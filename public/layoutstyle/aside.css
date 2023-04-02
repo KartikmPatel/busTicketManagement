@@ -1,0 +1,18 @@
+#aside{
+    padding-top:20px;
+    padding-left:20px;
+    width: 17%;
+    height: 615px;
+    float: left;
+    font-style: italic;
+    /* background-color: tan; */
+    /* background-color: mistyrose;  */
+    background: linear-gradient(110deg, #f8d56c 60%, #f7e863 60%);
+    /* background: linear-gradient(-70deg, #f58743 40%, rgba(0, 0, 0, 0) 40%); */
+    font-weight: bold;
+    font-size: 23px;
+  }
+  .c1:hover{
+    text-decoration:none;
+    font-size:24px;
+  }

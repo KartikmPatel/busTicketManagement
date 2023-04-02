@@ -8,10 +8,12 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="jsFiles/aside.js"></script>
+</head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <a class="navbar-brand" href="#"><span id="toggle-icon" class="navbar-toggler-icon" style="border:2px solid black mr-2"></span></a>
+        <a class="navbar-brand"><span id="toggle-icon" class="navbar-toggler-icon" style="border:2px solid white"></span></a>
         <a class="navbar-brand" href="#"><img src="images/bus.webp" height="50" width="60"></a>
         <a class="navbar-brand" href="#">Globle Travels</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
