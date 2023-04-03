@@ -1,16 +1,16 @@
 #aside{
     padding-top:20px;
     padding-left:20px;
-    width: 17%;
+    width: 16%;
     height: 625px;
     float: left;
     font-style: italic;
     /* background-color: tan; */
     /* background-color: mistyrose;  */
-    background: linear-gradient(110deg, #142c3d 60%, #284252 60%);
+    background: linear-gradient(110deg, #36393b 60%, #2d2f30 60%);
     /* background: linear-gradient(-70deg, #f58743 40%, rgba(0, 0, 0, 0) 40%); */
     font-weight: bold;
-    font-size: 23px;
+    font-size: 19px;
   }
 
   .c1{
@@ -19,6 +19,6 @@
 
   .c1:hover{
     text-decoration:none;
-    font-size:24px;
-    color: #5c7eeb;
+    font-size:20px;
+    color: #a6afc0;
   }
