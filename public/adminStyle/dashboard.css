@@ -1,0 +1,16 @@
+.dashboard-card{
+    display: flex;
+    margin-top: 20px;
+}
+
+.card{
+    margin-left: 20px;
+}
+
+.booking-card{
+    margin-left:35px;
+}
+
+.payment-card{
+    margin-left:35px;
+}
