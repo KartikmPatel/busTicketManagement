@@ -2,7 +2,8 @@
   padding-top: 20px;
   padding-left: 20px;
   width: 16%;
-  height: 669px;
+  /* height: 669px; */
+  height: 602px;
   float: left;
   font-style: italic;
   /* background-color: tan; */
@@ -14,15 +15,17 @@
 }
 
 .c1 {
-  color: rgb(7, 96, 123);
+  /* color: #e39eb29e; */
+  color: #0583d2;
 }
 
 .c1:hover {
   text-decoration: none;
   font-size: 20px;
-  color: #a6afc0;
+  /* color: #a127ca; */
+  color: #c762e9;
 }
 
 i {
-  color: whitesmoke;
+  color: rgb(17, 174, 201);
 }

@@ -51,10 +51,10 @@
                                     </div>
                             <div class="modal-body">
                                 <div class="container-fluid text-white">
-                                    Username :-
-                                    <input type="text" name="username" class="mb-2"><br>
-                                    Password :-
-                                    <input type="password" name="password" class="ml-1">
+                                    Username 
+                                    <input type="text" style="border-radius: 10px" name="username" placeholder="userName" class="mb-2"><br>
+                                    Password 
+                                    <input type="password" style="border-radius: 10px" name="password" placeholder="Password" class="ml-1">
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -83,21 +83,27 @@
                 <!-- Modal -->
                 <div class="modal fade" id="modelId2" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                     <div class="modal-dialog" role="document">
-                        <div class="modal-content">
+                        <div class="modal-content bg-dark col-md-10">
                                 <div class="modal-header">
-                                        <h5 class="modal-title">SignUp</h5>
+                                        <h5 class="modal-title text-white">SignUp</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                     </div>
                             <div class="modal-body">
-                                <div class="container-fluid">
-                                    Add rows here
+                                <div class="container-fluid text-white">
+                                    Username 
+                                    <input type="text" style="border-radius: 10px" name="username" placeholder="userName" class="mb-2"><br>
+                                    Password 
+                                    <input type="password" style="border-radius: 10px" name="password" placeholder="Password" class="mb-2"><br>
+                                    Confirm
+                                    <input type="password" style="border-radius: 10px" name="cpassword" placeholder="Confirm" class="ml-1"><br>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save</button>
+                                {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save</button> --}}
+                                <button type="submit" class="btn btn-outline-primary">Sign-Up</button>
                             </div>
                         </div>
                     </div>
