@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{asset('layoutstyle/aside.css')}}">
     <link rel="stylesheet" href="{{asset('adminStyle/dashboard.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <script src="jsFiles/aside.js"></script>
 </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -31,9 +32,85 @@
                     <a class="nav-link" href="#">Manage Bus</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <button class="btn btn-outline-success mx-2 my-2 my-sm-0" type="submit">Login</button>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up</button>
+            <form class="form-inline my-2 my-lg-0" method="post">
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-success mx-2 my-2 my-sm-0" data-toggle="modal" data-target="#modelId">
+                  Login
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content bg-dark col-md-10">
+                                <div class="modal-header">
+                                        <h5 class="modal-title text-white"> Login </h5>
+                                            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                    </div>
+                            <div class="modal-body">
+                                <div class="container-fluid text-white">
+                                    Username :-
+                                    <input type="text" name="username" class="mb-2"><br>
+                                    Password :-
+                                    <input type="password" name="password" class="ml-1">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-outline-primary">Login</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    $('#exampleModal').on('show.bs.modal', event => {
+                        var button = $(event.relatedTarget);
+                        var modal = $(this);
+                        // Use above variables to manipulate the DOM
+
+                    });
+                </script>
+
+                {{-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up</button> --}}
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#modelId2">
+                  Sign Up
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modelId2" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <h5 class="modal-title">SignUp</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                    </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    Add rows here
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    $('#exampleModal').on('show.bs.modal', event => {
+                        var button = $(event.relatedTarget);
+                        var modal = $(this);
+                        // Use above variables to manipulate the DOM
+
+                    });
+                </script>
             </form>
         </div>
     </nav>

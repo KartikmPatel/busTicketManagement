@@ -1,4 +1,4 @@
-<p class="footer">
+{{-- <p class="footer">
     Bus Management System © 2023
 </p>
 <style>
@@ -13,4 +13,4 @@
         position: absolute;
         padding-bottom: 0px;
     }
-</style>
+</style> --}}
