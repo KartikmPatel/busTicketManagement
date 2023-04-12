@@ -1,16 +1,21 @@
-.dashboard-card{
+.dashboard-card {
     display: flex;
     margin-top: 20px;
 }
 
-.card{
+.card {
     margin-left: 20px;
 }
 
-.booking-card{
-    margin-left:35px;
+.card:hover {
+    scale: 1.1;
+    box-shadow: 10px 7px 10px gray;
 }
 
-.payment-card{
-    margin-left:35px;
+.booking-card {
+    margin-left: 35px;
+}
+
+.payment-card {
+    margin-left: 35px;
 }
