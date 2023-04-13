@@ -1,9 +1,6 @@
 @extends('Layouts.main')
 
 @section('main-content')
-<head>
-<link rel="stylesheet" href="{{asset('layoutstyle/Login.css')}}">
-</head>
 
 <div class="dashboard-card">
     <div class="card" style="width: 13rem;height: 15.5rem;background-color:rgb(203, 220, 184)">
@@ -40,7 +37,7 @@
     </div>
 </div>
 
-<div class="container">
+<!-- <div class="container">
 	<div class="screen">
 		<div class="screen__content">
 			<form class="login">
@@ -96,6 +93,6 @@
 			<span class="screen__background__shape screen__background__shape1"></span>
 		</div>		
 	</div>
-</div>
+</div> -->
 
 @endsection

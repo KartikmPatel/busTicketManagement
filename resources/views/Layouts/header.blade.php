@@ -2,9 +2,6 @@
 <html lang="en">
   <head>
     <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -14,7 +11,7 @@
     <link rel="stylesheet" href="{{asset('layoutstyle/aside.css')}}">
     <link rel="stylesheet" href="{{asset('adminStyle/dashboard.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    <script src="jsFiles/aside.js"></script>
+    <link rel="stylesheet" href="{{asset('layoutstyle/Login.css')}}">
 </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -32,94 +29,55 @@
                     <a class="nav-link" href="#">Manage Bus</a>
                 </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0" method="post">
 
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-outline-success mx-2 my-2 my-sm-0" data-toggle="modal" data-target="#modelId">
+                <button type="button" class="btn btn-outline-success mx-2 my-2 my-sm-0" onclick="showform()">
                   Login
                 </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content bg-dark col-md-10">
-                                <div class="modal-header">
-                                        <h5 class="modal-title text-white"> Login </h5>
-                                            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                    </div>
-                            <div class="modal-body">
-                                <div class="container-fluid text-white">
-                                    Username 
-                                    <input type="text" style="border-radius: 10px" name="username" placeholder="userName" class="mb-2"><br>
-                                    Password 
-                                    <input type="password" style="border-radius: 10px" name="password" placeholder="Password" class="ml-1">
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-outline-primary">Login</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <script>
-                    $('#exampleModal').on('show.bs.modal', event => {
-                        var button = $(event.relatedTarget);
-                        var modal = $(this);
-                        // Use above variables to manipulate the DOM
-
-                    });
-                </script>
-
-                {{-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up</button> --}}
-
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#modelId2">
-                  Sign Up
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="modelId2" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content bg-dark col-md-10">
-                                <div class="modal-header">
-                                        <h5 class="modal-title text-white">SignUp</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                    </div>
-                            <div class="modal-body">
-                                <div class="container-fluid text-white">
-                                    Username 
-                                    <input type="text" style="border-radius: 10px" name="username" placeholder="userName" class="mb-2"><br>
-                                    Password 
-                                    <input type="password" style="border-radius: 10px" name="password" placeholder="Password" class="mb-2"><br>
-                                    Confirm
-                                    <input type="password" style="border-radius: 10px" name="cpassword" placeholder="Confirm" class="ml-1"><br>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save</button> --}}
-                                <button type="submit" class="btn btn-outline-primary">Sign-Up</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <script>
-                    $('#exampleModal').on('show.bs.modal', event => {
-                        var button = $(event.relatedTarget);
-                        var modal = $(this);
-                        // Use above variables to manipulate the DOM
-
-                    });
-                </script>
-            </form>
-        </div>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sign Up</button>
     </nav>
+
+        <div class="overlay" onclick="hideform()"></div>
+		<div class="container">
+		<div class="screen">
+			<div class="screen__content">
+				<h2 onclick="hideform()">&times;</h2>
+				<form class="login">
+					<div class="login__field">
+						<i class="login__icon fas fa-user"></i>
+						<input type="text" class="login__input" placeholder="User name / Email">
+					</div>
+					<div class="login__field">
+						<i class="login__icon fas fa-lock"></i>
+						<input type="password" class="login__input" placeholder="Password">
+					</div>
+					<button class="button login__submit">
+						<span class="button__text">Log In</span>
+						<i class="button__icon fas fa-chevron-right"></i>
+					</button>				
+				</form>
+			</div>
+			<div class="screen__background">
+				<span class="screen__background__shape screen__background__shape4"></span>
+				<span class="screen__background__shape screen__background__shape3"></span>		
+				<span class="screen__background__shape screen__background__shape2"></span>
+				<span class="screen__background__shape screen__background__shape1"></span>
+			</div>		
+		</div>
+	</div>
+
+    <script>
+    function showform()
+    {
+        document.querySelector('.overlay').classList.add('showoverlay');
+        document.querySelector('.container').classList.add('open-container');
+    }
+
+    function hideform()
+    {
+        document.querySelector('.overlay').classList.remove('showoverlay');
+        document.querySelector('.container').classList.remove('open-container');
+    }
+    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
