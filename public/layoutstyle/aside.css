@@ -2,14 +2,13 @@
   padding-top: 20px;
   padding-left: 20px;
   width: 16%;
-  /* height: 669px; */
-  height: 602px;
+  height: 550px;
   float: left;
   font-style: italic;
+  /* margin: auto; */
   /* background-color: tan; */
   /* background-color: mistyrose;  */
   background: linear-gradient(110deg, #36393b 60%, #2d2f30 60%);
-  /* background: linear-gradient(-70deg, #f58743 40%, rgba(0, 0, 0, 0) 40%); */
   font-weight: bold;
   font-size: 19px;
 }
@@ -29,3 +28,16 @@
 i {
   color: rgb(17, 174, 201);
 }
+
+/* @media(max-width: 767px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px){
+    .footer-col{
+        width: 100%;
+    }
+} */

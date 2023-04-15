@@ -10,11 +10,13 @@
   </head>
 
   <body>
-    <aside id="aside">
+    <div class="asi">
+      <div id="aside">
         <span><i class="fa fa-bus"></i><a href="" class="c1"> Manage Bus</a></span><br><br/>
         <span><i class="fa fa-route"></i><a href="" class="c1"> Manage Route</a></span><br><br/>
         <span><i class="fa fa-ticket"></i><a href="" class="c1"> SMS Ticket</a></span><br><br/>
         <span><i class="fa fa-money-check"></i><a href="" class="c1"> Payments</a></span><br><br/>
-    </aside>
+      </div>
+    </div>
   </body>
 </html>
