@@ -55,15 +55,15 @@
 					<button class="button login__submit">
 						<span class="button__text">Log In</span>
 						<i class="button__icon fas fa-chevron-right"></i>
-					</button>				
+					</button>
 				</form>
 			</div>
 			<div class="screen__background">
-				<span class="screen__background__shape screen__background__shape4"></span>
-				<span class="screen__background__shape screen__background__shape3"></span>		
+				<span class="screen__background__shape screen__background__shape4 bg-dark"></span>
+				<span class="screen__background__shape screen__background__shape3 bg-dark"></span>
 				<span class="screen__background__shape screen__background__shape2"></span>
 				<span class="screen__background__shape screen__background__shape1"></span>
-			</div>		
+			</div>
 		</div>
 	</div>
 
@@ -80,7 +80,7 @@
         document.querySelector('.container').classList.remove('open-container');
     }
     </script>
-        
+
          <!-- Sign Up -->
         <div class="overlay1" onclick="formhide()"></div>
 		<div class="container-sign">
@@ -103,15 +103,15 @@
 					<button class="button login__submit">
 						<span class="button__text">Sign Up</span>
 						<i class="button__icon fas fa-chevron-right"></i>
-					</button>				
+					</button>
 				</form>
 			</div>
 			<div class="screen__background">
 				<span class="screen__background__shape screen__background__shape4"></span>
-				<span class="screen__background__shape screen__background__shape3"></span>		
+				<span class="screen__background__shape screen__background__shape3"></span>
 				<span class="screen__background__shape screen__background__shape2"></span>
 				<span class="screen__background__shape screen__background__shape1"></span>
-			</div>		
+			</div>
 		</div>
 	</div>
 
