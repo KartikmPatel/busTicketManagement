@@ -24,7 +24,7 @@ route::get('manageBus',[adminController::class,'viewBuses']);
 
 route::post('manageBus',[adminController::class,'addBus']);
 route::get('deleteBus/{id}',[adminController::class,'deleteBus']);
-route::get('editBus/{id}',[adminController::class,'editBus']);
-route::post('updateBus/{id}',[adminController::class,'updateBus']);
+// route::get('editBus/{id}',[adminController::class,'editBus']);
+// route::post('updateBus/{id}',[adminController::class,'updateBus']);
 
 // route::post('busEdit/action',[adminController::class,'busAction']);

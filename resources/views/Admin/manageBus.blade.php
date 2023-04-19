@@ -1,6 +1,9 @@
 @extends('Layouts.main')
 
 @section('main-content')
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
     <div class="ml-4 mt-3">
         <h2> Buses </h2>
         {{-- <button class="btn btn-outline-dark"> Add Bus</button> --}}
@@ -101,69 +104,67 @@
         <br>
         <br>
 
-        <table class="table col-md-6 bg-secondary table-hover text-white">
+        <table class="table col-md-10 bg-secondary table-hover text-white" id="tblData">
             <thead class="thead-dark">
                 <tr>
                     <th> Bus No </th>
                     <th> Name </th>
                     <th> Size </th>
                     <th> Type </th>
-                    <th></th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($bus as $b)
                     <tr>
-                        <td>
+                        <td class="bno">
                             {{ $b->busNo }}
                         </td>
-                        <td>
+                        <td class="bname">
                             {{ $b->name }}
                         </td>
-                        <td>
+                        <td class="bsize">
                             {{ $b->size }}
                         </td>
-                        <td>
+                        <td class="btype">
                             {{ $b->type }}
                         </td>
-                        <td>
-                             <a href="{{url('editBus')}}/{{ $b->busNo }}" class="btn btn-outline-warning" ><i
-                                    class="fa fa-edit text-white"></i></a>
+                        <td class="tdAction">
+                        <!-- href="{{url('editBus')}}/{{ $b->busNo }}"
+                             <a class="btn btn-outline-warning"><i
+                                    class="fa fa-edit text-white" id="a1"></i></a>
                             <a href="{{ url('/deleteBus') }}/{{ $b->busNo }}" class="btn btn-outline-danger"><i
-                                    class="fa fa-trash-can text-white"></i></a>
+                            class="fa fa-trash-can text-white"></i></a> -->
+                            <button class='btn btn-success btn-sm btn-edit' > Edit </button> 
+                            <a href="{{ url('/deleteBus') }}/{{ $b->busNo }}" class='btn btn-danger btn-sm'> Delete </a>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
-    {{-- <script>
-        $(document).ready(function(){
+            <script>
+            //   var rowButtons ="<button class='btn btn-success btn-sm btn-edit' > Edit </button>  <button class='btn btn-danger btn-sm' > Delete </button> ";
+        var rowUpdateButtons ="<a href='{{url('/mangeBus')}}'><button class='btn btn-success btn-sm btn-save' > Update </button></a>";
+            
+               $('#tblData').on('click', '.btn-edit', function () { 
+                const no =$(this).parent().parent().find(".bno").html();
 
-            $.ajaxSetup({
-                headers:{
-                    'X-CSRF-Token' : $("input[name=_token]").val();
-                }
+                const name =$(this).parent().parent().find(".bname").html();
 
-                $('#editTable').Tabledit({
-                    url:"{{url('busEdit/action')}}",
-                    dataType:"json",
-                    columns:{
-                        identifier:[0,'busno'],
-                        editable:[[1,'name'],[2,'size'],[3,
-                    'type','{"1":"Sleeper","2":"Seater"}']]
-                    },
-                    restoreButton:false,
-                    onSuccess:function(data,textStatus,jqXHR)
-                    {
-                        if(data.action == 'delete')
-                        {
-                            $('#'+data.id).remove();
-                        }
-                    }
-                });
-            })
+                $(this).parent().parent().find(".bname").html("<input type='text' value='"+name+"' class='form-control txtbname' />"); 
 
-        });
-        </script> --}}
+
+                const bsize =$(this).parent().parent().find(".bsize").html();
+
+                $(this).parent().parent().find(".bsize").html("<input type='text' value='"+bsize+"' class='form-control txtbsize' />"); 
+                
+                const type =$(this).parent().parent().find(".btype").html();
+
+                $(this).parent().parent().find(".btype").html("<select name='type1' class='form-control'><option value='Sleeper'>Sleeper</option><option value='Seater'>Seater</option></select>"); 
+                
+                $(this).parent().parent().find(".tdAction").html(rowUpdateButtons);    
+                
+            });
+            </script>
 @endsection
