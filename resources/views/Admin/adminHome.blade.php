@@ -8,7 +8,7 @@
         <div class="card-body">
           <h5 class="card-title ml-5">Buses</h5>
           <p class="card-text text-success ml-5">Available</p>
-          <a class="btn btn-outline-primary ml-5" href="#">View</a>
+          <a class="btn btn-outline-primary ml-5" href="{{url('/manageBus')}}">View</a>
         </div>
     </div>
     <div class="card" style="width: 13rem;height: 16rem;background-color:rgb(235, 240, 176)">

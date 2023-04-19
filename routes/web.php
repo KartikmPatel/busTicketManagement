@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\adminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-route::get('/adminHome',function(){
-    return view('Admin.adminHome');
-});
+route::get('/adminHome',[adminController::class,'adminHome']);
+
+route::get('manageBus',[adminController::class,'viewBuses']);
+
+route::post('manageBus',[adminController::class,'addBus']);
+route::get('deleteBus/{id}',[adminController::class,'deleteBus']);
+route::get('editBus/{id}',[adminController::class,'editBus']);
+route::post('updateBus/{id}',[adminController::class,'updateBus']);
+
+// route::post('busEdit/action',[adminController::class,'busAction']);
