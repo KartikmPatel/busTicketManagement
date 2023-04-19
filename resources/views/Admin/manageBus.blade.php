@@ -135,8 +135,8 @@
                                     class="fa fa-edit text-white" id="a1"></i></a>
                             <a href="{{ url('/deleteBus') }}/{{ $b->busNo }}" class="btn btn-outline-danger"><i
                             class="fa fa-trash-can text-white"></i></a> -->
-                            <button class='btn btn-success btn-sm btn-edit' > Edit </button> 
-                            <a href="{{ url('/deleteBus') }}/{{ $b->busNo }}" class='btn btn-danger btn-sm'> Delete </a>
+                            <button class='btn btn-success btn-sm btn-edit' ><i class="fa fa-edit text-white"></i></button>
+                            <a href="{{ url('/deleteBus') }}/{{ $b->busNo }}" class='btn btn-danger btn-sm'> <i class="fa fa-trash-can text-white"></i> </a>
                         </td>
                     </tr>
                 @endforeach
@@ -145,26 +145,53 @@
     </div>
             <script>
             //   var rowButtons ="<button class='btn btn-success btn-sm btn-edit' > Edit </button>  <button class='btn btn-danger btn-sm' > Delete </button> ";
-        var rowUpdateButtons ="<a href='{{url('/mangeBus')}}'><button class='btn btn-success btn-sm btn-save' > Update </button></a>";
-            
-               $('#tblData').on('click', '.btn-edit', function () { 
+        var rowUpdateButtons ="<a onclick='updateBus();'><button class='btn btn-success btn-sm btn-save' > Update </button></a>";
+
+               $('#tblData').on('click', '.btn-edit', function () {
                 const no =$(this).parent().parent().find(".bno").html();
+                // var no = $(this).parent().parent().find(".bno").html();
+                $(this).parent().parent().find(".bno").html("<input type='text' value='"+no.trim()+"' class='form-control txtbno' />");
+
 
                 const name =$(this).parent().parent().find(".bname").html();
-
-                $(this).parent().parent().find(".bname").html("<input type='text' value='"+name+"' class='form-control txtbname' />"); 
+                $(this).parent().parent().find(".bname").html("<input type='text' value='"+name.trim()+"' class='form-control txtbname' />");
 
 
                 const bsize =$(this).parent().parent().find(".bsize").html();
 
-                $(this).parent().parent().find(".bsize").html("<input type='text' value='"+bsize+"' class='form-control txtbsize' />"); 
-                
+                $(this).parent().parent().find(".bsize").html("<input type='text' value='"+bsize.trim()+"' class='form-control txtbsize' />");
+
                 const type =$(this).parent().parent().find(".btype").html();
 
-                $(this).parent().parent().find(".btype").html("<select name='type1' class='form-control'><option value='Sleeper'>Sleeper</option><option value='Seater'>Seater</option></select>"); 
-                
-                $(this).parent().parent().find(".tdAction").html(rowUpdateButtons);    
-                
+                $(this).parent().parent().find(".btype").html("<select name='type1' class='form-control txtbtype'><option value='Sleeper'>Sleeper</option><option value='Seater'>Seater</option></select>");
+
+                $(this).parent().parent().find(".tdAction").html(rowUpdateButtons);
+
             });
+
+            function updateBus() {
+                var busno =$('.txtbno').val();
+                var name = $('.txtbname').val();
+                var size = $('.txtbsize').val();
+                var type = $('.txtbtype').val();
+
+                $.ajax({
+                    type:'POST',
+                    url:"{{ url('updateBus/"+busno+"') }}",
+                    data: {
+                        _token: '{{ csrf_token() }}',
+                        busno: busno,
+                        name: name,
+                        size: size,
+                        type: type
+                    },
+                    success : function(data)
+                    {
+                        setTimeout(function() {
+                            location.reload();
+                        },10);
+                    }
+                })
+            }
             </script>
 @endsection

@@ -52,39 +52,24 @@ class adminController extends Controller
         return redirect()->back();
     }
 
-    public function editBus($id)
+    // public function editBus($id)
+    // {
+    //     $bus = busModel::find($id);
+
+    //     $title = "Update Bus";
+    //     $url = url('update/').$id;
+    //     $data = compact('bus','url','title');
+
+    //     return view('Admin.manageBus')->with($data);
+    // }
+
+    public function updateBus(Request $r)
     {
-        $bus = busModel::find($id);
+        $bus = busModel::find($r['busno']);
 
-        $title = "Update Bus";
-        $url = url('update/').$id;
-        $data = compact('bus','url','title');
-
-        return view('Admin.manageBus')->with($data);
-    }
-
-    function busAction(Request $r)
-    {
-        if($r->ajax())
-        {
-            if($r->action == "Edit")
-            {
-                $data = array(
-                    'name' => $r->name,
-                    'size' => $r->size,
-                    'type' => $r->type,
-                );
-
-                $bus = busModel::find($r->busno);
-                $bus->update($data);
-            }
-            if($r->action == 'delete')
-            {
-                $bus = busModel::find($r->busno);
-                $bus->delete();
-            }
-
-            return request()->json($r);
-        }
+        $bus->name = $r['name'];
+        $bus->size = $r['size'];
+        $bus->type = $r['type'];
+        $bus->save();
     }
 }
