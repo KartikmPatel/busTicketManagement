@@ -15,8 +15,8 @@
         <img class="ml-5" src="images/route_icon.png" height="100" width="120" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Routes</h5>
-          <p class="card-text text-success">Available</p>
-          <a class="btn btn-outline-primary" href="#">View</a>
+          <p class="card-text text-success">{{$routeCount}} Available</p>
+          <a class="btn btn-outline-primary" href="{{url('/manageRoute')}}">View</a>
         </div>
     </div>
     <div class="card" style="width: 13rem;height: 16rem;background-color:rgb(183, 183, 171)">

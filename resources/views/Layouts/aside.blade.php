@@ -15,6 +15,8 @@
       <div id="aside">
         <span><i class="fa fa-bus"></i><a href="{{url('/manageBus')}}" class="c1"> Manage Buses </a></span><br><br/>
         <span><i class="fa fa-route"></i><a href="{{url('/manageRoute')}}" class="c1"> Manage Route</a></span><br><br/>
+        <span><i class="fa fa-clock"></i><a href="" class="c1"> Manage busTime</a></span><br><br/>
+        <span><i class="fa fa-people-group"></i><a href="" class="c1"> Manage Staff</a></span><br><br/>
         <span><i class="fa fa-ticket"></i><a href="" class="c1"> SMS Ticket</a></span><br><br/>
         <span><i class="fa fa-money-check"></i><a href="" class="c1"> Payments</a></span><br><br/>
       </div>

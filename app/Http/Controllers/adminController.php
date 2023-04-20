@@ -12,7 +12,8 @@ class adminController extends Controller
     public function adminHome()
     {
         $busCount = busModel::count();
-        $data = compact('busCount');
+        $routeCount = routeModal::count();
+        $data = compact('busCount','routeCount');
         return view("Admin.adminHome")->with($data);
     }
 
