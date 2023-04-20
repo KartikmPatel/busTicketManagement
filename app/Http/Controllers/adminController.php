@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\busModel;
-use DB;
+use App\Models\stationModal;
+use App\Models\routeModal;
 
 class adminController extends Controller
 {
     public function adminHome()
     {
-        return view("Admin.adminHome");
+        $busCount = busModel::count();
+        $data = compact('busCount');
+        return view("Admin.adminHome")->with($data);
     }
 
     public function viewBuses()
@@ -71,5 +74,58 @@ class adminController extends Controller
         $bus->size = $r['size'];
         $bus->type = $r['type'];
         $bus->save();
+    }
+
+    public function viewRoutes()
+    {
+        $buses = busModel::all();
+        $stations = stationModal::all();
+        $routes = routeModal::all();
+
+        $data = compact('buses','stations','routes');
+        return view("Admin.manageRoute")->with($data);
+    }
+
+    public function addRoute(Request $r)
+    {
+        $r->validate([
+            'busno' => 'required',
+            'startStation' => 'required',
+            'endStation' => 'required',
+            'fare' => 'required'
+        ],
+        [
+            'busno.required' => 'Please Select BusNo',
+            'startStation.required' => 'Please Select Starting Station',
+            'endStation.required' => 'Please Select Ending Station',
+            'fare.required' => 'Please Enter Fare'
+        ]
+    );
+
+       $route = new routeModal;
+       $route->busNo = $r['busno'];
+       $route->startingStationID = $r['startStation'];
+       $route->endingStationID = $r['endStation'];
+       $route->fare = $r['fare'];
+       $route->save();
+
+       return redirect()->back();
+    }
+
+    public function deleteRoute($id)
+    {
+        routeModal::find($id)->delete();
+        return redirect()->back();
+    }
+
+    public function updateRoute(Request $r)
+    {
+        $route = routeModal::find($r['rID']);
+
+        $route->busNo = $r['busno'];
+        $route->startingStationID = $r['ssID'];
+        $route->endingStationID = $r['esID'];
+        $route->fare = $r['fare'];
+        $route->save();
     }
 }

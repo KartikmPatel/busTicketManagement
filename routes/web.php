@@ -21,10 +21,13 @@ Route::get('/', function () {
 route::get('/adminHome',[adminController::class,'adminHome']);
 
 route::get('manageBus',[adminController::class,'viewBuses']);
-
-route::post('manageBus',[adminController::class,'addBus']);
+route::post('addBus',[adminController::class,'addBus']);
 route::get('deleteBus/{id}',[adminController::class,'deleteBus']);
 // route::get('editBus/{id}',[adminController::class,'editBus']);
 route::post('updateBus/{id}',[adminController::class,'updateBus']);
 
+route::get('manageRoute',[adminController::class,'viewRoutes']);
+route::post('addRoute',[adminController::class,'addRoute']);
+route::get('deleteRoute/{id}',[adminController::class,'deleteRoute']);
+route::post('updateRoute/{id}',[adminController::class,'updateRoute']);
 // route::post('busEdit/action',[adminController::class,'busAction']);

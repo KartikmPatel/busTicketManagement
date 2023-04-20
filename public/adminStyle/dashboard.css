@@ -12,10 +12,6 @@
     box-shadow: 10px 7px 10px gray;
 }
 
-.booking-card {
-    margin-left: 35px;
-}
-
-.payment-card {
-    margin-left: 35px;
+.card-body{
+    text-align: center;
 }

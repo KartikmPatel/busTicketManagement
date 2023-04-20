@@ -3,6 +3,7 @@
 @section('main-content')
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<title> Manage Bus </title>
 </head>
     <div class="ml-4 mt-3">
         <h2> Buses </h2>
@@ -56,55 +57,10 @@
             </div>
         </div>
 
-        <script>
-            $('#exampleModal').on('show.bs.modal', event => {
-                var button = $(event.relatedTarget);
-                var modal = $(this);
-                // Use above variables to manipulate the DOM
-            });
-
-            function storeData() {
-                var busno = $('#busno').val();
-                var name = $('#name').val();
-                var size = $('#size').val();
-                var type = $('#type').val();
-
-                $('#busno-error').addClass('d-none');
-                $('#name-error').addClass('d-none');
-                $('#size-error').addClass('d-none');
-
-                $.ajax({
-                    type: 'POST',
-                    url: "{{ url('manageBus') }}",
-                    data: {
-                        _token: '{{ csrf_token() }}',
-                        busno: busno,
-                        name: name,
-                        size: size,
-                        type: type
-                    },
-                    success: function(data) {
-                        setTimeout(function() {
-                            location.reload();
-                        },50);
-                    },
-                    error: function(data) {
-                        var errors = data.responseJSON;
-                        if ($.isEmptyObject(errors) == false) {
-                            $.each(errors.errors, function(key, value) {
-                                var ErrorID = '#' + key + '-error';
-                                $(ErrorID).removeClass('d-none');
-                                $(ErrorID).text(value);
-                            })
-                        }
-                    }
-                })
-            }
-        </script>
         <br>
         <br>
 
-        <table class="table col-md-10 bg-secondary table-hover text-white" id="tblData">
+        <table class="table col-md-9 bg-secondary table-hover text-white" id="tblData">
             <thead class="thead-dark">
                 <tr>
                     <th> Bus No </th>
@@ -131,10 +87,10 @@
                         </td>
                         <td class="tdAction">
                         <!-- href="{{url('editBus')}}/{{ $b->busNo }}"
-                             <a class="btn btn-outline-warning"><i
-                                    class="fa fa-edit text-white" id="a1"></i></a>
-                            <a href="{{ url('/deleteBus') }}/{{ $b->busNo }}" class="btn btn-outline-danger"><i
-                            class="fa fa-trash-can text-white"></i></a> -->
+                            <a class="btn btn-outline-warning"><i
+                                class="fa fa-edit text-white" id="a1"></i></a>
+                                <a href="{{ url('/deleteBus') }}/{{ $b->busNo }}" class="btn btn-outline-danger"><i
+                                    class="fa fa-trash-can text-white"></i></a> -->
                             <button class='btn btn-success btn-sm btn-edit' ><i class="fa fa-edit text-white"></i></button>
                             <a href="{{ url('/deleteBus') }}/{{ $b->busNo }}" class='btn btn-danger btn-sm'> <i class="fa fa-trash-can text-white"></i> </a>
                         </td>
@@ -143,7 +99,50 @@
             </tbody>
         </table>
     </div>
-            <script>
+    <script>
+        $('#exampleModal').on('show.bs.modal', event => {
+            var button = $(event.relatedTarget);
+            var modal = $(this);
+            // Use above variables to manipulate the DOM
+        });
+
+        function storeData() {
+            var busno = $('#busno').val();
+            var name = $('#name').val();
+            var size = $('#size').val();
+            var type = $('#type').val();
+
+            $('#busno-error').addClass('d-none');
+            $('#name-error').addClass('d-none');
+            $('#size-error').addClass('d-none');
+
+            $.ajax({
+                type: 'POST',
+                url: "{{ url('addBus') }}",
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    busno: busno,
+                    name: name,
+                    size: size,
+                    type: type
+                },
+                success: function(data) {
+                    setTimeout(function() {
+                        location.reload();
+                    },50);
+                },
+                error: function(data) {
+                    var errors = data.responseJSON;
+                    if ($.isEmptyObject(errors) == false) {
+                        $.each(errors.errors, function(key, value) {
+                            var ErrorID = '#' + key + '-error';
+                            $(ErrorID).removeClass('d-none');
+                            $(ErrorID).text(value);
+                        })
+                    }
+                }
+            })
+        }
             //   var rowButtons ="<button class='btn btn-success btn-sm btn-edit' > Edit </button>  <button class='btn btn-danger btn-sm' > Delete </button> ";
         var rowUpdateButtons ="<a onclick='updateBus();'><button class='btn btn-success btn-sm btn-save' > Update </button></a>";
 
