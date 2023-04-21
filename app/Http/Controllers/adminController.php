@@ -93,12 +93,16 @@ class adminController extends Controller
             'busno' => 'required',
             'startStation' => 'required',
             'endStation' => 'required',
+            'date' => 'required',
+            'dtime' => 'required',
             'fare' => 'required'
         ],
         [
             'busno.required' => 'Please Select BusNo',
             'startStation.required' => 'Please Select Starting Station',
             'endStation.required' => 'Please Select Ending Station',
+            'date.required' => 'Please Select Date',
+            'dtime.required' => 'Please Select Departure Time',
             'fare.required' => 'Please Enter Fare'
         ]
     );
@@ -107,6 +111,8 @@ class adminController extends Controller
        $route->busNo = $r['busno'];
        $route->startingStationID = $r['startStation'];
        $route->endingStationID = $r['endStation'];
+       $route->date = $r['date'];
+       $route->departureTime = $r['dtime'];
        $route->fare = $r['fare'];
        $route->save();
 
@@ -122,10 +128,14 @@ class adminController extends Controller
     public function updateRoute(Request $r)
     {
         $route = routeModal::find($r['rID']);
+        $st1 = stationModal::where('stationName',$r['ssID'])->first();
+        $st2 = stationModal::where('stationName',$r['esID'])->first();
 
         $route->busNo = $r['busno'];
-        $route->startingStationID = $r['ssID'];
-        $route->endingStationID = $r['esID'];
+        $route->startingStationID = $st1->stationID;
+        $route->endingStationID = $st2->stationID;
+        $route->date = $r['ddate'];
+        $route->departureTime = $r['dtime'];
         $route->fare = $r['fare'];
         $route->save();
     }

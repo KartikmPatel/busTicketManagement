@@ -61,6 +61,18 @@
                                 </span>
                             </div>
                             <div class="form-group">
+                                <label> Date : </label>
+                                <input type="date" class="form-control" name="date" id="date">
+                                <span class="text-danger" id="date-error">
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label> Departure Time : </label>
+                                <input type="time" class="form-control" name="dtime" id="dtime">
+                                <span class="text-danger" id="dtime-error">
+                                </span>
+                            </div>
+                            <div class="form-group">
                                 <label> Fare : </label>
                                 <input type="text" class="form-control" name="fare" id="fare" placeholder="fare">
                                 <span class="text-danger" id="fare-error">
@@ -72,13 +84,15 @@
                 </div>
             </div>
         </div>
-        <table class="table col-md-9 mt-2 bg-secondary table-hover text-white" id="tblData">
+        <table class="table col-md-10 mt-2 bg-secondary table-hover text-white" id="tblData">
             <thead class="thead-dark">
                 <tr>
                     <th> Route ID </th>
                     <th> Bus No </th>
                     <th> Starting Station </th>
                     <th> Ending Station </th>
+                    <th> Date </th>
+                    <th> Departure Time </th>
                     <th>Fare</th>
                     <th> Action </th>
                 </tr>
@@ -86,11 +100,20 @@
             <tbody>
                 @foreach ($routes as $r)
                 <tr>
-                    <td class="rID">
-                        {{ $r->routeID }}
+                    <td class="rID col-md-1">
+                        {{$r->routeID}}
                     </td>
                     <td class="bno">
                         {{ $r->busNo }}
+                        {{-- <select name='busno' class='form-control txtbno'>
+                            @foreach($buses as $b)
+                            @if ($r->busNo == $b->busNo)
+                            <option value='{{ $b->busNo }}' selected>{{$b->busNo}}</option>
+                            @else
+                            <option value='{{ $b->busNo }}'>{{$b->busNo}}</option>
+                            @endif
+                            @endforeach
+                        </select> --}}
                     </td>
                     <td class="ssID">
                         @foreach ($stations as $s)
@@ -106,7 +129,14 @@
                         @endif
                         @endforeach
                     </td>
-                    <td class="fare col-md-2">
+                    <td class="ddate col-md-1">
+                        {{-- {{ Carbon\Carbon::parse($r->date)->format('d-m-y')}} --}}
+                        {{$r->date}}
+                    </td>
+                    <td class="dtime">
+                        {{ $r->departureTime}}
+                    </td>
+                    <td class="fare col-md-1">
                         {{ $r->fare }}
                     </td>
                     <td class="tdAction">
@@ -130,15 +160,40 @@
                 // Use above variables to manipulate the DOM
             });
 
+            $(document).ready(function(){
+                var dtToday = new Date();
+
+                var month = dtToday.getMonth() + 1;
+                var day = dtToday.getDate();
+                var year = dtToday.getFullYear();
+
+                if(month < 10)
+                {
+                    month = '0' + month.toString();
+                }
+                if(day < 10)
+                {
+                    day = '0'+day.toString();
+                }
+
+                var maxDate = year + '-' + month + '-' + day;
+
+                $('#date').attr('min',maxDate);
+            })
+
             function storeData() {
             var busno = $('#busno').val();
             var startStation = $('#startStation').val();
             var endStation = $('#endStation').val();
+            var date = $('#date').val();
+            var dtime = $('#dtime').val();
             var fare = $('#fare').val();
 
             $('#busno-error').addClass('d-none');
             $('#startStation-error').addClass('d-none');
             $('#endStation-error').addClass('d-none');
+            $('#date-error').addClass('d-none');
+            $('#dtime-error').addClass('d-none');
             $('#fare-error').addClass('d-none');
 
             $.ajax({
@@ -149,6 +204,8 @@
                     busno: busno,
                     startStation: startStation,
                     endStation: endStation,
+                    date: date,
+                    dtime: dtime,
                     fare: fare
                 },
                 success: function(data) {
@@ -172,22 +229,56 @@
         var rowUpdateButtons ="<a onclick='updateRoute();'><button class='btn btn-success btn-sm btn-save' > Update </button></a>";
 
                $('#tblData').on('click', '.btn-edit', function () {
-                // const rID =$(this).parent().parent().find(".rID").html();
-                // // var no = $(this).parent().parent().find(".bno").html();
-                // $(this).parent().parent().find(".rID").html("<input type='text' value='"+rID.trim()+"' class='form-control txtrID' />");
+                const rID =$(this).parent().parent().find(".rID").html();
+                // var no = $(this).parent().parent().find(".bno").html();
+                $(this).parent().parent().find(".rID").html("<input type='text' value='"+rID.trim()+"' class='form-control txtrID' readonly/>");
 
 
                 const bno =$(this).parent().parent().find(".bno").html();
-                $(this).parent().parent().find(".bno").html("<select name='busno' class='form-control txtbno'>@foreach($buses as $b)<option value='{{ $b->busNo }}'>{{$b->busNo}}</option>@endforeach</select>");
+                $(this).parent().parent().find(".bno").html(`
+                <select name='busno' class='form-control txtbno'>
+                    <option value='`+bno.trim()+`' selected>`+bno.trim()+`</option>
+                            @foreach($buses as $b)
+                            @if(`+bno.trim()+` != $b->busNo)
+                            <option value='{{ $b->busNo }}'>{{$b->busNo}}</option>
+                            @endif
+                            @endforeach
+                        </select>
+                `);
+
 
 
                 const ssID =$(this).parent().parent().find(".ssID").html();
 
-                $(this).parent().parent().find(".ssID").html("<select name='ssID' class='form-control txtssID'>@foreach($stations as $s)<option value='{{ $s->stationID }}'>{{$s->stationName}}</option>@endforeach</select>");
+                $(this).parent().parent().find(".ssID").html(`
+                <select name='ssID' class='form-control txtssID'>
+                    <option value='`+ssID.trim()+`'>`+ssID.trim()+`</option>
+                    @foreach($stations as $s)
+                    @if(`+ssID.trim()+` != $s->stationID)
+                    <option value='{{ $s->stationName }}'>{{$s->stationName}}</option>
+                    @endif
+                    @endforeach
+                    </select>
+                    `);
 
                 const esID =$(this).parent().parent().find(".esID").html();
 
-                $(this).parent().parent().find(".esID").html("<select name='esID' class='form-control txtesID'>@foreach($stations as $s)<option value='{{ $s->stationID }}'>{{$s->stationName}}</option>@endforeach</select>");
+                $(this).parent().parent().find(".esID").html(`
+                <select name='ssID' class='form-control txtesID'>
+                    <option value='`+esID.trim()+`'>`+esID.trim()+`</option>
+                    @foreach($stations as $s)
+                    @if(`+esID.trim()+` != $s->stationID)
+                    <option value='{{ $s->stationName }}'>{{$s->stationName}}</option>
+                    @endif
+                    @endforeach
+                    </select>
+                `);
+
+                const ddate =$(this).parent().parent().find(".ddate").html();
+                $(this).parent().parent().find(".ddate").html(" <input type='date' class='form-control txtdate' id='ddate' value='"+ddate.trim()+"'>");
+
+                const dtime =$(this).parent().parent().find(".dtime").html();
+                $(this).parent().parent().find(".dtime").html(" <input type='time' class='form-control txttime' id='time' value='"+dtime.trim()+"'>");
 
                 const fare =$(this).parent().parent().find(".fare").html();
 
@@ -198,21 +289,25 @@
             });
 
             function updateRoute() {
-                var rID = $('.rID').text();
+                var rID = $('.txtrID').val();
                 var busno =$('.txtbno').val();
                 var ssID = $('.txtssID').val();
                 var esID = $('.txtesID').val();
+                var ddate = $('.txtdate').val();
+                var dtime = $('.txttime').val();
                 var fare = $('.txtbfare').val();
 
                 $.ajax({
                     type:'POST',
-                    url:"{{ url('updateRoute/"+rID+"') }}",
+                    url:"{{ url('updateRoute') }}",
                     data: {
                         _token: '{{ csrf_token() }}',
                         rID: rID,
                         busno: busno,
                         ssID: ssID,
                         esID: esID,
+                        ddate: ddate,
+                        dtime: dtime,
                         fare: fare
                     },
                     success : function(data)
@@ -223,5 +318,26 @@
                     }
                 })
             }
+
+            $(document).ready(function(){
+                var dtToday = new Date();
+
+                var month = dtToday.getMonth() + 1;
+                var day = dtToday.getDate();
+                var year = dtToday.getFullYear();
+
+                if(month < 10)
+                {
+                    month = '0' + month.toString();
+                }
+                if(day < 10)
+                {
+                    day = '0'+day.toString();
+                }
+
+                var maxDate = year + '-' + month + '-' + day;
+
+                $('#ddate').attr('min',maxDate);
+            })
         </script>
     @endsection

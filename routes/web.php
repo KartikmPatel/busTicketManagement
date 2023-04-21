@@ -29,5 +29,5 @@ route::post('updateBus/{id}',[adminController::class,'updateBus']);
 route::get('manageRoute',[adminController::class,'viewRoutes']);
 route::post('addRoute',[adminController::class,'addRoute']);
 route::get('deleteRoute/{id}',[adminController::class,'deleteRoute']);
-route::post('updateRoute/{id}',[adminController::class,'updateRoute']);
+route::post('updateRoute',[adminController::class,'updateRoute']);
 // route::post('busEdit/action',[adminController::class,'busAction']);

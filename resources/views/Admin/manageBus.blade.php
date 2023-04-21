@@ -149,7 +149,7 @@
                $('#tblData').on('click', '.btn-edit', function () {
                 const no =$(this).parent().parent().find(".bno").html();
                 // var no = $(this).parent().parent().find(".bno").html();
-                $(this).parent().parent().find(".bno").html("<input type='text' value='"+no.trim()+"' class='form-control txtbno' />");
+                $(this).parent().parent().find(".bno").html("<input type='text' value='"+no.trim()+"' class='form-control txtbno' readonly/>");
 
 
                 const name =$(this).parent().parent().find(".bname").html();
