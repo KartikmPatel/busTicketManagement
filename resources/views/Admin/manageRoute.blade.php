@@ -2,12 +2,29 @@
 
 @section('main-content')
 
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-        <title> Manage Route </title>
-    </head>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <title> Manage Route </title>
+</head>
 
-    <div class="ml-4 mt-3">
+<div class="ml-4 mt-3">
+        @if (Session()->has('success'))
+        <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+            <i class="fa fa-times"></i>
+        </button>
+        <strong>Success !</strong> {{ session()->get('success') }}
+        </div>
+        @endif
+
+        @if ($error)
+        <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+            <i class="fa fa-times"></i>
+        </button>
+        <strong>Error !</strong> {{ $error }}
+        </div>
+        @endif
         <h2> Routes </h2>
         {{-- <button class="btn btn-outline-dark"> Add Bus</button> --}}
         <!-- Button trigger modal -->
@@ -152,6 +169,7 @@
             @endforeach
             </tbody>
         </table>
+
     </div>
         <script>
             $('#exampleModal').on('show.bs.modal', event => {

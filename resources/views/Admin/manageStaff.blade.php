@@ -183,10 +183,8 @@
 
                 $(this).parent().parent().find(".sType").html(`
                 <select name='sType' class='form-control txtsType'>
-                    <option value='`+sType.trim()+`'>`+sType.trim()+`</option>
-                    @foreach($staff as $s)
-                    <option value='{{ $s->staffType }}'>{{$s->staffType}}</option>
-                    @endforeach
+                    <option value="Driver">Driver</option>
+                    <option value="Conductor">Conductor</option>
                     </select>
                 `);
 

@@ -83,8 +83,9 @@ class adminController extends Controller
         $buses = busModel::all();
         $stations = stationModal::all();
         $routes = routeModal::all();
+        $error = "Date Must Be Different";
 
-        $data = compact('buses','stations','routes');
+        $data = compact('buses','stations','routes','error');
         return view("Admin.manageRoute")->with($data);
     }
 
@@ -108,16 +109,32 @@ class adminController extends Controller
         ]
     );
 
-       $route = new routeModal;
-       $route->busNo = $r['busno'];
-       $route->startingStationID = $r['startStation'];
-       $route->endingStationID = $r['endStation'];
-       $route->date = $r['date'];
-       $route->departureTime = $r['dtime'];
-       $route->fare = $r['fare'];
-       $route->save();
+     $busRoute = routeModal::where('busNo',$r['busno'])->get();
 
-       return redirect()->back();
+     foreach($busRoute as $br)
+     {
+         if($br->date == $r['date'])
+         {
+             return back()->with('success','sfsgsbsf');
+        }
+    }
+
+    if($r['startStation'] == $r['endStation'])
+    {
+        return redirect()->back();
+    }
+    else
+    {
+        $route = new routeModal;
+        $route->busNo = $r['busno'];
+        $route->startingStationID = $r['startStation'];
+        $route->endingStationID = $r['endStation'];
+        $route->date = $r['date'];
+        $route->departureTime = $r['dtime'];
+        $route->fare = $r['fare'];
+        $route->save();
+    }
+    return redirect()->back();
     }
 
     public function deleteRoute($id)
@@ -164,6 +181,7 @@ class adminController extends Controller
             'mNo.required' => 'Please Enter Mobile Number'
         ]
     );
+
 
        $staff = new staffModel;
        $staff->busNo = $r['busno'];
