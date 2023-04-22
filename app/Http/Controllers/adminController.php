@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\busModel;
 use App\Models\stationModal;
 use App\Models\routeModal;
+use App\Models\staffModel;
 
 class adminController extends Controller
 {
@@ -138,5 +139,56 @@ class adminController extends Controller
         $route->departureTime = $r['dtime'];
         $route->fare = $r['fare'];
         $route->save();
+    }
+
+    public function viewStaff()
+    {
+        $staff = staffModel::all();
+        $buses = busModel::all();
+        $data = compact('staff','buses');
+        return view("Admin.manageStaff")->with($data);
+    }
+
+    public function addStaff(Request $r)
+    {
+        $r->validate([
+            'busno' => 'required',
+            'sName' => 'required',
+            'sType' => 'required',
+            'mNo' => 'required'
+        ],
+        [
+            'busno.required' => 'Please Select BusNo',
+            'sName.required' => 'Please Enter Staff Name',
+            'sType.required' => 'Please Select Staff Type',
+            'mNo.required' => 'Please Enter Mobile Number'
+        ]
+    );
+
+       $staff = new staffModel;
+       $staff->busNo = $r['busno'];
+       $staff->staffName = $r['sName'];
+       $staff->staffType = $r['sType'];
+       $staff->mobileNo = $r['mNo'];
+       $staff->save();
+
+       return redirect()->back();
+    }
+
+    public function deleteStaff($id)
+    {
+       staffModel::find($id)->delete();
+       return redirect()->back();
+    }
+
+    public function updateStaff(Request $r)
+    {
+        $staff = staffModel::find($r['sID']);
+
+        $staff->busNo = $r['busno'];
+        $staff->staffName = $r['sName'];
+        $staff->staffType = $r['sType'];
+        $staff->mobileNo = $r['mNo'];
+        $staff->save();
     }
 }
