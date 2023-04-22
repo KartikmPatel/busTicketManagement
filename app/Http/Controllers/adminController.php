@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\busModel;
-use App\Models\stationModal;
-use App\Models\routeModal;
+use App\Models\stationModel;
+use App\Models\routeModel;
 use App\Models\staffModel;
 
 class adminController extends Controller
@@ -13,8 +13,9 @@ class adminController extends Controller
     public function adminHome()
     {
         $busCount = busModel::count();
-        $routeCount = routeModal::count();
-        $data = compact('busCount','routeCount');
+        $routeCount = routeModel::count();
+        $stationCount = stationModel::count();
+        $data = compact('busCount','routeCount','stationCount');
         return view("Admin.adminHome")->with($data);
     }
 
@@ -81,8 +82,8 @@ class adminController extends Controller
     public function viewRoutes()
     {
         $buses = busModel::all();
-        $stations = stationModal::all();
-        $routes = routeModal::all();
+        $stations = stationModel::all();
+        $routes = routeModel::all();
         $error = "Date Must Be Different";
 
         $data = compact('buses','stations','routes','error');
@@ -109,7 +110,7 @@ class adminController extends Controller
         ]
     );
 
-     $busRoute = routeModal::where('busNo',$r['busno'])->get();
+     $busRoute = routeModel::where('busNo',$r['busno'])->get();
 
      foreach($busRoute as $br)
      {
@@ -125,7 +126,7 @@ class adminController extends Controller
     }
     else
     {
-        $route = new routeModal;
+        $route = new routeModel;
         $route->busNo = $r['busno'];
         $route->startingStationID = $r['startStation'];
         $route->endingStationID = $r['endStation'];
@@ -139,15 +140,15 @@ class adminController extends Controller
 
     public function deleteRoute($id)
     {
-        routeModal::find($id)->delete();
+        routeModel::find($id)->delete();
         return redirect()->back();
     }
 
     public function updateRoute(Request $r)
     {
-        $route = routeModal::find($r['rID']);
-        $st1 = stationModal::where('stationName',$r['ssID'])->first();
-        $st2 = stationModal::where('stationName',$r['esID'])->first();
+        $route = routeModel::find($r['rID']);
+        $st1 = stationModel::where('stationName',$r['ssID'])->first();
+        $st2 = stationModel::where('stationName',$r['esID'])->first();
 
         $route->busNo = $r['busno'];
         $route->startingStationID = $st1->stationID;
@@ -208,5 +209,47 @@ class adminController extends Controller
         $staff->staffType = $r['sType'];
         $staff->mobileNo = $r['mNo'];
         $staff->save();
+    }
+
+    public function viewStations()
+    {
+        $station = stationModel::all();
+        $url = url('/manageStation');
+        $title = "Add Station";
+        $data = compact('station','title','url');
+        return view("Admin.manageStation")->with($data);
+    }
+
+    public function addStation(Request $r)
+    {
+        $r->validate([
+            'staid' => 'required',
+            'staname' => 'required',
+        ],
+        [
+            'staid.required' => 'Please enter Station Id',
+            'staname.required' => 'Please enter Station Name',
+        ]
+    );
+
+        $station = new stationModel;
+        $station->stationID = $r['staid'];
+        $station->stationName = $r['staname'];
+        $station->save();
+
+        return redirect()->back();
+    }
+
+    public function updateStation(Request $r)
+    {
+        $station = stationModel::find($r['staid']);
+        $station->stationName = $r['staname'];
+        $station->save();
+    }
+
+    public function deleteStation($id)
+    {
+        stationModel::find($id)->delete();
+        return redirect()->back();
     }
 }
