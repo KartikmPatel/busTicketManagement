@@ -183,6 +183,14 @@ class adminController extends Controller
         ]
     );
 
+    $busStaff = staffModel::where('busNo',$r['busno'])->get();
+    foreach($busStaff as $b)
+    {
+        if(($b->staffType == $r['sType']))
+        {
+           return redirect()->back();
+        }
+    }
 
        $staff = new staffModel;
        $staff->busNo = $r['busno'];
