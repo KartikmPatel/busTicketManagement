@@ -7,6 +7,7 @@ use App\Models\busModel;
 use App\Models\stationModel;
 use App\Models\routeModel;
 use App\Models\staffModel;
+use Illuminate\Support\Facades\DB;
 
 class adminController extends Controller
 {
@@ -39,15 +40,22 @@ class adminController extends Controller
             'busno.required' => 'Please enter BusNo',
             'name.required' => 'Please enter Name',
             'size.required' => 'Please enter Size'
-        ]
-    );
+            ]
+        );
 
-        $bus = new busModel;
-        $bus->busNo = $r['busno'];
-        $bus->name = $r['name'];
-        $bus->size = $r['size'];
-        $bus->type = $r['type'];
-        $bus->save();
+        $busNo = $r['busno'];
+        if($busNo)
+        {
+            $bus = new busModel;
+            $bus->busNo = $r['busno'];
+            $bus->name = $r['name'];
+            $bus->size = $r['size'];
+            $bus->type = $r['type'];
+            $bus->save();
+        }
+
+        //   $value = [$busNo];
+        DB::insert("CALL insert_bus('".$busNo."')");
 
         return redirect()->back();
     }
@@ -55,6 +63,8 @@ class adminController extends Controller
     public function deleteBus($id)
     {
         busModel::find($id)->delete();
+
+        DB::insert("CALL delete_bus('".$id."')");
         return redirect()->back();
     }
 
