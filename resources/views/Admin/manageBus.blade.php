@@ -25,22 +25,24 @@
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
+                        <span class="" id="all-error">
+                                </span>
                             <div class="form-group">
                                 <label> Bus Number : </label>
-                                <input type="text" class="form-control" name="busno" id="busno">
-                                <span class="text-danger" id="busno-error">
+                                <input type="text" class="form-control" name="busno" id="busno" oninput="validateBusNO()">
+                                <span class="" id="busno-error">
                                 </span>
                             </div>
                             <div class="form-group">
                                 <label> Name : </label>
-                                <input type="text" class="form-control" name="name" id="name">
-                                <span class="text-danger" id="name-error">
+                                <input type="text" class="form-control" name="name" id="name" oninput="validateName()">
+                                <span class="" id="name-error">
                                 </span>
                             </div>
                             <div class="form-group">
                                 <label> Size : </label>
-                                <input type="text" class="form-control" name="size" id="size">
-                                <span class="text-danger" id="size-error">
+                                <input type="text" class="form-control" name="size" id="size" oninput="validateSize()">
+                                <span class="" id="size-error">
                                 </span>
                             </div>
                             <div class="form-group">
@@ -50,7 +52,7 @@
                                     <option value="Seater">Seater</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-success mt-1" onclick="storeData();"> AddBus </button>
+                            <button type="submit" class="btn btn-success mt-1" onclick="checkValidate()"> AddBus </button>
                         </div>
                     </div>
                 </div>
@@ -106,15 +108,100 @@
             // Use above variables to manipulate the DOM
         });
 
+        function validateBusNO()
+        {
+            var bNo = document.getElementById("busno");
+            let p = /^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$/;
+            if(!p.test(bNo.value))
+            {
+                document.getElementById("busno-error").innerHTML="Please Enter valid Bus Number (GJ05AB1122)";
+        		document.getElementById("busno-error").style.color="red";
+        		document.getElementById("busno-error").style.fontSize="15px";
+        		bNo.focus();
+        		return false;
+            }
+            else
+            {
+                document.getElementById("busno-error").innerHTML="Bus Number is valid";
+        		document.getElementById("busno-error").style.color="green";
+        		document.getElementById("busno-error").style.fontSize="15px";
+            }
+            return true;
+        }
+
+        function validateName()
+        {
+            var name = document.getElementById("name");
+            let p = /^\D+$/;
+            if(!p.test(name.value))
+            {
+                document.getElementById("name-error").innerHTML="Please Enter valid Bus Name";
+        		document.getElementById("name-error").style.color="red";
+        		document.getElementById("name-error").style.fontSize="15px";
+        		name.focus();
+        		return false;
+            }
+            else
+            {
+                document.getElementById("name-error").innerHTML="Bus Name is valid";
+        		document.getElementById("name-error").style.color="green";
+        		document.getElementById("name-error").style.fontSize="15px";
+            }
+            return true;
+        }
+
+        function validateSize()
+        {
+            var size = document.getElementById("size");
+            let p = /^[0-9]{2}$/;
+            if(!p.test(size.value))
+            {
+                document.getElementById("size-error").innerHTML="Please Enter valid size";
+        		document.getElementById("size-error").style.color="red";
+        		document.getElementById("size-error").style.fontSize="15px";
+        		size.focus();
+        		return false;
+            }
+            else
+            {
+                document.getElementById("size-error").innerHTML="Size is valid";
+        		document.getElementById("size-error").style.color="green";
+        		document.getElementById("size-error").style.fontSize="15px";
+            }
+            return true;
+        }
+
+        function checkValidate()
+        {
+            var bNo = document.getElementById("busno");
+            var name = document.getElementById("name");
+            var size = document.getElementById("size");
+            if(bNo.value.length == "" || name.value.length == "" || size.value.length == "")
+            {
+                document.getElementById("all-error").innerHTML="Please fill up the empty field";
+        		document.getElementById("all-error").style.color="red";
+        		document.getElementById("all-error").style.fontSize="15px";
+            }
+            else{
+                document.getElementById("all-error").innerHTML="";
+        		document.getElementById("all-error").style.color="";
+        		document.getElementById("all-error").style.fontSize="";
+                if(validateBusNO() && validateName() && validateSize())
+                {
+                        storeData();
+                }
+            }
+        }
+
         function storeData() {
             var busno = $('#busno').val();
             var name = $('#name').val();
             var size = $('#size').val();
             var type = $('#type').val();
-
-            $('#busno-error').addClass('d-none');
-            $('#name-error').addClass('d-none');
-            $('#size-error').addClass('d-none');
+            
+            // $('#busno-error').addClass('d-none');
+            // $('#name-error').addClass('d-none');
+            // $('#size-error').addClass('d-none');
 
             $.ajax({
                 type: 'POST',
@@ -131,18 +218,26 @@
                         location.reload();
                     },50);
                 },
-                error: function(data) {
-                    var errors = data.responseJSON;
-                    if ($.isEmptyObject(errors) == false) {
-                        $.each(errors.errors, function(key, value) {
-                            var ErrorID = '#' + key + '-error';
-                            $(ErrorID).removeClass('d-none');
-                            $(ErrorID).text(value);
-                        })
-                    }
-                }
+                // error: function(data) {
+                //     var errors = data.responseJSON;
+                //     if ($.isEmptyObject(errors) == false) {
+                //         $.each(errors.errors, function(key, value) {
+                //             var ErrorID = '#' + key + '-error';
+                //             $(ErrorID).removeClass('d-none');
+                //             $(ErrorID).text(value);
+                //         })
+                //     }
+                // }    
             })
         }
+
+        // function checkData()
+        // {
+        //     if(validateBusNO())
+        //     {
+        //         storeData();
+        //     }
+        // }
             //   var rowButtons ="<button class='btn btn-success btn-sm btn-edit' > Edit </button>  <button class='btn btn-danger btn-sm' > Delete </button> ";
         var rowUpdateButtons ="<a onclick='updateBus();'><button class='btn btn-success btn-sm btn-save' > Update </button></a>";
 

@@ -25,19 +25,21 @@
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
+                        <span class="" id="all-error">
+                                </span>
                             <div class="form-group">
                                 <label> Station I'd : </label>
-                                <input type="text" class="form-control" name="staid" id="staid">
-                                <span class="text-danger" id="staid-error">
+                                <input type="text" class="form-control" name="staid" id="staid" oninput="validateStationID()">
+                                <span class="" id="staid-error">
                                 </span>
                             </div>
                             <div class="form-group">
                                 <label> Station Name : </label>
-                                <input type="text" class="form-control" name="staname" id="staname">
-                                <span class="text-danger" id="staname-error">
+                                <input type="text" class="form-control" name="staname" id="staname" oninput="validateName()">
+                                <span class="" id="staname-error">
                                 </span>
                             </div>
-                            <button type="submit" class="btn btn-success mt-1" onclick="storeData();"> AddStation </button>
+                            <button type="submit" class="btn btn-success mt-1" onclick="checkValidate();"> AddStation </button>
                         </div>
                     </div>
                 </div>
@@ -85,12 +87,75 @@
             // Use above variables to manipulate the DOM
         });
 
+        function validateStationID()
+        {
+            var staid = document.getElementById("staid");
+            let p = /^[A-Z]{2}\d+$/;
+            if(!p.test(staid.value))
+            {
+                document.getElementById("staid-error").innerHTML="Please Enter valid Station ID (ST10)";
+        		document.getElementById("staid-error").style.color="red";
+        		document.getElementById("staid-error").style.fontSize="15px";
+        		staid.focus();
+        		return false;
+            }
+            else
+            {
+                document.getElementById("staid-error").innerHTML="Station ID is valid";
+        		document.getElementById("staid-error").style.color="green";
+        		document.getElementById("staid-error").style.fontSize="15px";
+            }
+            return true;
+        }
+
+        function validateName()
+        {
+            var staname = document.getElementById("staname");
+            let p = /^\D+$/;
+            if(!p.test(staname.value))
+            {
+                document.getElementById("staname-error").innerHTML="Please Enter valid Station Name";
+        		document.getElementById("staname-error").style.color="red";
+        		document.getElementById("staname-error").style.fontSize="15px";
+        		staname.focus();
+        		return false;
+            }
+            else
+            {
+                document.getElementById("staname-error").innerHTML="Station Name is valid";
+        		document.getElementById("staname-error").style.color="green";
+        		document.getElementById("staname-error").style.fontSize="15px";
+            }
+            return true;
+        }
+
+        function checkValidate()
+        {
+            var staid = document.getElementById("staid");
+            var staname = document.getElementById("staname");
+            if(staid.value.length == "" || staname.value.length == "")
+            {
+                document.getElementById("all-error").innerHTML="Please fill up the empty field";
+        		document.getElementById("all-error").style.color="red";
+        		document.getElementById("all-error").style.fontSize="15px";
+            }
+            else{
+                document.getElementById("all-error").innerHTML="";
+        		document.getElementById("all-error").style.color="";
+        		document.getElementById("all-error").style.fontSize="";
+                if(validateStationID() && validateName())
+                {
+                        storeData();
+                }
+            }
+        }
+
         function storeData() {
             var staid = $('#staid').val();
             var staname = $('#staname').val();
 
-            $('#staid-error').addClass('d-none');
-            $('#staname-error').addClass('d-none');
+            // $('#staid-error').addClass('d-none');
+            // $('#staname-error').addClass('d-none');
 
             $.ajax({
                 type: 'POST',
@@ -105,16 +170,16 @@
                         location.reload();
                     },50);
                 },
-                error: function(data) {
-                    var errors = data.responseJSON;
-                    if ($.isEmptyObject(errors) == false) {
-                        $.each(errors.errors, function(key, value) {
-                            var ErrorID = '#' + key + '-error';
-                            $(ErrorID).removeClass('d-none');
-                            $(ErrorID).text(value);
-                        })
-                    }
-                }
+                // error: function(data) {
+                //     var errors = data.responseJSON;
+                //     if ($.isEmptyObject(errors) == false) {
+                //         $.each(errors.errors, function(key, value) {
+                //             var ErrorID = '#' + key + '-error';
+                //             $(ErrorID).removeClass('d-none');
+                //             $(ErrorID).text(value);
+                //         })
+                //     }
+                // }
             })
         }
             //   var rowButtons ="<button class='btn btn-success btn-sm btn-edit' > Edit </button>  <button class='btn btn-danger btn-sm' > Delete </button> ";
