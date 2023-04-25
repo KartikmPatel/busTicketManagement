@@ -42,3 +42,10 @@ route::post('addStation',[adminController::class,'addStation']);
 route::get('deleteStation/{id}',[adminController::class,'deleteStation']);
 // route::get('editBus/{id}',[adminController::class,'editBus']);
 route::post('updateStation/{id}',[adminController::class,'updateStation']);
+
+route::get('adminSeats',[adminController::class,'adminSeats']);
+route::post('searchSeats',[adminController::class,'searchSeats']);
+
+route::get('test',function(){
+    return view('Admin.testAdmin');
+});

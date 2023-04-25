@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\busModel;
 use App\Models\stationModel;
 use App\Models\routeModel;
+use App\Models\seatModel;
 use App\Models\staffModel;
 use Illuminate\Support\Facades\DB;
 
@@ -270,4 +271,21 @@ class adminController extends Controller
         stationModel::find($id)->delete();
         return redirect()->back();
     }
+
+    public function adminSeats()
+    {
+        $buses = busModel::all();
+        $data = compact('buses');
+        return view('Admin.adminSeats')->with($data);
+    }
+
+    public function searchSeats(Request $r)
+    {
+        // $busSeats = seatModel::where('busNo',$r['busno'])->get();
+        $busSeats = DB::select('select * from '.$r["busno"].'seatTB');
+        $bus = busModel::find($r['busno']);
+        $data = compact('busSeats','bus');
+        return view('Admin.searchSeat')->with($data);
+    }
+
 }
