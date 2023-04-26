@@ -39,12 +39,12 @@
                                 <span class="" id="name-error">
                                 </span>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label> Size : </label>
                                 <input type="text" class="form-control" name="size" id="size" oninput="validateSize()">
                                 <span class="" id="size-error">
                                 </span>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label> Type : </label>
                                 <select id="type" name="type" class="form-control">
@@ -150,33 +150,33 @@
             return true;
         }
 
-        function validateSize()
-        {
-            var size = document.getElementById("size");
-            let p = /^[0-9]{2}$/;
-            if(!p.test(size.value))
-            {
-                document.getElementById("size-error").innerHTML="Please Enter valid size";
-        		document.getElementById("size-error").style.color="red";
-        		document.getElementById("size-error").style.fontSize="15px";
-        		size.focus();
-        		return false;
-            }
-            else
-            {
-                document.getElementById("size-error").innerHTML="Size is valid";
-        		document.getElementById("size-error").style.color="green";
-        		document.getElementById("size-error").style.fontSize="15px";
-            }
-            return true;
-        }
+        // function validateSize()
+        // {
+        //     var size = document.getElementById("size");
+        //     let p = /^[0-9]{2}$/;
+        //     if(!p.test(size.value))
+        //     {
+        //         document.getElementById("size-error").innerHTML="Please Enter valid size";
+        // 		document.getElementById("size-error").style.color="red";
+        // 		document.getElementById("size-error").style.fontSize="15px";
+        // 		size.focus();
+        // 		return false;
+        //     }
+        //     else
+        //     {
+        //         document.getElementById("size-error").innerHTML="Size is valid";
+        // 		document.getElementById("size-error").style.color="green";
+        // 		document.getElementById("size-error").style.fontSize="15px";
+        //     }
+        //     return true;
+        // }
 
         function checkValidate()
         {
             var bNo = document.getElementById("busno");
             var name = document.getElementById("name");
-            var size = document.getElementById("size");
-            if(bNo.value.length == "" || name.value.length == "" || size.value.length == "")
+            // var size = document.getElementById("size");
+            if(bNo.value.length == "" || name.value.length == "")
             {
                 document.getElementById("all-error").innerHTML="Please fill up the empty field";
         		document.getElementById("all-error").style.color="red";
@@ -186,7 +186,7 @@
                 document.getElementById("all-error").innerHTML="";
         		document.getElementById("all-error").style.color="";
         		document.getElementById("all-error").style.fontSize="";
-                if(validateBusNO() && validateName() && validateSize())
+                if(validateBusNO() && validateName())
                 {
                         storeData();
                 }
@@ -196,9 +196,8 @@
         function storeData() {
             var busno = $('#busno').val();
             var name = $('#name').val();
-            var size = $('#size').val();
+            // var size = $('#size').val();
             var type = $('#type').val();
-            
             // $('#busno-error').addClass('d-none');
             // $('#name-error').addClass('d-none');
             // $('#size-error').addClass('d-none');
@@ -210,7 +209,7 @@
                     _token: '{{ csrf_token() }}',
                     busno: busno,
                     name: name,
-                    size: size,
+                    // size: size,
                     type: type
                 },
                 success: function(data) {
@@ -230,14 +229,7 @@
                 // }    
             })
         }
-
-        // function checkData()
-        // {
-        //     if(validateBusNO())
-        //     {
-        //         storeData();
-        //     }
-        // }
+        
             //   var rowButtons ="<button class='btn btn-success btn-sm btn-edit' > Edit </button>  <button class='btn btn-danger btn-sm' > Delete </button> ";
         var rowUpdateButtons ="<a onclick='updateBus();'><button class='btn btn-success btn-sm btn-save' > Update </button></a>";
 
@@ -253,7 +245,7 @@
 
                 const bsize =$(this).parent().parent().find(".bsize").html();
 
-                $(this).parent().parent().find(".bsize").html("<input type='text' value='"+bsize.trim()+"' class='form-control txtbsize' />");
+                $(this).parent().parent().find(".bsize").html("<input type='text' value='"+bsize.trim()+"' class='form-control txtbsize' readonly/>");
 
                 const type =$(this).parent().parent().find(".btype").html();
 
@@ -266,7 +258,7 @@
             function updateBus() {
                 var busno =$('.txtbno').val();
                 var name = $('.txtbname').val();
-                var size = $('.txtbsize').val();
+                // var size = $('.txtbsize').val();
                 var type = $('.txtbtype').val();
 
                 $.ajax({
@@ -276,7 +268,7 @@
                         _token: '{{ csrf_token() }}',
                         busno: busno,
                         name: name,
-                        size: size,
+                        // size: size,
                         type: type
                     },
                     success : function(data)

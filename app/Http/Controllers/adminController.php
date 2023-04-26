@@ -32,17 +32,17 @@ class adminController extends Controller
 
     public function addBus(Request $r)
     {
-        $r->validate([
-            'busno' => 'required',
-            'name' => 'required',
-            'size' => 'required'
-        ],
-        [
-            'busno.required' => 'Please enter BusNo',
-            'name.required' => 'Please enter Name',
-            'size.required' => 'Please enter Size'
-            ]
-        );
+        // $r->validate([
+        //     'busno' => 'required',
+        //     'name' => 'required',
+        //     'size' => 'required'
+        // ],
+        // [
+        //     'busno.required' => 'Please enter BusNo',
+        //     'name.required' => 'Please enter Name',
+        //     'size.required' => 'Please enter Size'
+        //     ]
+        // );
 
         $busNo = $r['busno'];
         if($busNo)
@@ -50,7 +50,14 @@ class adminController extends Controller
             $bus = new busModel;
             $bus->busNo = $r['busno'];
             $bus->name = $r['name'];
-            $bus->size = $r['size'];
+            if($r['type'] == "Seater")
+            {
+                $bus->size = 30;               
+            }
+            else if($r['type'] == "Sleeper")
+            {
+                $bus->size = 24;
+            }
             $bus->type = $r['type'];
             $bus->save();
         }
@@ -85,7 +92,15 @@ class adminController extends Controller
         $bus = busModel::find($r['busno']);
 
         $bus->name = $r['name'];
-        $bus->size = $r['size'];
+        // $bus->size = $r['size'];
+        if($r['type'] == "Seater")
+        {
+            $bus->size = 30;               
+        }
+        else if($r['type'] == "Sleeper")
+        {
+            $bus->size = 24;
+        }
         $bus->type = $r['type'];
         $bus->save();
     }
