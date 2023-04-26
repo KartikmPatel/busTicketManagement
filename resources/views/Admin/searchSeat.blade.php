@@ -8,17 +8,23 @@
     </head>
     <div class="ml-4 mt-3">
         <h2> {{ $bus->busNo }} Seats </h2>
-
+        
         <div>
-            @foreach ($busSeats as $seat)
-                @for ($i = 1; $i <= $bus->size; $i++)
-                    @if ($i == $seat->seatNo)
-                        <div class="text-danger">{{ $i }}</div>
-                        @continue
-                    @endif
-                    <div class="text-dark">{{ $i }}</div>
-                @endfor
-            @endforeach
+            $j;
+            <!-- in_array ( $value, $array_name ,$mode ) -->
+            @for ($i = 1; $i <= $bus->size; $i++)
+            $j = false;
+        @foreach($busSeats as $seat)
+            @if($i == $seat->seatNo)
+            <div class="text-danger">{{ $i }}</div>
+            $j = true;
+            @endif
+        @endforeach
+        @if($j == false)
+            <div class="text-dark">{{ $i }}</div>
+        @endif
+        @endfor
+
         </div>
     </div>
 @endsection
