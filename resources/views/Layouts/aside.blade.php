@@ -15,7 +15,7 @@
       <div id="aside">
         <span><i class="fa fa-bus"></i><a href="{{url('/manageBus')}}" class="c1"> Buses </a></span><br><br/>
         <span><i class="fa fa-route"></i><a href="{{url('/manageRoute')}}" class="c1"> Routes</a></span><br><br/>
-        <span><i class="fa fa-clock"></i><a href="{{url('/adminSeats')}}" class="c1"> Seats </a></span><br><br/>
+        <span><i class="fas fa-playstation"></i><a href="{{url('/adminSeats')}}" class="c1"> Seats </a></span><br><br/>
         <span><i class="fab fa-playstation"></i><a href="{{url('/manageStation')}}" class="c1"> Stations</a></span><br><br/>
         <span><i class="fa fa-people-group"></i><a href="{{url('/manageStaff')}}" class="c1"> Staffs</a></span><br><br/>
         <span><i class="fa fa-ticket"></i><a href="" class="c1"> SMS Ticket</a></span><br><br/>

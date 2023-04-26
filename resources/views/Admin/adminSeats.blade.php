@@ -10,15 +10,15 @@
 
             <form action="{{ url('searchSeats') }}" method="POST">
                 @csrf
-                <div class="form-group">
-                    <label> Bus Number : </label>
-                    <select id="busno" name="busno" class="form-control" >
+                <label> Bus Number : </label>
+                <div class="form-group row">
+                    <select id="busno" name="busno" class="form-control col-md-4" >
                         @foreach ($buses as $bus)
                             <option value="{{ $bus->busNo }}">{{ $bus->busNo }}</option>
                         @endforeach
                     </select>
 
-                    <button type="submit" class="btn btn-primary"> Search
+                    <button type="submit" class="btn btn-primary ml-3"> Search
                     </button>
                 </div>
             </form>

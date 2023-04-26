@@ -95,9 +95,8 @@ class adminController extends Controller
         $buses = busModel::all();
         $stations = stationModel::all();
         $routes = routeModel::all();
-        $error = "Date Must Be Different";
 
-        $data = compact('buses','stations','routes','error');
+        $data = compact('buses','stations','routes');
         return view("Admin.manageRoute")->with($data);
     }
 
@@ -127,7 +126,9 @@ class adminController extends Controller
      {
          if($br->date == $r['date'])
          {
-             return back()->with('success','sfsgsbsf');
+            $error = 'dateError';
+            $data = compact('error');
+            return redirect()->back()->with($data);
         }
     }
 
