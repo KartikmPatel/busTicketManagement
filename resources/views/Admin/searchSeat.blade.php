@@ -10,14 +10,13 @@
         <h2> {{ $bus->busNo }} Seats </h2>
         
         <div>
-            $j;
             <!-- in_array ( $value, $array_name ,$mode ) -->
             @for ($i = 1; $i <= $bus->size; $i++)
-            $j = false;
+            {{$j = false}}
         @foreach($busSeats as $seat)
             @if($i == $seat->seatNo)
             <div class="text-danger">{{ $i }}</div>
-            $j = true;
+            {{$j = true}}
             @endif
         @endforeach
         @if($j == false)
