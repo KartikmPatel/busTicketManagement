@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\userModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class userController extends Controller
 {
@@ -23,7 +24,7 @@ class userController extends Controller
             ],
             [
                 'username.required' => 'Please enter UserName',
-                'password.required' => 'Please enter Password',
+                'password.required' => 'Please enter Password'
                 // 'password.confirmed' => 'Passwords must be same'
                 // 'cpassword.required' => 'Password and Confirm Password must be same'
                 ]
@@ -31,7 +32,7 @@ class userController extends Controller
 
                 $user = new userModel();
                 $user->userName = $r['username'];
-                $user->password = $r['password'];
+                $user->password = Hash::make($r['password']);
                 $user->save();
 
                 return redirect('/');
@@ -49,8 +50,8 @@ class userController extends Controller
             'loginpassword.required' => 'Please enter Password',
             ]
         );
-        $user = userModel::where('userName',$r['loginusername'])->where('password',$r['loginpassword'])->first();
-        if($user)
+        $user = userModel::where('userName',$r['loginusername'])->first();
+        if($user || Hash::check('password',$r['loginpassword']))
         {
             session()->put('username',$user->userName);
 

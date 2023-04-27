@@ -26,9 +26,9 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             @if(session('username') == "Admin")
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                {{-- <li class="nav-item">
+                 <li class="nav-item">
                     <a class="nav-link" href="/adminHome">Home <span class="sr-only">(current)</span></a>
-                </li> --}}
+                </li> 
                 <li class="nav-item">
                     <a class="nav-link" href="/manageBus">Manage Bus</a>
                 </li>
