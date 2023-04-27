@@ -94,7 +94,7 @@
     overflow: hidden;
   }
   .seat input[type="checkbox"]:disabled + label:after {
-    content: "X";
+    content: "✔️";
     text-indent: 0;
     position: absolute;
     top: 4px;
@@ -133,6 +133,11 @@
 
   .cabin{
     margin-left: 29px;
+  }
+
+  .sleeperCabin .seat{
+    height: 75px;
+    margin-left: 5px;
   }
   @-webkit-keyframes rubberBand {
     0% {

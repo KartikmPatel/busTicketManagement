@@ -772,7 +772,7 @@
             </div>
             <div class="exit exit--front">
             </div>
-            <ol class="cabin">
+            <ol class="Cabin">
                 <li class="row row--1">
                     <ol class="seats" type="A">
                         @foreach ($busSeats as $seat)
@@ -1128,7 +1128,7 @@
     <label for="">15</label>
     </li>
     @endif
-    @foreach ($busSeats as $seat)
+    {{-- @foreach ($busSeats as $seat)
     @if (16 == $seat->seatNo)
     <li class="seat">
     <input type="checkbox" disabled id="16" />
@@ -1341,7 +1341,7 @@
     @endif
     </ol>
     </li>
-    </ol>
+    </ol> --}}
     {{-- <div class="exit exit--back"> --}}
 
     </div>

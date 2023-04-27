@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\userController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,11 @@ use App\Http\Controllers\adminController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
+// Admin Side //
 route::get('/adminHome',[adminController::class,'adminHome']);
 
 route::get('manageBus',[adminController::class,'viewBuses']);
@@ -49,3 +51,12 @@ route::post('searchSeats',[adminController::class,'searchSeats']);
 route::get('test',function(){
     return view('Admin.testAdmin');
 });
+
+
+// User Side //
+
+route::get('/',[userController::class,'home']);
+route::post('signUp',[userController::class,'signUp']);
+route::post('login',[userController::class,'login']);
+
+route::get('logout',[userController::class,'logout']);
