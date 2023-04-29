@@ -17,8 +17,10 @@
     <link rel="stylesheet" href="{{asset('layoutstyle/SignUp.css')}}">
 </head>
   <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
+        @if(session('username') == "Admin")
         <a class="navbar-brand"><span id="toggle-icon" class="navbar-toggler-icon" style="border:2px solid white"></span></a>
+        @endif
         <a class="navbar-brand" href="/adminHome"><img src="images/bus.webp" height="50" width="60"></a>
         <a class="navbar-brand" href="/adminHome">Globle Travels</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
@@ -27,8 +29,8 @@
             @if(session('username') == "Admin")
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                  <li class="nav-item">
-                    <a class="nav-link" href="/adminHome">Home <span class="sr-only">(current)</span></a>
-                </li> 
+                    <a class="nav-link" href="/adminHome">Home</a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/manageBus">Manage Bus</a>
                 </li>

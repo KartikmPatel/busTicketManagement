@@ -6,13 +6,20 @@ use App\Models\userModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use App\Models\busModel;
+use App\Models\stationModel;
+use App\Models\routeModel;
 
 class userController extends Controller
 {
     public function home()
     {
-        print_r(session()->all());
-        return view('User.userHome');
+        $bus = busModel::all();
+        $stations = stationModel::all();
+        $routes = routeModel::all();
+        $data = compact('bus','stations','routes');
+        // print_r(session()->all());
+        return view('User.userHome')->with($data);
     }
 
     public function signUp(Request $r)
@@ -60,7 +67,7 @@ class userController extends Controller
                 return redirect('/adminHome');
             }
             else{
-                return view('User.userHome')->with('success','You are chutiya');
+                return redirect('/');
             }
         }
         else
@@ -71,7 +78,41 @@ class userController extends Controller
     public function logout()
     {
         session()->forget('username');
-
         return redirect('/');
+    }
+
+    public function searchBus(Request $r)
+    {
+        // $r->validate([
+        //     'from' => 'required',
+        //     'to' => 'required',
+        //     'date'=>'required'
+        //     // 'cpassword' => 'required'
+        // ],
+        // [
+        //     'from.required' => 'Please Select Source',
+        //     'to.required' => 'Please Select Destination',
+        //     'date.required' => 'Please Select Date'
+        //     ]
+        // );
+
+        $routes = routeModel::where('startingStationID',$r['from'])->where('endingStationID',$r['to'])->where('date',$r['date'])->get();
+
+        $buses = busModel::all();
+
+        if($routes)
+        {
+            $data = compact('routes','buses');
+            return view('User.searchBus')->with($data);
+        }
+    }
+
+    public function viewSeat($id)
+    {
+        // $busSeats = seatModel::where('busNo',$r['busno'])->get();
+        $busSeats = DB::select('select * from '.$id.'seatTB');
+        $bus = busModel::find($id);
+        $data = compact('busSeats','bus');
+        return view('User.bookSeat')->with($data);
     }
 }

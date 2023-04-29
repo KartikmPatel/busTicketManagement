@@ -226,10 +226,10 @@
                 //             $(ErrorID).text(value);
                 //         })
                 //     }
-                // }    
+                // }
             })
         }
-        
+
             //   var rowButtons ="<button class='btn btn-success btn-sm btn-edit' > Edit </button>  <button class='btn btn-danger btn-sm' > Delete </button> ";
         var rowUpdateButtons ="<a onclick='updateBus();'><button class='btn btn-success btn-sm btn-save' > Update </button></a>";
 

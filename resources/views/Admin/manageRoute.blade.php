@@ -8,27 +8,27 @@
 </head>
 
 <div class="ml-4 mt-3">
-        {{-- @if (Session()->has('success')) --}}
-        {{-- <div class="alert alert-success alert-dismissible successAlert" role="alert">
+        @if (Session()->has('success'))
+         <div class="alert alert-success alert-dismissible successAlert" role="alert">
         <button type="button" class="close" data-dismiss="alert">
             <i class="fa fa-times"></i>
         </button>
         <strong>Success !</strong> {{ session()->get('success') }}
         </div>
-        @endif --}}
+        @endif
 
         {{-- <div class="alert col-md-6 ml-5">
 
         </div> --}}
 
-        {{-- @if ($error)
+         @if (session('error'))
         <div class="alert alert-danger alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert">
             <i class="fa fa-times"></i>
         </button>
-        <strong>Error !</strong> {{ $error }}
+        <strong>Error !</strong> {{ session('error') }}
         </div>
-        @endif --}}
+        @endif
         <h2> Routes </h2>
         {{-- <button class="btn btn-outline-dark"> Add Bus</button> --}}
         <!-- Button trigger modal -->

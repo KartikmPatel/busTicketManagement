@@ -2,6 +2,7 @@
 
 @section('main-content')
 
+<body>
 <div class="dashboard-card">
     <div class="card" style="width: 13rem;height: 16rem;background-color:rgb(203, 220, 184)">
         <img class="ml-5" src="images/bus_icon.png" height="100" width="120" alt="Card image cap">
@@ -94,5 +95,6 @@
 		</div>
 	</div>
 </div> -->
+</body>
 
 @endsection
