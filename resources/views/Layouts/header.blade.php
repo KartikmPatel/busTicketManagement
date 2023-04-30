@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('layoutstyle/Login.css')}}">
     <link rel="stylesheet" href="{{asset('layoutstyle/SignUp.css')}}">
     <link rel="stylesheet" href="{{asset('userStyle/searchBus.css')}}">
+    <link rel="stylesheet" href="{{asset('userStyle/viewBus.css')}}">
 </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">

@@ -2,20 +2,21 @@
 
 @section('Usermain-content')
 <body class="bg-white">
-    <table class="table col-md-6 bg-secondary table-hover text-white" id="tblData">
-        <thead class="thead-dark">
-            <tr>
-                <th> Bus Number </th>
-                <th> Type </th>
-                <th> Departure Time </th>
-                <th> Fare </th>
-                <th>viewSeat<th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($routes as $route)
+    <table class="content-table">
+  <thead>
+    <tr>
+      <th> Bus Number </th>
+      <th> Type </th>
+      <th> Departure Time </th>
+      <th> Fare </th>
+      <th>viewSeat<th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach ($routes as $route)
                 <tr>
                     <td class="bno">
+                      <img src="./images1/bus13.jpg" width="70px" height="50px" alt=""/>
                         {{ $route->busNo }}
                     </td>
                     <td class="btype">
@@ -36,7 +37,7 @@
                     </td>
                 </tr>
             @endforeach
-        </tbody>
-    </table>
+  </tbody>
+</table>
 </body>
 @endsection
