@@ -25,15 +25,9 @@
 		}
 </script> --}}
 
-<img src="./images1/bus1.jpg" id="image" width="100%" height="600px">
+{{-- <img src="./images1/bus1.jpg" id="image" width="100%" height="600px">
 <form action="{{url('searchBus')}}" method="post">
     @csrf
-    {{-- <div class="form-group">
-      <label for=""></label>
-      <input type=""
-        class="form-control" name="" id="" aria-describedby="helpId" placeholder="">
-      <small id="helpId" class="form-text text-muted">Help text</small>
-    </div> --}}
     <div class="form-group">
         <label> From : </label>
         <select id="from" name="from" class="form-control col-md-6">
@@ -59,8 +53,43 @@
             </span><br>
             <button type="submit" class="btn btn-success mt-1" > Search </button>
     </div>
-</form>
+</form> --}}
 <!-- style="margin-left:auto;margin-right:auto;display:block;" -->
+
+<div class="containerSearch">
+    <img src="./images1/bus1.jpg" id="image" class="slideshow">
+    <div class="form-content">
+        <form action="{{url('searchBus')}}" method="post">
+            @csrf
+            <div class="form-group">
+                <h1 class="ml-5"> Search Bus </h1>
+                <label class="ml-5"> From : </label>
+                <select id="from" name="from" class="form-control col-md-9 ml-5">
+                    <option value="">--Select Station--</option>
+                    @foreach ($stations as $station)
+                        <option value="{{ $station->stationID }}">{{ $station->stationName }}</option>
+                    @endforeach
+                </select>
+                <span class="text-danger" id="from-error">
+                </span><br>
+                <label class="ml-5"> To : </label>
+                <select id="to" name="to" class="form-control col-md-9 ml-5">
+                    <option value="">--Select Station--</option>
+                    @foreach ($stations as $station)
+                        <option value="{{ $station->stationID }}">{{ $station->stationName }}</option>
+                    @endforeach
+                </select>
+                <span class="text-danger" id="to-error">
+                </span><br>
+                    <label class="ml-5"> Date : </label>
+                    <input type="date" class="form-control col-md-9 ml-5" name="date" id="date">
+                    <span class="text-danger" id="date-error">
+                    </span><br>
+                    <button type="submit" class="btn btn-warning mt-1 ml-5 col-md-9" > Search </button>
+            </div>
+        </form>
+    </div>
+  </div>
 <script>
 
     $(document).ready(function(){
@@ -83,6 +112,18 @@
 
         $('#date').attr('min',maxDate);
     })
+
+    let a1=new Array("bus13.jpg","bus15.jpg","bus14.jpg","bus12.jpg");
+            var c=0;
+            setInterval(click1,2000);
+            image.src="images1/"+a1[c];
+		function click1()
+		{
+             c++;
+             if(c==a1.length)
+             c=0;
+              image.src="images1/"+a1[c];
+		}
 
     // function searchBus() {
     //     var from = $('#from').val();
