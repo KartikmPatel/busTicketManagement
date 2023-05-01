@@ -755,8 +755,102 @@
 </ol>
 
 {{-- <div class="exit exit--back"> --}}
+{{--
+    <form action="{{url('payment')}}" method="post">
+        @csrf --}}
+        <input type="hidden" name="rid" id="rid" value="{{$rid}}"/>
+        <input type="hidden" name="date" id="date" value="{{$date}}"/>
+        <input type="hidden" name="time" id="time" value="{{$time}}"/>
+        <input type="hidden" name="fare" id="fare" value="{{$fare}}"/>
+    <button type="button" class="btn btn-success" onclick="display1()" data-toggle="modal" data-target="#modelId">Payment</button>
+    {{-- </form> --}}
 
 </div>
+{{-- <button class="btn btn-dark" onclick="display1()">click</button> --}}
+<!-- Button trigger modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Payment</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <label> User Name :- </label>
+                        <input type="text" class="form-control" name="uname" id="uname" readonly value="{{session('username')}}">
+                        <label> SeatNo :- </label>
+                        <input type="text" name="display" id="display" class="form-control" readonly/>
+                        <label> Fare :- </label>
+                        <input type="text" class="form-control" name="fare" id="fare" readonly value="{{$fare}}">
+                        <label> Payment Proof :- </label>
+                        <input type="file" class="form-control" name="proof" id="proof">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{{-- <h1 id="display"> </h1> --}}
+
+<script>
+    function display1()
+    {
+        var s1 = document.getElementById('1');
+        var s2 = document.getElementById('2');
+        var s3 = document.getElementById('3');
+        var s4 = document.getElementById('4');
+        var s5 = document.getElementById('5');
+        var s6 = document.getElementById('6');
+        var s7 = document.getElementById('7');
+        var s8 = document.getElementById('8');
+        var s9 = document.getElementById('9');
+        var s10 = document.getElementById('10');
+        var s11 = document.getElementById('11');
+        var s12 = document.getElementById('12');
+        var s13 = document.getElementById('13');
+        var s14 = document.getElementById('14');
+        var s15 = document.getElementById('15');
+        var s16 = document.getElementById('16');
+        var s17 = document.getElementById('17');
+        var s18 = document.getElementById('18');
+        var s19 = document.getElementById('19');
+        var s20 = document.getElementById('20');
+        var s21 = document.getElementById('21');
+        var s22 = document.getElementById('22');
+        var s23 = document.getElementById('23');
+        var s24 = document.getElementById('24');
+        var s25 = document.getElementById('25');
+        var s26 = document.getElementById('26');
+        var s27 = document.getElementById('27');
+        var s28 = document.getElementById('28');
+        var s29 = document.getElementById('29');
+        var s30 = document.getElementById('30');
+
+        if(s1.checked == true)
+        {
+          document.getElementById('display').value="1";
+          count++;
+        }
+
+        if(s2.checked == true)
+        {
+            document.getElementById('display').value="2";
+        }
+        if(s3.checked == true)
+        {
+            document.getElementById('display').value="3";
+        }
+        if(s4.checked == true)
+        {
+            document.getElementById('display').value="4";
+        }
+    }
+
+
+
+    </script>
 
 @elseif($bus->type == "Sleeper")
 @php
@@ -1344,9 +1438,11 @@
 </ol> --}}
 {{-- <div class="exit exit--back"> --}}
 
+<button class="btn btn-success">Payment</button>
 </div>
 @endif
 </div>
+
 
 </body>
 @endsection

@@ -217,7 +217,7 @@
         //     }
         //     return true;
         // }
-        
+
     // function searchBus() {
     //     var from = $('#from').val();
     //     var to = $('#to').val();

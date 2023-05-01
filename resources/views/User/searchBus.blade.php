@@ -2,9 +2,12 @@
 
 @section('Usermain-content')
 <body class="bg-white">
-    <table class="content-table">
+
+    <div class="viewBus">
+    <table class="content-table col-md-7">
   <thead>
     <tr>
+        <th></th>
       <th> Bus Number </th>
       <th> Type </th>
       <th> Departure Time </th>
@@ -15,8 +18,10 @@
   <tbody>
   @foreach ($routes as $route)
                 <tr>
+                    <td>
+                        <img src="./images1/bus13.jpg" width="70px" height="50px" alt=""/>
+                    </td>
                     <td class="bno">
-                      <img src="./images1/bus13.jpg" width="70px" height="50px" alt=""/>
                         {{ $route->busNo }}
                     </td>
                     <td class="btype">
@@ -33,11 +38,21 @@
                         {{ $route->fare }}
                     </td>
                     <td class="tdAction">
-                        <a href="{{ url('/viewSeat') }}/{{ $route->busNo }}" class='btn btn-warning btn-sm'><i class="fa fa-eye" aria-hidden="true"></i></a>
+                        <form action="{{ url('/viewSeat') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="rid" id="rid" value="{{$route->routeID}}"/>
+                            <input type="hidden" name="date" id="date" value="{{$route->date}}"/>
+                            <input type="hidden" name="time" id="time" value="{{$route->departureTime}}"/>
+                            <input type="hidden" name="fare" id="fare" value="{{$route->fare}}"/>
+
+                            <input type="hidden" name="bno" id="bno" value="{{$route->busNo}}"/>
+                        <button class='btn btn-warning btn-sm'><i class="fa fa-eye" aria-hidden="true"></i></button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
   </tbody>
 </table>
+    </div>
 </body>
 @endsection

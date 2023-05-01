@@ -60,6 +60,7 @@ class userController extends Controller
         $user = userModel::where('userName',$r['loginusername'])->first();
         if($user || Hash::check('password',$r['loginpassword']))
         {
+            session()->put('userid',$user->userID);
             session()->put('username',$user->userName);
 
             if(session('username') == "Admin")
@@ -107,12 +108,16 @@ class userController extends Controller
         }
     }
 
-    public function viewSeat($id)
+    public function viewSeat(Request $r)
     {
         // $busSeats = seatModel::where('busNo',$r['busno'])->get();
-        $busSeats = DB::select('select * from '.$id.'seatTB');
-        $bus = busModel::find($id);
-        $data = compact('busSeats','bus');
+        $busSeats = DB::select('select * from '.$r['bno'].'seatTB');
+        $rid = $r['rid'];
+        $date = $r['date'];
+        $time = $r['time'];
+        $fare = $r['fare'];
+        $bus = busModel::find($r['bno']);
+        $data = compact('busSeats','bus','rid','date','time','fare');
         return view('User.bookSeat')->with($data);
     }
 }

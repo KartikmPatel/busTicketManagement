@@ -61,4 +61,4 @@ route::post('login',[userController::class,'login']);
 
 route::get('logout',[userController::class,'logout']);
 route::post('searchBus',[userController::class,'searchBus']);
-route::get('viewSeat/{id}',[userController::class,'viewSeat']);
+route::post('viewSeat',[userController::class,'viewSeat']);
