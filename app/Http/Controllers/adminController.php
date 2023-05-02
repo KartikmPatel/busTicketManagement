@@ -8,6 +8,7 @@ use App\Models\stationModel;
 use App\Models\routeModel;
 use App\Models\seatModel;
 use App\Models\staffModel;
+use App\Models\bookingModel;
 use Illuminate\Support\Facades\DB;
 
 class adminController extends Controller
@@ -17,7 +18,8 @@ class adminController extends Controller
         $busCount = busModel::count();
         $routeCount = routeModel::count();
         $stationCount = stationModel::count();
-        $data = compact('busCount','routeCount','stationCount');
+        $bookingCount = bookingModel::count();
+        $data = compact('busCount','routeCount','stationCount','bookingCount');
         return view("Admin.adminHome")->with($data);
     }
 
@@ -304,4 +306,10 @@ class adminController extends Controller
         return view('Admin.searchSeat')->with($data);
     }
 
+    public function manageBooking()
+    {
+        $tickets = bookingModel::all();
+        $data = compact('tickets');
+        return view('Admin.manageBooking')->with($data);
+    }
 }

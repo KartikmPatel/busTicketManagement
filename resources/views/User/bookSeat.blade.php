@@ -700,7 +700,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="28" />
+<input type="checkbox" id="28" onselect="display1()"/>
 <label for="28">28</label>
 </li>
 @endif
@@ -723,7 +723,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="29" />
+<input type="checkbox" id="29" onselect="display1()"/>
 <label for="29">29</label>
 </li>
 @endif
@@ -746,7 +746,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="30" />
+<input type="checkbox" id="30" onselect="display1()"/>
 <label for="30">30</label>
 </li>
 @endif
@@ -758,11 +758,7 @@
 {{--
     <form action="{{url('payment')}}" method="post">
         @csrf --}}
-        <input type="hidden" name="rid" id="rid" value="{{$rid}}"/>
-        <input type="hidden" name="date" id="date" value="{{$date}}"/>
-        <input type="hidden" name="time" id="time" value="{{$time}}"/>
-        <input type="hidden" name="fare" id="fare" value="{{$fare}}"/>
-    <button type="button" class="btn btn-success" onclick="display1()" data-toggle="modal" data-target="#modelId">Payment</button>
+    <button type="button" class="btn btn-success ml-3" onclick="display1()" data-toggle="modal" data-target="#modelId">Book</button>
     {{-- </form> --}}
 
 </div>
@@ -778,15 +774,24 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <label> User Name :- </label>
-                        <input type="text" class="form-control" name="uname" id="uname" readonly value="{{session('username')}}">
-                        <label> SeatNo :- </label>
-                        <input type="text" name="display" id="display" class="form-control" readonly/>
-                        <label> Fare :- </label>
-                        <input type="text" class="form-control" name="fare" id="fare" readonly value="{{$fare}}">
-                        <label> Payment Proof :- </label>
-                        <input type="file" class="form-control" name="proof" id="proof">
+                        <form action="{{url('booking')}}" method="post">
+                            @csrf
+                            <label> User Name :- </label>
+                            <input type="text" class="form-control" name="uname" id="uname" readonly value="{{session('username')}}">
+                            <label> SeatNo :- </label>
+                            <input type="text" name="display" id="display" class="form-control" readonly/>
+                            <label> Fare :- </label>
+                            <input type="text" class="form-control" name="fare" id="fare" readonly value="{{$fare}}">
 
+                            <input type="hidden" name="rid" id="rid" value="{{$rid}}"/>
+                            <input type="hidden" name="bno" id="bno" value="{{$bus->busNo}}"/>
+                            <input type="hidden" name="from" id="from" value="{{$from}}"/>
+                            <input type="hidden" name="to" id="to" value="{{$to}}"/>
+                            <input type="hidden" name="date" id="date" value="{{$date}}"/>
+                            <input type="hidden" name="time" id="time" value="{{$time}}"/>
+                            <input type="hidden" name="fare" id="fare" value="{{$fare}}"/>
+                            <button type="submit" class="btn btn-success mt-3">Payment</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -795,6 +800,15 @@
 {{-- <h1 id="display"> </h1> --}}
 
 <script>
+
+      $(document).ready(function()
+      {
+          $('input').on('change',function(){
+              $('input').not(this).prop('checked',false);
+          });
+      });
+
+
     function display1()
     {
         var s1 = document.getElementById('1');
@@ -831,7 +845,6 @@
         if(s1.checked == true)
         {
           document.getElementById('display').value="1";
-          count++;
         }
 
         if(s2.checked == true)
@@ -846,6 +859,129 @@
         {
             document.getElementById('display').value="4";
         }
+        if(s5.checked == true)
+        {
+            document.getElementById('display').value="5";
+        }
+
+        if(s6.checked == true)
+        {
+          document.getElementById('display').value="6";
+        }
+
+        if(s7.checked == true)
+        {
+            document.getElementById('display').value="7";
+        }
+        if(s8.checked == true)
+        {
+            document.getElementById('display').value="8";
+        }
+        if(s9.checked == true)
+        {
+            document.getElementById('display').value="9";
+        }
+        if(s10.checked == true)
+        {
+            document.getElementById('display').value="10";
+        }
+
+        if(s11.checked == true)
+        {
+          document.getElementById('display').value="11";
+        }
+
+        if(s12.checked == true)
+        {
+            document.getElementById('display').value="12";
+        }
+        if(s13.checked == true)
+        {
+            document.getElementById('display').value="13";
+        }
+        if(s14.checked == true)
+        {
+            document.getElementById('display').value="14";
+        }
+        if(s15.checked == true)
+        {
+            document.getElementById('display').value="15";
+        }
+
+        if(s16.checked == true)
+        {
+          document.getElementById('display').value="16";
+        }
+
+        if(s17.checked == true)
+        {
+            document.getElementById('display').value="17";
+        }
+        if(s18.checked == true)
+        {
+            document.getElementById('display').value="18";
+        }
+        if(s19.checked == true)
+        {
+            document.getElementById('display').value="19";
+        }
+        if(s20.checked == true)
+        {
+            document.getElementById('display').value="20";
+        }
+        if(s21.checked == true)
+        {
+          document.getElementById('display').value="21";
+        }
+
+        if(s22.checked == true)
+        {
+            document.getElementById('display').value="22";
+        }
+        if(s23.checked == true)
+        {
+            document.getElementById('display').value="23";
+        }
+        if(s24.checked == true)
+        {
+            document.getElementById('display').value="24";
+        }
+        if(s25.checked == true)
+        {
+            document.getElementById('display').value="25";
+        }
+
+        if(s26.checked == true)
+        {
+          document.getElementById('display').value="26";
+        }
+
+        if(s27.checked == true)
+        {
+            document.getElementById('display').value="27";
+        }
+        if(s28.checked == true)
+        {
+            document.getElementById('display').value="28";
+        }
+        if(s29.checked == true)
+        {
+            document.getElementById('display').value="29";
+        }
+        if(s30.checked == true)
+        {
+            document.getElementById('display').value="30";
+        }
+
+
+        // var i;
+        // for(i=1;i<=30;i++)
+        // {
+        //     if('s'+i.checked == true)
+        //     {
+        //         document.getElementById('display').value=i;
+        //     }
+        // }
     }
 
 

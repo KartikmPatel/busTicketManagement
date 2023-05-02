@@ -24,8 +24,8 @@
         <img class="" src="images/busBooking_icon.png" style="margin-left:40px" height="100" width="120" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title booking-card">Bookings</h5>
-          <p class="card-text text-success">Tickets</p>
-          <a class="btn btn-outline-primary" href="#">View</a>
+          <p class="card-text text-success">{{$bookingCount}} Tickets</p>
+          <a class="btn btn-outline-primary" href="{{url('manageBooking')}}">View</a>
         </div>
     </div>
     <div class="card" style="width: 13rem;height: 16rem;background-color:rgb(242, 205, 163)">

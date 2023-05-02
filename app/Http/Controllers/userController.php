@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Models\busModel;
 use App\Models\stationModel;
 use App\Models\routeModel;
+use App\Models\bookingModel;
 
 class userController extends Controller
 {
@@ -113,11 +114,38 @@ class userController extends Controller
         // $busSeats = seatModel::where('busNo',$r['busno'])->get();
         $busSeats = DB::select('select * from '.$r['bno'].'seatTB');
         $rid = $r['rid'];
+        $from = $r['from'];
+        $to = $r['to'];
         $date = $r['date'];
         $time = $r['time'];
         $fare = $r['fare'];
         $bus = busModel::find($r['bno']);
-        $data = compact('busSeats','bus','rid','date','time','fare');
+        $data = compact('busSeats','bus','rid','date','time','fare','from','to');
         return view('User.bookSeat')->with($data);
+    }
+
+    public function booking(Request $r)
+    {
+        // $rid = $r['rid'];
+        $bno = $r['bno'];
+        $uid = session('userid');
+        $from = $r['from'];
+        $to = $r['to'];
+        $date = $r['date'];
+        $time = $r['time'];
+
+        $book = new bookingModel;
+        $book->busNo = $bno;
+        $book->userID = $uid;
+        $book->seatNo = $r['display'];
+        $book->fare = $r['fare'];
+        $book->from = $from;
+        $book->to = $to;
+        $book->date = $date;
+        $book->time = $time;
+        $book->save();
+
+        DB::insert('insert into '.$bno.'seatTB values('.$r["display"].',1)');
+        return redirect('/');
     }
 }
