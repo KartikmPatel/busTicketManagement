@@ -133,12 +133,14 @@ class userController extends Controller
         $to = $r['to'];
         $date = $r['date'];
         $time = $r['time'];
+        $seatno=$r['display'];
+        $fare=$r['fare'];
 
         $book = new bookingModel;
         $book->busNo = $bno;
         $book->userID = $uid;
-        $book->seatNo = $r['display'];
-        $book->fare = $r['fare'];
+        $book->seatNo = $seatno;
+        $book->fare = $fare;
         $book->from = $from;
         $book->to = $to;
         $book->date = $date;
@@ -146,6 +148,11 @@ class userController extends Controller
         $book->save();
 
         DB::insert('insert into '.$bno.'seatTB values('.$r["display"].',1)');
-        return redirect('/');
+        // return redirect('/');
+
+        $station = stationModel::all();
+        $uname = session('username');
+        $data = compact('bno','uname','seatno','fare','from','to','date','time','station');
+        return view("User.viewTicket")->with($data);
     }
 }
