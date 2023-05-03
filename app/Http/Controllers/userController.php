@@ -66,14 +66,18 @@ class userController extends Controller
 
             if(session('username') == "Admin")
             {
-                return redirect('/adminHome');
+                $message = "adminLogin";
+                return $message;
             }
             else{
-                return redirect('/');
+                $message = "userLogin";
+                return $message;
             }
         }
         else
         {
+            // $message = "errorLogin";
+            // return $message;
         }
     }
 

@@ -166,9 +166,16 @@
                     staname: staname,
                 },
                 success: function(data) {
-                    setTimeout(function() {
-                        location.reload();
-                    },50);
+                        if(data == "insertStation")
+                        {
+                            alert('Station Insert Successfully');
+                            window.location.replace('/manageStation');
+                        }
+
+                        if(data == "stationError")
+                        {
+                            alert('Station Already Exists');
+                        }
                 },
                 // error: function(data) {
                 //     var errors = data.responseJSON;
@@ -212,9 +219,16 @@
                     },
                     success : function(data)
                     {
-                        setTimeout(function() {
-                            location.reload();
-                        },10);
+                        // setTimeout(function() {
+                        //     location.reload();
+                        // },10);
+
+                        if(data == "updateStation")
+                        {
+                            alert('Station Update Successfully');
+                            window.location.replace('/manageStation');
+                        }
+
                     }
                 })
             }

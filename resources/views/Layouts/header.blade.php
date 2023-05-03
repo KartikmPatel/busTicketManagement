@@ -220,9 +220,24 @@
                     loginpassword: loginpassword
                 },
                 success: function(data) {
-                    setTimeout(function() {
-                        location.reload();
-                    },50);
+                    // setTimeout(function() {
+                    //     location.reload();
+                    // },50);
+
+                    if(data == "adminLogin")
+                    {
+                        window.location.replace('/adminHome');
+                    }
+
+                    if(data == "userLogin")
+                    {
+                        window.location.replace('/');
+                    }
+
+                    if(data == "errorLogin")
+                    {
+                        alert('Invalid User Name Or Password');
+                    }
                 },
                 error: function(data) {
                     var errors = data.responseJSON;

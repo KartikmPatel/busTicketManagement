@@ -67,7 +67,9 @@ class adminController extends Controller
         //   $value = [$busNo];
         DB::insert("CALL insert_bus('".$busNo."')");
 
-        return redirect()->back();
+        $message = "insertBus";
+        return $message;
+        // return redirect()->back();
     }
 
     public function deleteBus($id)
@@ -75,6 +77,8 @@ class adminController extends Controller
         busModel::find($id)->delete();
 
         DB::insert("CALL delete_bus('".$id."')");
+        $message = "deleteBus";
+        // return $message;
         return redirect()->back();
     }
 
@@ -105,6 +109,9 @@ class adminController extends Controller
         }
         $bus->type = $r['type'];
         $bus->save();
+
+        $message = "updateBus";
+        return $message;
     }
 
     public function viewRoutes()
@@ -143,18 +150,20 @@ class adminController extends Controller
      {
          if($br->date == $r['date'])
          {
-            $error = 'dateError';
-            $data = compact('error');
-            return redirect()->back()->with($data);
+            $message = 'dateError';
+            // $data = compact('error');
+            return $message;
         }
     }
 
     if($r['startStation'] == $r['endStation'])
     {
-        return redirect()->back();
+        $message = "stationError";
+        return $message;
     }
     else
     {
+        $message = "routeDone";
         $route = new routeModel;
         $route->busNo = $r['busno'];
         $route->startingStationID = $r['startStation'];
@@ -163,8 +172,9 @@ class adminController extends Controller
         $route->departureTime = $r['dtime'];
         $route->fare = $r['fare'];
         $route->save();
+        return $message;
     }
-    return redirect()->back();
+    // return redirect()->back();
     }
 
     public function deleteRoute($id)
@@ -186,6 +196,9 @@ class adminController extends Controller
         $route->departureTime = $r['dtime'];
         $route->fare = $r['fare'];
         $route->save();
+
+        $message = "updateRoute";
+        return $message;
     }
 
     public function viewStaff()
@@ -217,7 +230,9 @@ class adminController extends Controller
     {
         if(($b->staffType == $r['sType']))
         {
-           return redirect()->back();
+            $message = "errorStaff";
+            return $message;
+        //    return redirect()->back();
         }
     }
 
@@ -228,7 +243,9 @@ class adminController extends Controller
        $staff->mobileNo = $r['mNo'];
        $staff->save();
 
-       return redirect()->back();
+       $message = "insertStaff";
+        return $message;
+    //    return redirect()->back();
     }
 
     public function deleteStaff($id)
@@ -246,6 +263,9 @@ class adminController extends Controller
         $staff->staffType = $r['sType'];
         $staff->mobileNo = $r['mNo'];
         $staff->save();
+
+        $message = "updateStaff";
+        return $message;
     }
 
     public function viewStations()
@@ -269,12 +289,22 @@ class adminController extends Controller
         ]
     );
 
-        $station = new stationModel;
-        $station->stationID = $r['staid'];
-        $station->stationName = $r['staname'];
-        $station->save();
+        $station = stationModel::where('stationName',$r['staname'])->first();
+        if($station)
+        {
+            $message = "stationError";
+            return $message;
+        }
+        else
+        {
+            $station = new stationModel;
+            $station->stationID = $r['staid'];
+            $station->stationName = $r['staname'];
+            $station->save();
 
-        return redirect()->back();
+            $message = "insertStation";
+            return $message;
+        }
     }
 
     public function updateStation(Request $r)
@@ -282,6 +312,9 @@ class adminController extends Controller
         $station = stationModel::find($r['staid']);
         $station->stationName = $r['staname'];
         $station->save();
+
+        $message = "updateStation";
+        return $message;
     }
 
     public function deleteStation($id)

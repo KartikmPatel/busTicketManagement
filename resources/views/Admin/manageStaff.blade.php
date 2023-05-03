@@ -140,9 +140,21 @@
                     mNo: mNo
                 },
                 success: function(data) {
-                    setTimeout(function() {
-                        location.reload();
-                    },50);
+                    // setTimeout(function() {
+                    //     location.reload();
+                    // },50);
+
+                    if(data == "errorStaff")
+                    {
+                        alert('Only 1 Staff For 1 Bus');
+                    }
+
+                    if(data == "insertStaff")
+                    {
+                        alert('Staff Insert Successfully');
+                        window.location.replace('/manageStaff');
+                    }
+
                 },
                 error: function(data) {
                     var errors = data.responseJSON;
@@ -216,9 +228,15 @@
                     },
                     success : function(data)
                     {
-                        setTimeout(function() {
-                            location.reload();
-                        },10);
+                        // setTimeout(function() {
+                        //     location.reload();
+                        // },10);
+
+                        if(data == "updateStaff")
+                        {
+                            alert('Staff Update Successfully');
+                            window.location.replace('/manageStaff');
+                        }
                     }
                 })
             }

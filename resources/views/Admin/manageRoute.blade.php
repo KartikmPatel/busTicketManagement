@@ -8,27 +8,27 @@
 </head>
 
 <div class="ml-4 mt-3">
-        @if (Session()->has('success'))
+        {{-- @if (Session()->has('success'))
          <div class="alert alert-success alert-dismissible successAlert" role="alert">
         <button type="button" class="close" data-dismiss="alert">
             <i class="fa fa-times"></i>
         </button>
         <strong>Success !</strong> {{ session()->get('success') }}
         </div>
-        @endif
+        @endif --}}
 
         {{-- <div class="alert col-md-6 ml-5">
 
         </div> --}}
 
-         @if (session('error'))
+         {{-- @if (session('error'))
         <div class="alert alert-danger alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert">
             <i class="fa fa-times"></i>
         </button>
         <strong>Error !</strong> {{ session('error') }}
         </div>
-        @endif
+        @endif --}}
         <h2> Routes </h2>
         {{-- <button class="btn btn-outline-dark"> Add Bus</button> --}}
         <!-- Button trigger modal -->
@@ -231,13 +231,23 @@
                     fare: fare
                 },
                 success: function(data) {
-                    setTimeout(function() {
-                        location.reload();
-                    },50);
-                    // if(data.error == "dateError")
-                    // {
-                    //     $('.alert').text("Do not Take Same Date For Single Bus")
-                    // }
+                    // setTimeout(function() {
+                    //     location.reload();
+                    // },50);
+                    if(data == "dateError")
+                    {
+                        alert('you can not choose 2 date with single bus');
+                    }
+                    if(data == "stationError")
+                    {
+                        alert('You can not Select Same Station');
+                    }
+
+                        if(data == "routeDone")
+                        {
+                         alert('Route Insert SuccessFully');
+                         window.location.replace('/manageRoute');
+                        }
                 },
                 error: function(data) {
                     var errors = data.responseJSON;
@@ -338,9 +348,15 @@
                     },
                     success : function(data)
                     {
-                        setTimeout(function() {
-                            location.reload();
-                        },10);
+                        // setTimeout(function() {
+                        //     location.reload();
+                        // },10);
+
+                        if(data == "updateRoute")
+                        {
+                            alert('Update Route SuccessFully');
+                            window.location.replace('/manageRoute');
+                        }
                     }
                 })
             }
