@@ -213,9 +213,15 @@
                     type: type
                 },
                 success: function(data) {
-                    setTimeout(function() {
-                        location.reload();
-                    },50);
+                    // setTimeout(function() {
+                    //     location.reload();
+                    // },50);
+
+                    if(data == "insertBus")
+                    {
+                        alert('Bus Insert SuccessFully');
+                        window.location.replace('/manageBus');
+                    }
                 },
                 // error: function(data) {
                 //     var errors = data.responseJSON;
@@ -273,9 +279,19 @@
                     },
                     success : function(data)
                     {
-                        setTimeout(function() {
-                            location.reload();
-                        },10);
+                        // setTimeout(function() {
+                        //     location.reload();
+                        // },10);
+                        if(data == "updateBus")
+                        {
+                            alert('Update Bus SuccessFully');
+                            window.location.replace('/manageBus');
+                        }
+                        // if(data == "deleteBus")
+                        // {
+                        //     alert('Delete Bus SuccessFully');
+                        //     window.location.replace('/manageBus');
+                        // }
                     }
                 })
             }

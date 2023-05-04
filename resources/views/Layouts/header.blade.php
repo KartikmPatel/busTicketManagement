@@ -133,26 +133,27 @@
 			<div class="screen__content1">
 				<h2 onclick="formhide()">&times;</h2>
 				<div class="login">
+                <span class="text-danger" id="all-error">
+                        </span>
 					<div class="login__field">
 						<i class="login__icon fas fa-user"></i>
-						<input type="text" id="username"
-                        class="login__input" placeholder="User name"><br>
+						<input type="text" id="username" class="login__input" placeholder="User name" oninput="validUsername()"><br>
                         <span class="text-danger" id="username-error">
                         </span>
 					</div>
 					<div class="login__field">
 						<i class="login__icon fas fa-lock"></i>
-						<input type="password" id="password" class="login__input" placeholder="Password"><br>
+						<input type="password" id="password" class="login__input" placeholder="Password" oninput="validPassword()"><br>
                         <span class="text-danger" id="password-error">
                         </span>
 					</div>
 					<div class="login__field">
 						<i class="login__icon fas fa-lock"></i>
-						<input type="password" id="cpassword" class="login__input" placeholder="Confirm Password">
+						<input type="password" id="cpassword" class="login__input" placeholder="Confirm Password" oninput="validCpassword()">
                         <span class="text-danger" id="cpassword-error">
                         </span>
 					</div>
-					<button class="button login__submit" id="signUpBtn">
+					<button class="button login__submit" id="signUpBtn" onclick="checkValidate()">
 						<span class="button__text">Sign Up</span>
 						<i class="button__icon fas fa-chevron-right"></i>
 					</button>
@@ -205,14 +206,98 @@
         document.querySelector('.container-sign').classList.remove('open-container-sign');
     }
 
-        $('#signUpBtn').on('click',function(){
+
+    function validUsername()
+    {
+        var username = document.getElementById("username");
+            let p = /^\D+$/;
+            if(!p.test(username.value))
+            {
+                document.getElementById("username-error").innerHTML="Please Enter Only character";
+        		document.getElementById("username-error").style.color="red";
+        		document.getElementById("username-error").style.fontSize="15px";
+        		username.focus();
+        		return false;
+            }
+            else
+            {
+                document.getElementById("username-error").innerHTML="";
+        		document.getElementById("username-error").style.color="";
+        		document.getElementById("username-error").style.fontSize="";
+            }
+            return true;
+    }
+    function validPassword()
+    {
+        var password = document.getElementById("password");
+            let p = /^\D+[0-9]{4}$/;
+            if(!p.test(password.value))
+            {
+                document.getElementById("password-error").innerHTML="Please Enter Valid Password (patel@4040)";
+        		document.getElementById("password-error").style.color="red";
+        		document.getElementById("password-error").style.fontSize="15px";
+        		password.focus();
+        		return false;
+            }
+            else
+            {
+                document.getElementById("password-error").innerHTML="";
+        		document.getElementById("password-error").style.color="";
+        		document.getElementById("password-error").style.fontSize="";
+            }
+            return true;
+    }
+    function validCpassword()
+    {
+        var password = document.getElementById("password");
+        var cpassword = document.getElementById("cpassword");
+        if(password.value != cpassword.value)
+        {
+            
+            document.getElementById("cpassword-error").innerHTML="Passwords Must be Same";
+            document.getElementById("cpassword-error").style.color="red";
+            document.getElementById("cpassword-error").style.fontSize="15px";
+            return false;
+        }
+        else
+        {
+            document.getElementById("cpassword-error").innerHTML="";
+            document.getElementById("cpassword-error").style.color="";
+            document.getElementById("cpassword-error").style.fontSize="";
+            }
+            return true;
+        }
+        
+        function checkValidate()
+        {
+          var username = document.getElementById("username");
+          var password = document.getElementById("password");
+          var cpassword = document.getElementById("cpassword");
+        if(username.value.length == "" || password.value.length =="" || cpassword.value.length == "")
+        {
+            document.getElementById("all-error").innerHTML="Please fill up the empty field";
+            document.getElementById("all-error").style.color="red";
+            document.getElementById("all-error").style.fontSize="15px";         
+        }
+        else
+        {
+            document.getElementById("all-error").innerHTML="";
+            document.getElementById("all-error").style.color="";
+            document.getElementById("all-error").style.fontSize="";   
+            if(validUsername() && validPassword() && validCpassword())
+            {
+                storedata()
+            }
+        }
+    }
+        function storedata(){
             var username = $('#username').val();
             var password = $('#password').val();
             // var size = $('#size').val();
             var cpassword = $('#cpassword').val();
-            $('#username-error').addClass('d-none');
-            $('#password-error').addClass('d-none');
-            $('#cpassword-error').addClass('d-none');
+            // $('#username-error').addClass('d-none');
+            // $('#password-error').addClass('d-none');
+            // $('#cpassword-error').addClass('d-none');
 
             $.ajax({
                 type: 'POST',
@@ -240,7 +325,7 @@
                     }
                 }
             })
-        })
+        }
 
         $('#logInbtn').on('click',function(){
             var loginusername = $('#loginusername').val();

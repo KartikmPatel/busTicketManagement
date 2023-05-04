@@ -26,22 +26,22 @@ class userController extends Controller
 
     public function signUp(Request $r)
     {
-        $r->validate([
-                'username' => 'required',
-                'password' => 'required'
-                // 'cpassword' => 'required'
-            ],
-            [
-                'username.required' => 'Please enter UserName',
-                'password.required' => 'Please enter Password'
-                // 'password.confirmed' => 'Passwords must be same'
-                // 'cpassword.required' => 'Password and Confirm Password must be same'
-                ]
-            );
+        // $r->validate([
+        //         'username' => 'required',
+        //         'password' => 'required'
+        //         // 'cpassword' => 'required'
+        //     ],
+        //     [
+        //         'username.required' => 'Please enter UserName',
+        //         'password.required' => 'Please enter Password'
+        //         // 'password.confirmed' => 'Passwords must be same'
+        //         // 'cpassword.required' => 'Password and Confirm Password must be same'
+        //         ]
+        //     );
 
                 $user = new userModel();
                 $user->userName = $r['username'];
-                $user->password = Hash::make($r['password']);
+                $user->password = $r['password'];
                 $user->save();
 
                 return redirect('/');
@@ -59,8 +59,8 @@ class userController extends Controller
             'loginpassword.required' => 'Please enter Password',
             ]
         );
-        $user = userModel::where('userName',$r['loginusername'])->first();
-        if($user || Hash::check('password',$r['loginpassword']))
+        $user = userModel::where('userName',$r['loginusername'])->where('password',$r['loginpassword'])->first();
+        if($user)
         {
             session()->put('userid',$user->userID);
             session()->put('username',$user->userName);
