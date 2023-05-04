@@ -10,6 +10,7 @@ use App\Models\busModel;
 use App\Models\stationModel;
 use App\Models\routeModel;
 use App\Models\bookingModel;
+use PDF;
 
 class userController extends Controller
 {
@@ -158,5 +159,19 @@ class userController extends Controller
         $uname = session('username');
         $data = compact('bno','uname','seatno','fare','from','to','date','time','station');
         return view("User.viewTicket")->with($data);
+    }
+
+    public function downloadTicket(Request $r)
+    {
+        $st1 = $r['sname1'];
+        $st2 = $r['sname2'];
+        $uname = $r['uname'];
+        $bno = $r['bno'];
+        $seatno = $r['seatno'];
+        $date = $r['date'];
+        $fare = $r['fare'];
+
+        $pdf_view = PDF::loadView('User.downloadTicket',compact('st1','st2','uname','bno','seatno','date','fare'));
+        return $pdf_view->download('ticket.pdf');
     }
 }

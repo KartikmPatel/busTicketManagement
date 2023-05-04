@@ -59,9 +59,10 @@ route::get('test',function(){
 route::get('/',[userController::class,'home']);
 route::post('signUp',[userController::class,'signUp']);
 route::post('login',[userController::class,'login']);
-
 route::get('logout',[userController::class,'logout']);
+
 route::post('searchBus',[userController::class,'searchBus']);
 route::post('viewSeat',[userController::class,'viewSeat']);
-
 route::post('booking',[userController::class,'booking']);
+
+route::post('/downloadTicket',[userController::class,'downloadTicket']);

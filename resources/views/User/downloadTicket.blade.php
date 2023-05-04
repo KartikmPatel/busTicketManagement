@@ -1,4 +1,8 @@
-body{
+<html>
+  <head>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/> -->
+     <style>
+        body{
     margin: 0;
     padding: 0;
     background: #fff;
@@ -10,10 +14,6 @@ body{
   }
   .down{
     cursor: pointer;
-  }
-  #down{
-    width: 35px;
-    height: 22px;
   }
 
   .box{
@@ -546,3 +546,76 @@ body{
   .airlineslip{
     left: 455px;
   }
+     </style>
+  </head>
+  <body>
+    <div class="box">
+  <ul class="left">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  
+  <ul class="right">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <div class="ticket">
+    <span class="airline">Global Travels</span>
+    <span class="airline airlineslip">Global Travels</span>
+    <div class="content">
+        <span class="jfk">{{ $st1 }}</span>
+        
+        <!-- <span class="jfk1"><i class="fa fa-arrow-right"></i></span> -->
+      
+      
+      <span class="sfo">{{ $st2 }}</span>
+
+      
+      <span class="jfk jfkslip">{{ $st1 }}</span>
+      
+      <!-- <span class="jfk jfkslip1"><i class="fa fa-arrow-right"></i></span> -->
+      
+        <span class="sfo sfoslip">{{ $st2 }}</span>
+
+      <div class="sub-content">
+        <span class="watermark">Global Travels</span>
+        <span class="name">PASSENGER NAME<br><span>{{ $uname }}</span></span>
+        <span class="flight">Bus No&deg;<br><span>{{ $bno }}</span></span>
+        <span class="seat">SEAT<br><span>{{ $seatno }}</span></span>
+        <span class="boardingtime">DEPARTURETIME<br><span>{{ $date }}</span></span>
+        <span class="fare">FARE<br><span>{{ $fare }}</span></span>
+        
+         <span class="flight flightslip">Bus No&deg;<br><span>{{ $bno }}</span></span>
+          <span class="seat seatslip">SEAT<br><span>{{ $seatno }}</span></span>
+         <span class="name nameslip">PASSENGER NAME<br><span>{{ $uname }}</span></span>
+
+      </div>
+    </div>
+  </div>
+</div>
+    </body>
+</html>

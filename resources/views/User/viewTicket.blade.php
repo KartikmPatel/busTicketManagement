@@ -1,9 +1,34 @@
 <html>
-    <head>
+  <head>
     <link rel="stylesheet" href="{{asset('userStyle/viewTicket.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-    </head>
-    <body>
+  </head>
+  <body>
+      <div class="download">
+        <form action="{{ url('/downloadTicket') }}" method="post">
+            @csrf
+       @foreach($station as $s)
+       @if($s->stationID == $from)
+        <input type="hidden" name="sname1" id="sname1" value="{{ $s->stationName }}">
+        @endif
+        @endforeach
+
+      @foreach($station as $s)
+      @if($s->stationID == $to)
+      <input type="hidden" name="sname2" id="sname2" value="{{ $s->stationName }}">
+      @endif
+      @endforeach
+      
+      <input type="hidden" name="uname" id="uname" value="{{ $uname }}">
+      <input type="hidden" name="bno" id="bno" value="{{ $bno }}">
+      <input type="hidden" name="seatno" id="seatno" value="{{ $seatno }}">
+      <input type="hidden" name="date" id="date" value="{{$time}} ON {{$date}}">
+      <input type="hidden" name="fare" id="fare" value="{{ $fare }}">
+
+        <button type="submit" class='btn btn-warning down'><i class="fa fa-download" id="down" aria-hidden="true"></i></button>
+      </form>
+    </div>
+    
     <div class="box">
   <ul class="left">
     <li></li>
@@ -76,6 +101,7 @@
         <span class="flight">Bus No&deg;<br><span>{{ $bno }}</span></span>
         <span class="seat">SEAT<br><span>{{ $seatno }}</span></span>
         <span class="boardingtime">DEPARTURETIME<br><span>{{$time}} ON {{$date}}</span></span>
+        <span class="fare">FARE<br><span>{{ $fare }}</span></span>
             
          <span class="flight flightslip">Bus No&deg;<br><span>{{ $bno }}</span></span>
           <span class="seat seatslip">SEAT<br><span>{{ $seatno }}</span></span>
