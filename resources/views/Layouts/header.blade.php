@@ -9,6 +9,7 @@
     <script src="jsFiles/aside.js"></script>
     <link rel="stylesheet" href="{{asset('app.css')}}">
     <link rel="stylesheet" href="{{asset('layoutstyle/aside.css')}}">
+    <link rel="stylesheet" href="{{asset('layoutstyle/header.css')}}">
     <link rel="stylesheet" href="{{asset('adminStyle/dashboard.css')}}">
     <link rel="stylesheet" href="{{asset('adminStyle/seatStyle.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
@@ -54,9 +55,40 @@
                 </button>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="formshow()">Sign Up</button>
                 @else
-                <a href="{{url('logout')}}" class="btn btn-outline-success mx-2 my-2 my-sm-0">
+                {{-- <a href="{{url('logout')}}" class="btn btn-outline-success mx-2 my-2 my-sm-0">
                   Logout
-                </a>
+                </a> --}}
+                <img src="images/User-avatar.png" class="user-pic" onclick="toggleMenu()">
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <img src="images/User-avatar.png">
+                            {{-- <h2>Prem Patel</h2> --}}
+                            <h3> {{session('username')}}</h3>
+                        </div>
+                        <hr>
+                        <a href="#" class="sub-menu-link">
+                            <img src="images/profile.png">
+                            <p> Edit Profile </p>
+                            <span> > </span>
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <img src="images/setting.png">
+                            <p> Settings & Privacy </p>
+                            <span> > </span>
+                        </a>
+                        <a href="#" class="sub-menu-link">
+                            <img src="images/help.png">
+                            <p> Help & Support </p>
+                            <span> > </span>
+                        </a>
+                        <a href="{{url('logout')}}" class="sub-menu-link">
+                            <img src="images/logout.png">
+                            <p> Logout </p>
+                            <span> > </span>
+                        </a>
+                    </div>
+                </div>
                 @endif
     </nav>
 
@@ -144,6 +176,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
+        let subMenu = document.getElementById("subMenu");
+
+        function toggleMenu(){
+            subMenu.classList.toggle("open-menu");
+        }
+
     function showform()
     {
         document.querySelector('.overlay').classList.add('showoverlay');
