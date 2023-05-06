@@ -15,9 +15,9 @@ use PDF;
 
 class userController extends Controller
 {   
-    public function home($locale)
+    public function home()
     {
-        App::setLocale($locale);
+        // App::setLocale($locale);
         $bus = busModel::all();
         $stations = stationModel::all();
         $routes = routeModel::all();

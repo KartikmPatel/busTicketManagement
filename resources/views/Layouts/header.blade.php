@@ -25,7 +25,7 @@
         <a class="navbar-brand"><span id="toggle-icon" class="navbar-toggler-icon" style="border:2px solid white"></span></a>
         @endif
         <a class="navbar-brand" href="/adminHome"><img src="images/bus.webp" height="50" width="60"></a>
-        <a class="navbar-brand" href="/adminHome">{{__('home.name')}}</a>
+        <a class="navbar-brand" href="/adminHome">Global Travels</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation"></button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
