@@ -55,7 +55,7 @@ route::get('test',function(){
 
 
 // User Side //
-route::get('/',[userController::class,'home']);
+route::get('/{locale}',[userController::class,'home']);
 
 route::post('signUp',[userController::class,'signUp']);
 route::post('login',[userController::class,'login']);

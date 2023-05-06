@@ -6,6 +6,7 @@ use App\Models\userModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\App;
 use App\Models\busModel;
 use App\Models\stationModel;
 use App\Models\routeModel;
@@ -13,9 +14,10 @@ use App\Models\bookingModel;
 use PDF;
 
 class userController extends Controller
-{
-    public function home()
+{   
+    public function home($locale)
     {
+        App::setLocale($locale);
         $bus = busModel::all();
         $stations = stationModel::all();
         $routes = routeModel::all();
