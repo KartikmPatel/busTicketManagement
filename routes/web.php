@@ -55,8 +55,8 @@ route::get('test',function(){
 
 
 // User Side //
-
 route::get('/',[userController::class,'home']);
+
 route::post('signUp',[userController::class,'signUp']);
 route::post('login',[userController::class,'login']);
 route::get('logout',[userController::class,'logout']);

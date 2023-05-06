@@ -62,32 +62,32 @@
         <form action="{{url('searchBus')}}" method="post" onsubmit="return validateSearch()">
             @csrf
             <div class="form-group">
-                <h1 class="ml-5"> Search Bus </h1>
+                <h1 class="ml-5"> {{__('home.sBus')}} </h1>
                 <span class="text-danger" id="all-error">
         </span><br>
-                <label class="ml-5"> From : </label>
+                <label class="ml-5"> {{__('home.from')}} : </label>
                 <select id="from" name="from" class="form-control col-md-9 ml-5" oninput="validateStartStation()">
-                    <option value="">--Select Station--</option>
+                    <option value="">{{__('home.selectstation')}}</option>
                     @foreach ($stations as $station)
                         <option value="{{ $station->stationID }}">{{ $station->stationName }}</option>
                     @endforeach
                 </select>
                 <span class="pl-5" id="from-error">
                 </span><br>
-                <label class="ml-5"> To : </label>
+                <label class="ml-5"> {{__('home.to')}} : </label>
                 <select id="to" name="to" class="form-control col-md-9 ml-5" oninput="validateEndStation()">
-                    <option value="">--Select Station--</option>
+                    <option value="">{{__('home.selectstation')}}</option>
                     @foreach ($stations as $station)
                         <option value="{{ $station->stationID }}">{{ $station->stationName }}</option>
                     @endforeach
                 </select>
                 <span class="pl-5" id="to-error">
                 </span><br>
-                    <label class="ml-5"> Date : </label>
+                    <label class="ml-5"> {{__('home.date')}} : </label>
                     <input type="date" class="form-control col-md-9 ml-5" name="date" id="date" oninput="validateDate()">
                     <span class="pl-5" id="date-error">
                     </span><br>
-                    <button type="submit" class="btn btn-warning mt-1 ml-5 col-md-9" onclick="validateSearch()"> Search </button>
+                    <button type="submit" class="btn btn-warning mt-1 ml-5 col-md-9" onclick="validateSearch()"> {{__('home.search')}} </button>
             </div>
         </form>
     </div>
@@ -132,7 +132,7 @@
             var from = document.getElementById("from");
             if(from.value.length == "")
             {
-                document.getElementById("from-error").innerHTML="Please Enter the Source";
+                document.getElementById("from-error").innerHTML="{{__('home.st1Error')}}";
         		document.getElementById("from-error").style.color="red";
         		document.getElementById("from-error").style.fontSize="15px";
         		from.focus();
@@ -151,7 +151,7 @@
             var to = document.getElementById("to");
             if(to.value.length == "")
             {
-                document.getElementById("to-error").innerHTML="Please Enter the Destination";
+                document.getElementById("to-error").innerHTML="{{__('home.st2Error')}}";
         		document.getElementById("to-error").style.color="red";
         		document.getElementById("to-error").style.fontSize="15px";
         		to.focus();
@@ -170,7 +170,7 @@
             var date = document.getElementById("date");
             if(date.value.length == "")
             {
-                document.getElementById("date-error").innerHTML="Please Enter the Date";
+                document.getElementById("date-error").innerHTML="{{__('home.dateError')}}";
         		document.getElementById("date-error").style.color="red";
         		document.getElementById("date-error").style.fontSize="15px";
         		date.focus();

@@ -7,12 +7,12 @@
     <table class="content-table col-md-7">
   <thead>
     <tr>
-        <th></th>
-      <th> Bus Number </th>
-      <th> Type </th>
-      <th> Departure Time </th>
-      <th> Fare </th>
-      <th>viewSeat<th>
+      <th></th>
+      <th> {{__('home.bno')}} </th>
+      <th> {{__('home.type')}} </th>
+      <th> {{__('home.dTime')}} </th>
+      <th> {{__('home.fare')}} </th>
+      <th> {{__('home.vSeat')}} <th>
     </tr>
   </thead>
   <tbody>

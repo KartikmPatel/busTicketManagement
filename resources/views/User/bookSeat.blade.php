@@ -758,7 +758,7 @@
 {{--
     <form action="{{url('payment')}}" method="post">
         @csrf --}}
-    <button type="button" class="btn btn-success ml-3" onclick="display1()" data-toggle="modal" data-target="#modelId">Book</button>
+    <button type="button" class="btn btn-success ml-3" onclick="display1()" data-toggle="modal" data-target="#modelId">{{__('home.book')}}</button>
     {{-- </form> --}}
 
 </div>
@@ -768,7 +768,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Payment</h5>
+                <h5 class="modal-title">{{__('home.payment')}}</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -776,11 +776,11 @@
                     <div class="modal-body">
                         <form action="{{url('booking')}}" method="post">
                             @csrf
-                            <label> User Name :- </label>
+                            <label> {{__('home.username')}} :- </label>
                             <input type="text" class="form-control" name="uname" id="uname" readonly value="{{session('username')}}">
-                            <label> SeatNo :- </label>
+                            <label> {{__('home.sNo')}} :- </label>
                             <input type="text" name="display" id="display" class="form-control" readonly/>
-                            <label> Fare :- </label>
+                            <label> {{__('home.fare')}} :- </label>
                             <input type="text" class="form-control" name="fare" id="fare" readonly value="{{$fare}}">
 
                             <input type="hidden" name="rid" id="rid" value="{{$rid}}"/>
@@ -790,7 +790,7 @@
                             <input type="hidden" name="date" id="date" value="{{$date}}"/>
                             <input type="hidden" name="time" id="time" value="{{$time}}"/>
                             <input type="hidden" name="fare" id="fare" value="{{$fare}}"/>
-                            <button type="submit" class="btn btn-success mt-3">Payment</button>
+                            <button type="submit" class="btn btn-success mt-3">{{__('home.payment')}}</button>
                         </form>
                     </div>
                 </div>

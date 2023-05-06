@@ -612,7 +612,6 @@
          <span class="flight flightslip">Bus No&deg;<br><span>{{ $bno }}</span></span>
           <span class="seat seatslip">SEAT<br><span>{{ $seatno }}</span></span>
          <span class="name nameslip">PASSENGER NAME<br><span>{{ $uname }}</span></span>
-
       </div>
     </div>
   </div>

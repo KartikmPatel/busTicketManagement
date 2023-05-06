@@ -25,7 +25,7 @@
         <a class="navbar-brand"><span id="toggle-icon" class="navbar-toggler-icon" style="border:2px solid white"></span></a>
         @endif
         <a class="navbar-brand" href="/adminHome"><img src="images/bus.webp" height="50" width="60"></a>
-        <a class="navbar-brand" href="/adminHome">Global Travels</a>
+        <a class="navbar-brand" href="/adminHome">{{__('home.name')}}</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
             aria-expanded="false" aria-label="Toggle navigation"></button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
@@ -44,19 +44,19 @@
                     <a class="nav-link" href="/adminHome">Home <span class="sr-only">(current)</span></a>
                 </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link" href="/"> Home </a>
+                    <a class="nav-link" href="/"> {{__('home.home')}} </a>
                 </li>
             </ul>
             @endif
 
             @if(!session('username'))
                 <button type="button" class="btn btn-outline-success mx-2 my-2 my-sm-0" onclick="showform()">
-                  Login
+                {{__('home.login')}}
                 </button>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="formshow()">Sign Up</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="formshow()">{{__('home.signUp')}}</button>
                 @else
                 {{-- <a href="{{url('logout')}}" class="btn btn-outline-success mx-2 my-2 my-sm-0">
-                  Logout
+                {{__('home.logout')}}
                 </a> --}}
                 <img src="images/User-avatar.png" class="user-pic" onclick="toggleMenu()">
                 <div class="sub-menu-wrap" id="subMenu">
@@ -69,22 +69,22 @@
                         <hr>
                         <a href="#" class="sub-menu-link">
                             <img src="images/profile.png">
-                            <p> Edit Profile </p>
+                            <p> {{__('home.editProfile')}} </p>
                             <span> > </span>
                         </a>
                         <a href="#" class="sub-menu-link">
                             <img src="images/setting.png">
-                            <p> Settings & Privacy </p>
+                            <p> {{__('home.s&p')}} </p>
                             <span> > </span>
                         </a>
                         <a href="#" class="sub-menu-link">
                             <img src="images/help.png">
-                            <p> Help & Support </p>
+                            <p> {{__('home.h&s')}} </p>
                             <span> > </span>
                         </a>
                         <a href="{{url('logout')}}" class="sub-menu-link">
                             <img src="images/logout.png">
-                            <p> Logout </p>
+                            <p> {{__('home.logout')}} </p>
                             <span> > </span>
                         </a>
                     </div>
@@ -101,18 +101,18 @@
 				<div class="login">
 					<div class="login__field">
 						<i class="login__icon fas fa-user"></i>
-						<input type="text" class="login__input" id="loginusername" placeholder="User name"><br>
+						<input type="text" class="login__input" id="loginusername" placeholder="{{__('home.username')}}"><br>
                         <span class="text-danger" id="loginusername-error">
                         </span>
 					</div>
 					<div class="login__field">
 						<i class="login__icon fas fa-lock"></i>
-						<input type="password" class="login__input" id="loginpassword" placeholder="Password"><br>
+						<input type="password" class="login__input" id="loginpassword" placeholder="{{__('home.password')}}"><br>
                         <span class="text-danger" id="loginpassword-error">
                         </span>
 					</div>
 					<button class="button login__submit" id="logInbtn">
-						<span class="button__text">Log In</span>
+						<span class="button__text">{{__('home.login')}}</span>
 						<i class="button__icon fas fa-chevron-right"></i>
 					</button>
 				</div>
@@ -137,24 +137,24 @@
                         </span>
 					<div class="login__field">
 						<i class="login__icon fas fa-user"></i>
-						<input type="text" id="username" class="login__input" placeholder="User name" oninput="validUsername()"><br>
+						<input type="text" id="username" class="login__input" placeholder="{{__('home.username')}}" oninput="validUsername()"><br>
                         <span class="text-danger" id="username-error">
                         </span>
 					</div>
 					<div class="login__field">
 						<i class="login__icon fas fa-lock"></i>
-						<input type="password" id="password" class="login__input" placeholder="Password" oninput="validPassword()"><br>
+						<input type="password" id="password" class="login__input" placeholder="{{__('home.password')}}" oninput="validPassword()"><br>
                         <span class="text-danger" id="password-error">
                         </span>
 					</div>
 					<div class="login__field">
 						<i class="login__icon fas fa-lock"></i>
-						<input type="password" id="cpassword" class="login__input" placeholder="Confirm Password" oninput="validCpassword()">
+						<input type="password" id="cpassword" class="login__input" placeholder="{{__('home.cpassword')}}" oninput="validCpassword()">
                         <span class="text-danger" id="cpassword-error">
                         </span>
 					</div>
 					<button class="button login__submit" id="signUpBtn" onclick="checkValidate()">
-						<span class="button__text">Sign Up</span>
+						<span class="button__text">{{__('home.signUp')}}</span>
 						<i class="button__icon fas fa-chevron-right"></i>
 					</button>
 				</div>
@@ -213,7 +213,8 @@
             let p = /^\D+$/;
             if(!p.test(username.value))
             {
-                document.getElementById("username-error").innerHTML="Please Enter Only character";
+                // document.getElementById("username-error").innerHTML="Please Enter Only character";
+                document.getElementById("username-error").innerHTML="{{__('home.usernameError')}}";
         		document.getElementById("username-error").style.color="red";
         		document.getElementById("username-error").style.fontSize="15px";
         		username.focus();
@@ -233,7 +234,8 @@
             let p = /^\D+[0-9]{4}$/;
             if(!p.test(password.value))
             {
-                document.getElementById("password-error").innerHTML="Please Enter Valid Password (patel@4040)";
+                // document.getElementById("password-error").innerHTML="Please Enter Valid Password (patel@4040)";
+                document.getElementById("password-error").innerHTML="{{__('home.passwordError')}}";
         		document.getElementById("password-error").style.color="red";
         		document.getElementById("password-error").style.fontSize="15px";
         		password.focus();
@@ -254,7 +256,8 @@
         if(password.value != cpassword.value)
         {
             
-            document.getElementById("cpassword-error").innerHTML="Passwords Must be Same";
+            // document.getElementById("cpassword-error").innerHTML="Passwords Must be Same";
+            document.getElementById("cpassword-error").innerHTML="{{__('home.cpasswordError')}}";
             document.getElementById("cpassword-error").style.color="red";
             document.getElementById("cpassword-error").style.fontSize="15px";
             return false;
@@ -275,7 +278,8 @@
           var cpassword = document.getElementById("cpassword");
         if(username.value.length == "" || password.value.length =="" || cpassword.value.length == "")
         {
-            document.getElementById("all-error").innerHTML="Please fill up the empty field";
+            // document.getElementById("all-error").innerHTML="Please fill up the empty field";
+            document.getElementById("all-error").innerHTML="{{__('home.allError')}}";
             document.getElementById("all-error").style.color="red";
             document.getElementById("all-error").style.fontSize="15px";         
         }

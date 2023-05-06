@@ -64,8 +64,8 @@
     <li></li>
   </ul>
   <div class="ticket">
-    <span class="airline">Global Travels</span>
-    <span class="airline airlineslip">Global Travels</span>
+    <span class="airline">{{__('home.name')}}</span>
+    <span class="airline airlineslip">{{__('home.name')}}</span>
     <div class="content">
     @foreach($station as $s)
       @if($s->stationID == $from)
@@ -96,16 +96,16 @@
       @endforeach
 
       <div class="sub-content">
-        <span class="watermark">Global Travels</span>
-        <span class="name">PASSENGER NAME<br><span>{{ $uname }}</span></span>
-        <span class="flight">Bus No&deg;<br><span>{{ $bno }}</span></span>
-        <span class="seat">SEAT<br><span>{{ $seatno }}</span></span>
-        <span class="boardingtime">DEPARTURETIME<br><span>{{$time}} ON {{$date}}</span></span>
-        <span class="fare">FARE<br><span>{{ $fare }}</span></span>
+        <span class="watermark">{{__('home.name')}}</span>
+        <span class="name">{{__('home.passenger')}}<br><span>{{ $uname }}</span></span>
+        <span class="flight">{{__('home.bno')}}&deg;<br><span>{{ $bno }}</span></span>
+        <span class="seat">{{__('home.sNo')}}<br><span>{{ $seatno }}</span></span>
+        <span class="boardingtime">{{__('home.dTime')}}<br><span>{{$time}} ON {{$date}}</span></span>
+        <span class="fare">{{__('home.fare')}}<br><span>{{ $fare }}</span></span>
             
-         <span class="flight flightslip">Bus No&deg;<br><span>{{ $bno }}</span></span>
-          <span class="seat seatslip">SEAT<br><span>{{ $seatno }}</span></span>
-         <span class="name nameslip">PASSENGER NAME<br><span>{{ $uname }}</span></span>
+         <span class="flight flightslip">{{__('home.bno')}}&deg;<br><span>{{ $bno }}</span></span>
+          <span class="seat seatslip">{{__('home.sNo')}}<br><span>{{ $seatno }}</span></span>
+         <span class="name nameslip">{{__('home.passenger')}}<br><span>{{ $uname }}</span></span>
       </div>
     </div>
     <div class="barcode"></div>
