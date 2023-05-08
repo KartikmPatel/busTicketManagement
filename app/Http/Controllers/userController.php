@@ -14,7 +14,7 @@ use App\Models\bookingModel;
 use PDF;
 
 class userController extends Controller
-{   
+{
     public function home()
     {
         // App::setLocale($locale);
@@ -79,14 +79,15 @@ class userController extends Controller
         }
         else
         {
-            // $message = "errorLogin";
-            // return $message;
+            $message = "errorLogin";
+            return $message;
         }
     }
 
     public function logout()
     {
         session()->forget('username');
+        session()->forget('userid');
         return redirect('/');
     }
 
@@ -175,5 +176,28 @@ class userController extends Controller
 
         $pdf_view = PDF::loadView('User.downloadTicket',compact('st1','st2','uname','bno','seatno','date','fare'));
         return $pdf_view->download('ticket.pdf');
+    }
+
+    public function viewProfile()
+    {
+        $userid = session('userid');
+        $user = userModel::find($userid);
+
+        $data = compact('user');
+        return view('User.viewProfile')->with($data);
+    }
+
+    public function editProfile(Request $r)
+    {
+        $userid = session('userid');
+        $user = userModel::find($userid);
+
+        $user->userName = $r['username'];
+        $user->email = $r['email'];
+        $user->mobileNo = $r['mobileno'];
+        $user->city = $r['city'];
+        $user->save();
+
+        return redirect('viewProfile');
     }
 }

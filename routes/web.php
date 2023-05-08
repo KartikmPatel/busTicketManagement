@@ -65,5 +65,6 @@ route::get('logout',[userController::class,'logout']);
 route::post('searchBus',[userController::class,'searchBus']);
 route::post('viewSeat',[userController::class,'viewSeat']);
 route::post('booking',[userController::class,'booking']);
-
+route::get('viewProfile',[userController::class,'viewProfile']);
+route::post('editProfile',[userController::class,'editProfile']);
 route::post('/downloadTicket',[userController::class,'downloadTicket']);

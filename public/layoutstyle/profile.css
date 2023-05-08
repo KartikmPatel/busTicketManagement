@@ -1,0 +1,40 @@
+.profileContainer{
+    font-family: Montserrat, sans-serif;
+    background: rgb(200, 215, 175);
+    height: 270px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+  }
+
+  .panel-body td{
+    font-size: medium;
+  }
+  .profile-info{
+    margin-top: 40px;
+  }
+
+  .image-profile{
+    display:block;
+    /* margin-left: auto;
+    margin-right: auto; */
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    margin-top: 15px;
+    background: black;
+  }
+  .panel-footer {
+    padding: 5px;
+    height: 40px;
+  }
+
+  .image{
+    margin-left: 30px;
+    margin-right:20px;
+  }
+
+  .edit-button{
+    margin-left: 17%;
+  }
+

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="jsFiles/aside.js"></script>
-    <link rel="stylesheet" href="{{asset('app.css')}}">
     <link rel="stylesheet" href="{{asset('layoutstyle/aside.css')}}">
     <link rel="stylesheet" href="{{asset('layoutstyle/header.css')}}">
     <link rel="stylesheet" href="{{asset('adminStyle/dashboard.css')}}">
@@ -18,6 +17,7 @@
     <link rel="stylesheet" href="{{asset('layoutstyle/SignUp.css')}}">
     <link rel="stylesheet" href="{{asset('userStyle/searchBus.css')}}">
     <link rel="stylesheet" href="{{asset('userStyle/viewBus.css')}}">
+    <link rel="stylesheet" href="{{asset('layoutstyle/profile.css')}}">
 </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
@@ -67,7 +67,7 @@
                             <h3> {{session('username')}}</h3>
                         </div>
                         <hr>
-                        <a href="#" class="sub-menu-link">
+                        <a href="{{url('viewProfile')}}" class="sub-menu-link">
                             <img src="images/profile.png">
                             <p> {{__('home.editProfile')}} </p>
                             <span> > </span>
@@ -255,7 +255,7 @@
         var cpassword = document.getElementById("cpassword");
         if(password.value != cpassword.value)
         {
-            
+
             // document.getElementById("cpassword-error").innerHTML="Passwords Must be Same";
             document.getElementById("cpassword-error").innerHTML="{{__('home.cpasswordError')}}";
             document.getElementById("cpassword-error").style.color="red";
@@ -270,7 +270,7 @@
             }
             return true;
         }
-        
+
         function checkValidate()
         {
           var username = document.getElementById("username");
@@ -281,13 +281,13 @@
             // document.getElementById("all-error").innerHTML="Please fill up the empty field";
             document.getElementById("all-error").innerHTML="{{__('home.allError')}}";
             document.getElementById("all-error").style.color="red";
-            document.getElementById("all-error").style.fontSize="15px";         
+            document.getElementById("all-error").style.fontSize="15px";
         }
         else
         {
             document.getElementById("all-error").innerHTML="";
             document.getElementById("all-error").style.color="";
-            document.getElementById("all-error").style.fontSize="";   
+            document.getElementById("all-error").style.fontSize="";
             if(validUsername() && validPassword() && validCpassword())
             {
                 storedata()
