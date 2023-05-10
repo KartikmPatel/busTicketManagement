@@ -200,4 +200,26 @@ class userController extends Controller
 
         return redirect('viewProfile');
     }
+
+    public function changePassword()
+    {
+        return view('User.changePassword');
+    }
+    
+    public function passwordChange(Request $r)
+    {
+        $cPassword = userModel::where('password',$r['oldPassword'])->first();
+        if($cPassword)
+        {
+            $cPassword->password = $r['newPassword'];
+            $cPassword->save();
+            $message = "passwordDone";
+            return $message;
+        }
+        else
+        {
+            $message = "passwordError";
+            return $message;
+        }
+    }
 }

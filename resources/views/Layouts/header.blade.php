@@ -77,9 +77,10 @@
                             <p> {{__('home.s&p')}} </p>
                             <span> > </span>
                         </a>
-                        <a href="#" class="sub-menu-link">
+                        <a href="{{url('changePassword')}}" class="sub-menu-link">
                             <img src="images/help.png">
-                            <p> {{__('home.h&s')}} </p>
+                            <!-- <p> {{__('home.h&s')}} </p> -->
+                            <p>Change Password</p>
                             <span> > </span>
                         </a>
                         <a href="{{url('logout')}}" class="sub-menu-link">
@@ -267,9 +268,9 @@
             document.getElementById("cpassword-error").innerHTML="";
             document.getElementById("cpassword-error").style.color="";
             document.getElementById("cpassword-error").style.fontSize="";
-            }
-            return true;
         }
+            return true;
+    }
 
         function checkValidate()
         {
