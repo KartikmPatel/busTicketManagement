@@ -115,7 +115,7 @@ button[disabled] {
         Change Your Password
       </h2>
 
-      <h3 id="all-error"></h3>
+      <span id="empty-error" style="margin-left:70px;font-weight:bold;" class="text-danger"></span>
     <div class="inputDiv">
       <label class="inputLabel" for="password">Old Password</label>
       <input type="password" id="oldPassword" name="oldPassword">
@@ -130,11 +130,11 @@ button[disabled] {
     <div class="inputDiv">
       <label class="inputLabel" for="confirmPassword">Confirm New Password</label>
       <input type="password" id="confirmPassword" name="confirmPassword" oninput="validCPassword()">
-      <span id="cpassword-error"></span>
+      <span id="confirmpassword-error"></span>
     </div>
     
     <div class="buttonWrapper">
-      <button type="submit" id="submitButton" onclick="storeData()" class="submitButton pure-button pure-button-primary">
+      <button type="submit" id="submitButton" onclick="checkValidate()" class="submitButton pure-button pure-button-primary">
         <span>Continue</span>
         <span id="loader"></span>
     </button>
@@ -144,70 +144,70 @@ button[disabled] {
 </div>
 
 <script>
-// function validNewPassword()
-//     {
-//         var newPassword = document.getElementById("newPassword");
-//             let p = /^\D+[0-9]{4}$/;
-//             if(!p.test(newPassword.value))
-//             {
-//                 document.getElementById("newPassword-error").innerHTML="Please Enter Valid Password (patel@4040)";
-//         		document.getElementById("newPassword-error").style.color="red";
-//         		document.getElementById("newPassword-error").style.fontSize="15px";
-//         		newPassword.focus();
-//         		return false;
-//             }
-//             else
-//             {
-//                 document.getElementById("newPassword-error").innerHTML="";
-//         		document.getElementById("newPassword-error").style.color="";
-//         		document.getElementById("newPassword-error").style.fontSize="";
-//             }
-//             return true;
-//     }
-//     function validCPassword()
-//     {
-//         var npassword = document.getElementById("newPassword");
-//         var cpassword = document.getElementById("confirmPassword");
-//         if(npassword.value != cpassword.value)
-//         {
-//             // document.getElementById("cpassword-error").innerHTML="Passwords Must be Same";
-//             document.getElementById("cpassword-error").innerHTML="Passwords must be same";
-//             document.getElementById("cpassword-error").style.color="red";
-//             document.getElementById("cpassword-error").style.fontSize="15px";
-//             return false;
-//         }
-//         else
-//         {
-//             document.getElementById("cpassword-error").innerHTML="";
-//             document.getElementById("cpassword-error").style.color="";
-//             document.getElementById("cpassword-error").style.fontSize="";
-//         }
-//         return true;
-//     }
+function validNewPassword()
+    {
+        var newPassword = document.getElementById("newPassword");
+        let p = /^\D+[0-9]{4}$/;
+        if(!p.test(newPassword.value))
+        {
+          document.getElementById("newPassword-error").innerHTML="Please Enter Valid Password (patel@4040)";
+          document.getElementById("newPassword-error").style.color="red";
+          document.getElementById("newPassword-error").style.fontSize="15px";
+          newPassword.focus();
+          return false;
+        }
+            else
+            {
+            document.getElementById("newPassword-error").innerHTML="";
+        		document.getElementById("newPassword-error").style.color="";
+        		document.getElementById("newPassword-error").style.fontSize="";
+            }
+            return true;
+    }
+    function validCPassword()
+    {
+        var newPassword = document.getElementById("newPassword");
+        var cpassword = document.getElementById("confirmPassword");
+        if(newPassword.value != cpassword.value)
+        {
+            document.getElementById("confirmpassword-error").innerHTML="Passwords must be same";
+            document.getElementById("confirmpassword-error").style.color="red";
+            document.getElementById("confirmpassword-error").style.fontSize="15px";
+            cpassword.focus();
+            return false;
+        }
+        else
+        {
+            document.getElementById("confirmpassword-error").innerHTML="";
+            document.getElementById("confirmpassword-error").style.color="";
+            document.getElementById("confirmpassword-error").style.fontSize="";
+        }
+        return true;
+    }
     
-//     function checkValidate()
-//     {
-//         var opassword = document.getElementById("oldPassword");
-//         var npassword = document.getElementById("newPassword");
-//         var cpassword = document.getElementById("confirmPassword");
-//         if(opassword.value.length == "" || npassword.value.length == "" || cpassword.value.length == "")
-//         {
-//             // document.getElementById("all-error").innerHTML="Please fill up the empty field";
-//             document.getElementById("all-error").innerHTML="Please fill up the empty field";
-//             document.getElementById("all-error").style.color="red";
-//             document.getElementById("all-error").style.fontSize="15px";
-//         }
-//         else
-//         {
-//             document.getElementById("all-error").innerHTML="";
-//             document.getElementById("all-error").style.color="";
-//             document.getElementById("all-error").style.fontSize="";
-//             if(validNewPassword() && validCPassword())
-//             {
-//                 storedata()
-//             }
-//         }
-//     }
+    function checkValidate()
+    {
+        var opassword = document.getElementById("oldPassword");
+        var npassword = document.getElementById("newPassword");
+        var cpassword = document.getElementById("confirmPassword");
+        if(opassword.value.length == "" || npassword.value.length == "" || cpassword.value.length == "")
+        {
+            // document.getElementById("all-error").innerHTML="Please fill up the empty field";
+            document.getElementById("empty-error").innerHTML="Please fill up the empty fields";
+            document.getElementById("empty-error").style.color="red";
+            document.getElementById("empty-error").style.fontSize="20px";
+        }
+        else
+        {
+            document.getElementById("empty-error").innerHTML="";
+            document.getElementById("empty-error").style.color="";
+            document.getElementById("empty-error").style.fontSize="";
+            if(validNewPassword() && validCPassword())
+            {
+              storeData();
+            }
+        }
+    }
 
     function storeData() {
             var oldPassword = $('#oldPassword').val();
@@ -228,11 +228,13 @@ button[disabled] {
 
                     if(data == "passwordError")
                     {
-                        alert('Old Password is Incorrect');
-                    }
-                    if(data == "passwordDone")
-                    {
-                        alert('Your Password has been reset');
+                        // alert('Old Password is Incorrect');
+                        document.getElementById("empty-error").innerHTML = "Old Password is Incorrect";
+                      }
+                      if(data == "passwordDone")
+                      {
+                        // alert('Your Password has been reset');
+                        document.getElementById("empty-error").innerHTML = "Your Password has been reset";
                     }
                 },
             })
