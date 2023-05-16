@@ -43,7 +43,7 @@
                             <input type="hidden" name="rid" id="rid" value="{{$route->routeID}}"/>
                             <input type="hidden" name="from" id="from" value="{{$route->startingStationID}}"/>
                             <input type="hidden" name="to" id="to" value="{{$route->endingStationID}}"/>
-                            <input type="hidden" name="date" id="date" value="{{$route->date}}"/>
+                            <input type="hidden" name="date" id="date" value="{{$date}}"/>
                             <input type="hidden" name="time" id="time" value="{{$route->departureTime}}"/>
                             <input type="hidden" name="fare" id="fare" value="{{$route->fare}}"/>
 

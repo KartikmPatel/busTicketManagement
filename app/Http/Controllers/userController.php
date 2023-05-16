@@ -106,13 +106,13 @@ class userController extends Controller
         //     ]
         // );
 
-        $routes = routeModel::where('startingStationID',$r['from'])->where('endingStationID',$r['to'])->where('date',$r['date'])->get();
+        $routes = routeModel::where('startingStationID',$r['from'])->where('endingStationID',$r['to'])->get();
 
         $buses = busModel::all();
-
+        $date = $r['date'];
         if($routes)
         {
-            $data = compact('routes','buses');
+            $data = compact('routes','buses','date');
             return view('User.searchBus')->with($data);
         }
     }
@@ -120,11 +120,11 @@ class userController extends Controller
     public function viewSeat(Request $r)
     {
         // $busSeats = seatModel::where('busNo',$r['busno'])->get();
-        $busSeats = DB::select('select * from '.$r['bno'].'seatTB');
+        $date = $r['date'];
+        $busSeats = DB::select('select * from '.$r['bno'].'seatTB where date="'.$date.'"');
         $rid = $r['rid'];
         $from = $r['from'];
         $to = $r['to'];
-        $date = $r['date'];
         $time = $r['time'];
         $fare = $r['fare'];
         $bus = busModel::find($r['bno']);
@@ -155,7 +155,7 @@ class userController extends Controller
         $book->time = $time;
         $book->save();
 
-        DB::insert('insert into '.$bno.'seatTB values('.$r["display"].',1)');
+        DB::insert('insert into '.$bno.'seatTB values("'.$date.'",'.$seatno.')');
         // return redirect('/');
 
         $station = stationModel::all();
@@ -205,7 +205,7 @@ class userController extends Controller
     {
         return view('User.changePassword');
     }
-    
+
     public function passwordChange(Request $r)
     {
         $cPassword = userModel::where('password',$r['oldPassword'])->first();
