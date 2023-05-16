@@ -333,7 +333,8 @@ class adminController extends Controller
     public function searchSeats(Request $r)
     {
         // $busSeats = seatModel::where('busNo',$r['busno'])->get();
-        $busSeats = DB::select('select * from '.$r["busno"].'seatTB');
+        $date = $r['date'];
+        $busSeats = DB::select('select * from '.$r["busno"].'seatTB where date="'.$date.'"');
         $bus = busModel::find($r['busno']);
         $data = compact('busSeats','bus');
         return view('Admin.searchSeat')->with($data);
