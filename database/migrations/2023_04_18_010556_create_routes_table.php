@@ -19,7 +19,6 @@ return new class extends Migration
             $table->foreign("startingStationID")->references("stationID")->on("stations");
             $table->string("endingStationID");
             $table->foreign("endingStationID")->references("stationID")->on("stations");
-            $table->date("date");
             $table->time("departureTime");
             $table->integer("fare");
             $table->timestamps();

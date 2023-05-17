@@ -130,7 +130,6 @@ class adminController extends Controller
             'busno' => 'required',
             'startStation' => 'required',
             'endStation' => 'required',
-            'date' => 'required',
             'dtime' => 'required',
             'fare' => 'required'
         ],
@@ -138,23 +137,10 @@ class adminController extends Controller
             'busno.required' => 'Please Select BusNo',
             'startStation.required' => 'Please Select Starting Station',
             'endStation.required' => 'Please Select Ending Station',
-            'date.required' => 'Please Select Date',
             'dtime.required' => 'Please Select Departure Time',
             'fare.required' => 'Please Enter Fare'
         ]
     );
-
-     $busRoute = routeModel::where('busNo',$r['busno'])->get();
-
-     foreach($busRoute as $br)
-     {
-         if($br->date == $r['date'])
-         {
-            $message = 'dateError';
-            // $data = compact('error');
-            return $message;
-        }
-    }
 
     if($r['startStation'] == $r['endStation'])
     {
@@ -163,15 +149,14 @@ class adminController extends Controller
     }
     else
     {
-        $message = "routeDone";
         $route = new routeModel;
         $route->busNo = $r['busno'];
         $route->startingStationID = $r['startStation'];
         $route->endingStationID = $r['endStation'];
-        $route->date = $r['date'];
         $route->departureTime = $r['dtime'];
         $route->fare = $r['fare'];
         $route->save();
+        $message = "routeDone";
         return $message;
     }
     // return redirect()->back();
@@ -192,7 +177,6 @@ class adminController extends Controller
         $route->busNo = $r['busno'];
         $route->startingStationID = $st1->stationID;
         $route->endingStationID = $st2->stationID;
-        $route->date = $r['ddate'];
         $route->departureTime = $r['dtime'];
         $route->fare = $r['fare'];
         $route->save();
