@@ -9,6 +9,7 @@ use App\Models\routeModel;
 use App\Models\seatModel;
 use App\Models\staffModel;
 use App\Models\bookingModel;
+use GuzzleHttp\Psr7\Message;
 use Illuminate\Support\Facades\DB;
 
 class adminController extends Controller
@@ -47,7 +48,14 @@ class adminController extends Controller
         // );
 
         $busNo = $r['busno'];
-        if($busNo)
+
+        $bus = busModel::where('busNo',$r['busno'])->first();
+        if($bus)
+        {
+            $message = "busError";
+            return $message;
+        }
+        else
         {
             $bus = new busModel;
             $bus->busNo = $r['busno'];
@@ -62,8 +70,10 @@ class adminController extends Controller
             }
             $bus->type = $r['type'];
             $bus->save();
-        }
 
+            $message = "busSuccess";
+            return $message;
+        }
         //   $value = [$busNo];
         DB::insert("CALL insert_bus('".$busNo."')");
 
@@ -142,7 +152,14 @@ class adminController extends Controller
         ]
     );
 
-    if($r['startStation'] == $r['endStation'])
+    $bus = routeModel::where('busNo',$r['busno'])->first();
+
+    if($bus)
+    {
+        $message = "busError";
+        return $message;
+    }
+    else if($r['startStation'] == $r['endStation'])
     {
         $message = "stationError";
         return $message;

@@ -199,9 +199,9 @@
                     // setTimeout(function() {
                     //     location.reload();
                     // },50);
-                    if(data == "dateError")
+                    if(data == "busError")
                     {
-                        alert('you can not choose 2 date with single bus');
+                        alert('Bus route Already Exists');
                     }
                     if(data == "stationError")
                     {

@@ -217,11 +217,17 @@
                     //     location.reload();
                     // },50);
 
-                    if(data == "insertBus")
-                    {
-                        alert('Bus Insert SuccessFully');
-                        window.location.replace('/manageBus');
-                    }
+                    if(data == "busError")
+                        {
+                            alert('Bus Already Exists');
+                        }
+
+
+                        if(data == "busSuccess")
+                        {
+                            alert('Insert Bus SuccessFully');
+                            window.location.replace('/manageBus');
+                        }
                 },
                 // error: function(data) {
                 //     var errors = data.responseJSON;
@@ -282,6 +288,8 @@
                         // setTimeout(function() {
                         //     location.reload();
                         // },10);
+
+
                         if(data == "updateBus")
                         {
                             alert('Update Bus SuccessFully');
