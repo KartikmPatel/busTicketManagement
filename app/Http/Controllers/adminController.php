@@ -70,14 +70,12 @@ class adminController extends Controller
             }
             $bus->type = $r['type'];
             $bus->save();
+            DB::insert("CALL insert_bus('".$busNo."')");
 
-            $message = "busSuccess";
-            return $message;
         }
         //   $value = [$busNo];
-        DB::insert("CALL insert_bus('".$busNo."')");
 
-        $message = "insertBus";
+        $message = "busSuccess";
         return $message;
         // return redirect()->back();
     }

@@ -137,12 +137,14 @@ class userController extends Controller
         // $rid = $r['rid'];
         $bno = $r['bno'];
         $uid = session('userid');
-        $from = $r['from'];
-        $to = $r['to'];
+        $ssID = stationModel::where('stationID',$r['from'])->first();
+        $esID = stationModel::where('stationID',$r['to'])->first();
         $date = $r['date'];
         $time = $r['time'];
         $seatno=$r['display'];
         $fare=$r['fare'];
+        $from = $ssID->stationName;
+        $to = $esID->stationName;
 
         $book = new bookingModel;
         $book->busNo = $bno;
