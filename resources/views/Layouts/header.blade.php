@@ -46,9 +46,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/"> {{__('home.home')}} </a>
                 </li>
+                @if(session('username'))
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('/viewHistory')}}"> History </a>
                 </li>
+                @endif
             </ul>
             @endif
 

@@ -66,7 +66,7 @@ class adminController extends Controller
             }
             else if($r['type'] == "Sleeper")
             {
-                $bus->size = 24;
+                $bus->size = 20;
             }
             $bus->type = $r['type'];
             $bus->save();
@@ -113,7 +113,7 @@ class adminController extends Controller
         }
         else if($r['type'] == "Sleeper")
         {
-            $bus->size = 24;
+            $bus->size = 20;
         }
         $bus->type = $r['type'];
         $bus->save();

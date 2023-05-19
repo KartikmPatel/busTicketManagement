@@ -764,7 +764,7 @@
     @endphp
 
 
-        <div class="theatre mt-5">
+        <div class="theatre1 mt-5">
             <a class="btn btn-outline-dark ml-3" href="{{url('adminSeats')}}"><i class="ml-1 fa fa-arrow-left backarraow text-danger"></i></a>
             <div class="screen-side">
                 {{-- <div class="screen">Screen</div> --}}
@@ -772,14 +772,20 @@
             </div>
             <div class="exit exit--front">
             </div>
-            <ol class="Cabin">
-                <li class="row row--1">
-                    <ol class="seats" type="A">
+            
+            <div class="row">
+                <div id="lower">Lower</div>
+                <div id="upper">Upper</div>
+            </div>
+
+            <ol class="Cabin1">
+                <!-- <li class="row row--1">
+                    <ol class="seats" type="A"> -->
                         @foreach ($busSeats as $seat)
                             @if (1 == $seat->seatNo)
-                                <li class="seat">
+                                <li class="seat" id="seat1">
                                     <input type="checkbox" disabled id="1" />
-                                    <label for="1">1</label>
+                                    <label for="1" id="s1">1</label>
                                 </li>
                                 @php
                                     $j = true;
@@ -793,14 +799,14 @@
                         @endif
                     @endforeach
                     @if ($j == false)
-                        <li class="seat">
+                        <li class="seat" id="seat1">
                             <input type="checkbox" id="1" />
-                            <label for="">1</label>
+                            <label for="" id="s1">1</label>
                         </li>
                     @endif
                     @foreach ($busSeats as $seat)
                         @if (2 == $seat->seatNo)
-                            <li class="seat">
+                            <li class="seat" id="seat1">
                                 <input type="checkbox" disabled id="2" />
                                 <label for="2">2</label>
                             </li>
@@ -816,16 +822,16 @@
                     @endif
                 @endforeach
                 @if ($j == false)
-                    <li class="seat">
+                    <li class="seat" id="seat1">
                         <input type="checkbox" id="2" />
-                        <label for="">2</label>
+                        <label for="" id="s1">2</label>
                     </li>
                 @endif
                 @foreach ($busSeats as $seat)
                     @if (3 == $seat->seatNo)
-                        <li class="seat">
+                        <li class="seat" id="seat1">
                             <input type="checkbox" disabled id="3" />
-                            <label for="3">3</label>
+                            <label for="3" id="s1">3</label>
                         </li>
                         @php
                             $j = true;
@@ -839,16 +845,16 @@
                 @endif
             @endforeach
             @if ($j == false)
-                <li class="seat">
+                <li class="seat" id="seat1">
                     <input type="checkbox" id="3" />
-                    <label for="">3</label>
+                    <label for="" id="s1">3</label>
                 </li>
             @endif
             @foreach ($busSeats as $seat)
                 @if (4 == $seat->seatNo)
-                    <li class="seat">
+                    <li class="seat" id="seat1">
                         <input type="checkbox" disabled id="4" />
-                        <label for="4">4</label>
+                        <label for="4" id="s1">4</label>
                     </li>
                     @php
                         $j = true;
@@ -862,16 +868,16 @@
                 @endif
             @endforeach
             @if ($j == false)
-                <li class="seat">
+                <li class="seat" id="seat1">
                     <input type="checkbox" id="4" />
-                    <label for="">4</label>
+                    <label for="" id="s1">4</label>
                 </li>
             @endif
             @foreach ($busSeats as $seat)
                 @if (5 == $seat->seatNo)
-                    <li class="seat">
+                    <li class="seat" id="seat1">
                         <input type="checkbox" disabled id="5" />
-                        <label for="5">5</label>
+                        <label for="5" id="s1">5</label>
                     </li>
                     @php
                         $j = true;
@@ -885,463 +891,383 @@
             @endif
         @endforeach
         @if ($j == false)
-            <li class="seat">
+            <li class="seat" id="seat1">
                 <input type="checkbox" id="5" />
-                <label for="">5</label>
+                <label for="" id="s1">5</label>
             </li>
         @endif
-        @foreach ($busSeats as $seat)
-            @if (6 == $seat->seatNo)
-                <li class="seat">
-                    <input type="checkbox" disabled id="6" />
-                    <label for="6">6</label>
+    <!-- </ol>
+    </li> -->
+        </ol>
+
+        <ol class="Cabin2">
+                <!-- <li class="row row--1">
+                    <ol class="seats" type="A"> -->
+                        @foreach ($busSeats as $seat)
+                            @if (6 == $seat->seatNo)
+                                <li class="seat" id="seat1">
+                                    <input type="checkbox" disabled id="6" />
+                                    <label for="6" id="s1">6</label>
+                                </li>
+                                @php
+                                    $j = true;
+                                @endphp
+                            @break
+
+                        @else
+                            @php
+                                $j = false;
+                            @endphp
+                        @endif
+                    @endforeach
+                    @if ($j == false)
+                        <li class="seat" id="seat1">
+                            <input type="checkbox" id="6" />
+                            <label for="" id="s1">6</label>
+                        </li>
+                    @endif
+                    @foreach ($busSeats as $seat)
+                        @if (7 == $seat->seatNo)
+                            <li class="seat" id="seat1">
+                                <input type="checkbox" disabled id="7" />
+                                <label for="7" id="s1">7</label>
+                            </li>
+                            @php
+                                $j = true;
+                            @endphp
+                        @break
+
+                    @else
+                        @php
+                            $j = false;
+                        @endphp
+                    @endif
+                @endforeach
+                @if ($j == false)
+                    <li class="seat" id="seat1">
+                        <input type="checkbox" id="7" />
+                        <label for="" id="s1">7</label>
+                    </li>
+                @endif
+                @foreach ($busSeats as $seat)
+                    @if (8 == $seat->seatNo)
+                        <li class="seat" id="seat1">
+                            <input type="checkbox" disabled id="8" />
+                            <label for="8" id="s1">8</label>
+                        </li>
+                        @php
+                            $j = true;
+                        @endphp
+                    @break
+
+                @else
+                    @php
+                        $j = false;
+                    @endphp
+                @endif
+            @endforeach
+            @if ($j == false)
+                <li class="seat" id="seat1">
+                    <input type="checkbox" id="8" />
+                    <label for="" id="s1">8</label>
                 </li>
+            @endif
+            @foreach ($busSeats as $seat)
+                @if (9 == $seat->seatNo)
+                    <li class="seat" id="seat1">
+                        <input type="checkbox" disabled id="9" />
+                        <label for="9" id="s1">9</label>
+                    </li>
+                    @php
+                        $j = true;
+                    @endphp
+                    @break
+
+                @else
+                    @php
+                        $j = false;
+                    @endphp
+                @endif
+            @endforeach
+            @if ($j == false)
+                <li class="seat" id="seat1">
+                    <input type="checkbox" id="9" />
+                    <label for="" id="s1">9</label>
+                </li>
+            @endif
+            @foreach ($busSeats as $seat)
+                @if (10 == $seat->seatNo)
+                    <li class="seat" id="seat1">
+                        <input type="checkbox" disabled id="10" />
+                        <label for="10" id="s1">10</label>
+                    </li>
+                    @php
+                        $j = true;
+                    @endphp
+                @break
+
+            @else
                 @php
-                    $j = true;
+                    $j = false;
                 @endphp
-            @break
-
-        @else
-            @php
-                $j = false;
-            @endphp
-        @endif
-    @endforeach
-    @if ($j == false)
-        <li class="seat">
-            <input type="checkbox" id="6" />
-            <label for="">6</label>
-        </li>
-    @endif
-    </ol>
-    </li>
-    <li class="row row--2">
-    <ol class="seats" type="A">
-    @foreach ($busSeats as $seat)
-        @if (7 == $seat->seatNo)
-            <li class="seat">
-                <input type="checkbox" disabled id="7" />
-                <label for="7">7</label>
+            @endif
+        @endforeach
+        @if ($j == false)
+            <li class="seat" id="seat1">
+                <input type="checkbox" id="10" />
+                <label for="" id="s1">10</label>
             </li>
-            @php
-                $j = true;
-            @endphp
-        @break
+        @endif
+        
+    <!-- </ol>
+    </li> -->
+        </ol>
 
-    @else
-        @php
-            $j = false;
-        @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-        <input type="checkbox" id="7" />
-        <label for="">7</label>
-    </li>
-    @endif
-    @foreach ($busSeats as $seat)
-    @if (8 == $seat->seatNo)
-        <li class="seat">
-            <input type="checkbox" disabled id="8" />
-            <label for="8">8</label>
-        </li>
-        @php
-            $j = true;
-        @endphp
-    @break
+        <ol class="Cabin3">
+                <!-- <li class="row row--1">
+                    <ol class="seats" type="A"> -->
+                        @foreach ($busSeats as $seat)
+                            @if (11 == $seat->seatNo)
+                                <li class="seat" id="seat1">
+                                    <input type="checkbox" disabled id="11" />
+                                    <label for="11" id="s1">11</label>
+                                </li>
+                                @php
+                                    $j = true;
+                                @endphp
+                            @break
 
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="8" />
-    <label for="">8</label>
-    </li>
-    @endif
-    @foreach ($busSeats as $seat)
-    @if (9 == $seat->seatNo)
-    <li class="seat">
-        <input type="checkbox" disabled id="9" />
-        <label for="9">9</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
+                        @else
+                            @php
+                                $j = false;
+                            @endphp
+                        @endif
+                    @endforeach
+                    @if ($j == false)
+                        <li class="seat" id="seat1">
+                            <input type="checkbox" id="11" />
+                            <label for="" id="s1">11</label>
+                        </li>
+                    @endif
+                    @foreach ($busSeats as $seat)
+                        @if (12 == $seat->seatNo)
+                            <li class="seat" id="seat1">
+                                <input type="checkbox" disabled id="12" />
+                                <label for="12">12</label>
+                            </li>
+                            @php
+                                $j = true;
+                            @endphp
+                        @break
 
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="9" />
-    <label for="">9</label>
-    </li>
-    @endif
-    @foreach ($busSeats as $seat)
-    @if (10 == $seat->seatNo)
-    <li class="seat">
-    <input type="checkbox" disabled id="10" />
-    <label for="10">10</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
+                    @else
+                        @php
+                            $j = false;
+                        @endphp
+                    @endif
+                @endforeach
+                @if ($j == false)
+                    <li class="seat" id="seat1">
+                        <input type="checkbox" id="12" />
+                        <label for="" id="s1">12</label>
+                    </li>
+                @endif
+                @foreach ($busSeats as $seat)
+                    @if (13 == $seat->seatNo)
+                        <li class="seat" id="seat1">
+                            <input type="checkbox" disabled id="13" />
+                            <label for="13" id="s1">13</label>
+                        </li>
+                        @php
+                            $j = true;
+                        @endphp
+                    @break
 
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="10" />
-    <label for="">10</label>
-    </li>
-    @endif
-    @foreach ($busSeats as $seat)
-    @if (11 == $seat->seatNo)
-    <li class="seat">
-    <input type="checkbox" disabled id="11" />
-    <label for="11">11</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
+                @else
+                    @php
+                        $j = false;
+                    @endphp
+                @endif
+            @endforeach
+            @if ($j == false)
+                <li class="seat" id="seat1">
+                    <input type="checkbox" id="13" />
+                    <label for="" id="s1">13</label>
+                </li>
+            @endif
+            @foreach ($busSeats as $seat)
+                @if (14 == $seat->seatNo)
+                    <li class="seat" id="seat1">
+                        <input type="checkbox" disabled id="14" />
+                        <label for="14" id="s1">14</label>
+                    </li>
+                    @php
+                        $j = true;
+                    @endphp
+                    @break
 
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="11" />
-    <label for="">11</label>
-    </li>
-    @endif
-    @foreach ($busSeats as $seat)
-    @if (12 == $seat->seatNo)
-    <li class="seat">
-    <input type="checkbox" disabled id="12" />
-    <label for="12">12</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
+                @else
+                    @php
+                        $j = false;
+                    @endphp
+                @endif
+            @endforeach
+            @if ($j == false)
+                <li class="seat" id="seat1">
+                    <input type="checkbox" id="14" />
+                    <label for="" id="s1">14</label>
+                </li>
+            @endif
+            @foreach ($busSeats as $seat)
+                @if (15 == $seat->seatNo)
+                    <li class="seat" id="seat1">
+                        <input type="checkbox" disabled id="15" />
+                        <label for="15" id="s1">15</label>
+                    </li>
+                    @php
+                        $j = true;
+                    @endphp
+                @break
 
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="12" />
-    <label for="">12</label>
-    </li>
-    @endif
-    </ol>
-    </li>
-    <li class="row row--3">
-    <ol class="seats" type="A">
-    @foreach ($busSeats as $seat)
-    @if (13 == $seat->seatNo)
-    <li class="seat">
-    <input type="checkbox" disabled id="13" />
-    <label for="13">13</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
+            @else
+                @php
+                    $j = false;
+                @endphp
+            @endif
+        @endforeach
+        @if ($j == false)
+            <li class="seat" id="seat1">
+                <input type="checkbox" id="15" />
+                <label for="" id="s1">15</label>
+            </li>
+        @endif
+    <!-- </ol>
+    </li> -->
+        </ol>
 
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="13" />
-    <label for="">13</label>
-    </li>
-    @endif
-    @foreach ($busSeats as $seat)
-    @if (14 == $seat->seatNo)
-    <li class="seat">
-    <input type="checkbox" disabled id="14" />
-    <label for="14">14</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
+        <ol class="Cabin4">
+                <!-- <li class="row row--1">
+                    <ol class="seats" type="A"> -->
+                        @foreach ($busSeats as $seat)
+                            @if (16 == $seat->seatNo)
+                                <li class="seat" id="seat1">
+                                    <input type="checkbox" disabled id="16" />
+                                    <label for="16" id="s1">16</label>
+                                </li>
+                                @php
+                                    $j = true;
+                                @endphp
+                            @break
 
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="14" />
-    <label for="">14</label>
-    </li>
-    @endif
-    @foreach ($busSeats as $seat)
-    @if (15 == $seat->seatNo)
-    <li class="seat">
-    <input type="checkbox" disabled id="15" />
-    <label for="15">15</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
+                        @else
+                            @php
+                                $j = false;
+                            @endphp
+                        @endif
+                    @endforeach
+                    @if ($j == false)
+                        <li class="seat" id="seat1">
+                            <input type="checkbox" id="16" />
+                            <label for="" id="s1">16</label>
+                        </li>
+                    @endif
+                    @foreach ($busSeats as $seat)
+                        @if (17 == $seat->seatNo)
+                            <li class="seat" id="seat1">
+                                <input type="checkbox" disabled id="17" />
+                                <label for="17">17</label>
+                            </li>
+                            @php
+                                $j = true;
+                            @endphp
+                        @break
 
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="15" />
-    <label for="">15</label>
-    </li>
-    @endif
-    {{-- @foreach ($busSeats as $seat)
-    @if (16 == $seat->seatNo)
-    <li class="seat">
-    <input type="checkbox" disabled id="16" />
-    <label for="16">16</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
+                    @else
+                        @php
+                            $j = false;
+                        @endphp
+                    @endif
+                @endforeach
+                @if ($j == false)
+                    <li class="seat" id="seat1">
+                        <input type="checkbox" id="17" />
+                        <label for="" id="s1">17</label>
+                    </li>
+                @endif
+                @foreach ($busSeats as $seat)
+                    @if (18 == $seat->seatNo)
+                        <li class="seat" id="seat1">
+                            <input type="checkbox" disabled id="18" />
+                            <label for="18" id="s1">18</label>
+                        </li>
+                        @php
+                            $j = true;
+                        @endphp
+                    @break
 
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="16" />
-    <label for="">16</label>
-    </li>
-    @endif
-    @foreach ($busSeats as $seat)
-    @if (17 == $seat->seatNo)
-    <li class="seat">
-    <input type="checkbox" disabled id="17" />
-    <label for="17">17</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
+                @else
+                    @php
+                        $j = false;
+                    @endphp
+                @endif
+            @endforeach
+            @if ($j == false)
+                <li class="seat" id="seat1">
+                    <input type="checkbox" id="18" />
+                    <label for="" id="s1">18</label>
+                </li>
+            @endif
+            @foreach ($busSeats as $seat)
+                @if (19 == $seat->seatNo)
+                    <li class="seat" id="seat1">
+                        <input type="checkbox" disabled id="19" />
+                        <label for="19" id="s1">19</label>
+                    </li>
+                    @php
+                        $j = true;
+                    @endphp
+                    @break
 
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="17" />
-    <label for="">17</label>
-    </li>
-    @endif
-    @foreach ($busSeats as $seat)
-    @if (18 == $seat->seatNo)
-    <li class="seat">
-    <input type="checkbox" disabled id="18" />
-    <label for="18">18</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
+                @else
+                    @php
+                        $j = false;
+                    @endphp
+                @endif
+            @endforeach
+            @if ($j == false)
+                <li class="seat" id="seat1">
+                    <input type="checkbox" id="19" />
+                    <label for="" id="s1">19</label>
+                </li>
+            @endif
+            @foreach ($busSeats as $seat)
+                @if (20 == $seat->seatNo)
+                    <li class="seat" id="seat1">
+                        <input type="checkbox" disabled id="20" />
+                        <label for="20" id="s1">20</label>
+                    </li>
+                    @php
+                        $j = true;
+                    @endphp
+                @break
 
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="18" />
-    <label for="">18</label>
-    </li>
-    @endif
-    </ol>
-    </li>
-    <li class="row row--4">
-    <ol class="seats" type="A">
-    @foreach ($busSeats as $seat)
-    @if (19 == $seat->seatNo)
-    <li class="seat">
-    <input type="checkbox" disabled id="19" />
-    <label for="19">19</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
+            @else
+                @php
+                    $j = false;
+                @endphp
+            @endif
+        @endforeach
+        @if ($j == false)
+            <li class="seat" id="seat1">
+                <input type="checkbox" id="20" />
+                <label for="" id="s1">20</label>
+            </li>
+        @endif
+    <!-- </ol>
+    </li> -->
+        </ol>
 
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="19" />
-    <label for="">19</label>
-    </li>
-    @endif
-    @foreach ($busSeats as $seat)
-    @if (20 == $seat->seatNo)
-    <li class="seat">
-    <input type="checkbox" disabled id="20" />
-    <label for="20">20</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
-
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="20" />
-    <label for="">20</label>
-    </li>
-    @endif
-    @foreach ($busSeats as $seat)
-    @if (21 == $seat->seatNo)
-    <li class="seat">
-    <input type="checkbox" disabled id="21" />
-    <label for="21">21</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
-
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="21" />
-    <label for="">21</label>
-    </li>
-    @endif
-    @foreach ($busSeats as $seat)
-    @if (22 == $seat->seatNo)
-    <li class="seat">
-    <input type="checkbox" disabled id="22" />
-    <label for="22">22</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
-
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="22" />
-    <label for="">22</label>
-    </li>
-    @endif
-    @foreach ($busSeats as $seat)
-    @if (23 == $seat->seatNo)
-    <li class="seat">
-    <input type="checkbox" disabled id="23" />
-    <label for="23">23</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
-
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="23" />
-    <label for="">23</label>
-    </li>
-    @endif
-    @foreach ($busSeats as $seat)
-    @if (24 == $seat->seatNo)
-    <li class="seat">
-    <input type="checkbox" disabled id="24" />
-    <label for="24">24</label>
-    </li>
-    @php
-        $j = true;
-    @endphp
-    @break
-
-    @else
-    @php
-        $j = false;
-    @endphp
-    @endif
-    @endforeach
-    @if ($j == false)
-    <li class="seat">
-    <input type="checkbox" id="24" />
-    <label for="">24</label>
-    </li>
-    @endif
-    </ol>
-    </li>
-    </ol> --}}
+    
     {{-- <div class="exit exit--back"> --}}
 
     </div>
