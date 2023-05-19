@@ -46,6 +46,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/"> {{__('home.home')}} </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/viewHistory')}}"> History </a>
+                </li>
             </ul>
             @endif
 

@@ -11,6 +11,7 @@ use App\Models\busModel;
 use App\Models\stationModel;
 use App\Models\routeModel;
 use App\Models\bookingModel;
+use App\Models\historyModel;
 use PDF;
 
 class userController extends Controller
@@ -223,5 +224,15 @@ class userController extends Controller
             $message = "passwordError";
             return $message;
         }
+    }
+
+    public function viewHistory()
+    {
+        $userID = session('userid');
+
+        $historys = historyModel::where('userID',$userID)->get();
+
+        $data = compact('historys');
+        return view('User.viewHistory')->with($data);
     }
 }
