@@ -162,8 +162,9 @@ class userController extends Controller
         // return redirect('/');
 
         $station = stationModel::all();
+        $ticket = bookingModel::all();
         $uname = session('username');
-        $data = compact('bno','uname','seatno','fare','from','to','date','time','station');
+        $data = compact('bno','uname','seatno','fare','from','to','date','time','station','ticket');
         return view("User.viewTicket")->with($data);
     }
 
@@ -176,8 +177,9 @@ class userController extends Controller
         $seatno = $r['seatno'];
         $date = $r['date'];
         $fare = $r['fare'];
+        $tid = $r['ticketID'];
 
-        $pdf_view = PDF::loadView('User.downloadTicket',compact('st1','st2','uname','bno','seatno','date','fare'));
+        $pdf_view = PDF::loadView('User.downloadTicket',compact('st1','st2','uname','bno','seatno','date','fare','tid'));
         return $pdf_view->download('ticket.pdf');
     }
 
@@ -234,5 +236,38 @@ class userController extends Controller
 
         $data = compact('historys');
         return view('User.viewHistory')->with($data);
+    }
+
+    public function cancelTicket()
+    {
+        return view("User.cancelTicket");
+    }
+
+    public function ticketCancel(Request $r)
+    {
+        $cancel = bookingModel::where('ticketID',$r['ticketID'])->first();
+        if($cancel)
+        {
+            $curDate = now()->format('Y-m-d');
+            // $curTime = now()->format('H:m:s');
+            $ticket = bookingModel::where('ticketID',$r['ticketID'])->where('date','>',$curDate)->first();
+            if($ticket)
+            {
+                bookingModel::find($r['ticketID'])->delete();
+                
+                $message = "DoneTicket";
+                return $message;
+            }
+            else
+            {
+                $message = "lateTime";
+                return $message;
+            }
+        }
+        else
+        {
+            $message = "notTicket";
+            return $message;
+        }
     }
 }

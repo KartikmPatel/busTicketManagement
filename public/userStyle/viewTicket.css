@@ -290,10 +290,20 @@ body{
     font-size: 18px;
     color: rgba(255,255,255,0.6);
   }
+
   .fare{
     position: absolute;
     margin-top: 60px;
     margin-left: 350px;
+    font-family: Arial;
+    font-size: 18px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .ticketID{
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 240px;
     font-family: Arial;
     font-size: 18px;
     color: rgba(255,255,255,0.6);
@@ -433,7 +443,22 @@ body{
     font-size: 14px;
     color: #999;
   }
+  .ticketID{
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 240px;
+    font-family: Arial Narrow, Arial;
+    font-weight: bold;
+    font-size: 14px;
+    color: #999;
+  }
+
   .fare span{
+    color: #555;
+    font-size: 17px;
+  }
+
+  .ticketID span{
     color: #555;
     font-size: 17px;
   }

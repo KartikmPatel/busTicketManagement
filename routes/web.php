@@ -45,6 +45,7 @@ route::get('deleteStation/{id}',[adminController::class,'deleteStation']);
 // route::get('editBus/{id}',[adminController::class,'editBus']);
 route::post('updateStation/{id}',[adminController::class,'updateStation']);
 route::get('manageBooking',[adminController::class,'manageBooking']);
+route::get('manageCancelTicket',[adminController::class,'manageCancelTicket']);
 
 route::get('adminSeats',[adminController::class,'adminSeats']);
 route::post('searchSeats',[adminController::class,'searchSeats']);
@@ -73,3 +74,5 @@ route::get('changePassword',[userController::class,'changePassword']);
 route::post('passwordChange',[userController::class,'passwordChange']);
 
 route::get('viewHistory',[userController::class,'viewHistory']);
+route::get('cancelTicket',[userController::class,'cancelTicket']);
+route::post('ticketCancel',[userController::class,'ticketCancel']);

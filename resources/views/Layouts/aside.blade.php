@@ -18,7 +18,7 @@
         <span><i class="fas fa-playstation"></i><a href="{{url('/adminSeats')}}" class="c1"> Seats </a></span><br><br/>
         <span><i class="fab fa-playstation"></i><a href="{{url('/manageStation')}}" class="c1"> Stations</a></span><br><br/>
         <span><i class="fa fa-people-group"></i><a href="{{url('/manageStaff')}}" class="c1"> Staffs</a></span><br><br/>
-        <span><i class="fa fa-ticket"></i><a href="" class="c1"> SMS Ticket</a></span><br><br/>
+        <span><i class="fa fa-ticket-simple"></i><a href="{{url('/manageCancelTicket')}}" class="c1"> Cancel Ticket</a></span><br><br/>
         <span><i class="fa fa-ticket"></i><a href="{{url('manageBooking')}}" class="c1"> Bookings </a></span><br><br/>
       </div>
     </div>

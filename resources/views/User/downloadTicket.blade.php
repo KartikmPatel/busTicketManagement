@@ -298,6 +298,14 @@
     font-size: 18px;
     color: rgba(255,255,255,0.6);
   }
+  .ticketID{
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 240px;
+    font-family: Arial;
+    font-size: 18px;
+    color: rgba(255,255,255,0.6);
+  }
   
   .jfk{
     position: absolute;
@@ -434,7 +442,23 @@
     font-size: 14px;
     color: #999;
   }
+  
+  .ticketID{
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 240px;
+    font-family: Arial Narrow, Arial;
+    font-weight: bold;
+    font-size: 14px;
+    color: #999;
+  }
+
   .fare span{
+    color: #555;
+    font-size: 17px;
+  }
+
+  .ticketID span{
     color: #555;
     font-size: 17px;
   }
@@ -607,6 +631,7 @@
         <span class="flight">Bus No&deg;<br><span>{{ $bno }}</span></span>
         <span class="seat">SEAT<br><span>{{ $seatno }}</span></span>
         <span class="boardingtime">DEPARTURETIME<br><span>{{ $date }}</span></span>
+        <span class="ticketID">Ticket Id<br><span>{{ $tid }}</span></span>
         <span class="fare">FARE<br><span>{{ $fare }}</span></span>
         
          <span class="flight flightslip">Bus No&deg;<br><span>{{ $bno }}</span></span>

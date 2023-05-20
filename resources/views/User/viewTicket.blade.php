@@ -23,6 +23,12 @@
       <input type="hidden" name="bno" id="bno" value="{{ $bno }}">
       <input type="hidden" name="seatno" id="seatno" value="{{ $seatno }}">
       <input type="hidden" name="date" id="date" value="{{$time}} ON {{$date}}">
+      @foreach($ticket as $t)
+        @if($t->busNo == $bno && $t->seatNo == $seatno && $t->date == $date)
+          <!-- <span class="ticketID">Ticket Id<br><span>{{ $t->ticketID }}</span></span> -->
+          <input type="hidden" name="ticketID" id="ticketID" value="{{ $t->ticketID }}">
+        @endif
+        @endforeach
       <input type="hidden" name="fare" id="fare" value="{{ $fare }}">
 
         <button type="submit" class='btn btn-warning down'><i class="fa fa-download" id="down" aria-hidden="true"></i></button>
@@ -95,12 +101,18 @@
       @endforeach --}}
       <span class="sfo sfoslip">{{ $to }}</span>
 
+      
       <div class="sub-content">
         <span class="watermark">{{__('home.name')}}</span>
         <span class="name">{{__('home.passenger')}}<br><span>{{ $uname }}</span></span>
         <span class="flight">{{__('home.bno')}}&deg;<br><span>{{ $bno }}</span></span>
         <span class="seat">{{__('home.sNo')}}<br><span>{{ $seatno }}</span></span>
         <span class="boardingtime">{{__('home.dTime')}}<br><span>{{$time}} ON {{$date}}</span></span>
+        @foreach($ticket as $t)
+        @if($t->busNo == $bno && $t->seatNo == $seatno && $t->date == $date)
+          <span class="ticketID">Ticket Id<br><span>{{ $t->ticketID }}</span></span>
+        @endif
+        @endforeach
         <span class="fare">{{__('home.fare')}}<br><span>{{ $fare }}</span></span>
 
          <span class="flight flightslip">{{__('home.bno')}}&deg;<br><span>{{ $bno }}</span></span>

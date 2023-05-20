@@ -9,6 +9,7 @@ use App\Models\routeModel;
 use App\Models\seatModel;
 use App\Models\staffModel;
 use App\Models\bookingModel;
+use App\Models\cancelticketModel;
 use GuzzleHttp\Psr7\Message;
 use Illuminate\Support\Facades\DB;
 
@@ -344,5 +345,12 @@ class adminController extends Controller
         $tickets = bookingModel::all();
         $data = compact('tickets');
         return view('Admin.manageBooking')->with($data);
+    }
+
+    public function manageCancelTicket()
+    {
+        $ticket = cancelticketModel::all();
+        $data = compact('ticket');
+        return view('Admin.managecancelTicket')->with($data);
     }
 }

@@ -51,6 +51,9 @@
                     <a class="nav-link" href="{{url('/viewHistory')}}"> History </a>
                 </li>
                 @endif
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/cancelTicket')}}"> Ticket Cancel </a>
+                </li>
             </ul>
             @endif
 
