@@ -246,6 +246,9 @@ class userController extends Controller
     public function ticketCancel(Request $r)
     {
         $cancel = bookingModel::where('ticketID',$r['ticketID'])->first();
+        $seatno = $cancel->seatNo;
+        $date = $cancel->date;
+        $busno = $cancel->busNo;
         if($cancel)
         {
             $curDate = now()->format('Y-m-d');
@@ -254,7 +257,8 @@ class userController extends Controller
             if($ticket)
             {
                 bookingModel::find($r['ticketID'])->delete();
-                
+                DB::insert("CALL cancel_ticket('".$busno."',".$seatno.",'".$date."')");
+
                 $message = "DoneTicket";
                 return $message;
             }
