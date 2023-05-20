@@ -109,7 +109,7 @@ button[disabled] {
       <img src="images1/bus13.jpg" id="signupLogo"/>
       
       <h2 class="formTitle">
-        Cancel Your Ticket
+        Cancel Your Booking
       </h2>
 
       <span id="empty-error" style="margin-left:70px;font-weight:bold;" class="text-danger"></span>
@@ -166,7 +166,7 @@ button[disabled] {
 
                       if(data == "DoneTicket")
                       {
-                        document.getElementById("empty-error").innerHTML = "The ticket has been cancelled";
+                        document.getElementById("empty-error").innerHTML = "The booking has been cancelled";
                       }
 
                       if(data == "notTicket")
@@ -176,7 +176,7 @@ button[disabled] {
                       
                       if(data == "lateTime")
                       {
-                        document.getElementById("empty-error").innerHTML = "Sorry, your ticket will not be canceled on the day of travel";
+                        document.getElementById("empty-error").innerHTML = "Sorry, your booking will not be canceled on the day of travel";
                       }
                 },
             })
