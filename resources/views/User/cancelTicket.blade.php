@@ -107,7 +107,7 @@ button[disabled] {
 <div class="mainDiv">
   <div class="cardStyle">
       <img src="images1/bus13.jpg" id="signupLogo"/>
-      
+
       <h2 class="formTitle">
         Cancel Your Booking
       </h2>
@@ -117,14 +117,14 @@ button[disabled] {
       <label class="inputLabel" for="ticket">Ticket Id</label>
       <input type="text" id="ticketID" name="ticketID">
     </div>
-    
+
     <div class="buttonWrapper">
       <button type="submit" id="submitButton" onclick="checkValidate()" class="submitButton pure-button pure-button-primary">
         <span>Continue</span>
         <span id="loader"></span>
     </button>
     </div>
-      
+
   </div>
 </div>
 
@@ -173,7 +173,7 @@ button[disabled] {
                       {
                         document.getElementById("empty-error").innerHTML = "Booking is Not Available";
                       }
-                      
+
                       if(data == "lateTime")
                       {
                         document.getElementById("empty-error").innerHTML = "Sorry, your booking will not be canceled on the day of travel";
