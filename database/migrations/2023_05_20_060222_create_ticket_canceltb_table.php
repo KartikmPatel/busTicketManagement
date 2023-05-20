@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer("fare");
             $table->string("Source");
             $table->string("Destination");
+            $table->string("Status");
             $table->date("busDate");
             $table->time("busTime");
             $table->timestamps();
