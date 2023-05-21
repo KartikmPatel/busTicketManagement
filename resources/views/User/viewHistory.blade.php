@@ -56,10 +56,10 @@
                                     {{ $h->Status }}
                                 </td>
                                 @endif
-                                
+
                                 @foreach($ticket as $t)
-                                @if($h->busDate >= $curDate && $h->Status == "Successful" && $h->busNo == $t->busNo && $h->seatNo == $t->seatNo && $h->busDate == $t->date)
-                                <td>
+                                @if($h->busDate > $curDate && $h->Status == "Successful" && $h->busNo == $t->busNo && $h->seatNo == $t->seatNo && $h->busDate == $t->date)
+                                <td class="row">
                                     <form action="{{url('showTicket')}}" method="post">
                                         @csrf
                                         <input type="hidden" name="from" id="from" value="{{ $t->from }}">
@@ -73,6 +73,11 @@
 
                                         <button class='btn btn-warning btn-sm'><i class="fa fa-eye" aria-hidden="true"></i></button>
                                     </form>
+                                    <form action="ticketCancel2" method="post">
+                                        @csrf
+                                        <input type="hidden" name="ticketID" id="ticketID" value="{{ $t->ticketID }}">
+                                        <button tyep="submit" class="btn btn-danger ml-3 btn-sm" onclick="cancelTicket()"> Cancel Ticket</button>
+                                    </form>
                               </td>
                               @endif
                             @endforeach
@@ -81,5 +86,10 @@
                 </tbody>
             </table>
         </div>
+        <script>
+            function cancelTicket(){
+                alert('Your Ticket Has Been Canceled Successfully');
+            }
+            </script>
     </body>
 @endsection

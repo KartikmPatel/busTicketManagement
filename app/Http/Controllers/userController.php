@@ -232,9 +232,10 @@ class userController extends Controller
     {
         $userID = session('userid');
 
-        $historys = historyModel::where('userID',$userID)->get();
+        $historys = historyModel::where('userID',$userID)->latest('historyID')->get();
         $ticket = bookingModel::all();
         $curDate = now()->format('Y-m-d');
+        // $curTime = now()->format('H:i:s');
 
         $data = compact('historys','ticket','curDate');
         return view('User.viewHistory')->with($data);
@@ -288,8 +289,29 @@ class userController extends Controller
         $tid=$r['tid'];
         $from=$r['from'];
         $to=$r['to'];
-        
+
         $data = compact('bno','uname','seatno','fare','from','to','date','time','tid');
         return view("User.showTicket")->with($data);
+    }
+
+    public function ticketCancel2(Request $r)
+    {
+        $cancel = bookingModel::where('ticketID',$r['ticketID'])->first();
+        $seatno = $cancel->seatNo;
+        $date = $cancel->date;
+        $busno = $cancel->busNo;
+        if($cancel)
+        {
+            $curDate = now()->format('Y-m-d');
+            // $curTime = now()->format('H:m:s');
+            $ticket = bookingModel::where('ticketID',$r['ticketID'])->where('date','>=',$curDate)->first();
+            if($ticket)
+            {
+                bookingModel::find($r['ticketID'])->delete();
+                DB::insert("CALL cancel_ticket('".$busno."',".$seatno.",'".$date."')");
+
+                return redirect('/viewHistory');
+            }
+        }
     }
 }
