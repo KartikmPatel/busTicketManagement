@@ -38,6 +38,11 @@
                     <td>
                         {{$t->Destination}}
                     </td>
+                    
+                    <td class="text-danger" style="font-weight:bold;">
+                        {{ $t->Status }}
+                    </td>
+
                     <td>
                         {{$t->seatNo}}
                     </td>

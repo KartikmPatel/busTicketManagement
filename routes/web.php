@@ -68,6 +68,8 @@ route::post('viewSeat',[userController::class,'viewSeat']);
 route::post('booking',[userController::class,'booking']);
 route::post('/downloadTicket',[userController::class,'downloadTicket']);
 
+route::post('showTicket',[userController::class,'showTicket']);
+
 route::get('viewProfile',[userController::class,'viewProfile']);
 route::post('editProfile',[userController::class,'editProfile']);
 route::get('changePassword',[userController::class,'changePassword']);

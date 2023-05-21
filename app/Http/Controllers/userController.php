@@ -233,8 +233,10 @@ class userController extends Controller
         $userID = session('userid');
 
         $historys = historyModel::where('userID',$userID)->get();
+        $ticket = bookingModel::all();
+        $curDate = now()->format('Y-m-d');
 
-        $data = compact('historys');
+        $data = compact('historys','ticket','curDate');
         return view('User.viewHistory')->with($data);
     }
 
@@ -273,5 +275,21 @@ class userController extends Controller
             $message = "notTicket";
             return $message;
         }
+    }
+
+    public function showTicket(Request $r)
+    {
+        $bno = $r['bno'];
+        $uname = session('username');
+        $date = $r['date'];
+        $time = $r['time'];
+        $seatno=$r['seatno'];
+        $fare=$r['fare'];
+        $tid=$r['tid'];
+        $from=$r['from'];
+        $to=$r['to'];
+        
+        $data = compact('bno','uname','seatno','fare','from','to','date','time','tid');
+        return view("User.showTicket")->with($data);
     }
 }

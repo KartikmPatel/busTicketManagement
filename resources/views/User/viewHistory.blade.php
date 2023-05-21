@@ -20,11 +20,12 @@
                         <th> Time </th>
                         <th> Fare </th>
                         <th> Status </th>
+                        <th> View Ticket </th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($historys as $h)
-                        <tr>
+                    <tr>
                             <td>
                                 {{ $h->busNo }}
                             </td>
@@ -47,14 +48,34 @@
                                 {{ $h->fare }}
                             </td>
                             @if ($h->Status == 'Successful')
-                                <td class="text-success">
-                                    {{ $h->Status }}
-                                </td>
+                            <td class="text-success" style="font-weight:bold;">
+                                {{ $h->Status }}
+                            </td>
                             @else
-                                <td class="text-danger">
+                                <td class="text-danger" style="font-weight:bold;">
                                     {{ $h->Status }}
                                 </td>
-                            @endif
+                                @endif
+                                
+                                @foreach($ticket as $t)
+                                @if($h->busDate >= $curDate && $h->Status == "Successful" && $h->busNo == $t->busNo && $h->seatNo == $t->seatNo && $h->busDate == $t->date)
+                                <td>
+                                    <form action="{{url('showTicket')}}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="from" id="from" value="{{ $t->from }}">
+                                        <input type="hidden" name="to" id="to" value="{{ $t->to }}">
+                                        <input type="hidden" name="bno" id="bno" value="{{ $t->busNo }}">
+                                        <input type="hidden" name="seatno" id="seatno" value="{{ $t->seatNo }}">
+                                        <input type="hidden" name="date" id="date" value="{{ $t->date }}">
+                                        <input type="hidden" name="time" id="time" value="{{ $t->time }}">
+                                        <input type="hidden" name="tid" id="tid" value="{{ $t->ticketID }}">
+                                        <input type="hidden" name="fare" id="fare" value="{{ $t->fare }}">
+
+                                        <button class='btn btn-warning btn-sm'><i class="fa fa-eye" aria-hidden="true"></i></button>
+                                    </form>
+                              </td>
+                              @endif
+                            @endforeach
                         </tr>
                     @endforeach
                 </tbody>
