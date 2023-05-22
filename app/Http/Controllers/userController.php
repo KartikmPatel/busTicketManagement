@@ -42,12 +42,22 @@ class userController extends Controller
         //         ]
         //     );
 
-                $user = new userModel();
-                $user->userName = $r['username'];
-                $user->password = $r['password'];
-                $user->save();
-
-                return redirect('/');
+        $check = userModel::where('password',$r['password'])->first();
+        if($check)
+        {
+            $message = "signupError";
+            return $message;
+        }
+        else
+        {
+            $user = new userModel();
+            $user->userName = $r['username'];
+            $user->password = $r['password'];
+            $user->save();
+            
+            $message = "signupDone";
+            return $message;
+        }
     }
 
     public function login(Request $r)

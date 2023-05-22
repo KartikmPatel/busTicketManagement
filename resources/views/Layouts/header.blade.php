@@ -323,9 +323,19 @@
                     cpassword: cpassword
                 },
                 success: function(data) {
-                    setTimeout(function() {
-                        location.reload();
-                    },50);
+                    // setTimeout(function() {
+                    //     location.reload();
+                    // },50);
+
+                    if(data == "signupError")
+                    {
+                        alert('Username or Password already Exits!');
+                    }
+
+                    if(data == "signupDone")
+                    {
+                        window.location.replace('/');
+                    }
                 },
                 error: function(data) {
                     var errors = data.responseJSON;
