@@ -65,8 +65,11 @@ route::get('logout',[userController::class,'logout']);
 
 route::post('searchBus',[userController::class,'searchBus']);
 route::post('viewSeat',[userController::class,'viewSeat']);
-route::post('booking',[userController::class,'booking']);
-route::post('/downloadTicket',[userController::class,'downloadTicket']);
+
+route::middleware(['guard'])->group(function(){
+    route::post('booking',[userController::class,'booking']);
+    route::post('/downloadTicket',[userController::class,'downloadTicket']);
+});
 
 route::post('showTicket',[userController::class,'showTicket']);
 

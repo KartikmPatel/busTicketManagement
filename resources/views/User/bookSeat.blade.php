@@ -33,7 +33,7 @@
 
 
     <div class="theatre mt-5">
-        <a class="btn btn-outline-dark ml-3" href="{{url('adminSeats')}}"><i class="ml-1 fa fa-arrow-left backarraow text-danger"></i></a>
+        <a class="btn btn-outline-dark ml-3" href="{{url('/')}}"><i class="ml-1 fa fa-arrow-left backarraow text-danger"></i></a>
         <div class="screen-side">
             {{-- <div class="screen">Screen</div> --}}
             <h3 class="select-text">{{ $bus->busNo }}</h3>
@@ -774,12 +774,20 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="{{url('booking')}}" method="post">
+                        <form action="{{url('booking')}}" method="post" onsubmit="return validate1()">
                             @csrf
-                            <label> {{__('home.username')}} :- </label>
-                            <input type="text" class="form-control" name="uname" id="uname" readonly value="{{session('username')}}">
+                            @if(session('username'))
+                                <label> {{__('home.username')}} :- </label>
+                                <input type="text" class="form-control" name="uname" id="uname" readonly value="{{session('username')}}">
+                            @else
+                                <span class="text-danger">Please First LoggedIn</span><br>
+                                <label> {{__('home.username')}} :- </label>
+                                <input type="text" class="form-control" name="uname" id="uname" readonly value="{{session('username')}}">
+                            @endif
+
                             <label> {{__('home.sNo')}} :- </label>
                             <input type="text" name="display" id="display" class="form-control" readonly/>
+                            <span id="seatError" class="text-danger" style="font-weight:bold;"></span><br>
                             <label> {{__('home.fare')}} :- </label>
                             <input type="text" class="form-control" name="fare" id="fare" readonly value="{{$fare}}">
 
@@ -790,7 +798,7 @@
                             <input type="hidden" name="date" id="date" value="{{$date}}"/>
                             <input type="hidden" name="time" id="time" value="{{$time}}"/>
                             <input type="hidden" name="fare" id="fare" value="{{$fare}}"/>
-                            <button type="submit" class="btn btn-success mt-3">{{__('home.payment')}}</button>
+                            <button type="submit" class="btn btn-success mt-3" onclick="validate1()">{{__('home.payment')}}</button>
                         </form>
                     </div>
                 </div>
@@ -808,6 +816,20 @@
           });
       });
 
+      function validate1()
+      {
+        var seat5 = document.getElementById('display');
+        if(seat5.value.length == "")
+        {
+            document.getElementById("seatError").innerHTML = "Please Select the Seat";
+            document.getElementById("seatError").style.fontSize = "15px";
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+      }
 
     function display1()
     {
@@ -993,7 +1015,7 @@
 
 
 <div class="theatre1 mt-5">
-            <a class="btn btn-outline-dark ml-3" href="{{url('adminSeats')}}"><i class="ml-1 fa fa-arrow-left backarraow text-danger"></i></a>
+            <a class="btn btn-outline-dark ml-3" href="{{url('/')}}"><i class="ml-1 fa fa-arrow-left backarraow text-danger"></i></a>
             <div class="screen-side">
                 {{-- <div class="screen">Screen</div> --}}
                 <h3 class="select-text">{{ $bus->busNo }}</h3>
@@ -1518,12 +1540,20 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="{{url('booking')}}" method="post">
+                        <form action="{{url('booking')}}" method="post" onsubmit="return validate()">
                             @csrf
-                            <label> {{__('home.username')}} :- </label>
-                            <input type="text" class="form-control" name="uname" id="uname" readonly value="{{session('username')}}">
+                            @if(session('username'))
+                                <label> {{__('home.username')}} :- </label>
+                                <input type="text" class="form-control" name="uname" id="uname" readonly value="{{session('username')}}">
+                            @else
+                                <span class="text-danger">Please First LoggedIn</span><br>
+                                <label> {{__('home.username')}} :- </label>
+                                <input type="text" class="form-control" name="uname" id="uname" readonly value="{{session('username')}}">
+                            @endif
+
                             <label> {{__('home.sNo')}} :- </label>
                             <input type="text" name="display" id="display" class="form-control" readonly/>
+                            <span id="seatError" class="text-danger" style="font-weight:bold;"></span><br>
                             <label> {{__('home.fare')}} :- </label>
                             <input type="text" class="form-control" name="fare" id="fare" readonly value="{{$fare}}">
 
@@ -1534,7 +1564,7 @@
                             <input type="hidden" name="date" id="date" value="{{$date}}"/>
                             <input type="hidden" name="time" id="time" value="{{$time}}"/>
                             <input type="hidden" name="fare" id="fare" value="{{$fare}}"/>
-                            <button type="submit" class="btn btn-success mt-3">{{__('home.payment')}}</button>
+                            <button type="submit" class="btn btn-success mt-3" onclick="validate()">{{__('home.payment')}}</button>
                         </form>
                     </div>
                 </div>
@@ -1552,6 +1582,20 @@
           });
       });
 
+      function validate()
+      {
+        var seat5 = document.getElementById('display');
+        if(seat5.value.length == "")
+        {
+            document.getElementById("seatError").innerHTML = "Please Select the Seat";
+            document.getElementById("seatError").style.fontSize = "15px";
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+      }
 
     function display1()
     {
@@ -1666,17 +1710,7 @@
                 document.getElementById('display').value="20";
             }
         }
-        else
-        {
-            alert("Please select the seat");
-            $(document).ready(function()
-            {
-                $("#b1").click(function()
-                {
-                    $("#modelId").hide();
-                });
-            });
-        }
+
         // var i;
         // for(i=1;i<=30;i++)
         // {
