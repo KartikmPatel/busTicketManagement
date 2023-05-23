@@ -2,6 +2,7 @@
   <head>
     <link rel="stylesheet" href="{{asset('userStyle/viewTicket.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
       <div class="download">
@@ -26,7 +27,7 @@
       <input type="hidden" name="ticketID" id="ticketID" value="{{ $tid }}">
       <input type="hidden" name="fare" id="fare" value="{{ $fare }}">
 
-        <button type="submit" class='btn btn-warning down'><i class="fa fa-download" id="down" aria-hidden="true"></i></button>
+        <button type="submit" class='btn btn-info down'><i class="fa fa-download" id="down" aria-hidden="true"></i></button>
       </form>
     </div>
 
@@ -115,5 +116,7 @@
     <div class="barcode slip"></div>
   </div>
 </div>
+
+<a href="{{url('/')}}"><button class="btn btn-success" style="margin-left:30%;cursor:pointer;margin-top:-70px;">Home</button></a>
     </body>
 </html>
