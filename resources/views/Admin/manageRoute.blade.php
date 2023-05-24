@@ -99,7 +99,7 @@
                 </div>
             </div>
         </div>
-        <table class="table col-md-10 mt-2 bg-secondary table-hover text-white" id="tblData">
+        <!-- <table class="table col-md-10 mt-2 bg-secondary table-hover text-white" id="tblData">
             <thead class="thead-dark">
                 <tr>
                     <th> Route ID </th>
@@ -150,18 +150,83 @@
                         {{ $r->fare }}
                     </td>
                     <td class="tdAction">
-                    {{-- <!-- href="{{url('editBus')}}/{{ $b->busNo }}"
-                        <a class="btn btn-outline-warning"><i
-                            class="fa fa-edit text-white" id="a1"></i></a>
-                            <a href="{{ url('/deleteBus') }}/{{ $b->busNo }}" class="btn btn-outline-danger"><i
-                                class="fa fa-trash-can text-white"></i></a> --> --}}
                         <button class='btn btn-success btn-sm btn-edit' ><i class="fa fa-edit text-white"></i></button>
                         <a href="{{ url('/deleteRoute') }}/{{ $r->routeID }}" class='btn btn-danger btn-sm'> <i class="fa fa-trash-can text-white"></i> </a>
                     </td>
                 </tr>
             @endforeach
             </tbody>
-        </table>
+        </table> -->
+
+        <div class="viewTable">
+            <table class="content1-table1 col-md-7" id="tblData" style="margin-top:30px;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th> Route ID </th>
+                        <th> Bus No </th>
+                        <th> Starting Station </th>
+                        <th> Ending Station </th>
+                        <th> Departure Time </th>
+                        <th>Fare</th>
+                        <th> Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($routes as $r)
+                    <tr>
+                    <td>
+                        <img src="./images/route1.png" width="70px" height="50px" alt=""/>
+                    </td>
+                    <td class="rID col-md-1">
+                        {{$r->routeID}}
+                    </td>
+                    <td class="bno">
+                        {{ $r->busNo }}
+                        {{-- <select name='busno' class='form-control txtbno'>
+                            @foreach($buses as $b)
+                            @if ($r->busNo == $b->busNo)
+                            <option value='{{ $b->busNo }}' selected>{{$b->busNo}}</option>
+                            @else
+                            <option value='{{ $b->busNo }}'>{{$b->busNo}}</option>
+                            @endif
+                            @endforeach
+                        </select> --}}
+                    </td>
+                    <td class="ssID">
+                        @foreach ($stations as $s)
+                        @if($r->startingStationID == $s->stationID)
+                        {{ $s->stationName }}
+                        @endif
+                        @endforeach
+                    </td>
+                    <td class="esID">
+                        @foreach ($stations as $s)
+                        @if($r->endingStationID == $s->stationID)
+                        {{ $s->stationName }}
+                        @endif
+                        @endforeach
+                    </td>
+                    <td class="dtime">
+                        {{ $r->departureTime}}
+                    </td>
+                    <td class="fare col-md-1">
+                        {{ $r->fare }}
+                    </td>
+                    <td class="tdAction">
+                        <button class='btn btn-success btn-sm btn-edit' ><i class="fa fa-edit text-white"></i></button>
+                        <a href="{{ url('/deleteRoute') }}/{{ $r->routeID }}" class='btn btn-danger btn-sm'> <i class="fa fa-trash-can text-white"></i> </a>
+                    </td>
+                </tr>
+            @endforeach
+  </tbody>
+</table>
+    </div>
+
+    <br>
+<div style="margin-left:37%;">
+    {{ $routes->links() }}
+</div>
 
     </div>
         <script>

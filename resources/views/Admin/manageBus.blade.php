@@ -5,76 +5,115 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <title> Manage Bus </title>
 </head>
-    <div class="ml-4 mt-3">
-        <h2> Buses </h2>
-        {{-- <button class="btn btn-outline-dark"> Add Bus</button> --}}
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-outline-dark btn-lg" data-toggle="modal" data-target="#modelId">
-            Add Bus
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">{{$title}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container-fluid">
+<div class="ml-4 mt-3">
+    <h2> Buses </h2>
+    {{-- <button class="btn btn-outline-dark"> Add Bus</button> --}}
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-outline-dark btn-lg" data-toggle="modal" data-target="#modelId">
+        Add Bus
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{$title}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
                         <span class="" id="all-error">
-                                </span>
+                            </span>
                             <div class="form-group">
                                 <label> Bus Number : </label>
                                 <input type="text" class="form-control" name="busno" id="busno" oninput="validateBusNO()">
                                 <span class="" id="busno-error">
-                                </span>
+                                    </span>
                             </div>
                             <div class="form-group">
                                 <label> Name : </label>
                                 <input type="text" class="form-control" name="name" id="name" oninput="validateName()">
                                 <span class="" id="name-error">
-                                </span>
+                                    </span>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label> Size : </label>
+                                    <input type="text" class="form-control" name="size" id="size" oninput="validateSize()">
+                                    <span class="" id="size-error">
+                                        </span>
+                                    </div> -->
+                                    <div class="form-group">
+                                        <label> Type : </label>
+                                        <select id="type" name="type" class="form-control">
+                                            <option value="Sleeper">Sleeper</option>
+                                            <option value="Seater">Seater</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-success mt-1" onclick="checkValidate()"> AddBus </button>
+                                </div>
                             </div>
-                            <!-- <div class="form-group">
-                                <label> Size : </label>
-                                <input type="text" class="form-control" name="size" id="size" oninput="validateSize()">
-                                <span class="" id="size-error">
-                                </span>
-                            </div> -->
-                            <div class="form-group">
-                                <label> Type : </label>
-                                <select id="type" name="type" class="form-control">
-                                    <option value="Sleeper">Sleeper</option>
-                                    <option value="Seater">Seater</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-success mt-1" onclick="checkValidate()"> AddBus </button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+                
+                <br>
+                <br>
+                
+                <!-- <table class="table col-md-9 bg-secondary table-hover text-white" id="tblData">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th> Bus No </th>
+                            <th> Name </th>
+                            <th> Size </th>
+                            <th> Type </th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($bus as $b)
+                        <tr>
+                            <td class="bno">
+                                {{ $b->busNo }}
+                            </td>
+                            <td class="bname">
+                                {{ $b->name }}
+                            </td>
+                            <td class="bsize">
+                                {{ $b->size }}
+                            </td>
+                            <td class="btype">
+                                {{ $b->type }}
+                            </td>
+                            <td class="tdAction">
+                                <button class='btn btn-success btn-sm btn-edit' ><i class="fa fa-edit text-white"></i></button>
+                            <a href="{{ url('/deleteBus') }}/{{ $b->busNo }}" class='btn btn-danger btn-sm'> <i class="fa fa-trash-can text-white"></i> </a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table> -->
 
-        <br>
-        <br>
-
-        <table class="table col-md-9 bg-secondary table-hover text-white" id="tblData">
-            <thead class="thead-dark">
-                <tr>
-                    <th> Bus No </th>
-                    <th> Name </th>
-                    <th> Size </th>
-                    <th> Type </th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($bus as $b)
+        <div class="viewTable">
+            <table class="content1-table1 col-md-7" id="tblData">
+                <thead>
                     <tr>
+                        <th></th>
+                        <th> Bus No </th>
+                        <th> Name </th>
+                        <th> Size </th>
+                        <th> Type </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($bus as $b)
+                    <tr>
+                        <td>
+                            <img src="./images1/bus13.jpg" width="70px" height="50px" alt=""/>
+                        </td>
                         <td class="bno">
                             {{ $b->busNo }}
                         </td>
@@ -88,18 +127,20 @@
                             {{ $b->type }}
                         </td>
                         <td class="tdAction">
-                        <!-- href="{{url('editBus')}}/{{ $b->busNo }}"
-                            <a class="btn btn-outline-warning"><i
-                                class="fa fa-edit text-white" id="a1"></i></a>
-                                <a href="{{ url('/deleteBus') }}/{{ $b->busNo }}" class="btn btn-outline-danger"><i
-                                    class="fa fa-trash-can text-white"></i></a> -->
                             <button class='btn btn-success btn-sm btn-edit' ><i class="fa fa-edit text-white"></i></button>
                             <a href="{{ url('/deleteBus') }}/{{ $b->busNo }}" class='btn btn-danger btn-sm'> <i class="fa fa-trash-can text-white"></i> </a>
                         </td>
                     </tr>
                 @endforeach
-            </tbody>
-        </table>
+  </tbody>
+</table>
+    </div>
+
+    <br>
+<div style="margin-left:37%;">
+    {{ $bus->links() }}
+</div>
+
     </div>
     <script>
         $('#exampleModal').on('show.bs.modal', event => {

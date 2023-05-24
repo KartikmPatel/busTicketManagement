@@ -253,7 +253,7 @@ class userController extends Controller
     {
         $userID = session('userid');
 
-        $historys = historyModel::where('userID',$userID)->latest('historyID')->get();
+        $historys = historyModel::where('userID',$userID)->latest('historyID')->paginate(5);
         $ticket = bookingModel::all();
         $curDate = now()->format('Y-m-d');
         // $curTime = now()->format('H:i:s');

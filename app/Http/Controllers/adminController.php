@@ -27,7 +27,7 @@ class adminController extends Controller
 
     public function viewBuses()
     {
-        $bus = busModel::all();
+        $bus = busModel::paginate(5);
         $url = url('/manageBus');
         $title = "Add Bus";
         $data = compact('bus','title','url');
@@ -127,7 +127,7 @@ class adminController extends Controller
     {
         $buses = busModel::all();
         $stations = stationModel::all();
-        $routes = routeModel::all();
+        $routes = routeModel::paginate(5);
 
         $data = compact('buses','stations','routes');
         return view("Admin.manageRoute")->with($data);
@@ -203,7 +203,7 @@ class adminController extends Controller
 
     public function viewStaff()
     {
-        $staff = staffModel::all();
+        $staff = staffModel::paginate(5);
         $buses = busModel::all();
         $data = compact('staff','buses');
         return view("Admin.manageStaff")->with($data);
@@ -270,7 +270,7 @@ class adminController extends Controller
 
     public function viewStations()
     {
-        $station = stationModel::all();
+        $station = stationModel::paginate(5);
         $url = url('/manageStation');
         $title = "Add Station";
         $data = compact('station','title','url');
@@ -342,14 +342,14 @@ class adminController extends Controller
 
     public function manageBooking()
     {
-        $tickets = bookingModel::all();
+        $tickets = bookingModel::paginate(5);
         $data = compact('tickets');
         return view('Admin.manageBooking')->with($data);
     }
 
     public function manageCancelTicket()
     {
-        $ticket = cancelticketModel::all();
+        $ticket = cancelticketModel::paginate(5);
         $data = compact('ticket');
         return view('Admin.managecancelTicket')->with($data);
     }

@@ -49,7 +49,7 @@
         <br>
         <br>
 
-        <table class="table col-md-9 bg-secondary table-hover text-white" id="tblData">
+        <!-- <table class="table col-md-9 bg-secondary table-hover text-white" id="tblData">
             <thead class="thead-dark">
                 <tr>
                     <th> Station I'd </th>
@@ -67,18 +67,51 @@
                             {{ $s->stationName }}
                         </td>
                         <td class="tdAction">
-                        <!-- href="{{url('editStation')}}/{{ $s->stationID }}"
-                            <a class="btn btn-outline-warning"><i
-                                class="fa fa-edit text-white" id="a1"></i></a>
-                                <a href="{{ url('/deleteStation') }}/{{ $s->stationID }}" class="btn btn-outline-danger"><i
-                                    class="fa fa-trash-can text-white"></i></a> -->
                             <button class='btn btn-success btn-sm btn-edit' ><i class="fa fa-edit text-white"></i></button>
                             <a href="{{ url('/deleteStation') }}/{{ $s->stationID }}" class='btn btn-danger btn-sm'> <i class="fa fa-trash-can text-white"></i> </a>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
-        </table>
+        </table> -->
+
+        <div class="viewTable">
+            <table class="content1-table1 col-md-7" id="tblData" style="margin-top:30px;min-width: 800px;margin-left:15%">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th> Station I'd </th>
+                        <th> Station Name </th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($station as $s)
+                    <tr>
+                        <td>
+                            <img src="./images/station.jpg" width="70px" height="50px" alt=""/>
+                        </td>
+                        <td class="sid">
+                            {{ $s->stationID }}
+                        </td>
+                        <td class="sname">
+                            {{ $s->stationName }}
+                        </td>
+                        <td class="tdAction">
+                            <button class='btn btn-success btn-sm btn-edit' ><i class="fa fa-edit text-white"></i></button>
+                            <a href="{{ url('/deleteStation') }}/{{ $s->stationID }}" class='btn btn-danger btn-sm'> <i class="fa fa-trash-can text-white"></i> </a>
+                        </td>
+                    </tr>
+                @endforeach
+  </tbody>
+</table>
+    </div>
+
+    <br>
+<div style="margin-left:37%;">
+    {{ $station->links() }}
+</div>
+
     </div>
     <script>
         $('#exampleModal').on('show.bs.modal', event => {

@@ -67,7 +67,7 @@
             </div>
         </div>
 
-        <table class="table col-md-9 mt-2 bg-secondary table-hover text-white" id="tblData">
+        <!-- <table class="table col-md-9 mt-2 bg-secondary table-hover text-white" id="tblData">
             <thead class="thead-dark">
                 <tr>
                     <th> Staff Id </th>
@@ -97,18 +97,62 @@
                         {{ $s->mobileNo }}
                     </td>
                     <td class="tdAction">
-                    {{-- <!-- href="{{url('editBus')}}/{{ $b->busNo }}"
-                        <a class="btn btn-outline-warning"><i
-                            class="fa fa-edit text-white" id="a1"></i></a>
-                            <a href="{{ url('/deleteBus') }}/{{ $b->busNo }}" class="btn btn-outline-danger"><i
-                                class="fa fa-trash-can text-white"></i></a> --> --}}
                         <button class='btn btn-success btn-sm btn-edit' ><i class="fa fa-edit text-white"></i></button>
                         <a href="{{ url('/deleteStaff') }}/{{ $s->staffID }}" class='btn btn-danger btn-sm'> <i class="fa fa-trash-can text-white"></i> </a>
                     </td>
                 </tr>
             @endforeach
             </tbody>
-        </table>
+        </table> -->
+        <div class="viewTable">
+            <table class="content1-table1 col-md-7" id="tblData" style="margin-top:30px;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th> Staff Id </th>
+                        <th> Bus No </th>
+                        <th> Staff Name </th>
+                        <th> Staff Type </th>
+                        <th> Mobile Number </th>
+                        <th> Action </th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach ($staff as $s)
+                <tr>
+                    <td>
+                        <img src="./images/staff.jpg" width="70px" height="50px" alt=""/>
+                    </td>
+                    <td class="sID">
+                        {{ $s->staffID }}
+                    </td>
+                    <td class="bno">
+                        {{ $s->busNo }}
+                    </td>
+                    <td class="sName">
+                        {{ $s->staffName }}
+                    </td>
+                    <td class="sType">
+                        {{ $s->staffType }}
+                    </td>
+                    <td class="mNo col-md-2">
+                        {{ $s->mobileNo }}
+                    </td>
+                    <td class="tdAction">
+                        <button class='btn btn-success btn-sm btn-edit' ><i class="fa fa-edit text-white"></i></button>
+                        <a href="{{ url('/deleteStaff') }}/{{ $s->staffID }}" class='btn btn-danger btn-sm'> <i class="fa fa-trash-can text-white"></i> </a>
+                    </td>
+                </tr>
+            @endforeach
+  </tbody>
+</table>
+    </div>
+
+    <br>
+<div style="margin-left:37%;">
+    {{ $staff->links() }}
+</div>
+
     </div>
 
         <script>

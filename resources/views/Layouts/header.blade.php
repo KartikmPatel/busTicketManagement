@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{asset('layoutstyle/header.css')}}">
     <link rel="stylesheet" href="{{asset('adminStyle/dashboard.css')}}">
     <link rel="stylesheet" href="{{asset('adminStyle/seatStyle.css')}}">
+    <link rel="stylesheet" href="{{asset('adminStyle/viewTable.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="{{asset('layoutstyle/Login.css')}}">
