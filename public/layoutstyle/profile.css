@@ -22,7 +22,7 @@
     width: 200px;
     border-radius: 100%;
     margin-top: 15px;
-    background: black;
+    /* background: black; */
   }
   .panel-footer {
     padding: 5px;
@@ -35,6 +35,6 @@
   }
 
   .edit-button{
-    margin-left: 17%;
+    margin-left: 165px;
   }
 

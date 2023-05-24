@@ -75,6 +75,7 @@ route::post('showTicket',[userController::class,'showTicket']);
 
 route::get('viewProfile',[userController::class,'viewProfile']);
 route::post('editProfile',[userController::class,'editProfile']);
+route::post('editImage',[userController::class,'editImage']);
 route::get('changePassword',[userController::class,'changePassword']);
 route::post('passwordChange',[userController::class,'passwordChange']);
 

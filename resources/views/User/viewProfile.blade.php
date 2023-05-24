@@ -15,7 +15,50 @@
             <div class="panel-body">
               <div class="row profile-info">
                 <div class="image" align="center">
-                  <img src="images/User-avatar.png" alt="User image" class="image-profile">
+                    @if($user->image)
+                      <img src="{{asset($user->image)}}" alt="User image" class="image-profile" data-toggle="modal" data-target="#modelId">
+                    @else
+                  <img src="images/User-avatar.png" alt="User image" class="image-profile" data-toggle="modal" data-target="#modelId">
+                  @endif
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <h5 class="modal-title">Edit Image</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                    </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form action="{{url('editImage')}}" method="post" enctype="multipart/form-data">
+                                        @csrf
+                                    <div class="form-group">
+                                        <h3> Choose Profile Image </h3>
+                                      <input type="file"
+                                        class="form-control" name="image" id="image" aria-describedby="helpId">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+
+                  <script>
+                    $('#exampleModal').on('show.bs.modal', event => {
+                        var button = $(event.relatedTarget);
+                        var modal = $(this);
+                        // Use above variables to manipulate the DOM
+
+                    });
+                  </script>
                 </div><!-- /.col-xs-12 -->
         <!-- User Information -->
                 <div class="ml-5">

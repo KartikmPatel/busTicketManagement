@@ -54,7 +54,7 @@ class userController extends Controller
             $user->userName = $r['username'];
             $user->password = $r['password'];
             $user->save();
-            
+
             $message = "signupDone";
             return $message;
         }
@@ -213,6 +213,17 @@ class userController extends Controller
         $user->city = $r['city'];
         $user->save();
 
+        return redirect('viewProfile');
+    }
+
+    public function editImage(Request $r)
+    {
+        $userid = session('userid');
+        $user = userModel::find($userid);
+        $image = time().'btbs.'.$r->file('image')->getClientOriginalExtension();
+        $path = $r->file('image')->storeAs('uploads',$image,'public');
+        $user->image = '/storage/'.$path;
+        $user->save();
         return redirect('viewProfile');
     }
 
