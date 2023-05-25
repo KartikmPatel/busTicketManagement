@@ -220,11 +220,20 @@ class userController extends Controller
     {
         $userid = session('userid');
         $user = userModel::find($userid);
-        $image = time().'btbs.'.$r->file('image')->getClientOriginalExtension();
-        $path = $r->file('image')->storeAs('uploads',$image,'public');
-        $user->image = '/storage/'.$path;
-        $user->save();
-        return redirect('viewProfile');
+        if($r['image'] == NULL)
+        {
+            $user->image = NULL;
+            $user->save();
+            return redirect('viewProfile');
+        }
+        else
+        {
+            $image = time().'btbs.'.$r->file('image')->getClientOriginalExtension();
+            $path = $r->file('image')->storeAs('uploads',$image,'public');
+            $user->image = '/storage/'.$path;
+            $user->save();
+            return redirect('viewProfile');
+        }
     }
 
     public function changePassword()

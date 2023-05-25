@@ -16,13 +16,15 @@
               <div class="row profile-info">
                 <div class="image" align="center">
                     @if($user->image)
-                      <img src="{{asset($user->image)}}" alt="User image" class="image-profile" data-toggle="modal" data-target="#modelId">
-                    @else
-                  <img src="images/User-avatar.png" alt="User image" class="image-profile" data-toggle="modal" data-target="#modelId">
+                      <img src="{{ asset($user->image) }}" alt="User image" class="image-profile" data-toggle="modal" data-target="#modelId1">
+                      @elseif($user->image == NULL)
+                      <img src="images/User-avatar.png" alt="User image" class="image-profile" data-toggle="modal" data-target="#modelId1">                      
+                      @else
+                  <img src="images/User-avatar.png" alt="User image" class="image-profile" data-toggle="modal" data-target="#modelId1">
                   @endif
 
                   <!-- Modal -->
-                  <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                  <div class="modal fade" id="modelId1" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                                 <div class="modal-header">
