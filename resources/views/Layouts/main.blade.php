@@ -5,5 +5,5 @@
   @yield('main-content')
 @else
     @yield('Usermain-content')
+    @include('Layouts.footer')
 @endif
-@include('Layouts.footer')

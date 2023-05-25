@@ -1,7 +1,7 @@
 $(document).ready(function(){
-  $("#aside").hide();
+  $(".sidebar").hide();
 });
 
 $("#toggle-icon").click(function(){
-  $("#aside").toggle(50);
+  $(".sidebar").toggle(50);
 });

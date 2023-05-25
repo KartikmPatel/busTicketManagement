@@ -29,10 +29,10 @@
         </div>
     </div>
     <div class="card" style="width: 13rem;height: 16rem;background-color:rgb(242, 205, 163)">
-        <img class="ml-5" src="images/payment_icon.png" height="100" width="120" alt="Card image cap">
+        <img class="ml-5" src="images/stafflogo5.png" height="100" width="120" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title payment-card">Payments</h5>
-          <p class="card-text text-danger">Pending</p>
+          <h5 class="card-title payment-card">Staffs</h5>
+          <p class="card-text text-success">{{$staffCount}} Persons</p>
           <a class="btn btn-outline-primary" href="#">View</a>
         </div>
     </div>

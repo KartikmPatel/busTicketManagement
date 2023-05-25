@@ -12,7 +12,7 @@
 
   <body>
     <div class="asi">
-      <div id="aside">
+      {{-- <div id="aside">
         <span><i class="fa fa-bus"></i><a href="{{url('/manageBus')}}" class="c1"> Buses </a></span><br><br/>
         <span><i class="fa fa-route"></i><a href="{{url('/manageRoute')}}" class="c1"> Routes</a></span><br><br/>
         <span><i class="fas fa-playstation"></i><a href="{{url('/adminSeats')}}" class="c1"> Seats </a></span><br><br/>
@@ -20,6 +20,19 @@
         <span><i class="fa fa-people-group"></i><a href="{{url('/manageStaff')}}" class="c1"> Staffs</a></span><br><br/>
         <span><i class="fa fa-ticket-simple"></i><a href="{{url('/manageCancelTicket')}}" class="c1"> Cancel Ticket</a></span><br><br/>
         <span><i class="fa fa-ticket"></i><a href="{{url('manageBooking')}}" class="c1"> Bookings </a></span><br><br/>
+      </div> --}}
+
+      <div class="sidebar">
+        <header class="header bg-dark"> Admin side </header>
+        <ul>
+            <li><a href="{{url('/manageBus')}}"><i class="fa fa-bus"></i>Buses</a></li>
+            <li><a href="{{url('/manageRoute')}}"><i class="fa fa-route"></i>Routes</a></li>
+            <li><a href="{{url('/adminSeats')}}"><i class="fas fa-playstation"></i>Seats</a></li>
+            <li><a href="{{url('/manageStation')}}"><i class="fab fa-playstation"></i>Stations</a></li>
+            <li><a href="{{url('/manageStaff')}}"><i class="fa fa-people-group"></i>Staffs</a></li>
+            <li><a href="{{url('/manageCancelTicket')}}"><i class="fa fa-ticket-simple"></i>Cancel Ticket</a></li>
+            <li><a href="{{url('manageBooking')}}"><i class="fa fa-ticket"></i>Bookings</a></li>
+        </ul>
       </div>
     </div>
   </body>

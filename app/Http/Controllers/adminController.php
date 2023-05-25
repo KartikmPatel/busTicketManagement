@@ -21,7 +21,8 @@ class adminController extends Controller
         $routeCount = routeModel::count();
         $stationCount = stationModel::count();
         $bookingCount = bookingModel::count();
-        $data = compact('busCount','routeCount','stationCount','bookingCount');
+        $staffCount = staffModel::count();
+        $data = compact('busCount','routeCount','stationCount','bookingCount','staffCount');
         return view("Admin.adminHome")->with($data);
     }
 

@@ -1,37 +1,90 @@
 #aside {
-  padding-top: 20px;
-  padding-left: 20px;
-  width: 16%;
-  height: 550px;
-  float: left;
-  font-style: italic;
-  /* margin: auto; */
-  /* background-color: tan; */
-  /* background-color: mistyrose;  */
-  background: linear-gradient(110deg, #36393b 60%, #2d2f30 60%);
-  font-weight: bold;
-  font-size: 19px;
-  margin-right: 20px;
-}
+    padding-top: 20px;
+    padding-left: 20px;
+    width: 16%;
+    height: 550px;
+    float: left;
+    font-style: italic;
+    /* margin: auto; */
+    /* background-color: tan; */
+    /* background-color: mistyrose;  */
+    background: linear-gradient(110deg, #36393b 60%, #2d2f30 60%);
+    font-weight: bold;
+    font-size: 19px;
+    margin-right: 20px;
+  }
 
-.c1 {
-  /* color: #e39eb29e; */
-  color: #0583d2;
-}
+  .c1 {
+    /* color: #e39eb29e; */
+    color: #0583d2;
+  }
 
-.c1:hover {
-  text-decoration: none;
-  font-size: 20px;
-  /* color: #a127ca; */
-  color: #c762e9;
-}
+  .c1:hover {
+    text-decoration: none;
+    font-size: 20px;
+    /* color: #a127ca; */
+    color: #c762e9;
+  }
 
-i {
-  color: rgb(17, 174, 201);
-}
+  i {
+    color: rgb(17, 174, 201);
+  }
 
-@media(max-width: 600px){
-    #aside{
-        width: 35%;
+  @media(max-width: 600px){
+      #aside{
+          width: 35%;
+      }
+  }
+
+  @import url('https://fonts.googleapis.com/');
+
+  .sidebar{
+    /* padding-top: 20px;
+    padding-left: 20px; */
+      margin: 0;
+      float: left;
+      padding: 0;
+      list-style: none;
+      /* position: fixed; */
+      position: relative;
+      /* left: 0; */
+      width: 250px;
+      height: 100%;
+      background: #042331;
     }
-}
+
+    .sidebar .header{
+        font-size: 22px;
+        color:white;
+        text-align: center;
+        line-height: 70px;
+        /* background: #383939; */
+        user-select: none;
+    }
+
+    .sidebar ul a{
+        text-decoration: none;
+        display: block;
+      height: 100%;
+      width: 100%;
+      line-height: 65px;
+      font-size: 20px;
+      color: white;
+      padding-left: 40px;
+      box-sizing: border-box;
+      border-top: 1px solid rgba(255,255,255,1);
+      border-bottom: 1px solid black;
+      transition: .4s;
+      height: 80px;
+      /* margin-top: 10px; */
+      padding-top:10px;
+      padding-left:60px;
+  }
+
+  ul li:hover a{
+      padding-left: 50px;
+  }
+
+  .sidebar ul a i{
+      margin-right: 16px;
+  }
