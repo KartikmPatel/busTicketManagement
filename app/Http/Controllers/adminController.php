@@ -10,6 +10,7 @@ use App\Models\seatModel;
 use App\Models\staffModel;
 use App\Models\bookingModel;
 use App\Models\cancelticketModel;
+use App\Models\userModel;
 use GuzzleHttp\Psr7\Message;
 use Illuminate\Support\Facades\DB;
 
@@ -17,6 +18,12 @@ class adminController extends Controller
 {
     public function adminHome()
     {
+        $userid = session('userid');
+        if($userid)
+        {
+            $user = userModel::find($userid);
+            session()->put('userImage',$user->image);
+        }
         $busCount = busModel::count();
         $routeCount = routeModel::count();
         $stationCount = stationModel::count();

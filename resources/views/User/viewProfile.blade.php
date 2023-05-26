@@ -18,7 +18,7 @@
                     @if($user->image)
                       <img src="{{ asset($user->image) }}" alt="User image" class="image-profile" data-toggle="modal" data-target="#modelId1">
                       @elseif($user->image == NULL)
-                      <img src="images/User-avatar.png" alt="User image" class="image-profile" data-toggle="modal" data-target="#modelId1">                      
+                      <img src="images/User-avatar.png" alt="User image" class="image-profile" data-toggle="modal" data-target="#modelId1">
                       @else
                   <img src="images/User-avatar.png" alt="User image" class="image-profile" data-toggle="modal" data-target="#modelId1">
                   @endif
@@ -61,6 +61,7 @@
 
                     });
                   </script>
+                   <button class="btn btn-outline-dark col-md-12 btnEdit" data-toggle="modal" data-target="#modelId"><i class="fa fa-edit"></i></button>
                 </div><!-- /.col-xs-12 -->
         <!-- User Information -->
                 <div class="ml-5">
@@ -140,7 +141,7 @@
 
     </div><!-- /.col-xs-12 -->
     <div class="edit-button">
-        <button class="btn btn-outline-dark" data-toggle="modal" data-target="#modelId"><i class="fa fa-edit"></i></button>
+        {{-- <button class="btn btn-outline-dark" data-toggle="modal" data-target="#modelId"><i class="fa fa-edit"></i></button> --}}
         <!-- Button trigger modal -->
         <!-- Modal -->
         <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">

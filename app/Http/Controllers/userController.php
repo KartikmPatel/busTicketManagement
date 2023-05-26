@@ -18,6 +18,12 @@ class userController extends Controller
 {
     public function home()
     {
+        $userid = session('userid');
+        if($userid)
+        {
+            $user = userModel::find($userid);
+            session()->put('userImage',$user->image);
+        }
         // App::setLocale($locale);
         $bus = busModel::all();
         $stations = stationModel::all();
@@ -197,6 +203,10 @@ class userController extends Controller
     {
         $userid = session('userid');
         $user = userModel::find($userid);
+        if($userid)
+        {
+            session()->put('userImage',$user->image);
+        }
 
         $data = compact('user');
         return view('User.viewProfile')->with($data);

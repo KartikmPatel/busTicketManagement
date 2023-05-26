@@ -68,11 +68,19 @@
                 {{-- <a href="{{url('logout')}}" class="btn btn-outline-success mx-2 my-2 my-sm-0">
                 {{__('home.logout')}}
                 </a> --}}
+                @if(session('userImage'))
+                <img src="{{ asset(session('userImage')) }}" class="user-pic" onclick="toggleMenu()">
+                @else
                 <img src="images/User-avatar.png" class="user-pic" onclick="toggleMenu()">
+                @endif
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
                         <div class="user-info">
+                            @if(session('userImage'))
+                            <img src="{{asset(session('userImage'))}}">
+                            @else
                             <img src="images/User-avatar.png">
+                            @endif
                             {{-- <h2>Prem Patel</h2> --}}
                             <h3> {{session('username')}}</h3>
                         </div>
