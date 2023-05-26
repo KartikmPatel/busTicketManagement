@@ -104,6 +104,16 @@
             @endforeach
             </tbody>
         </table> -->
+
+        <div>
+            <form action="" class="form-inline" style="margin-left:32%;">
+                @csrf
+                <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" value="{{ $search }}" aria-label="Search">
+                <button class="btn btn-info my-2 my-sm-0">Search</button>
+                <button type="button" class="btn btn-danger my-2 my-sm-0 ml-4" onclick="window.location.href='{{ url('/manageStaff') }}'">All Staffs</button>
+            </form>
+        </div>
+
         <div class="viewTable">
             <table class="content1-table1 col-md-7" id="tblData" style="margin-top:30px;">
                 <thead>

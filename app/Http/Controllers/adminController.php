@@ -33,12 +33,22 @@ class adminController extends Controller
         return view("Admin.adminHome")->with($data);
     }
 
-    public function viewBuses()
+    public function viewBuses(Request $r)
     {
-        $bus = busModel::paginate(5);
+        $search = $r['search'] ?? "";
+        if($search != "")
+        {
+            $bus = busModel::where('busNo','LIKE',"%$search%")->orWhere('name','LIKE',"%$search%")->orWhere('size','LIKE',"%$search%")->orWhere('type','LIKE',"%$search%")->paginate(5);
+            $bus->appends(['search' => $search]);
+        }
+        else
+        {
+            $bus = busModel::paginate(5);
+        }
+
         $url = url('/manageBus');
         $title = "Add Bus";
-        $data = compact('bus','title','url');
+        $data = compact('bus','title','url','search');
         return view("Admin.manageBus")->with($data);
     }
 
@@ -131,13 +141,22 @@ class adminController extends Controller
         return $message;
     }
 
-    public function viewRoutes()
+    public function viewRoutes(Request $r)
     {
+        $search = $r['search'] ?? "";
+        if($search != "")
+        {
+            $routes = routeModel::where('busNo','LIKE',"%$search%")->orWhere('routeID','LIKE',"%$search%")->orWhere('startingStationID','LIKE',"%$search%")->orWhere('endingStationID','LIKE',"%$search%")->orWhere('departureTime','LIKE',"%$search%")->orWhere('fare','LIKE',"%$search%")->paginate(5);
+            $routes->appends(['search' => $search]);
+        }
+        else
+        {
+            $routes = routeModel::paginate(5);
+        }
+
         $buses = busModel::all();
         $stations = stationModel::all();
-        $routes = routeModel::paginate(5);
-
-        $data = compact('buses','stations','routes');
+        $data = compact('buses','stations','routes','search');
         return view("Admin.manageRoute")->with($data);
     }
 
@@ -209,11 +228,21 @@ class adminController extends Controller
         return $message;
     }
 
-    public function viewStaff()
+    public function viewStaff(Request $r)
     {
-        $staff = staffModel::paginate(5);
+        $search = $r['search'] ?? "";
+        if($search != "")
+        {
+            $staff = staffModel::where('busNo','LIKE',"%$search%")->orWhere('staffID','LIKE',"%$search%")->orWhere('staffName','LIKE',"%$search%")->orWhere('staffType','LIKE',"%$search%")->orWhere('mobileNo','LIKE',"%$search%")->paginate(5);
+            $staff->appends(['search' => $search]);
+        }
+        else
+        {
+            $staff = staffModel::paginate(5);
+        }
+        
         $buses = busModel::all();
-        $data = compact('staff','buses');
+        $data = compact('staff','buses','search');
         return view("Admin.manageStaff")->with($data);
     }
 
@@ -276,12 +305,22 @@ class adminController extends Controller
         return $message;
     }
 
-    public function viewStations()
+    public function viewStations(Request $r)
     {
-        $station = stationModel::paginate(5);
+        $search = $r['search'] ?? "";
+        if($search != "")
+        {
+            $station = stationModel::where('stationID','LIKE',"%$search%")->orWhere('stationName','LIKE',"%$search%")->paginate(5);
+            $station->appends(['search' => $search]);
+        }
+        else
+        {
+            $station = stationModel::paginate(5);
+        }
+
         $url = url('/manageStation');
         $title = "Add Station";
-        $data = compact('station','title','url');
+        $data = compact('station','title','url','search');
         return view("Admin.manageStation")->with($data);
     }
 
@@ -348,17 +387,37 @@ class adminController extends Controller
         return view('Admin.searchSeat')->with($data);
     }
 
-    public function manageBooking()
+    public function manageBooking(Request $r)
     {
-        $tickets = bookingModel::paginate(5);
-        $data = compact('tickets');
+        $users = userModel::all();
+        $search = $r['search'] ?? "";
+        if($search != "")
+        {
+            $tickets = bookingModel::where('busNo','LIKE',"%$search%")->orWhere('ticketID','LIKE',"%$search%")->orWhere('userID','LIKE',"%$search%")->orWhere('seatNo','LIKE',"%$search%")->orWhere('fare','LIKE',"%$search%")->orWhere('from','LIKE',"%$search%")->orWhere('to','LIKE',"%$search%")->orWhere('date','LIKE',"%$search%")->orWhere('time','LIKE',"%$search%")->paginate(5);
+            $tickets->appends(['search' => $search]);
+        }
+        else
+        {
+            $tickets = bookingModel::paginate(5);
+        }
+        $data = compact('tickets','search','users');
         return view('Admin.manageBooking')->with($data);
     }
 
-    public function manageCancelTicket()
+    public function manageCancelTicket(Request $r)
     {
-        $ticket = cancelticketModel::paginate(5);
-        $data = compact('ticket');
+        $users = userModel::all();
+        $search = $r['search'] ?? "";
+        if($search != "")
+        {
+            $ticket = cancelticketModel::where('busNo','LIKE',"%$search%")->orWhere('cancelID','LIKE',"%$search%")->orWhere('userID','LIKE',"%$search%")->orWhere('seatNo','LIKE',"%$search%")->orWhere('fare','LIKE',"%$search%")->orWhere('Source','LIKE',"%$search%")->orWhere('Destination','LIKE',"%$search%")->orWhere('Status','LIKE',"%$search%")->orWhere('busDate','LIKE',"%$search%")->orWhere('busTime','LIKE',"%$search%")->paginate(5);
+            $ticket->appends(['search' => $search]);
+        }
+        else
+        {
+            $ticket = cancelticketModel::paginate(5);
+        }
+        $data = compact('ticket','search','users');
         return view('Admin.managecancelTicket')->with($data);
     }
 }
