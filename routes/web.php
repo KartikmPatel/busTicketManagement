@@ -22,6 +22,8 @@ use App\Http\Controllers\userController;
 // Admin Side //
 route::get('/adminHome',[adminController::class,'adminHome']);
 
+route::get('manageTodayBooking',[adminController::class,'manageTodayBooking']);
+
 route::get('manageBus',[adminController::class,'viewBuses']);
 route::post('addBus',[adminController::class,'addBus']);
 route::get('deleteBus/{id}',[adminController::class,'deleteBus']);

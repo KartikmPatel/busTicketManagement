@@ -63,7 +63,7 @@
             @csrf
             <div class="form-group">
                 <h1 class="ml-5"> {{__('home.sBus')}} </h1>
-                <span class="text-danger" id="all-error">
+                <span class="text-danger ml-5" id="same-error">
         </span><br>
                 <label class="ml-5"> {{__('home.from')}} : </label>
                 <select id="from" name="from" class="form-control col-md-9 ml-5" oninput="validateStartStation()">
@@ -184,10 +184,30 @@
             }
             return true;
         }
+        
+        function sameCity()
+        {
+            var from = document.getElementById("from");
+            var to = document.getElementById("to");
+            if(from.value == to.value)
+            {
+                document.getElementById("same-error").innerHTML="Playas enter source and destination different";
+        		document.getElementById("same-error").style.color="red";
+        		document.getElementById("same-error").style.fontSize="15px";
+                return false;
+            }
+            else
+            {
+                document.getElementById("same-error").innerHTML="";
+        		document.getElementById("same-error").style.color="";
+        		document.getElementById("same-error").style.fontSize="";
+                return true;
+            }
+        }
 
         function validateSearch()
         {
-            if(validateStartStation() && validateEndStation() && validateDate())
+            if(validateStartStation() && validateEndStation() && validateDate() && sameCity())
             {
                 return true;
             }
