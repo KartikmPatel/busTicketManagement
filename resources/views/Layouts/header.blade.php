@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{asset('layoutstyle/Login.css')}}">
     <link rel="stylesheet" href="{{asset('layoutstyle/SignUp.css')}}">
     <link rel="stylesheet" href="{{asset('userStyle/searchBus.css')}}">
+    <link rel="stylesheet" href="{{asset('userStyle/login.css')}}">
     <link rel="stylesheet" href="{{asset('userStyle/viewBus.css')}}">
     <link rel="stylesheet" href="{{asset('layoutstyle/profile.css')}}">
 </head>
@@ -60,10 +61,10 @@
             @endif
 
             @if(!session('username'))
-                <button type="button" class="btn btn-outline-success mx-2 my-2 my-sm-0" onclick="showform()">
+                <a href="{{url('loginView')}}" class="btn btn-outline-success mx-2 my-2 my-sm-0">
                 {{__('home.login')}}
-                </button>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="formshow()">{{__('home.signUp')}}</button>
+                </a>
+                <a href="{{url('signUpView')}}" class="btn btn-outline-success my-2 my-sm-0">{{__('home.signUp')}}</a>
                 @else
                 {{-- <a href="{{url('logout')}}" class="btn btn-outline-success mx-2 my-2 my-sm-0">
                 {{__('home.logout')}}

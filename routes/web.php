@@ -85,3 +85,5 @@ route::get('viewHistory',[userController::class,'viewHistory']);
 route::get('cancelTicket',[userController::class,'cancelTicket']);
 route::post('ticketCancel',[userController::class,'ticketCancel']);
 route::post('ticketCancel2',[userController::class,'ticketCancel2']);
+route::get('loginView',[userController::class,'loginView']);
+route::get('signUpView',[userController::class,'signUpView']);
