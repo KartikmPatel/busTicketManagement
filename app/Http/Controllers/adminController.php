@@ -414,12 +414,12 @@ class adminController extends Controller
         $search = $r['search'] ?? "";
         if($search != "")
         {
-            $tickets = bookingModel::where('busNo','LIKE',"%$search%")->orWhere('ticketID','LIKE',"%$search%")->orWhere('userID','LIKE',"%$search%")->orWhere('seatNo','LIKE',"%$search%")->orWhere('fare','LIKE',"%$search%")->orWhere('from','LIKE',"%$search%")->orWhere('to','LIKE',"%$search%")->orWhere('date','LIKE',"%$search%")->orWhere('time','LIKE',"%$search%")->paginate(5);
+            $tickets = bookingModel::where('busNo','LIKE',"%$search%")->orWhere('ticketID','LIKE',"%$search%")->orWhere('userID','LIKE',"%$search%")->orWhere('seatNo','LIKE',"%$search%")->orWhere('fare','LIKE',"%$search%")->orWhere('from','LIKE',"%$search%")->orWhere('to','LIKE',"%$search%")->orWhere('date','LIKE',"%$search%")->orWhere('time','LIKE',"%$search%")->orderBy('date','desc')->paginate(5);
             $tickets->appends(['search' => $search]);
         }
         else
         {
-            $tickets = bookingModel::paginate(5);
+            $tickets = bookingModel::orderBy('date','desc')->paginate(5);
         }
         $data = compact('tickets','search','users');
         return view('Admin.manageBooking')->with($data);
@@ -431,12 +431,12 @@ class adminController extends Controller
         $search = $r['search'] ?? "";
         if($search != "")
         {
-            $ticket = cancelticketModel::where('busNo','LIKE',"%$search%")->orWhere('cancelID','LIKE',"%$search%")->orWhere('userID','LIKE',"%$search%")->orWhere('seatNo','LIKE',"%$search%")->orWhere('fare','LIKE',"%$search%")->orWhere('Source','LIKE',"%$search%")->orWhere('Destination','LIKE',"%$search%")->orWhere('Status','LIKE',"%$search%")->orWhere('busDate','LIKE',"%$search%")->orWhere('busTime','LIKE',"%$search%")->paginate(5);
+            $ticket = cancelticketModel::where('busNo','LIKE',"%$search%")->orWhere('cancelID','LIKE',"%$search%")->orWhere('userID','LIKE',"%$search%")->orWhere('seatNo','LIKE',"%$search%")->orWhere('fare','LIKE',"%$search%")->orWhere('Source','LIKE',"%$search%")->orWhere('Destination','LIKE',"%$search%")->orWhere('Status','LIKE',"%$search%")->orWhere('busDate','LIKE',"%$search%")->orWhere('busTime','LIKE',"%$search%")->orderBy('busDate','desc')->paginate(5);
             $ticket->appends(['search' => $search]);
         }
         else
         {
-            $ticket = cancelticketModel::paginate(5);
+            $ticket = cancelticketModel::orderBy('busDate','desc')->paginate(5);
         }
         $data = compact('ticket','search','users');
         return view('Admin.managecancelTicket')->with($data);

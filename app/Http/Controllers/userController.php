@@ -48,7 +48,7 @@ class userController extends Controller
         //         ]
         //     );
 
-        $check = userModel::where('userName',$r['signu'])->where('password',$r['signp'])->first();
+        $check = userModel::where('password',$r['signp'])->first();
         if($check)
         {
             $message = "signupError";
@@ -362,6 +362,35 @@ class userController extends Controller
     public function signUpView()
     {
         return view('User.signup');
+    }
+    public function showLogin()
+    {
+        return view('User.checkLogin');
+    }
+    public function checkLogin(Request $r)
+    {
+        $r->validate([
+            'loginu' => 'required',
+            'loginp' => 'required'
+            // 'cpassword' => 'required'
+        ],
+        [
+            'loginu.required' => 'Please enter UserName',
+            'loginp.required' => 'Please enter Password',
+            ]
+        );
+        $user = userModel::where('userName',$r['loginu'])->where('password',$r['loginp'])->first();
+        if($user)
+        {
+            session()->put('userid',$user->userID);
+            session()->put('username',$user->userName);
+
+            if(session('username'))
+            {
+                return redirect()->back();
+                // return redirect('/viewSeat');
+            }
+        }
     }
 
 }

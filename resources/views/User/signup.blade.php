@@ -17,21 +17,21 @@
           <ul class="noBullet">
             <li>
               <label for="username"></label>
-              <input type="text" class="inputFields" id="signu" name="username" placeholder="Username" oninput="validsignu()" required/><br>
+              <input type="text" class="inputFields" id="signu" name="username" placeholder="Username" oninput="validsignu()" Required/><br>
               <span class="text-danger" id="signu-error">
             </li>
             <li>
               <label for="password"></label>
-              <input type="password" class="inputFields" id="signp" name="password" placeholder="Password" oninput="validsignp()" required/><br>
+              <input type="password" class="inputFields" id="signp" name="password" placeholder="Password" oninput="validsignp()"><br>
               <span class="text-danger" id="signp-error">
             </li>
             <li>
               <label for="cpassword"></label>
-              <input type="password" class="inputFields" id="signcp" name="password" placeholder="Confirm Password" oninput="validsigncp()" required/><br>
+              <input type="password" class="inputFields" id="signcp" name="password" placeholder="Confirm Password" oninput="validsigncp()"><br>
               <span class="text-danger" id="signcp-error">
             </li>
             <li id="center-btn">
-              <button id="join-btn" class="signUpbtn" name="join" alt="Join" onclick="checkValidate()"> SignUp </button>
+              <button type="submit" id="join-btn" class="signUpbtn" name="join" alt="Join" onclick="checkValidate1()"> SignUp </button>
             </li>
           </ul>
         </div>
@@ -66,7 +66,7 @@
             if(!p.test(password.value))
             {
                 // document.getElementById("password-error").innerHTML="Please Enter Valid Password (patel@4040)";
-                document.getElementById("signp-error").innerHTML="{{__('home.passwordError')}}";
+            document.getElementById("signp-error").innerHTML="{{__('home.passwordError')}}";
         		document.getElementById("signp-error").style.color="red";
         		document.getElementById("signp-error").style.fontSize="15px";
         		password.focus();
@@ -80,7 +80,7 @@
             }
             return true;
     }
-    function signcp()
+    function validsigncp()
     {
         var password = document.getElementById("signp");
         var cpassword = document.getElementById("signcp");
@@ -101,28 +101,28 @@
         }
             return true;
     }
-    function checkValidate()
+    function checkValidate1()
         {
-          var username = document.getElementById("signu");
-          var password = document.getElementById("signp");
-          var cpassword = document.getElementById("signcp");
-        if(username.value.length == "" || password.value.length =="" || cpassword.value.length == "")
-        {
-            // document.getElementById("all-error").innerHTML="Please fill up the empty field";
-            document.getElementById("allsign-error").innerHTML="{{__('home.allError')}}";
-            document.getElementById("allsign-error").style.color="red";
-            document.getElementById("allsign-error").style.fontSize="15px";
-        }
-        else
-        {
-            document.getElementById("allsign-error").innerHTML="";
-            document.getElementById("allsign-error").style.color="";
-            document.getElementById("allsign-error").style.fontSize="";
+        //   var username = document.getElementById("signu");
+        //   var password = document.getElementById("signp");
+        //   var cpassword = document.getElementById("signcp");
+        // if(username.value.length == "" || password.value.length == "" || cpassword.value.length == "")
+        // {
+        //     // document.getElementById("all-error").innerHTML="Please fill up the empty field";
+        //     document.getElementById("allsign-error").innerHTML="{{__('home.allError')}}";
+        //     document.getElementById("allsign-error").style.color="red";
+        //     document.getElementById("allsign-error").style.fontSize="15px";
+        // }
+        // else
+        // {
+        //     document.getElementById("allsign-error").innerHTML="";
+        //     document.getElementById("allsign-error").style.color="";
+        //     document.getElementById("allsign-error").style.fontSize="";
             if(validsignu() && validsignp() && validsigncp())
             {
                 storedata()
             }
-        }
+        // }
     }
          function storedata(){
             var signu = $('#signu').val();
