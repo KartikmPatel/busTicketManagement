@@ -31,48 +31,50 @@
                             <div class="form-group">
                                 <label> Bus Number : </label>
                                 <br>
-                                <select name="series" id="series" onchange="addCity()">
-                                    <option value="">Select</option>
-                                    <option value="GJ01">GJ01</option>
-                                    <option value="GJ02">GJ02</option>
-                                    <option value="GJ03">GJ03</option>
-                                    <option value="GJ04">GJ04</option>
-                                    <option value="GJ05">GJ05</option>
-                                    <option value="GJ06">GJ06</option>
-                                    <option value="GJ07">GJ07</option>
-                                    <option value="GJ08">GJ08</option>
-                                    <option value="GJ09">GJ09</option>
-                                    <option value="GJ10">GJ10</option>
-                                    <option value="GJ11">GJ11</option>
-                                    <option value="GJ12">GJ12</option>
-                                    <option value="GJ13">GJ13</option>
-                                    <option value="GJ14">GJ14</option>
-                                    <option value="GJ15">GJ15</option>
-                                    <option value="GJ16">GJ16</option>
-                                    <option value="GJ17">GJ17</option>
-                                    <option value="GJ18">GJ18</option>
-                                    <option value="GJ19">GJ19</option>
-                                    <option value="GJ20">GJ20</option>
-                                    <option value="GJ21">GJ21</option>
-                                    <option value="GJ22">GJ22</option>
-                                    <option value="GJ23">GJ23</option>
-                                    <option value="GJ24">GJ24</option>
-                                    <option value="GJ25">GJ25</option>
-                                    <option value="GJ26">GJ26</option>
-                                    <option value="GJ27">GJ27</option>
-                                    <option value="GJ28">GJ28</option>
-                                    <option value="GJ29">GJ29</option>
-                                    <option value="GJ30">GJ30</option>
-                                    <option value="GJ31">GJ31</option>
-                                    <option value="GJ32">GJ32</option>
-                                    <option value="GJ33">GJ33</option>
-                                    <option value="GJ34">GJ34</option>
-                                    <option value="GJ35">GJ35</option>
-                                    <option value="GJ36">GJ36</option>
-                                    <option value="GJ37">GJ37</option>
-                                    <option value="GJ38">GJ38</option>
+                                <select name="series" id="series" onchange="addState()">
+                                    <option value="">------------Select State------------</option>
+                                    <option value="AN">Andaman and Nicobar Islands</option>
+                                    <option value="AP">Andhra Pradesh</option>
+                                    <option value="AR">Arunachal Pradesh</option>
+                                    <option value="AS">Assam</option>
+                                    <option value="BH">Bharat</option>
+                                    <option value="BR">Bihar</option>
+                                    <option value="CH">Chandigarh</option>
+                                    <option value="CG">Chhattisgarh</option>
+                                    <option value="DD">Daman and Diu</option>
+                                    <option value="DL">Delhi</option>
+                                    <option value="DN">Dadra and Nagar Haveli</option>
+                                    <option value="GA">Goa</option>
+                                    <option value="GJ">Gujarat</option>
+                                    <option value="HR">Haryana</option>
+                                    <option value="HP">Himachal Pradesh</option>
+                                    <option value="JK">Jammu and Kashmir</option>
+                                    <option value="JH">Jharkhand</option>
+                                    <option value="KA">Karnataka</option>
+                                    <option value="KL">Kerala</option>
+                                    <option value="LA">Ladakh</option>
+                                    <option value="LD">Lakshadweep</option>
+                                    <option value="MP">Madhya Pradesh</option>
+                                    <option value="MH">Maharashtra</option>
+                                    <option value="MN">Manipur</option>
+                                    <option value="ML">Meghalaya</option>
+                                    <option value="MZ">Mizoram</option>
+                                    <option value="NL">Nagaland</option>
+                                    <option value="OD">Odisha</option>
+                                    <option value="OR">Orissa</option>
+                                    <option value="PY">Puducherry</option>
+                                    <option value="PB">Punjab</option>
+                                    <option value="RJ">Rajasthan</option>
+                                    <option value="SK">Sikkim</option>
+                                    <option value="TN">Tamil Nadu</option>
+                                    <option value="TS">Telangana</option>
+                                    <option value="TR">Tripura</option>
+                                    <option value="UA">Uttaranchal</option>
+                                    <option value="UP">Uttar Pradesh</option>
+                                    <option value="UK">Uttarakhand</option>
+                                    <option value="WB">West Bengal</option>
                                 </select>
-                                
+                                                                
                                     <input type="text" class="form-control" name="busno" id="busno" oninput="validateBusNO()">
                                     <span class="" id="busno-error">
                                     </span>
@@ -202,7 +204,7 @@
             // Use above variables to manipulate the DOM
         });
 
-        function addCity()
+        function addState()
         {
             var x = document.getElementById("series").value;
             document.getElementById("busno").value = x;

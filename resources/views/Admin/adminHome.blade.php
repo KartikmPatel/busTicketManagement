@@ -41,7 +41,7 @@
         <div class="card-body">
           <h5 class="card-title payment-card">Staffs</h5>
           <p class="card-text text-success">{{$staffCount}} Persons</p>
-          <a class="btn btn-outline-primary" href="#">View</a>
+          <a class="btn btn-outline-primary" href="{{url('/manageStaff')}}">View</a>
         </div>
     </div>
 </div>
