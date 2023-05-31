@@ -25,7 +25,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
-                        <span class="" id="all-error">
+                        <span class="" id="allStation-error">
                                 </span>
                             <div class="form-group">
                                 <label> Station I'd : </label>
@@ -143,7 +143,7 @@
             }
             else
             {
-                document.getElementById("staid-error").innerHTML="Station ID is valid";
+                document.getElementById("staid-error").innerHTML="";
         		document.getElementById("staid-error").style.color="green";
         		document.getElementById("staid-error").style.fontSize="15px";
             }
@@ -164,9 +164,9 @@
             }
             else
             {
-                document.getElementById("staname-error").innerHTML="Station Name is valid";
-        		document.getElementById("staname-error").style.color="green";
-        		document.getElementById("staname-error").style.fontSize="15px";
+                document.getElementById("staname-error").innerHTML="";
+        		document.getElementById("staname-error").style.color="";
+        		document.getElementById("staname-error").style.fontSize="";
             }
             return true;
         }
@@ -177,14 +177,14 @@
             var staname = document.getElementById("staname");
             if(staid.value.length == "" || staname.value.length == "")
             {
-                document.getElementById("all-error").innerHTML="Please fill up the empty field";
-        		document.getElementById("all-error").style.color="red";
-        		document.getElementById("all-error").style.fontSize="15px";
+                document.getElementById("allStation-error").innerHTML="Please fill up the empty field";
+        		document.getElementById("allStation-error").style.color="red";
+        		document.getElementById("allStation-error").style.fontSize="15px";
             }
             else{
-                document.getElementById("all-error").innerHTML="";
-        		document.getElementById("all-error").style.color="";
-        		document.getElementById("all-error").style.fontSize="";
+                document.getElementById("allStation-error").innerHTML="";
+        		document.getElementById("allStation-error").style.color="";
+        		document.getElementById("allStation-error").style.fontSize="";
                 if(validateStationID() && validateName())
                 {
                         storeData();

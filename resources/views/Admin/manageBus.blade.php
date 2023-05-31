@@ -25,12 +25,56 @@
                 </div>
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <span class="" id="all-error">
+                        <span class="" id="allBus-error">
                             </span>
+
                             <div class="form-group">
                                 <label> Bus Number : </label>
-                                <input type="text" class="form-control" name="busno" id="busno" oninput="validateBusNO()">
-                                <span class="" id="busno-error">
+                                <br>
+                                <select name="series" id="series" onchange="addCity()">
+                                    <option value="">Select</option>
+                                    <option value="GJ01">GJ01</option>
+                                    <option value="GJ02">GJ02</option>
+                                    <option value="GJ03">GJ03</option>
+                                    <option value="GJ04">GJ04</option>
+                                    <option value="GJ05">GJ05</option>
+                                    <option value="GJ06">GJ06</option>
+                                    <option value="GJ07">GJ07</option>
+                                    <option value="GJ08">GJ08</option>
+                                    <option value="GJ09">GJ09</option>
+                                    <option value="GJ10">GJ10</option>
+                                    <option value="GJ11">GJ11</option>
+                                    <option value="GJ12">GJ12</option>
+                                    <option value="GJ13">GJ13</option>
+                                    <option value="GJ14">GJ14</option>
+                                    <option value="GJ15">GJ15</option>
+                                    <option value="GJ16">GJ16</option>
+                                    <option value="GJ17">GJ17</option>
+                                    <option value="GJ18">GJ18</option>
+                                    <option value="GJ19">GJ19</option>
+                                    <option value="GJ20">GJ20</option>
+                                    <option value="GJ21">GJ21</option>
+                                    <option value="GJ22">GJ22</option>
+                                    <option value="GJ23">GJ23</option>
+                                    <option value="GJ24">GJ24</option>
+                                    <option value="GJ25">GJ25</option>
+                                    <option value="GJ26">GJ26</option>
+                                    <option value="GJ27">GJ27</option>
+                                    <option value="GJ28">GJ28</option>
+                                    <option value="GJ29">GJ29</option>
+                                    <option value="GJ30">GJ30</option>
+                                    <option value="GJ31">GJ31</option>
+                                    <option value="GJ32">GJ32</option>
+                                    <option value="GJ33">GJ33</option>
+                                    <option value="GJ34">GJ34</option>
+                                    <option value="GJ35">GJ35</option>
+                                    <option value="GJ36">GJ36</option>
+                                    <option value="GJ37">GJ37</option>
+                                    <option value="GJ38">GJ38</option>
+                                </select>
+                                
+                                    <input type="text" class="form-control" name="busno" id="busno" oninput="validateBusNO()">
+                                    <span class="" id="busno-error">
                                     </span>
                             </div>
                             <div class="form-group">
@@ -158,6 +202,12 @@
             // Use above variables to manipulate the DOM
         });
 
+        function addCity()
+        {
+            var x = document.getElementById("series").value;
+            document.getElementById("busno").value = x;
+        }
+
         function validateBusNO()
         {
             var bNo = document.getElementById("busno");
@@ -172,9 +222,9 @@
             }
             else
             {
-                document.getElementById("busno-error").innerHTML="Bus Number is valid";
-        		document.getElementById("busno-error").style.color="green";
-        		document.getElementById("busno-error").style.fontSize="15px";
+                document.getElementById("busno-error").innerHTML="";
+        		document.getElementById("busno-error").style.color="";
+        		document.getElementById("busno-error").style.fontSize="";
             }
             return true;
         }
@@ -193,9 +243,9 @@
             }
             else
             {
-                document.getElementById("name-error").innerHTML="Bus Name is valid";
-        		document.getElementById("name-error").style.color="green";
-        		document.getElementById("name-error").style.fontSize="15px";
+                document.getElementById("name-error").innerHTML="";
+        		document.getElementById("name-error").style.color="";
+        		document.getElementById("name-error").style.fontSize="";
             }
             return true;
         }
@@ -228,14 +278,14 @@
             // var size = document.getElementById("size");
             if(bNo.value.length == "" || name.value.length == "")
             {
-                document.getElementById("all-error").innerHTML="Please fill up the empty field";
-        		document.getElementById("all-error").style.color="red";
-        		document.getElementById("all-error").style.fontSize="15px";
+                document.getElementById("allBus-error").innerHTML="Please fill up the empty field";
+        		document.getElementById("allBus-error").style.color="red";
+        		document.getElementById("allBus-error").style.fontSize="15px";
             }
             else{
-                document.getElementById("all-error").innerHTML="";
-        		document.getElementById("all-error").style.color="";
-        		document.getElementById("all-error").style.fontSize="";
+                document.getElementById("allBus-error").innerHTML="";
+        		document.getElementById("allBus-error").style.color="";
+        		document.getElementById("allBus-error").style.fontSize="";
                 if(validateBusNO() && validateName())
                 {
                         storeData();
