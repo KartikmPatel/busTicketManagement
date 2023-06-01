@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class LoggedInCheck
+class adminLoggedInCheck
 {
     /**
      * Handle an incoming request.
@@ -15,10 +15,14 @@ class LoggedInCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(session('userid'))
+        if(session('username') == "Admin")
+        {
             return $next($request);
+        }
         else
-            // alert('Please First LoggedIn');
-            return redirect('/loginView');
+        {
+            return redirect('loginView');
+        }
+
     }
 }

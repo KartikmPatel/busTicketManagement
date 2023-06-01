@@ -12,7 +12,7 @@
     <button type="button" class="btn btn-outline-dark btn-lg" data-toggle="modal" data-target="#modelId">
         Add Bus
     </button>
-    
+
     <!-- Modal -->
     <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 <label> Bus Number : </label>
                                 <br>
-                                <select name="series" id="series" onchange="addState()">
+                                <select name="series" id="series" onchange="addState()" class="form-control col-md-6 mb-1">
                                     <option value="">------------Select State------------</option>
                                     <option value="AN">Andaman and Nicobar Islands</option>
                                     <option value="AP">Andhra Pradesh</option>
@@ -74,7 +74,7 @@
                                     <option value="UK">Uttarakhand</option>
                                     <option value="WB">West Bengal</option>
                                 </select>
-                                                                
+
                                     <input type="text" class="form-control" name="busno" id="busno" oninput="validateBusNO()">
                                     <span class="" id="busno-error">
                                     </span>
@@ -104,10 +104,10 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <br>
                 <br>
-                
+
                 <!-- <table class="table col-md-9 bg-secondary table-hover text-white" id="tblData">
                     <thead class="thead-dark">
                         <tr>
@@ -214,9 +214,10 @@
         {
             var bNo = document.getElementById("busno");
             let p = /^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$/;
+            var state = $('#series').val();
             if(!p.test(bNo.value))
             {
-                document.getElementById("busno-error").innerHTML="Please Enter valid Bus Number (GJ05AB1122)";
+                document.getElementById("busno-error").innerHTML="Please Enter valid Bus Number ("+state+"05AB1122)";
         		document.getElementById("busno-error").style.color="red";
         		document.getElementById("busno-error").style.fontSize="15px";
         		bNo.focus();

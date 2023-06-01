@@ -46,6 +46,10 @@ class Kernel extends HttpKernel
 
         'guard' => [
             \App\Http\Middleware\LoggedInCheck::class
+        ],
+
+        'adminLogin' => [
+            \App\Http\Middleware\adminLoggedInCheck::class
         ]
     ];
 

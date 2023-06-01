@@ -20,6 +20,7 @@ use App\Http\Controllers\userController;
 // });
 
 // Admin Side //
+route::middleware(['adminLogin'])->group(function(){
 route::get('/adminHome',[adminController::class,'adminHome']);
 
 route::get('manageTodayBooking',[adminController::class,'manageTodayBooking']);
@@ -51,6 +52,7 @@ route::get('manageCancelTicket',[adminController::class,'manageCancelTicket']);
 
 route::get('adminSeats',[adminController::class,'adminSeats']);
 route::post('searchSeats',[adminController::class,'searchSeats']);
+});
 
 route::get('test',function(){
     return view('Admin.testAdmin');
@@ -64,6 +66,9 @@ route::get('/',[userController::class,'home']);
 route::post('signUp',[userController::class,'signUp']);
 route::post('login',[userController::class,'login']);
 route::get('logout',[userController::class,'logout']);
+route::get('loginView',[userController::class,'loginView']);
+route::get('signUpView',[userController::class,'signUpView']);
+
 
 route::post('searchBus',[userController::class,'searchBus']);
 route::post('viewSeat',[userController::class,'viewSeat']);
@@ -71,19 +76,15 @@ route::post('viewSeat',[userController::class,'viewSeat']);
 route::middleware(['guard'])->group(function(){
     route::post('booking',[userController::class,'booking']);
     route::post('/downloadTicket',[userController::class,'downloadTicket']);
+    route::post('showTicket',[userController::class,'showTicket']);
+    route::get('viewHistory',[userController::class,'viewHistory']);
+    route::get('cancelTicket',[userController::class,'cancelTicket']);
+    route::post('ticketCancel',[userController::class,'ticketCancel']);
+    route::post('ticketCancel2',[userController::class,'ticketCancel2']);
 });
-
-route::post('showTicket',[userController::class,'showTicket']);
 
 route::get('viewProfile',[userController::class,'viewProfile']);
 route::post('editProfile',[userController::class,'editProfile']);
 route::post('editImage',[userController::class,'editImage']);
 route::get('changePassword',[userController::class,'changePassword']);
 route::post('passwordChange',[userController::class,'passwordChange']);
-
-route::get('viewHistory',[userController::class,'viewHistory']);
-route::get('cancelTicket',[userController::class,'cancelTicket']);
-route::post('ticketCancel',[userController::class,'ticketCancel']);
-route::post('ticketCancel2',[userController::class,'ticketCancel2']);
-route::get('loginView',[userController::class,'loginView']);
-route::get('signUpView',[userController::class,'signUpView']);
