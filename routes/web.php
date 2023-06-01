@@ -23,7 +23,7 @@ use App\Http\Controllers\userController;
 route::middleware(['adminLogin'])->group(function(){
 route::get('/adminHome',[adminController::class,'adminHome']);
 
-route::get('manageTodayBooking',[adminController::class,'manageTodayBooking']);
+// route::get('manageTodayBooking',[adminController::class,'manageTodayBooking']);
 
 route::get('manageBus',[adminController::class,'viewBuses']);
 route::post('addBus',[adminController::class,'addBus']);

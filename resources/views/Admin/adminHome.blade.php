@@ -1,17 +1,16 @@
 @extends('Layouts.main')
 
 @section('main-content')
-
 <body>
 <div class="dashboard-card">
-    <div class="card" style="width: 13rem;height: 16rem;background-color:#D8BFD8">
+    <!-- <div class="card" style="width: 13rem;height: 16rem;background-color:#D8BFD8">
         <img class="ml-5" src="images/new_icon.png" height="100" width="120" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Today's Bookings</h5>
           <p class="card-text text-success">Available</p>
           <a class="btn btn-outline-primary" href="{{url('/manageTodayBooking')}}">View</a>
         </div>
-    </div>
+    </div> -->
     <div class="card" style="width: 13rem;height: 16rem;background-color:rgb(203, 220, 184)">
         <img class="ml-5" src="images/bus_icon.png" height="100" width="120" alt="Card image cap">
         <div class="card-body">
@@ -46,6 +45,25 @@
     </div>
 </div>
 
+<br>
+<center>
+	<div style="border-top: 3px dashed black;font-Size:25px;font-weight:bold;">
+		<font color="#FF2626">T</font>
+        <font color="#252A34">o</font>
+        <font color="#753422">d</font>
+        <font color="#FFD523">a</font>
+        <font color="#71EFA3">y</font>
+        <font color="#0F52BA">'s</font>&nbsp;&nbsp;
+        <font color="#66CC66">B</font>
+        <font color="#FF9966">o</font>
+        <font color="#FFCCCC">o</font>
+        <font color="#00C1D4">k</font>
+        <font color="#EFE3D0">i</font>
+		<font color="#FF2626">n</font>
+        <font color="#252A34">g</font>
+		<font color="#71EFA3">s</font>
+   </div>
+</center>
 <!-- <div class="container">
 	<div class="screen">
 		<div class="screen__content">
@@ -103,6 +121,82 @@
 		</div>
 	</div>
 </div> -->
+<div>
+        <form action="" class="form-inline" style="margin-left:32%;margin-top:30px;">
+                @csrf
+                <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search" value="{{ $search }}" aria-label="Search">
+                <button class="btn btn-info my-2 my-sm-0">Search</button>
+                <!-- <button type="button" class="btn btn-danger my-2 my-sm-0 ml-4" onclick="window.location.href='{{ url('/manageBooking') }}'">All Bookings</button> -->
+            </form>
+        </div>
+        
+        <div class="viewTable">
+				<table class="content1-table1 col-md-7" id="tblData" style="margin-top:50px;margin-left:12%">
+					<thead>
+						<tr>
+							<th></th>
+							<th> ticket ID </th>
+							<th> busNo </th>
+							<th> userName </th>
+							<th> seat No </th>
+							<th> fare </th>
+							<th> From </th>
+							<th> To </th>
+							<th> Date </th>
+							<th> Time </th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach ($todayData as $today)
+						<tr>
+							<td>
+								<img src="./images/new.jpg" width="70px" height="50px" alt=""/>
+							</td>
+							
+							<td class="tid">
+								{{ $today->ticketID }}
+							</td>
+							<td class="bno">
+								{{ $today->busNo }}
+							</td>
+	
+							@foreach($users as $user)
+							@if($user->userID == $today->userID)
+							<td class="uid">
+								{{ $user->userName }}
+							</td>
+							@endif
+							@endforeach
+	
+							<td class="sno">
+								{{ $today->seatNo }}
+							</td>
+							<td class="fare">
+								{{ $today->fare }}
+							</td>
+							<td class="from">
+								{{ $today->from }}
+							</td>
+							<td class="to">
+								{{ $today->to }}
+							</td>
+							<td class="date">
+								{{ $today->date }}
+							</td>
+							<td class="time">
+								{{ $today->time }}
+							</td>
+						</tr>
+					@endforeach
+	  </tbody>
+	</table>
+	</div>
+	
+	<br>
+	<div style="margin-left:37%;">
+		{{ $todayData->links() }}
+	</div>
+
 </body>
 
 @endsection

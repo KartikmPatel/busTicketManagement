@@ -5,7 +5,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <title> </title>
 </head>
-<body class="bg-white">
+<body class="bg-white" onload="myFunction()">
 <div class="ml-4 mt-3">
     {{-- <h2> {{ $bus->busNo }} Seats </h2> --}}
 
@@ -30,6 +30,15 @@
     @php
         $j = false;
     @endphp
+
+<div class="content10" id="pre">
+    <div class="ball red"></div>
+    <div class="ball green"></div>
+    <div class="ball yellow"></div>
+    <div class="ball blue"></div>
+    <div class="ball emerald-green"></div>
+    <div class="ball pink"></div>
+</div>
 
 
     <div class="theatre mt-5">
@@ -1013,6 +1022,14 @@
         $j = false;
 @endphp
 
+<div class="content10" id="pre">
+    <div class="ball red"></div>
+    <div class="ball green"></div>
+    <div class="ball yellow"></div>
+    <div class="ball blue"></div>
+    <div class="ball emerald-green"></div>
+    <div class="ball pink"></div>
+</div>
 
 <div class="theatre1 mt-5">
             <a class="btn btn-outline-dark ml-3" href="{{url('/')}}"><i class="ml-1 fa fa-arrow-left backarraow text-danger"></i></a>

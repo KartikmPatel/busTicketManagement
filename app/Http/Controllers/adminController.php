@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\DB;
 
 class adminController extends Controller
 {
-    public function adminHome()
+    public function adminHome(Request $r)
     {
         $userid = session('userid');
         if($userid)
@@ -29,30 +29,44 @@ class adminController extends Controller
         $stationCount = stationModel::count();
         $bookingCount = bookingModel::count();
         $staffCount = staffModel::count();
-        $data = compact('busCount','routeCount','stationCount','bookingCount','staffCount');
-        return view("Admin.adminHome")->with($data);
-    }
 
-    public function manageTodayBooking(Request $r)
-    {
         $curDate = now()->format('Y-m-d');
         $search = $r['search'] ?? "";
         if($search != "")
         {
-            // $bus = busModel::where('busNo','LIKE',"%$search%")->orWhere('name','LIKE',"%$search%")->orWhere('size','LIKE',"%$search%")->orWhere('type','LIKE',"%$search%")->paginate(5);
             $todayData = bookingModel::select('*')->where('date',$curDate)->where('busNo','LIKE',"%$search%")->orderBy('busNo')->paginate(5);
             $todayData->appends(['search' => $search]);
         }
         else
         {
-            // $bus = busModel::paginate(5);
-            $todayData = bookingModel::select('*')->where('date',$curDate)->orderBy('busNo')->paginate(5);
+            $todayData = bookingModel::select('*')->where('date',$curDate)->orderBy('busNo')->paginate(3);
         }
 
         $users = userModel::all();
-        $data = compact('todayData','users','search');
-        return view('Admin.managetodayRecord')->with($data);
+        $data = compact('busCount','routeCount','stationCount','bookingCount','staffCount','todayData','users','search');
+        return view("Admin.adminHome")->with($data);
     }
+
+    // public function manageTodayBooking(Request $r)
+    // {
+    //     $curDate = now()->format('Y-m-d');
+    //     $search = $r['search'] ?? "";
+    //     if($search != "")
+    //     {
+    //         // $bus = busModel::where('busNo','LIKE',"%$search%")->orWhere('name','LIKE',"%$search%")->orWhere('size','LIKE',"%$search%")->orWhere('type','LIKE',"%$search%")->paginate(5);
+    //         $todayData = bookingModel::select('*')->where('date',$curDate)->where('busNo','LIKE',"%$search%")->orderBy('busNo')->paginate(5);
+    //         $todayData->appends(['search' => $search]);
+    //     }
+    //     else
+    //     {
+    //         // $bus = busModel::paginate(5);
+    //         $todayData = bookingModel::select('*')->where('date',$curDate)->orderBy('busNo')->paginate(5);
+    //     }
+
+    //     $users = userModel::all();
+    //     $data = compact('todayData','users','search');
+    //     return view('Admin.managetodayRecord')->with($data);
+    // }
 
     public function viewBuses(Request $r)
     {

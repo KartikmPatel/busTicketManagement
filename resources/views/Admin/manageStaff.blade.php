@@ -4,7 +4,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
         <title> Manage Staff </title>
     </head>
-
+    
     <div class="ml-4 mt-3">
         <h2> Staffs </h2>
         {{-- <button class="btn btn-outline-dark"> Add Bus</button> --}}
@@ -26,6 +26,7 @@
                     <div class="modal-body">
                         <div class="container-fluid">
                             <div class="form-group">
+                                <span id="allStaff-error" class="text-danger"></span><br>
                                 <label> Bus Number : </label>
                                 <select id="busno" name="busno" class="form-control">
                                     <option value="">--Select Bus Number--</option>
@@ -60,7 +61,7 @@
                                 <span class="text-danger" id="mNo-error">
                                 </span>
                             </div>
-                            <button type="button" class="btn btn-success mt-1" onclick="storeData();"> AddStaff </button>
+                            <button type="button" class="btn btn-success mt-1" onclick="validatefunction()"> AddStaff </button>
                         </div>
                     </div>
                 </div>
@@ -172,16 +173,56 @@
                 // Use above variables to manipulate the DOM
             });
 
+            function validatefunction()
+            {
+                let p = /^\d{10}$/;
+                var busno = document.getElementById("busno");
+                var sName = document.getElementById("sName");
+                var sType = document.getElementById("sType");
+                var mNo = document.getElementById("mNo");
+                if(busno.value == "" || sName.value == "" || sType.value == "" || mNo.value == "")
+                {
+                    document.getElementById("mNo-error").innerHTML =  "";
+                    document.getElementById("mNo-error").style.color =  "";
+                    document.getElementById("mNo-error").style.fontSize =  "";
+
+                    document.getElementById("allStaff-error").innerHTML =  "Please Fill up the empty field";
+                    document.getElementById("allStaff-error").style.color =  "red";
+                    document.getElementById("allStaff-error").style.fontSize =  "15px";
+                }
+                else if(!p.test(mNo.value))
+                {
+                    document.getElementById("allStaff-error").innerHTML =  "";
+                    document.getElementById("allStaff-error").style.color =  "";
+                    document.getElementById("allStaff-error").style.fontSize =  "";
+
+                    document.getElementById("mNo-error").innerHTML =  "Please enter exactly 10 digits";
+                    document.getElementById("mNo-error").style.color =  "red";
+                    document.getElementById("mNo-error").style.fontSize =  "15px";   
+                }
+                else
+                {
+                    document.getElementById("mNo-error").innerHTML =  "";
+                    document.getElementById("mNo-error").style.color =  "";
+                    document.getElementById("mNo-error").style.fontSize =  "";
+
+                    document.getElementById("allStaff-error").innerHTML =  "";
+                    document.getElementById("allStaff-error").style.color =  "";
+                    document.getElementById("allStaff-error").style.fontSize =  "";
+                    storeData()   
+                }
+            }
+
             function storeData() {
             var busno = $('#busno').val();
             var sName = $('#sName').val();
             var sType = $('#sType').val();
             var mNo = $('#mNo').val();
 
-            $('#busno-error').addClass('d-none');
-            $('#sName-error').addClass('d-none');
-            $('#sType-error').addClass('d-none');
-            $('#mNo-error').addClass('d-none');
+            // $('#busno-error').addClass('d-none');
+            // $('#sName-error').addClass('d-none');
+            // $('#sType-error').addClass('d-none');
+            // $('#mNo-error').addClass('d-none');
 
             $.ajax({
                 type: 'POST',
