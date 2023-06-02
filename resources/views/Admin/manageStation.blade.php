@@ -216,6 +216,10 @@
                             window.location.replace('/manageStation');
                         }
 
+                        if(data == "stationIdError")
+                        {
+                            alert('StationID Already Exists');
+                        }
                         if(data == "stationError")
                         {
                             alert('Station Already Exists');
@@ -270,6 +274,11 @@
                         if(data == "updateStation")
                         {
                             alert('Station Update Successfully');
+                            window.location.replace('/manageStation');
+                        }
+                        if(data == "stationUpdateError")
+                        {
+                            alert('Station Already Exists');
                             window.location.replace('/manageStation');
                         }
 

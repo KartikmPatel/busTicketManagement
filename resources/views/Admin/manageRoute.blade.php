@@ -387,6 +387,17 @@
                         //     location.reload();
                         // },10);
 
+                        if(data == "sameBus")
+                        {
+                            alert('Bus route Already Exists');
+                            window.location.replace('/manageRoute');
+                        }
+                        if(data == "sameStation")
+                        {
+                            alert('Station must be different');
+                            window.location.replace('/manageRoute');
+                        }
+
                         if(data == "updateRoute")
                         {
                             alert('Update Route SuccessFully');

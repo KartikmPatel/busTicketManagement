@@ -252,15 +252,28 @@ class adminController extends Controller
         $st1 = stationModel::where('stationName',$r['ssID'])->first();
         $st2 = stationModel::where('stationName',$r['esID'])->first();
 
-        $route->busNo = $r['busno'];
-        $route->startingStationID = $st1->stationID;
-        $route->endingStationID = $st2->stationID;
-        $route->departureTime = $r['dtime'];
-        $route->fare = $r['fare'];
-        $route->save();
-
-        $message = "updateRoute";
-        return $message;
+       // if($busno)
+        // {
+        //     $message = "sameBus";
+        //     return $message;
+        // }
+        if($st1 == $st2)
+        {
+            $message = "sameStation";
+            return $message;
+        }
+        else
+        {
+            $route->busNo = $r['busno'];
+            $route->startingStationID = $st1->stationID;
+            $route->endingStationID = $st2->stationID;
+            $route->departureTime = $r['dtime'];
+            $route->fare = $r['fare'];
+            $route->save();
+    
+            $message = "updateRoute";
+            return $message;
+        }
     }
 
     public function viewStaff(Request $r)
@@ -330,14 +343,24 @@ class adminController extends Controller
     {
         $staff = staffModel::find($r['sID']);
 
-        $staff->busNo = $r['busno'];
-        $staff->staffName = $r['sName'];
-        $staff->staffType = $r['sType'];
-        $staff->mobileNo = $r['mNo'];
-        $staff->save();
+        $busStaff = staffModel::where('busNo',$r['busno'])->first();
+        if($busStaff->staffType == $r['sType'])
+        {
+            $message = "sameStaffType";
+            return $message;
+        }
+        else
+        {
+            $staff->busNo = $r['busno'];
+            $staff->staffName = $r['sName'];
+            $staff->staffType = $r['sType'];
+            $staff->mobileNo = $r['mNo'];
+            $staff->save();
+    
+            $message = "updateStaff";
+            return $message;
+        }
 
-        $message = "updateStaff";
-        return $message;
     }
 
     public function viewStations(Request $r)
@@ -372,7 +395,14 @@ class adminController extends Controller
     );
 
         $station = stationModel::where('stationName',$r['staname'])->first();
-        if($station)
+        $stationId = stationModel::where('stationID',$r['staid'])->first();
+
+        if($stationId)
+        {
+            $message = "stationIdError";
+            return $message;
+        }
+        else if($station)
         {
             $message = "stationError";
             return $message;
@@ -392,11 +422,21 @@ class adminController extends Controller
     public function updateStation(Request $r)
     {
         $station = stationModel::find($r['staid']);
-        $station->stationName = $r['staname'];
-        $station->save();
 
-        $message = "updateStation";
-        return $message;
+        $stationName = stationModel::where('stationName',$r['staname'])->first();
+        if($stationName)
+        {
+            $message = "stationUpdateError";
+            return $message;
+        }
+        else
+        {
+            $station->stationName = $r['staname'];
+            $station->save();
+    
+            $message = "updateStation";
+            return $message;
+        }
     }
 
     public function deleteStation($id)
