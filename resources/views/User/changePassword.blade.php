@@ -107,16 +107,6 @@ button[disabled] {
   </style>
 </head>
 <body class="bg-white" onload="myFunction()">
-
-<div class="content10" id="pre">
-    <div class="ball red"></div>
-    <div class="ball green"></div>
-    <div class="ball yellow"></div>
-    <div class="ball blue"></div>
-    <div class="ball emerald-green"></div>
-    <div class="ball pink"></div>
-</div>
-
 <div class="mainDiv">
   <div class="cardStyle">
       <img src="images1/password1.jpg" id="signupLogo"/>

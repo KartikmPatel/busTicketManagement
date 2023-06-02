@@ -1,6 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <style>
+        #preloader{
+        background: #fff url(images/spinner.gif) no-repeat center ;
+        background-size: 15%;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        z-index: 100;
+        }
+    </style>
 
     <!-- Bootstrap CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -21,10 +31,10 @@
     <link rel="stylesheet" href="{{asset('userStyle/searchBus.css')}}">
     <link rel="stylesheet" href="{{asset('userStyle/login.css')}}">
     <link rel="stylesheet" href="{{asset('userStyle/viewBus.css')}}">
-    <link rel="stylesheet" href="{{asset('userStyle/preloader.css')}}">
     <link rel="stylesheet" href="{{asset('layoutstyle/profile.css')}}">
 </head>
   <body>
+  <div id="preloader"></div>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark ">
         @if(session('username') == "Admin")
         <a class="navbar-brand"><span id="toggle-icon" class="navbar-toggler-icon" style="border:2px solid white"></span></a>

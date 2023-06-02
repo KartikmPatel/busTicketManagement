@@ -31,16 +31,6 @@
         $j = false;
     @endphp
 
-<div class="content10" id="pre">
-    <div class="ball red"></div>
-    <div class="ball green"></div>
-    <div class="ball yellow"></div>
-    <div class="ball blue"></div>
-    <div class="ball emerald-green"></div>
-    <div class="ball pink"></div>
-</div>
-
-
     <div class="theatre mt-5">
         <a class="btn btn-outline-dark ml-3" href="{{url('/')}}"><i class="ml-1 fa fa-arrow-left backarraow text-danger"></i></a>
         <div class="screen-side">
@@ -1021,15 +1011,6 @@
 @php
         $j = false;
 @endphp
-
-<div class="content10" id="pre">
-    <div class="ball red"></div>
-    <div class="ball green"></div>
-    <div class="ball yellow"></div>
-    <div class="ball blue"></div>
-    <div class="ball emerald-green"></div>
-    <div class="ball pink"></div>
-</div>
 
 <div class="theatre1 mt-5">
             <a class="btn btn-outline-dark ml-3" href="{{url('/')}}"><i class="ml-1 fa fa-arrow-left backarraow text-danger"></i></a>

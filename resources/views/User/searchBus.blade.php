@@ -2,16 +2,6 @@
 
 @section('Usermain-content')
 <body class="bg-white" onload="myFunction()">
-
-<div class="content10" id="pre">
-    <div class="ball red"></div>
-    <div class="ball green"></div>
-    <div class="ball yellow"></div>
-    <div class="ball blue"></div>
-    <div class="ball emerald-green"></div>
-    <div class="ball pink"></div>
-</div>
-
     <div class="viewBus">
     <table class="content-table col-md-7">
   <thead>

@@ -4,17 +4,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="jsFiles/preloader.js"></script>
-    <link rel="stylesheet" href="{{asset('userStyle/preloader.css')}}">
+    <style>
+        #preloader{
+        background: #fff url(images/spinner.gif) no-repeat center ;
+        background-size: 15%;
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        z-index: 100;
+        }
+    </style>
   </head>
   <body onload="myFunction()">
-  <div class="content10" id="pre">
-    <div class="ball red"></div>
-    <div class="ball green"></div>
-    <div class="ball yellow"></div>
-    <div class="ball blue"></div>
-    <div class="ball emerald-green"></div>
-    <div class="ball pink"></div>
-</div>
+  <div id="preloader"></div>
 
       <div class="download">
         <form action="{{ url('/downloadTicket') }}" method="post">

@@ -5,16 +5,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
   <body class="bg-dark" onload="myFunction()">
-
-  <div class="content10" id="pre">
-    <div class="ball red"></div>
-    <div class="ball green"></div>
-    <div class="ball yellow"></div>
-    <div class="ball blue"></div>
-    <div class="ball emerald-green"></div>
-    <div class="ball pink"></div>
-</div>
-
     <div class="signupSection">
         <div class="info">
           <h2>Globel Travels</h2>
