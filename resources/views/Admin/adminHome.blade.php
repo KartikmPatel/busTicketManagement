@@ -1,7 +1,7 @@
 @extends('Layouts.main')
 
 @section('main-content')
-<body>
+<body onload="myFunction()">
 <div class="dashboard-card">
     <!-- <div class="card" style="width: 13rem;height: 16rem;background-color:#D8BFD8">
         <img class="ml-5" src="images/new_icon.png" height="100" width="120" alt="Card image cap">

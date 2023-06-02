@@ -5,6 +5,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <title> Manage Bus </title>
 </head>
+<body onload="myFunction()">
+    
 <div class="ml-4 mt-3">
     <h2> Buses </h2>
     {{-- <button class="btn btn-outline-dark"> Add Bus</button> --}}
@@ -407,4 +409,5 @@
                 })
             }
             </script>
+</body>
 @endsection

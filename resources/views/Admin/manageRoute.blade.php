@@ -7,6 +7,7 @@
     <title> Manage Route </title>
 </head>
 
+<body onload="myFunction()">    
 <div class="ml-4 mt-3">
         {{-- @if (Session()->has('success'))
          <div class="alert alert-success alert-dismissible successAlert" role="alert">
@@ -395,4 +396,5 @@
                 })
             }
         </script>
+</body>
     @endsection

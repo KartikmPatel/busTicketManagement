@@ -5,7 +5,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <title> Booking </title>
 </head>
-<body>
+<body onload="myFunction()">
         <div>
         <form action="" class="form-inline" style="margin-left:32%;margin-top:30px;">
                 @csrf

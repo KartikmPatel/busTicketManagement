@@ -5,7 +5,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <title> Booking </title>
 </head>
-<body>
+<body onload="myFunction()">
         <!-- <table class="table col-md-9 bg-secondary table-hover text-white" id="tblData">
             <thead class="thead-dark">
                 <tr>

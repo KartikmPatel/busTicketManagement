@@ -30,7 +30,7 @@
             <li><a href="{{url('/adminSeats')}}"><i class="fas fa-playstation"></i>Seats</a></li>
             <li><a href="{{url('/manageStation')}}"><i class="fab fa-playstation"></i>Stations</a></li>
             <li><a href="{{url('/manageStaff')}}"><i class="fa fa-people-group"></i>Staffs</a></li>
-            <li><a href="{{url('/manageCancelTicket')}}"><i class="fa fa-ticket-simple"></i>Cancel Ticket</a></li>
+            <li><a href="{{url('/manageCancelTicket')}}"><i class="fa fa-rectangle-xmark"></i>Cancel Ticket</a></li>
             <li><a href="{{url('manageBooking')}}"><i class="fa fa-ticket"></i>Bookings</a></li>
         </ul>
       </div>
