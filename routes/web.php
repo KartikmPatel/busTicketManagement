@@ -68,7 +68,7 @@ route::post('login',[userController::class,'login']);
 route::get('logout',[userController::class,'logout']);
 route::get('loginView',[userController::class,'loginView']);
 route::get('signUpView',[userController::class,'signUpView']);
-
+route::get('contactUs',[userController::class,'contactView']);
 
 route::post('searchBus',[userController::class,'searchBus']);
 route::post('viewSeat',[userController::class,'viewSeat']);

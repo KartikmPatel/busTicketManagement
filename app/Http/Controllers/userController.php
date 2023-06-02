@@ -363,5 +363,10 @@ class userController extends Controller
     {
         return view('User.signup');
     }
+
+    public function contactView()
+    {
+        return view('User.contactUs');
+    }
     
 }
