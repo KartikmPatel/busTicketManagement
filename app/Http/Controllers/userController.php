@@ -373,5 +373,10 @@ class userController extends Controller
     {
         return view('User.aboutUs');
     }
+
+    public function serviceView()
+    {
+        return view('User.service');
+    }
     
 }

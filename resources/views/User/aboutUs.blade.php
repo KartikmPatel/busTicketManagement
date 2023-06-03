@@ -21,7 +21,7 @@
                     <button class="cta-button">Learn More</button>
                 </div>
                 <div class="hero-image">
-                    <img src="images/about.jpg" id="ig">
+                    <img src="images1/about.jpg" id="ig">
                 </div>
             </div>
         </section>

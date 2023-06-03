@@ -13,7 +13,7 @@
                         <ul>
                             <li><a href="{{url('/aboutUs')}}">about us</a></li>
                             <li><a href="{{url('/contactUs')}}">contact us</a></li>
-                            <li><a href="#">our services</a></li>
+                            <li><a href="{{url('/service')}}">terms & services</a></li>
                             <li><a href="#">privacy policy</a></li>
                             <li><a href="#">affiliate program</a></li>
                         </ul>

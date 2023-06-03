@@ -16,7 +16,7 @@
     align-items: center;
     flex-direction: column;
     /* background: url("images/bus_icon.png"); */
-    background-image: url("bg.jpg");
+    background-image: url("../images1/contact.jpg");
     background-size: cover;
 }
 .contact .content
