@@ -70,6 +70,7 @@ route::get('loginView',[userController::class,'loginView']);
 route::get('signUpView',[userController::class,'signUpView']);
 route::get('contactUs',[userController::class,'contactView']);
 route::get('aboutUs',[userController::class,'aboutView']);
+route::get('privacy',[userController::class,'privacyView']);
 route::get('service',[userController::class,'serviceView']);
 
 route::post('searchBus',[userController::class,'searchBus']);

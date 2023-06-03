@@ -17,8 +17,10 @@
     flex-direction: column;
     /* background: url("images/bus_icon.png"); */
     background-image: url("../images1/contact.jpg");
+    /* opacity: 0.4; */
     background-size: cover;
 }
+
 .contact .content
 {
     max-width: 800px;

@@ -6,30 +6,58 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Terms Of Service</title>
+        {{-- <title>Terms Of Service</title> --}}
+        <title>Our Service</title>
         <link rel="stylesheet" href="{{asset('layoutstyle/service.css')}}">
         {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> --}}
     </head>
     <body onload="myFunction()" class="bg-white">
-        <div class="co">
-        <div class="terms-box">
-            <div class="terms-text">
-                <h2>Term Of Service</h2>
-                <p>Last Edit: 04/13/2022</p>
-                <p>Greetings Users,</p>
-                <p>Use this p tag for more paragraph</p>
-                <p>this are random paragraph</p>
-                <p>Generating random paragraphs can be an excellent way for writers to get their creative flow going at the beginning of the day. The writer has no idea what topic the random paragraph will be about when it appears. This forces the writer to use creativity to complete one of three common writing challenges. The writer can use the paragraph as the first one of a short story and build upon it. A second option is to use the random paragraph somewhere in a short story they create. The third option is to have the random paragraph be the ending paragraph in a short story. No matter which of these challenges is undertaken, the writer is forced to use creativity to incorporate the paragraph into their writing.</p>
-                <p>A random paragraph can also be an excellent way for a writer to tackle writers' block. Writing block can often happen due to being stuck with a current project that the writer is trying to complete. By inserting a completely random paragraph from which to begin, it can take down some of the issues that may have been causing the writers' block in the first place.</p>
-            </div>
-            <h4>I Agree to the <span>Terms of Service</span> and I read the Privacy Notice.</h4>
-            <div class="buttons">
-                <button class="bton red-btn">Accept</button>
-                <button class="bton gray-btn">Decline</button>
+        <div class="serve">
+            <h1>Our Services</h1>
+            <div class="row">
+                <div class="service">
+                    <i class="fa-solid fa-laptop"></i>
+                    <h2>Web Design</h2>
+                    <p>1st Paragraph of Web Design</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-laptop"></i>
+                    <h2>Marketing</h2>
+                    <p>2nd Paragraph of Marketing</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-laptop"></i>
+                    <h2>Graphics</h2>
+                    <p>3rd Paragraph of Graphics</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-laptop"></i>
+                    <h2>Data Analysis</h2>
+                    <p>4th Paragraph of Data Analysis</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-laptop"></i>
+                    <h2>App Development</h2>
+                    <p>5th Paragraph of App Development</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-laptop"></i>
+                    <h2>Accounting</h2>
+                    <p>6th Paragraph of Accounting</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-laptop"></i>
+                    <h2>Payroll</h2>
+                    <p>7th Paragraph of Payroll</p>
+                </div>
+                <div class="service">
+                    <i class="fa-solid fa-laptop"></i>
+                    <h2>Networking</h2>
+                    <p>8th Paragraph of Networking</p>
+                </div>
             </div>
         </div>
-        </div>
+
     </body>
 </html>
-
 @endsection

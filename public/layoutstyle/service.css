@@ -1,80 +1,69 @@
-.co{
+*{
     margin: 0;
     padding: 0;
-    background-image: url("../images1/service.jpg");
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
 }
 
-.terms-box{
-    max-width: 460px;
-    background-color: #111;
-    color: #fff;
-    font-family: "Montserrat";
-    padding: 60px 30px;
+.serve{
+    width: 100%;
+    height: 100vh;
+    padding: 0 8%;
 }
 
-.terms-text{
-    padding: 0 20px;
-    height: 400px;
-    overflow-y: auto;
-    font-size: 14px;
-    font-weight: 500;
-    color: #f1f1f1;
-}
-
-.terms-text::-webkit-scrollbar{
-    width: 2px;
-    background-color: #282828;
-}
-
-.terms-text::-webkit-scrollbar-thumb{
-    background-color: #d13639;
-}
-
-.terms-text h2{
-    text-transform: uppercase;
-}
-
-.terms-box h4{
-    font-size: 13px;
+.serve h1{
     text-align: center;
-    padding: 0 40px;
+    padding-top: 10%;
+    margin-bottom: 60px;
+    font-weight: 600;
+    position: relative;
 }
 
-.terms-box h4 span{
-    color: #d13639;
+.serve h1::after{
+    content: '';
+    background: #303ef7;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.button{
-    display: flex;
-    padding: 0 20px;
-    justify-content: space-between;
+.row{
+    display: grid;
+    padding: 0px 50px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
 }
 
-.bton{
-    height: 50px;
-    width: calc(50% - 6px);
-    border: 0;
-    border-radius: 6px;
-    font-size: 19px;
-    font-weight: 500;
-    color: #fff;
-    transition: .3s linear;
+.service{
+    text-align: center;
+    padding: 25px 15px;
+    border-radius: 5px;
+    font-size: 14px;
     cursor: pointer;
+    background: transparent;
+    transition: transform 0.5s, background 0.5s;
 }
 
-.red-btn{
-    background-color: #d13639;
+.service i{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #303ef7;
 }
 
-.gray-btn{
-    background-color: #282828;
+.service h2{
+    font-weight: 600;
+    margin-bottom: 8px;
 }
 
-.bton:hover{
-    opacity: .6;
+.service:hover{
+    background: #303ef7;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.service:hover i{
+    color: #fff;
 }
