@@ -11,6 +11,7 @@ use App\Models\staffModel;
 use App\Models\bookingModel;
 use App\Models\cancelticketModel;
 use App\Models\userModel;
+use App\Models\feedback;
 use GuzzleHttp\Psr7\Message;
 use Illuminate\Support\Facades\DB;
 
@@ -29,6 +30,7 @@ class adminController extends Controller
         $stationCount = stationModel::count();
         $bookingCount = bookingModel::count();
         $staffCount = staffModel::count();
+        $feedbackCount = feedback::count();
 
         $curDate = now()->format('Y-m-d');
         $search = $r['search'] ?? "";
@@ -43,7 +45,7 @@ class adminController extends Controller
         }
 
         $users = userModel::all();
-        $data = compact('busCount','routeCount','stationCount','bookingCount','staffCount','todayData','users','search');
+        $data = compact('busCount','routeCount','stationCount','bookingCount','staffCount','feedbackCount','todayData','users','search');
         return view("Admin.adminHome")->with($data);
     }
 
@@ -494,5 +496,12 @@ class adminController extends Controller
         }
         $data = compact('ticket','search','users');
         return view('Admin.managecancelTicket')->with($data);
+    }
+
+    public function manageFeedback()
+    {
+        $feedback = feedback::orderBy('curDate','desc')->paginate(5);
+        $data = compact('feedback');
+        return view('Admin.manageFeedback')->with($data);
     }
 }

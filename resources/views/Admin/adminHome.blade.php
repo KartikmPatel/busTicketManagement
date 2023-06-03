@@ -3,14 +3,14 @@
 @section('main-content')
 <body onload="myFunction()">
 <div class="dashboard-card">
-    <!-- <div class="card" style="width: 13rem;height: 16rem;background-color:#D8BFD8">
+    {{-- <div class="card" style="width: 13rem;height: 16rem;background-color:#D8BFD8">
         <img class="ml-5" src="images/new_icon.png" height="100" width="120" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">Today's Bookings</h5>
+          <h5 class="card-title">Feedback</h5>
           <p class="card-text text-success">Available</p>
-          <a class="btn btn-outline-primary" href="{{url('/manageTodayBooking')}}">View</a>
+          <a class="btn btn-outline-primary" href="{{url('/manageFeedback')}}">View</a>
         </div>
-    </div> -->
+    </div> --}}
     <div class="card" style="width: 13rem;height: 16rem;background-color:rgb(203, 220, 184)">
         <img class="ml-5" src="images/bus_icon.png" height="100" width="120" alt="Card image cap">
         <div class="card-body">
@@ -41,6 +41,14 @@
           <h5 class="card-title payment-card">Staffs</h5>
           <p class="card-text text-success">{{$staffCount}} Persons</p>
           <a class="btn btn-outline-primary" href="{{url('/manageStaff')}}">View</a>
+        </div>
+    </div>
+	<div class="card" style="width: 13rem;height: 16rem;background-color:#ceebf9">
+        <img class="ml-5" src="images1/mainfeed.png" height="100" width="120" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Feedback</h5>
+          <p class="card-text text-success">{{$feedbackCount}} Feedback</p>
+          <a class="btn btn-outline-primary" href="{{url('/manageFeedback')}}">View</a>
         </div>
     </div>
 </div>

@@ -15,7 +15,7 @@
         <section class="contact">
             <div class="content">
                 <h2>Contact Us</h2>
-                <p>Hello this is para</p>
+                <p>Thanks for Visit!</p>
             </div>
             <div class="con">
                 <div class="contactInfo">
@@ -40,26 +40,27 @@
                         </div>
                         <div class="text">
                             <h3>Email</h3>
-                            <p>p@gmail.com</p>
+                            <p>GlobalTravels@gmail.com</p>
                         </div>
                     </div>
                 </div>
                 <div class="contactForm">
-                    <form>
+                    <form method="POST" action="{{url('feedback')}}">
+                        @csrf 
                         <h2>
-                            Send Message
+                            Send Feedback
                         </h2>
                         <div class="inputBox">
-                            <input type="text" name="" required="required">
+                            <input type="text" name="name" required="required">
                             <span>Full Name</span>
                         </div>
                         <div class="inputBox">
-                            <input type="text" name="" required="required">
+                            <input type="text" name="email" required="required">
                             <span>Email</span>
                         </div>
                         <div class="inputBox">
-                            <textarea required="required"></textarea>
-                            <span>Type your Message...</span>
+                            <textarea required="required" name="message"></textarea>
+                            <span>Type your Feedback...</span>
                         </div>
                         <div class="inputBox">
                             <input type="submit" name="" value="Send">

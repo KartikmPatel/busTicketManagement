@@ -11,8 +11,10 @@ use App\Models\busModel;
 use App\Models\stationModel;
 use App\Models\routeModel;
 use App\Models\bookingModel;
+use App\Models\feedback;
 use App\Models\historyModel;
-use PDF;
+use Barryvdh\DomPDF\PDF;
+// use PDF;
 
 class userController extends Controller
 {
@@ -383,5 +385,16 @@ class userController extends Controller
     {
         return view('User.service');
     }
-    
+
+    public function feedback(Request $r)
+    {
+        $curDate = now()->format('Y-m-d');
+        $feed = new feedback;
+        $feed->name = $r['name'];
+        $feed->email = $r['email'];
+        $feed->message = $r['message'];
+        $feed->curDate = $curDate;
+        $feed->save();
+        return redirect('/contactUs');
+    }
 }
