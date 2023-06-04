@@ -40,7 +40,7 @@
                         </div>
                         <div class="text">
                             <h3>Email</h3>
-                            <p>GlobalTravels@gmail.com</p>
+                            <p>globaltravelers40@gmail.com</p>
                         </div>
                     </div>
                 </div>

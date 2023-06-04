@@ -17,20 +17,26 @@
             <div class="terms-text">
                 {{-- <h2>Term Of Service</h2> --}}
                 <h2>Privacy Policy</h2>
-                <p>Last Edit: 04/20/2023</p>
+                <p>Last Edit: 05/06/2023</p>
                 <p>Greetings Users,</p>
-                <p>Use this p tag for more paragraph</p>
-                <p>this are random paragraph</p>
-                <p>Generating random paragraphs can be an excellent way for writers to get their creative flow going at the beginning of the day. The writer has no idea what topic the random paragraph will be about when it appears. This forces the writer to use creativity to complete one of three common writing challenges. The writer can use the paragraph as the first one of a short story and build upon it. A second option is to use the random paragraph somewhere in a short story they create. The third option is to have the random paragraph be the ending paragraph in a short story. No matter which of these challenges is undertaken, the writer is forced to use creativity to incorporate the paragraph into their writing.</p>
-                <p>A random paragraph can also be an excellent way for a writer to tackle writers' block. Writing block can often happen due to being stuck with a current project that the writer is trying to complete. By inserting a completely random paragraph from which to begin, it can take down some of the issues that may have been causing the writers' block in the first place.</p>
+                <p>GlobalTravels India Private Limited recognizes the importance of privacy of its users and also of maintaining confidentiality of the information provided by its users as a responsible data controller and data processor.</p>
+                <p>This Privacy Policy provides for the practices for handling and securing user's Personal Information by GlobalTravels and its subsidiaries and affiliates.</p>
+                <p>For the purpose of this Privacy Policy, wherever the context so requires "you" or "your" shall mean User and the term "we", "us", "our" shall mean GlobalTravels. For the purpose of this Privacy Policy, Website means the website(s), mobile site(s) and mobile app(s).</p>
+                <p>By using or accessing the Website or other Sales Channels, the User hereby agrees with the terms of this Privacy Policy and the contents herein. If you disagree with this Privacy Policy please do not use or access our Website or other Sales Channels.</p>
             </div>
             <h4>I Agree to the <span>Terms of Service</span> and I read the Privacy Notice.</h4>
             <div class="buttons">
-                <button class="bton red-btn">Accept</button>
-                <button class="bton gray-btn">Decline</button>
+                <a href="{{url('/')}}"><button class="bton red-btn" onclick="policy()">Accept</button></a>
+                {{-- <button class="bton gray-btn">Decline</button> --}}
             </div>
         </div>
         </div>
+        <script>
+            function policy()
+            {
+                alert("Thanks for supporting");
+            }
+        </script>
     </body>
 </html>
 

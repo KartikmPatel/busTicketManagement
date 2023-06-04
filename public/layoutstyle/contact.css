@@ -16,7 +16,7 @@
     align-items: center;
     flex-direction: column;
     /* background: url("images/bus_icon.png"); */
-    background-image: url("../images1/contact.jpg");
+    background-image: url("../images1/contact_blur.jpg");
     /* opacity: 0.4; */
     background-size: cover;
 }
@@ -79,7 +79,7 @@
 }
 
 .con .contactInfo .box .text h3{
-    font-weight: 500;
+    font-weight: bold;
     color: #00bcd4;
 }
 

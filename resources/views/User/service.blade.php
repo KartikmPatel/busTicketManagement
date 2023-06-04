@@ -14,46 +14,46 @@
     <body onload="myFunction()" class="bg-white">
         <div class="serve">
             <h1>Our Services</h1>
-            <div class="row">
+            <div class="row" id="rw">
                 <div class="service">
-                    <i class="fa-solid fa-laptop"></i>
-                    <h2>Web Design</h2>
-                    <p>1st Paragraph of Web Design</p>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <h2>User Freindly</h2>
+                    <p>This is a paragraph</p>
                 </div>
                 <div class="service">
-                    <i class="fa-solid fa-laptop"></i>
-                    <h2>Marketing</h2>
-                    <p>2nd Paragraph of Marketing</p>
+                    <i class="fa-solid fa-bus"></i>
+                    <h2>Real-Time Booking</h2>
+                    <p>This is a paragraph</p>
                 </div>
                 <div class="service">
-                    <i class="fa-solid fa-laptop"></i>
-                    <h2>Graphics</h2>
-                    <p>3rd Paragraph of Graphics</p>
+                    <i class="fa-solid fa-clock"></i>
+                    <h2>24x7 Availibity</h2>
+                    <p>This is a paragraph</p>
                 </div>
                 <div class="service">
-                    <i class="fa-solid fa-laptop"></i>
-                    <h2>Data Analysis</h2>
-                    <p>4th Paragraph of Data Analysis</p>
+                    <i class="fa fa-ticket" aria-hidden="true"></i>
+                    <h2>Online Ticket</h2>
+                    <p>This is a paragraph</p>
                 </div>
                 <div class="service">
-                    <i class="fa-solid fa-laptop"></i>
-                    <h2>App Development</h2>
-                    <p>5th Paragraph of App Development</p>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h2>Data Security</h2>
+                    <p>This is a paragraph</p>
                 </div>
                 <div class="service">
-                    <i class="fa-solid fa-laptop"></i>
-                    <h2>Accounting</h2>
-                    <p>6th Paragraph of Accounting</p>
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <h2>Advance Booking</h2>
+                    <p>This is a paragraph</p>
                 </div>
                 <div class="service">
-                    <i class="fa-solid fa-laptop"></i>
-                    <h2>Payroll</h2>
-                    <p>7th Paragraph of Payroll</p>
+                    <i class="fa-solid fa-copy"></i>
+                    <h2>Booking History</h2>
+                    <p>This is a paragraph</p>
                 </div>
                 <div class="service">
-                    <i class="fa-solid fa-laptop"></i>
-                    <h2>Networking</h2>
-                    <p>8th Paragraph of Networking</p>
+                    <i class="fa-solid fa-rectangle-xmark"></i>
+                    <h2>Cancellation</h2>
+                    <p>This is a paragraph</p>
                 </div>
             </div>
         </div>
