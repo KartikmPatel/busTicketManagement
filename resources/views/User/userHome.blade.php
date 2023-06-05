@@ -68,16 +68,19 @@
         </span><br>
                 <label class="ml-5"> {{__('home.from')}} : </label>
                 <select id="from" name="from" class="form-control col-md-9 ml-5" oninput="validateStartStation()">
-                    <option value="">{{__('home.selectstation')}}</option>
+                    <!-- <option value="">{{__('home.selectstation')}}</option> -->
                     @foreach ($stations as $station)
                         <option value="{{ $station->stationID }}">{{ $station->stationName }}</option>
                     @endforeach
                 </select>
                 <span class="pl-5" id="from-error">
                 </span><br>
+
+                <i class="fa-solid fa-retweet bg-dark" style="margin-left:45%;cursor:pointer;font-size:20px;border:3px solid black;border-radius:20%;background-color:black;color:#ffffff;" onclick="swipeStation()"></i><br>
+
                 <label class="ml-5"> {{__('home.to')}} : </label>
                 <select id="to" name="to" class="form-control col-md-9 ml-5" oninput="validateEndStation()">
-                    <option value="">{{__('home.selectstation')}}</option>
+                    <!-- <option value="">{{__('home.selectstation')}}</option> -->
                     @foreach ($stations as $station)
                         <option value="{{ $station->stationID }}">{{ $station->stationName }}</option>
                     @endforeach
@@ -186,6 +189,42 @@
             return true;
         }
         
+        function swipeStation()
+        {
+            var swipe1 = document.getElementById("from");
+            var swipe3 = swipe1.value;
+            var swipe2 = document.getElementById("to");
+            
+            // if(swipe2 && swipe1)
+            // {
+                document.getElementById("from").innerHTML=`
+                <select id="to" name="to" class="form-control col-md-9 ml-5" oninput="validateEndStation()">
+                @foreach ($stations as $station)
+                @if(`+swipe2.value+` == $station->stationID)
+                <option value="{{ $station->stationID }}" selected>{{ $station->stationName }}</option>
+                @endif
+                @endforeach 
+
+                @foreach ($stations as $station)
+                <option value="{{ $station->stationID }}">{{ $station->stationName }}</option>
+                @endforeach    
+                </select>
+                `;
+                
+                
+                document.getElementById("to").innerHTML=`
+                <select id="from" name="from" class="form-control col-md-9 ml-5" oninput="validateEndStation()">
+                
+                <option value='`+swipe3+`' selected>`+swipe3+`</option>
+                
+                @foreach ($stations as $station)
+                <option value="{{ $station->stationID }}">{{ $station->stationName }}</option>
+                @endforeach
+                </select>
+                `;
+            // }
+        }
+
         function sameCity()
         {
             var from = document.getElementById("from");
