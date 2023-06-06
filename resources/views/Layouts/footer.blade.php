@@ -32,9 +32,9 @@
                         <h4>follow us</h4>
                         <div class="social-links">
                             <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+                            <a href="https://twitter.com/GlobalTravels40?t=MthkXWY9R6rHXEjvGdDy0g&s=08"><i class="fab fa-twitter"></i></a>
                             <a href="https://instagram.com/global_travelers_40?igshid=MzNlNGNkZWQ4Mg=="><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.linkedin.com/in/global-travelers-undefined-14626127a"><i class="fab fa-linkedin-in"></i></a>
                         </ul>
                     </div>
                 </div>

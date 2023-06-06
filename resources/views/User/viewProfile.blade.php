@@ -124,7 +124,7 @@
                     </div> <!-- /.table-responsive -->
         <!-- Social Buttons -->
                     <div class="button-group">
-                      <button class="btn">
+                      <!-- <button class="btn">
                          <a href="#" class="social-icon si-border si-border-round">
                        <i class="fa-brands fa-github"></i></a></button>
             <button class="btn"><a href="#" class="social-icon si-border si-border-round">
@@ -135,7 +135,7 @@
                   </a></button>
               <button class="btn"><a href="#" class="social-icon si-border si-border-round">
                     <i class="fa-brands fa-facebook"></i>
-                  </a></button>
+                  </a></button> -->
 
         </div><!-- /.button-group -->
 

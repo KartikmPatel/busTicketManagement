@@ -68,7 +68,7 @@
         </span><br>
                 <label class="ml-5"> {{__('home.from')}} : </label>
                 <select id="from" name="from" class="form-control col-md-9 ml-5" oninput="validateStartStation()">
-                    <!-- <option value="">{{__('home.selectstation')}}</option> -->
+                    <option value="">{{__('home.selectstation')}}</option>
                     @foreach ($stations as $station)
                         <option value="{{ $station->stationID }}">{{ $station->stationName }}</option>
                     @endforeach
@@ -80,7 +80,7 @@
 
                 <label class="ml-5"> {{__('home.to')}} : </label>
                 <select id="to" name="to" class="form-control col-md-9 ml-5" oninput="validateEndStation()">
-                    <!-- <option value="">{{__('home.selectstation')}}</option> -->
+                    <option value="">{{__('home.selectstation')}}</option>
                     @foreach ($stations as $station)
                         <option value="{{ $station->stationID }}">{{ $station->stationName }}</option>
                     @endforeach

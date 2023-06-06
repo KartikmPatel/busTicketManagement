@@ -107,11 +107,11 @@
                             <p> {{__('home.editProfile')}} </p>
                             <span> > </span>
                         </a>
-                        <a href="#" class="sub-menu-link">
+                        <!-- <a href="#" class="sub-menu-link">
                             <img src="images/setting.png">
                             <p> {{__('home.s&p')}} </p>
                             <span> > </span>
-                        </a>
+                        </a> -->
                         <a href="{{url('changePassword')}}" class="sub-menu-link">
                             <img src="images/help.png">
                             <!-- <p> {{__('home.h&s')}} </p> -->
