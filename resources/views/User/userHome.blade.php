@@ -188,41 +188,14 @@
             }
             return true;
         }
-        
+
         function swipeStation()
         {
-            var swipe1 = document.getElementById("from");
-            var swipe3 = swipe1.value;
-            var swipe2 = document.getElementById("to");
-            
-            // if(swipe2 && swipe1)
-            // {
-                document.getElementById("from").innerHTML=`
-                <select id="to" name="to" class="form-control col-md-9 ml-5" oninput="validateEndStation()">
-                @foreach ($stations as $station)
-                @if(`+swipe2.value+` == $station->stationID)
-                <option value="{{ $station->stationID }}" selected>{{ $station->stationName }}</option>
-                @endif
-                @endforeach 
+            var value1 = $('#from').val();
+            var value2 = $('#to').val();
 
-                @foreach ($stations as $station)
-                <option value="{{ $station->stationID }}">{{ $station->stationName }}</option>
-                @endforeach    
-                </select>
-                `;
-                
-                
-                document.getElementById("to").innerHTML=`
-                <select id="from" name="from" class="form-control col-md-9 ml-5" oninput="validateEndStation()">
-                
-                <option value='`+swipe3+`' selected>`+swipe3+`</option>
-                
-                @foreach ($stations as $station)
-                <option value="{{ $station->stationID }}">{{ $station->stationName }}</option>
-                @endforeach
-                </select>
-                `;
-            // }
+            $('#from').val(value2);
+            $('#to').val(value1);
         }
 
         function sameCity()
