@@ -90,7 +90,7 @@
             </table> -->
 
             <div class="viewBus">
-    <table class="content-table col-md-7" style="min-width:1200px;margin-left:10%">
+    <table class="content-table col-md-7" style="min-width:1200px;margin-left:5%">
   <thead>
     <tr>
             <th></th>
