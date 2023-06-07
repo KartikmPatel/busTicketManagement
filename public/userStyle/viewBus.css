@@ -3,6 +3,27 @@
     align-self: center;
   }
 
+  .next{
+    margin-top: 50px;
+    margin-left: 80px;
+  }
+  #n1{
+    cursor:pointer;
+    font-size: 30px;
+    border: 2px solid black;
+    background-color: grey;
+    width: 50px;
+    padding-left: 15px;
+    color: white;
+  }
+
+  #date1
+  {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
   .content-table {
     border-collapse: collapse;
     margin: 100px 0;
