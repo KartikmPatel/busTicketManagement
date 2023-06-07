@@ -8,7 +8,7 @@
     </head>
     <body onload="myFunction()">
 
-<div class="viewTable">
+<div class="viewTable mt-5 ml-5">
     <table class="content1-table1 col-md-7" id="tblData">
         <thead>
             <tr>
