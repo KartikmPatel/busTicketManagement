@@ -3,7 +3,7 @@
 @section('Usermain-content')
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <title> </title>
+    <title> Seats </title>
 </head>
 <body class="bg-white" onload="myFunction()">
 <div class="ml-4 mt-3">
@@ -1020,7 +1020,7 @@
             </div>
             <div class="exit exit--front">
             </div>
-            
+
             <div class="row">
                 <div id="lower">Lower</div>
                 <div id="upper">Upper</div>
@@ -1266,7 +1266,7 @@
                 <label for="10" id="s1">10</label>
             </li>
         @endif
-        
+
     <!-- </ol>
     </li> -->
         </ol>
@@ -1515,15 +1515,15 @@
     </li> -->
         </ol>
 
-    
+
     {{-- <div class="exit exit--back"> --}}
     {{--
     <form action="{{url('payment')}}" method="post">
         @csrf --}}
-        
+
     <button type="button" class="btn btn-success ml-2" onclick="display1()" id="b1" data-toggle="modal" data-target="#modelId">{{__('home.book')}}</button>
     {{-- </form> --}}
-    
+
 </div>
 
 {{-- <button class="btn btn-dark" onclick="display1()">click</button> --}}
@@ -1624,7 +1624,7 @@
             {
               document.getElementById('display').value="1";
             }
-    
+
             if(s2.checked == true)
             {
                 document.getElementById('display').value="2";
@@ -1641,12 +1641,12 @@
             {
                 document.getElementById('display').value="5";
             }
-    
+
             if(s6.checked == true)
             {
               document.getElementById('display').value="6";
             }
-    
+
             if(s7.checked == true)
             {
                 document.getElementById('display').value="7";
@@ -1663,12 +1663,12 @@
             {
                 document.getElementById('display').value="10";
             }
-    
+
             if(s11.checked == true)
             {
               document.getElementById('display').value="11";
             }
-    
+
             if(s12.checked == true)
             {
                 document.getElementById('display').value="12";
@@ -1685,12 +1685,12 @@
             {
                 document.getElementById('display').value="15";
             }
-    
+
             if(s16.checked == true)
             {
               document.getElementById('display').value="16";
             }
-    
+
             if(s17.checked == true)
             {
                 document.getElementById('display').value="17";

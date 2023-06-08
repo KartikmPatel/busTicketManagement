@@ -23,7 +23,7 @@
     left: calc(50% - 300px);
     left: -webkit-calc(50% - 300px);
   }
-  
+
   .ticket{
     width: 610px;
     height: 250px;
@@ -33,7 +33,7 @@
     border-top: 1px solid #E89F3D;
     border-bottom: 1px solid #E89F3D;
   }
-  
+
   .left{
     margin: 0;
     padding: 0;
@@ -42,84 +42,84 @@
     top: 0px;
     left: -5px;
   }
-  
+
   .left li{
     width: 0px;
     height: 0px;
   }
-  
+
   .left li:nth-child(-n+2){
     margin-top: 8px;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
+    border-bottom: 5px solid transparent;
     border-right: 5px solid #FFB300;
   }
-  
+
   .left li:nth-child(3),
   .left li:nth-child(6){
     margin-top: 8px;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
+    border-bottom: 5px solid transparent;
     border-right: 5px solid #EEEEEE;
   }
-  
+
   .left li:nth-child(4){
     margin-top: 8px;
     margin-left: 2px;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
+    border-bottom: 5px solid transparent;
     border-right: 5px solid #EEEEEE;
   }
-  
+
   .left li:nth-child(5){
     margin-top: 8px;
     margin-left: -1px;
     border-top: 6px solid transparent;
-    border-bottom: 6px solid transparent; 
+    border-bottom: 6px solid transparent;
     border-right: 6px solid #EEEEEE;
   }
-  
+
   .left li:nth-child(7),
   .left li:nth-child(9),
   .left li:nth-child(11),
   .left li:nth-child(12){
     margin-top: 7px;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
+    border-bottom: 5px solid transparent;
     border-right: 5px solid #E5E5E5;
   }
-  
+
   .left li:nth-child(8){
     margin-top: 7px;
     margin-left: 2px;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
+    border-bottom: 5px solid transparent;
     border-right: 5px solid #E5E5E5;
   }
-  
+
   .left li:nth-child(10){
     margin-top: 7px;
     margin-left: 1px;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
+    border-bottom: 5px solid transparent;
     border-right: 5px solid #E5E5E5;
   }
-  
+
   .left li:nth-child(13){
     margin-top: 7px;
     margin-left: 2px;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
+    border-bottom: 5px solid transparent;
     border-right: 5px solid #FFB300;
   }
-  
+
   .left li:nth-child(14){
     margin-top: 7px;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
+    border-bottom: 5px solid transparent;
     border-right: 5px solid #FFB300;
   }
-  
+
   .right{
     margin: 0;
     padding: 0;
@@ -128,71 +128,71 @@
     top: 0px;
     right: -5px;
   }
-  
+
   .right li:nth-child(-n+2){
     margin-top: 8px;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
+    border-bottom: 5px solid transparent;
     border-left: 5px solid #FFB300;
   }
-  
+
   .right li:nth-child(3),
   .right li:nth-child(4),
   .right li:nth-child(6){
     margin-top: 8px;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
+    border-bottom: 5px solid transparent;
     border-left: 5px solid #EEEEEE;
   }
-  
+
   .right li:nth-child(5){
     margin-top: 8px;
     margin-left: -2px;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
+    border-bottom: 5px solid transparent;
     border-left: 5px solid #EEEEEE;
   }
-  
+
   .right li:nth-child(8),
   .right li:nth-child(9),
   .right li:nth-child(11){
     margin-top: 7px;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
+    border-bottom: 5px solid transparent;
     border-left: 5px solid #E5E5E5;
   }
-  
+
   .right li:nth-child(7){
     margin-top: 7px;
     margin-left: -3px;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
+    border-bottom: 5px solid transparent;
     border-left: 5px solid #E5E5E5;
   }
-  
+
   .right li:nth-child(10){
     margin-top: 7px;
     margin-left: -2px;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
+    border-bottom: 5px solid transparent;
     border-left: 5px solid #E5E5E5;
   }
-  
+
   .right li:nth-child(12){
     margin-top: 7px;
     border-top: 6px solid transparent;
-    border-bottom: 6px solid transparent; 
+    border-bottom: 6px solid transparent;
     border-left: 6px solid #E5E5E5;
   }
-  
+
   .right li:nth-child(13),
   .right li:nth-child(14){
     margin-top: 7px;
     border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent; 
+    border-bottom: 5px solid transparent;
     border-left: 5px solid #FFB300;
   }
-  
+
   .ticket:after{
     content: '';
     position: absolute;
@@ -227,7 +227,7 @@
       inset 0 -240px 0 #FFB300,
       inset 0 -250px 0 #B56E0A;
   }
-  
+
   .ticket:before{
     content: '';
     position: absolute;
@@ -263,7 +263,7 @@
       inset 0 -240px 0 #FFB300,
       inset 0 -250px 0 #F4D483;
   }
-  
+
   .content{
     position: absolute;
     top: 40px;
@@ -271,7 +271,7 @@
     height: 170px;
     background: #eee;
   }
-  
+
   .airline{
     position: absolute;
     top: 10px;
@@ -281,7 +281,7 @@
     font-weight: bold;
     color: rgba(0,0,102,1);
   }
-  
+
   .boarding{
     position: absolute;
     top: 10px;
@@ -306,7 +306,7 @@
     font-size: 18px;
     color: rgba(255,255,255,0.6);
   }
-  
+
   .jfk{
     position: absolute;
     top: 10px;
@@ -323,7 +323,7 @@
     font-size: 38px;
     color: #222;
   }
-  
+
   .sfo{
     position: absolute;
     top: 10px;
@@ -332,13 +332,13 @@
     font-size: 38px;
     color: #222;
   }
-  
+
   .plane{
     position: absolute;
     left: 105px;
     top: 0px;
   }
-  
+
   .sub-content{
     background: #e5e5e5;
     width: 100%;
@@ -346,7 +346,7 @@
     position: absolute;
     top: 70px;
   }
-  
+
   .watermark{
     position: absolute;
     left: 5px;
@@ -356,7 +356,7 @@
     font-weight: bold;
     color: rgba(255,255,255,0.2);
   }
-  
+
   .name{
     position: absolute;
     top: 10px;
@@ -366,12 +366,12 @@
     font-size: 14px;
     color: #999;
   }
-  
+
   .name span{
     color: #555;
     font-size: 17px;
   }
-  
+
   .flight{
     position: absolute;
     top: 10px;
@@ -381,12 +381,12 @@
     font-size: 14px;
     color: #999;
   }
-  
+
   .flight span{
     color: #555;
     font-size: 17px;
   }
-  
+
   .gate{
     position: absolute;
     top: 10px;
@@ -396,13 +396,13 @@
     font-size: 14px;
     color: #999;
   }
-  
+
   .gate span{
     color: #555;
     font-size: 17px;
   }
-  
-  
+
+
   .seat{
     position: absolute;
     top: 10px;
@@ -412,12 +412,12 @@
     font-size: 14px;
     color: #999;
   }
-  
+
   .seat span{
     color: #555;
     font-size: 17px;
   }
-  
+
   .boardingtime{
     position: absolute;
     top: 60px;
@@ -427,7 +427,7 @@
     font-size: 14px;
     color: #999;
   }
-  
+
   .boardingtime span{
     color: #555;
     font-size: 17px;
@@ -442,7 +442,7 @@
     font-size: 14px;
     color: #999;
   }
-  
+
   .ticketID{
     position: absolute;
     margin-top: 60px;
@@ -526,24 +526,24 @@
       inset -89px 0 0 #222,
       inset -90px 0 0 #FFB300;
   }
-  
+
   .slip{
     left: 455px;
   }
-  
+
   .nameslip{
     top: 60px;
     left: 410px;
   }
-  
+
   .flightslip{
     left: 410px;
   }
-  
+
   .seatslip{
     left: 540px;
   }
-  
+
   .jfkslip{
     font-size: 30px;
     top: 20px;
@@ -555,22 +555,25 @@
     top: 20px;
     left: 490px;
   }
-  
+
   .sfoslip{
     font-size: 30px;
     top: 20px;
     left: 530px;
   }
-  
+
   .planeslip{
     top: 10px;
     left: 475px;
   }
-  
+
   .airlineslip{
     left: 455px;
   }
      </style>
+     <title>
+        Ticket
+     </title>
   </head>
   <body>
     <div class="box">
@@ -590,7 +593,7 @@
     <li></li>
     <li></li>
   </ul>
-  
+
   <ul class="right">
     <li></li>
     <li></li>
@@ -612,17 +615,17 @@
     <span class="airline airlineslip">Global Travels</span>
     <div class="content">
         <span class="jfk">{{ $st1 }}</span>
-        
+
         <!-- <span class="jfk1"><i class="fa fa-arrow-right"></i></span> -->
-      
-      
+
+
       <span class="sfo">{{ $st2 }}</span>
 
-      
+
       <span class="jfk jfkslip">{{ $st1 }}</span>
-      
+
       <!-- <span class="jfk jfkslip1"><i class="fa fa-arrow-right"></i></span> -->
-      
+
         <span class="sfo sfoslip">{{ $st2 }}</span>
 
       <div class="sub-content">
@@ -633,7 +636,7 @@
         <span class="boardingtime">DEPARTURETIME<br><span>{{ $date }}</span></span>
         <span class="ticketID">Ticket Id<br><span>{{ $tid }}</span></span>
         <span class="fare">FARE<br><span>{{ $fare }}</span></span>
-        
+
          <span class="flight flightslip">Bus No&deg;<br><span>{{ $bno }}</span></span>
           <span class="seat seatslip">SEAT<br><span>{{ $seatno }}</span></span>
          <span class="name nameslip">PASSENGER NAME<br><span>{{ $uname }}</span></span>

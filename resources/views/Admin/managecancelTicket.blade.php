@@ -3,7 +3,7 @@
 @section('main-content')
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<title> Booking </title>
+<title> Cancel Tickets </title>
 </head>
 <body onload="myFunction()">
         <!-- <table class="table col-md-9 bg-secondary table-hover text-white" id="tblData">
@@ -38,7 +38,7 @@
                     <td>
                         {{$t->Destination}}
                     </td>
-                    
+
                     <td class="text-danger" style="font-weight:bold;">
                         {{ $t->Status }}
                     </td>
@@ -68,7 +68,7 @@
                 <button type="button" class="btn btn-danger my-2 my-sm-0 ml-4" onclick="window.location.href='{{ url('/manageCancelTicket') }}'">All CancelTickets</button>
             </form>
         </div>
-        
+
         <div class="viewTable">
             <table class="content1-table1 col-md-7" id="tblData" style="margin-top:50px;margin-left:12%">
                 <thead>
@@ -113,7 +113,7 @@
                     <td>
                         {{$t->Destination}}
                     </td>
-                    
+
                     <td class="text-danger" style="font-weight:bold;">
                         {{ $t->Status }}
                     </td>

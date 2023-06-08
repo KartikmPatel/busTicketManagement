@@ -5,6 +5,9 @@
 @else
 @section('Usermain-content')
 @endif
+<head>
+    <title> Profile </title>
+</head>
 <body class="bg-white" onload="myFunction()">
     <div class="profileContainer col-md-6">
         <div class="panel panel-info">

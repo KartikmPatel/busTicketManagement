@@ -4,11 +4,11 @@
 
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-        <title> Manage Bus </title>
+        <title> Search Seats </title>
     </head>
     <body onload="myFunction()">
-        
-    <div class="ml-4 mt-3">
+
+    <div class="ml-4 mt-3" style="padding-left: 20px">
         <h2> Seats </h2>
 
         <span id="search-error" class="text-danger"></span><br>

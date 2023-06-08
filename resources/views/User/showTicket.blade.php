@@ -14,6 +14,9 @@
         z-index: 100;
         }
     </style>
+    <title>
+        Ticket
+    </title>
   </head>
   <body onload="myFunction()">
 
@@ -111,7 +114,7 @@
       @endforeach --}}
       <span class="sfo sfoslip">{{ $to }}</span>
 
-      
+
       <div class="sub-content">
         <span class="watermark">{{__('home.name')}}</span>
         <span class="name">{{__('home.passenger')}}<br><span>{{ $uname }}</span></span>

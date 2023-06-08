@@ -3,7 +3,7 @@
 @section('main-content')
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<title> Booking </title>
+<title> Bookings </title>
 </head>
 <body onload="myFunction()">
         <!-- <table class="table col-md-9 bg-secondary table-hover text-white" id="tblData">
@@ -63,7 +63,7 @@
                 <button type="button" class="btn btn-danger my-2 my-sm-0 ml-4" onclick="window.location.href='{{ url('/manageBooking') }}'">All Bookings</button>
             </form>
         </div>
-        
+
         <div class="viewTable">
             <table class="content1-table1 col-md-7" id="tblData" style="margin-top:50px;margin-left:12%">
                 <thead>
@@ -86,7 +86,7 @@
                         <td>
                             <img src="./images/booking.webp" width="70px" height="50px" alt=""/>
                         </td>
-                        
+
                         <td class="tid">
                             {{ $ticket->ticketID }}
                         </td>

@@ -1,6 +1,11 @@
 @extends('Layouts.main')
 
 @section('Usermain-content')
+<head>
+    <title>
+        Home
+    </title>
+</head>
 <body class="bg-white" onload="myFunction()">
     {{-- @if (Session()->has('success'))
          <div class="alert alert-success alert-dismissible successAlert" role="alert">

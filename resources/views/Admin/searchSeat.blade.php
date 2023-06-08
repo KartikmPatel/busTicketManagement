@@ -4,11 +4,11 @@
 
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-        <title> </title>
+        <title> Seats </title>
     </head>
 
     <body onload="myFunction()">
-        
+
     <div class="ml-4 mt-3">
         {{-- <h2> {{ $bus->busNo }} Seats </h2> --}}
 
@@ -775,7 +775,7 @@
             </div>
             <div class="exit exit--front">
             </div>
-            
+
             <div class="row">
                 <div id="lower">Lower</div>
                 <div id="upper">Upper</div>
@@ -1021,7 +1021,7 @@
                 <label for="" id="s1">10</label>
             </li>
         @endif
-        
+
     <!-- </ol>
     </li> -->
         </ol>
@@ -1270,7 +1270,7 @@
     </li> -->
         </ol>
 
-    
+
     {{-- <div class="exit exit--back"> --}}
 
     </div>

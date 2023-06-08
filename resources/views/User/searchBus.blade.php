@@ -1,6 +1,11 @@
 @extends('Layouts.main')
 
 @section('Usermain-content')
+<head>
+    <title>
+        Buses
+    </title>
+</head>
 <body class="bg-white" onload="myFunction()">
     <div class="row next">
     <i class="fa-solid fa-angle-left" id="n1"></i>
@@ -50,7 +55,7 @@
                             <input type="hidden" name="date" id="date" value="{{$date}}"/>
                             <input type="hidden" name="time" id="time" value="{{$route->departureTime}}"/>
                             <input type="hidden" name="fare" id="fare" value="{{$route->fare}}"/>
-                            
+
                             <input type="hidden" name="bno" id="bno" value="{{$route->busNo}}"/>
                             <button class='btn btn-warning btn-sm'><i class="fa fa-eye" aria-hidden="true"></i></button>
                         </form>
@@ -61,7 +66,7 @@
 </table>
     </div>
 
-    <script>        
+    <script>
         var date = document.getElementById("date").value;
         document.getElementById("date1").innerHTML = date;
     </script>

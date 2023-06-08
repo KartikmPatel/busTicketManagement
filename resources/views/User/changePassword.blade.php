@@ -105,12 +105,15 @@ button[disabled] {
     100% { transform: rotate(360deg); }
 }
   </style>
+  <title>
+    Change Password
+  </title>
 </head>
 <body class="bg-white" onload="myFunction()">
 <div class="mainDiv">
   <div class="cardStyle">
       <img src="images1/password1.jpg" id="signupLogo"/>
-      
+
       <h2 class="formTitle">
         Change Your Password
       </h2>
@@ -120,26 +123,26 @@ button[disabled] {
       <label class="inputLabel" for="password">Old Password</label>
       <input type="password" id="oldPassword" name="oldPassword">
     </div>
-      
+
     <div class="inputDiv">
       <label class="inputLabel" for="confirmPassword">New Password</label>
       <input type="password" id="newPassword" name="newPassword" oninput="validNewPassword()">
       <span id="newPassword-error"></span>
     </div>
-    
+
     <div class="inputDiv">
       <label class="inputLabel" for="confirmPassword">Confirm New Password</label>
       <input type="password" id="confirmPassword" name="confirmPassword" oninput="validCPassword()">
       <span id="confirmpassword-error"></span>
     </div>
-    
+
     <div class="buttonWrapper">
       <button type="submit" id="submitButton" onclick="checkValidate()" class="submitButton pure-button pure-button-primary">
         <span>Continue</span>
         <span id="loader"></span>
     </button>
     </div>
-      
+
   </div>
 </div>
 
@@ -184,7 +187,7 @@ function validNewPassword()
         }
         return true;
     }
-    
+
     function checkValidate()
     {
         var opassword = document.getElementById("oldPassword");

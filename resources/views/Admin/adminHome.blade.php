@@ -1,6 +1,11 @@
 @extends('Layouts.main')
 
 @section('main-content')
+<head>
+    <title>
+        Dashboard
+    </title>
+</head>
 <body onload="myFunction()">
 <div class="dashboard-card">
     {{-- <div class="card" style="width: 13rem;height: 16rem;background-color:#D8BFD8">
@@ -137,7 +142,7 @@
                 <!-- <button type="button" class="btn btn-danger my-2 my-sm-0 ml-4" onclick="window.location.href='{{ url('/manageBooking') }}'">All Bookings</button> -->
             </form>
         </div>
-        
+
         <div class="viewTable">
 				<table class="content1-table1 col-md-7" id="tblData" style="margin-top:50px;margin-left:12%">
 					<thead>
@@ -160,14 +165,14 @@
 							<td>
 								<img src="./images/new.jpg" width="70px" height="50px" alt=""/>
 							</td>
-							
+
 							<td class="tid">
 								{{ $today->ticketID }}
 							</td>
 							<td class="bno">
 								{{ $today->busNo }}
 							</td>
-	
+
 							@foreach($users as $user)
 							@if($user->userID == $today->userID)
 							<td class="uid">
@@ -175,7 +180,7 @@
 							</td>
 							@endif
 							@endforeach
-	
+
 							<td class="sno">
 								{{ $today->seatNo }}
 							</td>
@@ -199,7 +204,7 @@
 	  </tbody>
 	</table>
 	</div>
-	
+
 	<br>
 	<div style="margin-left:37%;">
 		{{ $todayData->links() }}

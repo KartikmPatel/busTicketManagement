@@ -102,6 +102,9 @@ button[disabled] {
     100% { transform: rotate(360deg); }
 }
   </style>
+  <title>
+    Cancel Ticket
+  </title>
 </head>
 <body class="bg-white" onload="myFunction()">
 <div class="mainDiv">
