@@ -5,6 +5,28 @@
     <title>
         Home
     </title>
+    <style>
+	  
+        #event img{
+        transition: 0.7s;
+        }
+        #event img:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+        }
+        
+      h6:hover{
+      font-size: 25px !important;
+      }
+  
+      /*.navbars{
+          transition: 1s;
+      } 
+      .navbars.scroll{
+           background: #3498db;
+       }*/
+      </style>
+      <link rel="stylesheet" href="{{asset('layoutstyle/galary.css')}}">
 </head>
 <body class="bg-white" onload="myFunction()">
     {{-- @if (Session()->has('success'))
@@ -100,6 +122,53 @@
             </div>
         </form>
     </div>
+  </div>
+  <div class="row">
+    <div class="offset-sm-1 col-sm-4"  id="event" style="margin-top: 50px; margin-left: 160px">
+        <img src="images1/about.jpg" class="img-fluid"  alt="">
+        <div class="event-content">
+            <h4 style="font-weight: bold;font-style: italic;font-size: 25px;margin-bottom: 5px;">Wadding Event</h4>
+            <span style="font-style: italic;font-size: 20px;">
+                Love Event
+            </span><br>
+            <a href="wedding.php" style="text-decoration: none;font-weight: bold;text-transform: uppercase;margin-top: 10px;">Join</a>
+        </div>
+        </div>
+    
+        <div class="offset-sm-1 col-sm-4"  id="event" style="margin-top: 50px">
+            <img src="images1/contact.jpg" class="img-fluid"  alt="">
+            <div class="event-content">
+                <h4 style="font-weight: bold;font-style: italic;font-size: 25px;margin-bottom: 5px;">Wadding Event</h4>
+                <span style="font-style: italic;font-size: 20px;">
+                    Love Event
+                </span><br>
+                <a href="wedding.php" style="text-decoration: none;font-weight: bold;text-transform: uppercase;margin-top: 10px;">Join</a>
+            </div>
+            </div>
+  </div>
+
+  <div class="row" style="margin-bottom: -100px">
+    <div class="offset-sm-1 col-sm-4"  id="event" style="margin-top: 70px; margin-left: 160px">
+        <img src="images1/feedback.jpg" class="img-fluid"  alt="">
+        <div class="event-content">
+            <h4 style="font-weight: bold;font-style: italic;font-size: 25px;margin-bottom: 5px;">Wadding Event</h4>
+            <span style="font-style: italic;font-size: 20px;">
+                Love Event
+            </span><br>
+            <a href="wedding.php" style="text-decoration: none;font-weight: bold;text-transform: uppercase;margin-top: 10px;">Join</a>
+        </div>
+        </div>
+    
+        <div class="offset-sm-1 col-sm-4"  id="event" style="margin-top: 70px;">
+            <img src="images1/privacy.jpg" class="img-fluid"  alt="">
+            <div class="event-content">
+                <h4 style="font-weight: bold;font-style: italic;font-size: 25px;margin-bottom: 5px;">Wadding Event</h4>
+                <span style="font-style: italic;font-size: 20px;">
+                    Love Event
+                </span><br>
+                <a href="wedding.php" style="text-decoration: none;font-weight: bold;text-transform: uppercase;margin-top: 10px;">Join</a>
+            </div>
+            </div>
   </div>
 <script>
 

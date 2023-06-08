@@ -23,7 +23,7 @@
       </div> --}}
 
       <div class="sidebar">
-        <header class="header bg-dark"> Admin side </header>
+        <header class="header" style="background-color: #4584B4;"> Admin side </header>
         <ul>
             <li><a href="{{url('/manageBus')}}"><i class="fa fa-bus"></i>Buses</a></li>
             <li><a href="{{url('/manageRoute')}}"><i class="fa fa-route"></i>Routes</a></li>
