@@ -115,7 +115,7 @@ button[disabled] {
         Cancel Your Booking
       </h2>
 
-      <span id="empty-error" style="margin-left:70px;font-weight:bold;" class="text-danger"></span>
+      <span id="empty-error" style="margin-left:70px;font-weight:bold;" class=""></span>
     <div class="inputDiv">
       <label class="inputLabel" for="ticket">Ticket Id</label>
       <input type="text" id="ticketID" name="ticketID">
@@ -170,16 +170,19 @@ button[disabled] {
                       if(data == "DoneTicket")
                       {
                         document.getElementById("empty-error").innerHTML = "The booking has been cancelled";
+                        document.getElementById("empty-error").style.color = "green";
                       }
 
                       if(data == "notTicket")
                       {
                         document.getElementById("empty-error").innerHTML = "Booking is Not Available";
+                        document.getElementById("empty-error").style.color = "red";
                       }
 
                       if(data == "lateTime")
                       {
                         document.getElementById("empty-error").innerHTML = "Sorry, your booking will not be canceled on the day of travel";
+                        document.getElementById("empty-error").style.color = "red";
                       }
                 },
             })

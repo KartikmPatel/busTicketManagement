@@ -164,7 +164,7 @@
             <div class="event-content">
                 <h4 style="font-weight: bold;font-style: italic;font-size: 25px;margin-bottom: 5px;">Global Travels</h4>
                 <span style="font-style: italic;font-size: 20px;margin-left:50px;">
-                    luxurious
+                    Luxurious
                 </span><br>
                 <a href="wedding.php" style="text-decoration: none;font-weight: bold;text-transform: uppercase;margin-top: 10px;margin-left:70px;">Bus</a>
             </div>
