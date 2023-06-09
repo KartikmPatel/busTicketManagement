@@ -18,42 +18,42 @@
                 <div class="service">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     <h2>User Freindly</h2>
-                    <p>This is a paragraph</p>
+                    <p>the quality of being <br>easy for people who are <br>not experts to understand.</p>
                 </div>
                 <div class="service">
                     <i class="fa-solid fa-bus"></i>
                     <h2>Real-Time Booking</h2>
-                    <p>This is a paragraph</p>
+                    <p>Allow them to see your<br> availability at any time of<br> the day or night they decide<br> to visit your website.</p>
                 </div>
                 <div class="service">
                     <i class="fa-solid fa-clock"></i>
                     <h2>24x7 Availibity</h2>
-                    <p>This is a paragraph</p>
+                    <p>Service that is available at<br> any time and usually, every day.</p>
                 </div>
                 <div class="service">
                     <i class="fa fa-ticket" aria-hidden="true"></i>
                     <h2>Online Ticket</h2>
-                    <p>This is a paragraph</p>
+                    <p>A paperless electronic document<br> used for ticketing purposes</p>
                 </div>
                 <div class="service">
                     <i class="fa-solid fa-shield-halved"></i>
                     <h2>Data Security</h2>
-                    <p>This is a paragraph</p>
+                    <p>protection from, or resilience<br> against, potential harm</p>
                 </div>
                 <div class="service">
                     <i class="fa-solid fa-calendar-days"></i>
                     <h2>Advance Booking</h2>
-                    <p>This is a paragraph</p>
+                    <p>a booking made before<br> you arrive at a Bus Station.</p>
                 </div>
                 <div class="service">
                     <i class="fa-solid fa-copy"></i>
                     <h2>Booking History</h2>
-                    <p>This is a paragraph</p>
+                    <p>It stores the user's booking history</p>
                 </div>
                 <div class="service">
                     <i class="fa-solid fa-rectangle-xmark"></i>
                     <h2>Cancellation</h2>
-                    <p>This is a paragraph</p>
+                    <p>User can cancel their booking<br> at any time from any where.</p>
                 </div>
             </div>
         </div>

@@ -55,7 +55,7 @@
                 </li>
             </ul>
             @else
-            <a class="navbar-brand" href="/"><img src="images/bus_logo.jpg" style="border-radius: 40%" height="50" width="60"></a> 
+            <a class="navbar-brand" href="/"><img src="images/bus_logo.jpg" style="border-radius: 40%" height="50" width="60"></a>
             <a class="navbar-brand" href="/">Global Travels</a>
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 {{-- <li class="nav-item">
