@@ -63,12 +63,18 @@
                             <span>Type your Feedback...</span>
                         </div>
                         <div class="inputBox">
-                            <input type="submit" name="" value="Send">
+                            <input type="submit" name="" onclick="cu()" value="Send">
                         </div>
                     </form>
                 </div>
             </div>
         </section>
+        <script>
+            function cu()
+            {
+                alert("We Appreciate Your Feedback");
+            }
+        </script>
     </body>
 </html>
 

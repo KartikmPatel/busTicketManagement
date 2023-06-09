@@ -34,7 +34,7 @@
         <script>
             function policy()
             {
-                alert("Thanks for supporting");
+                alert("Thanks For Supporting");
             }
         </script>
     </body>
