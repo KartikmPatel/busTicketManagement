@@ -125,48 +125,48 @@
   </div>
   <div class="row">
     <div class="offset-sm-1 col-sm-4"  id="event" style="margin-top: 50px; margin-left: 160px">
-        <img src="images1/about.jpg" class="img-fluid"  alt="">
+        <img src="images1/sleeperBus.jpg" class="img-fluid"  alt="">
         <div class="event-content">
-            <h4 style="font-weight: bold;font-style: italic;font-size: 25px;margin-bottom: 5px;">Wadding Event</h4>
-            <span style="font-style: italic;font-size: 20px;">
-                Love Event
+            <h4 style="font-weight: bold;font-style: italic;font-size: 25px;margin-bottom: 5px;">Global Travels</h4>
+            <span style="font-style: italic;font-size: 20px;margin-left:50px;">
+                Sleeper
             </span><br>
-            <a href="wedding.php" style="text-decoration: none;font-weight: bold;text-transform: uppercase;margin-top: 10px;">Join</a>
+            <a href="wedding.php" style="text-decoration: none;font-weight: bold;text-transform: uppercase;margin-top: 10px;text-align:center;margin-left:70px;">Bus</a>
         </div>
         </div>
     
         <div class="offset-sm-1 col-sm-4"  id="event" style="margin-top: 50px">
-            <img src="images1/contact.jpg" class="img-fluid"  alt="">
+            <img src="images1/seaterBus.jpg" class="img-fluid"  alt="">
             <div class="event-content">
-                <h4 style="font-weight: bold;font-style: italic;font-size: 25px;margin-bottom: 5px;">Wadding Event</h4>
-                <span style="font-style: italic;font-size: 20px;">
-                    Love Event
+                <h4 style="font-weight: bold;font-style: italic;font-size: 25px;margin-bottom: 5px;">Global Travels</h4>
+                <span style="font-style: italic;font-size: 20px;margin-left:50px;">
+                    Seater
                 </span><br>
-                <a href="wedding.php" style="text-decoration: none;font-weight: bold;text-transform: uppercase;margin-top: 10px;">Join</a>
+                <a href="wedding.php" style="text-decoration: none;font-weight: bold;text-transform: uppercase;margin-top: 10px;margin-left:70px;">bus</a>
             </div>
             </div>
   </div>
 
   <div class="row" style="margin-bottom: -100px">
     <div class="offset-sm-1 col-sm-4"  id="event" style="margin-top: 70px; margin-left: 160px">
-        <img src="images1/feedback.jpg" class="img-fluid"  alt="">
+        <img src="images1/MiniBus.jpg" class="img-fluid"  alt="">
         <div class="event-content">
-            <h4 style="font-weight: bold;font-style: italic;font-size: 25px;margin-bottom: 5px;">Wadding Event</h4>
-            <span style="font-style: italic;font-size: 20px;">
-                Love Event
+            <h4 style="font-weight: bold;font-style: italic;font-size: 25px;margin-bottom: 5px;">Global Travels</h4>
+            <span style="font-style: italic;font-size: 20px;margin-left:65px;">
+                Mini
             </span><br>
-            <a href="wedding.php" style="text-decoration: none;font-weight: bold;text-transform: uppercase;margin-top: 10px;">Join</a>
+            <a href="wedding.php" style="text-decoration: none;font-weight: bold;text-transform: uppercase;margin-top: 10px;margin-left:70px;">Bus</a>
         </div>
         </div>
     
         <div class="offset-sm-1 col-sm-4"  id="event" style="margin-top: 70px;">
-            <img src="images1/privacy.jpg" class="img-fluid"  alt="">
+            <img src="images1/luxuriesBus1.webp" class="img-fluid"  alt="">
             <div class="event-content">
-                <h4 style="font-weight: bold;font-style: italic;font-size: 25px;margin-bottom: 5px;">Wadding Event</h4>
-                <span style="font-style: italic;font-size: 20px;">
-                    Love Event
+                <h4 style="font-weight: bold;font-style: italic;font-size: 25px;margin-bottom: 5px;">Global Travels</h4>
+                <span style="font-style: italic;font-size: 20px;margin-left:50px;">
+                    luxurious
                 </span><br>
-                <a href="wedding.php" style="text-decoration: none;font-weight: bold;text-transform: uppercase;margin-top: 10px;">Join</a>
+                <a href="wedding.php" style="text-decoration: none;font-weight: bold;text-transform: uppercase;margin-top: 10px;margin-left:70px;">Bus</a>
             </div>
             </div>
   </div>

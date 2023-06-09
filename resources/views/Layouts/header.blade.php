@@ -37,7 +37,7 @@
   <div id="preloader"></div>
     <nav class="navbar navbar-expand-sm navbar-dark" style="background-color:#33475b;">
         @if(session('username') == "Admin")
-        <a class="navbar-brand"><span id="toggle-icon" class="navbar-toggler-icon" style="border:2px solid white"></span></a>
+        <a class="navbar-brand"><span id="toggle-icon" class="navbar-toggler-icon" style="border:2px solid white;"></span></a>
         <a class="navbar-brand" href="/adminHome"><img src="images/bus_logo.jpg" style="border-radius: 40%" height="50" width="60"></a>
         <a class="navbar-brand" href="/adminHome">Global Travels</a>
         @endif
