@@ -90,7 +90,7 @@
                             </div>
                             <div class="form-group">
                                 <label> Fare : </label>
-                                <input type="text" class="form-control" name="fare" id="fare" placeholder="fare">
+                                <input type="text" class="form-control" name="fare" id="fare" placeholder="Fare">
                                 <span class="text-danger" id="fare-error">
                                 </span>
                             </div>

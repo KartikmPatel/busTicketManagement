@@ -293,7 +293,7 @@
         		document.getElementById("allBus-error").style.fontSize="";
                 if(validateBusNO() && validateName())
                 {
-                        storeData();
+                    storeData();
                 }
             }
         }

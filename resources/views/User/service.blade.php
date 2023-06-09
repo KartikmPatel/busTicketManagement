@@ -18,7 +18,7 @@
                 <div class="service">
                     <i class="fa fa-user" aria-hidden="true"></i>
                     <h2>User Freindly</h2>
-                    <p>the quality of being <br>easy for people who are <br>not experts to understand.</p>
+                    <p>The quality of being <br>easy for people who are <br>not experts to understand.</p>
                 </div>
                 <div class="service">
                     <i class="fa-solid fa-bus"></i>
@@ -38,12 +38,12 @@
                 <div class="service">
                     <i class="fa-solid fa-shield-halved"></i>
                     <h2>Data Security</h2>
-                    <p>protection from, or resilience<br> against, potential harm</p>
+                    <p>Protection from, or resilience<br> against, potential harm</p>
                 </div>
                 <div class="service">
                     <i class="fa-solid fa-calendar-days"></i>
                     <h2>Advance Booking</h2>
-                    <p>a booking made before<br> you arrive at a Bus Station.</p>
+                    <p>A booking made before<br> you arrive at a Bus Station.</p>
                 </div>
                 <div class="service">
                     <i class="fa-solid fa-copy"></i>

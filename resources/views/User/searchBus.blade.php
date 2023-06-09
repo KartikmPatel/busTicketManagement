@@ -7,12 +7,12 @@
     </title>
 </head>
 <body class="bg-white" onload="myFunction()">
-    <div class="row next">
+    {{-- <div class="row next">
     <i class="fa-solid fa-angle-left" id="n1"></i>
     <span id="date1"></span>
     <i class="fa-solid fa-angle-right" id="n1" onclick="nextDate()"></i>
-    </div>
-    <div class="viewBus">
+    </div> --}}
+    <div class="viewBus" style="margin-left: 20%">
     <table class="content-table col-md-7">
   <thead>
     <tr>

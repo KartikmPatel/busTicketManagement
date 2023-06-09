@@ -13,8 +13,8 @@ use App\Models\routeModel;
 use App\Models\bookingModel;
 use App\Models\feedback;
 use App\Models\historyModel;
-use Barryvdh\DomPDF\PDF;
-// use PDF;
+// use Barryvdh\DomPDF\PDF;
+use PDF;
 
 class userController extends Controller
 {

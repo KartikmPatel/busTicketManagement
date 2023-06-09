@@ -119,6 +119,7 @@ button[disabled] {
       </h2>
 
       <span id="empty-error" style="margin-left:70px;font-weight:bold;" class="text-danger"></span>
+      <span id="empty-success" style="margin-left:70px;font-weight:bold;" class="text-success"></span>
     <div class="inputDiv">
       <label class="inputLabel" for="password">Old Password</label>
       <input type="password" id="oldPassword" name="oldPassword">
@@ -237,7 +238,14 @@ function validNewPassword()
                       if(data == "passwordDone")
                       {
                         // alert('Your Password has been reset');
-                        document.getElementById("empty-error").innerHTML = "Your Password has been reset";
+                        // document.getElementById("empty-success").innerHTML = "Your Password has been reset";
+                        @if(session('username') == "Admin")
+                          alert('Your Password has been reset');
+                          window.location.replace('/adminHome');
+                        @else
+                          alert('Your Password has been reset');
+                          window.location.replace('/');
+                        @endif
                     }
                 },
             })

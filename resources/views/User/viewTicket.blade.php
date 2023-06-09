@@ -142,6 +142,6 @@
   </div>
 </div>
 
-    <a href="{{url('/')}}"><button class="btn btn-success" style="margin-left:30%;cursor:pointer;margin-top:-70px;">Home</button></a>
+    <a href="{{url('/')}}"><button class="btn btn-success" style="margin-left:30%;cursor:pointer;margin-top:-55px;"><i class="fa fa-home" aria-hidden="true"></i></button></a>
     </body>
 </html>

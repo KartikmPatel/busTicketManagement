@@ -75,12 +75,12 @@ class adminController extends Controller
         $search = $r['search'] ?? "";
         if($search != "")
         {
-            $bus = busModel::where('busNo','LIKE',"%$search%")->orWhere('name','LIKE',"%$search%")->orWhere('size','LIKE',"%$search%")->orWhere('type','LIKE',"%$search%")->paginate(5);
+            $bus = busModel::where('busNo','LIKE',"%$search%")->orWhere('name','LIKE',"%$search%")->orWhere('size','LIKE',"%$search%")->orWhere('type','LIKE',"%$search%")->paginate(3);
             $bus->appends(['search' => $search]);
         }
         else
         {
-            $bus = busModel::paginate(5);
+            $bus = busModel::paginate(3);
         }
 
         $url = url('/manageBus');
@@ -183,12 +183,12 @@ class adminController extends Controller
         $search = $r['search'] ?? "";
         if($search != "")
         {
-            $routes = routeModel::where('busNo','LIKE',"%$search%")->orWhere('routeID','LIKE',"%$search%")->orWhere('startingStationID','LIKE',"%$search%")->orWhere('endingStationID','LIKE',"%$search%")->orWhere('departureTime','LIKE',"%$search%")->orWhere('fare','LIKE',"%$search%")->paginate(5);
+            $routes = routeModel::where('busNo','LIKE',"%$search%")->orWhere('routeID','LIKE',"%$search%")->orWhere('startingStationID','LIKE',"%$search%")->orWhere('endingStationID','LIKE',"%$search%")->orWhere('departureTime','LIKE',"%$search%")->orWhere('fare','LIKE',"%$search%")->paginate(3);
             $routes->appends(['search' => $search]);
         }
         else
         {
-            $routes = routeModel::paginate(5);
+            $routes = routeModel::paginate(3);
         }
 
         $buses = busModel::all();
@@ -283,12 +283,12 @@ class adminController extends Controller
         $search = $r['search'] ?? "";
         if($search != "")
         {
-            $staff = staffModel::where('busNo','LIKE',"%$search%")->orWhere('staffID','LIKE',"%$search%")->orWhere('staffName','LIKE',"%$search%")->orWhere('staffType','LIKE',"%$search%")->orWhere('mobileNo','LIKE',"%$search%")->paginate(5);
+            $staff = staffModel::where('busNo','LIKE',"%$search%")->orWhere('staffID','LIKE',"%$search%")->orWhere('staffName','LIKE',"%$search%")->orWhere('staffType','LIKE',"%$search%")->orWhere('mobileNo','LIKE',"%$search%")->paginate(3);
             $staff->appends(['search' => $search]);
         }
         else
         {
-            $staff = staffModel::paginate(5);
+            $staff = staffModel::paginate(3);
         }
         
         $buses = busModel::all();
@@ -370,12 +370,12 @@ class adminController extends Controller
         $search = $r['search'] ?? "";
         if($search != "")
         {
-            $station = stationModel::where('stationID','LIKE',"%$search%")->orWhere('stationName','LIKE',"%$search%")->paginate(5);
+            $station = stationModel::where('stationID','LIKE',"%$search%")->orWhere('stationName','LIKE',"%$search%")->paginate(3);
             $station->appends(['search' => $search]);
         }
         else
         {
-            $station = stationModel::paginate(5);
+            $station = stationModel::paginate(3);
         }
 
         $url = url('/manageStation');
