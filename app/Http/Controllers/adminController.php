@@ -344,15 +344,7 @@ class adminController extends Controller
     public function updateStaff(Request $r)
     {
         $staff = staffModel::find($r['sID']);
-
-        $busStaff = staffModel::where('busNo',$r['busno'])->first();
-        if($busStaff->staffType == $r['sType'])
-        {
-            $message = "sameStaffType";
-            return $message;
-        }
-        else
-        {
+        
             $staff->busNo = $r['busno'];
             $staff->staffName = $r['sName'];
             $staff->staffType = $r['sType'];
@@ -361,8 +353,6 @@ class adminController extends Controller
     
             $message = "updateStaff";
             return $message;
-        }
-
     }
 
     public function viewStations(Request $r)

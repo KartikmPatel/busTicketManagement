@@ -328,6 +328,12 @@
                         //     location.reload();
                         // },10);
 
+                        // if(data == "errorUpdateStaff")
+                        // {
+                        //     alert('Only 1 Staff For 1 Bus');
+                        //     window.location.replace('/manageStaff');
+                        // }
+
                         if(data == "sameStaffType")
                         {
                             alert('Only 1 Staff For 1 Bus');
