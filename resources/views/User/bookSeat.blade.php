@@ -1363,7 +1363,7 @@
     <form action="{{url('payment')}}" method="post">
         @csrf --}}
 
-    <button type="button" class="btn btn-success ml-2" onclick="display1()" id="b1" data-toggle="modal" data-target="#modelId">{{__('home.book')}}</button>
+    <button type="button" class="btn btn-success ml-2" onclick="display2()" id="b1" data-toggle="modal" data-target="#modelId">{{__('home.book')}}</button>
     {{-- </form> --}}
 
 </div>
@@ -1404,6 +1404,7 @@
                             <input type="hidden" name="date" id="date" value="{{$date}}"/>
                             <input type="hidden" name="time" id="time" value="{{$time}}"/>
                             <input type="hidden" name="fare" id="fare" value="{{$fare}}"/>
+                            <input type="hidden" name="count" id="count"/>
                             <button type="submit" class="btn btn-success mt-3" onclick="validate()">{{__('home.payment')}}</button>
                         </form>
                     </div>
@@ -1448,8 +1449,8 @@
             count++;
         }
     }
-    console.log(result);
-    console.log(count);
+    // console.log(result);
+    // console.log(count);
     document.getElementById('display').value = result;
     document.getElementById('fare').value={{ $fare }} * count;
     document.getElementById('count').value=count;
