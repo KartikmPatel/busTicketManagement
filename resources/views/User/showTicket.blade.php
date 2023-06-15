@@ -23,7 +23,7 @@
   <div id="preloader"></div>
 
       <div class="download">
-        <form action="{{ url('/downloadTicket') }}" method="post">
+        <form action="{{ url('/downloadTicket1') }}" method="post">
             @csrf
        {{-- @foreach($station as $s)
        @if($s->stationName == $from)

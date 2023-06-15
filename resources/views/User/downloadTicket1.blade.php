@@ -619,6 +619,7 @@
         <!-- <span class="jfk1"><i class="fa fa-arrow-right"></i></span> -->
         <span class="jfk1">To</span>
 
+
       <span class="sfo">{{ $st2 }}</span>
 
 
@@ -635,8 +636,8 @@
         <span class="flight">Bus No&deg;<br><span>{{ $bno }}</span></span>
         <span class="seat">SEAT<br><span>{{ $seatno }}</span></span>
         <span class="boardingtime">DEPARTURETIME<br><span>{{ $date }}</span></span>
-        <!-- <span class="ticketID">Ticket Id<br><span>{{ $tid }}</span></span>
-        <span class="fare">FARE<br><span>{{ $fare }}</span></span> -->
+        <span class="ticketID">Ticket Id<br><span>{{ $tid }}</span></span>
+        <span class="fare">FARE<br><span>{{ $fare }}</span></span>
 
          <span class="flight flightslip">Bus No&deg;<br><span>{{ $bno }}</span></span>
           <span class="seat seatslip">SEAT<br><span>{{ $seatno }}</span></span>

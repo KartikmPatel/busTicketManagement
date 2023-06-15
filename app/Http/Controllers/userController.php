@@ -162,21 +162,29 @@ class userController extends Controller
         $time = $r['time'];
         $seatno=$r['display'];
         $fare=$r['fare'];
+        $count = $r['count'];
         $from = $ssID->stationName;
         $to = $esID->stationName;
 
-        $book = new bookingModel;
-        $book->busNo = $bno;
-        $book->userID = $uid;
-        $book->seatNo = $seatno;
-        $book->fare = $fare;
-        $book->from = $from;
-        $book->to = $to;
-        $book->date = $date;
-        $book->time = $time;
-        $book->save();
+        $seat1 = explode(",",$seatno);
+        for($i = 0;$i < $count;$i++)
+        {
+            $book = new bookingModel;
+            $book->busNo = $bno;
+            $book->userID = $uid;
+            $book->seatNo = $seat1[$i];
+            $book->fare = $fare;
+            $book->from = $from;
+            $book->to = $to;
+            $book->date = $date;
+            $book->time = $time;
+            $book->save();
+        }
 
-        DB::insert('insert into '.$bno.'seatTB values("'.$date.'",'.$seatno.')');
+        for($i = 0;$i < $count;$i++)
+        {   
+            DB::insert('insert into '.$bno.'seatTB values("'.$date.'",'.$seat1[$i].')');
+        }
         // return redirect('/');
 
         $station = stationModel::all();
@@ -334,6 +342,21 @@ class userController extends Controller
 
         $data = compact('bno','uname','seatno','fare','from','to','date','time','tid');
         return view("User.showTicket")->with($data);
+    }
+
+    public function downloadTicket1(Request $r)
+    {
+        $st1 = $r['sname1'];
+        $st2 = $r['sname2'];
+        $uname = $r['uname'];
+        $bno = $r['bno'];
+        $seatno = $r['seatno'];
+        $date = $r['date'];
+        $fare = $r['fare'];
+        $tid = $r['ticketID'];
+
+        $pdf_view = PDF::loadView('User.downloadTicket1',compact('st1','st2','uname','bno','seatno','date','fare','tid'));
+        return $pdf_view->download('ticket.pdf');
     }
 
     public function ticketCancel2(Request $r)

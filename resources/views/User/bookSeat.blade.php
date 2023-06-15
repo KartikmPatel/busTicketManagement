@@ -61,7 +61,7 @@
                 @endforeach
                 @if ($j == false)
                     <li class="seat">
-                        <input type="checkbox" id="1" />
+                        <input type="checkbox" name="Seaterseat" value="1" id="1" />
                         <label for="1">1</label>
                     </li>
                 @endif
@@ -84,7 +84,7 @@
             @endforeach
             @if ($j == false)
                 <li class="seat">
-                    <input type="checkbox" id="2" />
+                    <input type="checkbox" name="Seaterseat" value="2" id="2" />
                     <label for="2">2</label>
                 </li>
             @endif
@@ -107,7 +107,7 @@
         @endforeach
         @if ($j == false)
             <li class="seat">
-                <input type="checkbox" id="3" />
+                <input type="checkbox" name="Seaterseat" value="3" id="3" />
                 <label for="3">3</label>
             </li>
         @endif
@@ -130,7 +130,7 @@
         @endforeach
         @if ($j == false)
             <li class="seat">
-                <input type="checkbox" id="4" />
+                <input type="checkbox" name="Seaterseat" value="4" id="4" />
                 <label for="4">4</label>
             </li>
         @endif
@@ -153,7 +153,7 @@
     @endforeach
     @if ($j == false)
         <li class="seat">
-            <input type="checkbox" id="5" />
+            <input type="checkbox" name="Seaterseat" value="5" id="5" />
             <label for="5">5</label>
         </li>
     @endif
@@ -176,7 +176,7 @@
 @endforeach
 @if ($j == false)
     <li class="seat">
-        <input type="checkbox" id="6" />
+        <input type="checkbox" name="Seaterseat" value="6" id="6" />
         <label for="6">6</label>
     </li>
 @endif
@@ -203,7 +203,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-    <input type="checkbox" id="7" />
+    <input type="checkbox" name="Seaterseat" value="7" id="7" />
     <label for="7">7</label>
 </li>
 @endif
@@ -226,7 +226,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="8" />
+<input type="checkbox" name="Seaterseat" value="8" id="8" />
 <label for="8">8</label>
 </li>
 @endif
@@ -249,7 +249,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="9" />
+<input type="checkbox" name="Seaterseat" value="9" id="9" />
 <label for="9">9</label>
 </li>
 @endif
@@ -272,7 +272,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="10" />
+<input type="checkbox" name="Seaterseat" value="10" id="10" />
 <label for="10">10</label>
 </li>
 @endif
@@ -295,7 +295,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="11" />
+<input type="checkbox" name="Seaterseat" value="11" id="11" />
 <label for="11">11</label>
 </li>
 @endif
@@ -318,7 +318,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="12" />
+<input type="checkbox" name="Seaterseat" value="12" id="12" />
 <label for="12">12</label>
 </li>
 @endif
@@ -345,7 +345,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="13" />
+<input type="checkbox" name="Seaterseat" value="13" id="13" />
 <label for="13">13</label>
 </li>
 @endif
@@ -368,7 +368,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="14" />
+<input type="checkbox" name="Seaterseat" value="14" id="14" />
 <label for="14">14</label>
 </li>
 @endif
@@ -391,7 +391,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="15" />
+<input type="checkbox" name="Seaterseat" value="15" id="15" />
 <label for="15">15</label>
 </li>
 @endif
@@ -414,7 +414,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="16" />
+<input type="checkbox" name="Seaterseat" value="16" id="16" />
 <label for="16">16</label>
 </li>
 @endif
@@ -437,7 +437,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="17" />
+<input type="checkbox" name="Seaterseat" value="17" id="17" />
 <label for="17">17</label>
 </li>
 @endif
@@ -460,7 +460,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="18" />
+<input type="checkbox" name="Seaterseat" value="18" id="18" />
 <label for="18">18</label>
 </li>
 @endif
@@ -487,7 +487,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="19" />
+<input type="checkbox" name="Seaterseat" value="19" id="19" />
 <label for="19">19</label>
 </li>
 @endif
@@ -510,7 +510,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="20" />
+<input type="checkbox" name="Seaterseat" value="20" id="20" />
 <label for="20">20</label>
 </li>
 @endif
@@ -533,7 +533,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="21" />
+<input type="checkbox" name="Seaterseat" value="21" id="21" />
 <label for="21">21</label>
 </li>
 @endif
@@ -556,7 +556,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="22" />
+<input type="checkbox" name="Seaterseat" value="22" id="22" />
 <label for="22">22</label>
 </li>
 @endif
@@ -579,7 +579,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="23" />
+<input type="checkbox" name="Seaterseat" value="23" id="23" />
 <label for="23">23</label>
 </li>
 @endif
@@ -602,7 +602,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="24" />
+<input type="checkbox" name="Seaterseat" value="24" id="24" />
 <label for="24">24</label>
 </li>
 @endif
@@ -630,7 +630,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="25" />
+<input type="checkbox" name="Seaterseat" value="25" id="25" />
 <label for="25">25</label>
 </li>
 @endif
@@ -653,7 +653,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="26" />
+<input type="checkbox" name="Seaterseat" value="26" id="26" />
 <label for="26">26</label>
 </li>
 @endif
@@ -676,7 +676,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="27" />
+<input type="checkbox" name="Seaterseat" value="27" id="27" />
 <label for="27">27</label>
 </li>
 @endif
@@ -699,7 +699,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="28" onselect="display1()"/>
+<input type="checkbox" name="Seaterseat" value="28" id="28" />
 <label for="28">28</label>
 </li>
 @endif
@@ -722,7 +722,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="29" onselect="display1()"/>
+<input type="checkbox" name="Seaterseat" value="29" id="29" />
 <label for="29">29</label>
 </li>
 @endif
@@ -745,7 +745,7 @@
 @endforeach
 @if ($j == false)
 <li class="seat">
-<input type="checkbox" id="30" onselect="display1()"/>
+<input type="checkbox" name="Seaterseat" value="30" id="30"/>
 <label for="30">30</label>
 </li>
 @endif
@@ -797,6 +797,7 @@
                             <input type="hidden" name="date" id="date" value="{{$date}}"/>
                             <input type="hidden" name="time" id="time" value="{{$time}}"/>
                             <input type="hidden" name="fare" id="fare" value="{{$fare}}"/>
+                            <input type="hidden" name="count" id="count" />
                             <button type="submit" class="btn btn-success mt-3" onclick="validate1()">{{__('home.payment')}}</button>
                         </form>
                     </div>
@@ -808,12 +809,12 @@
 
 <script>
 
-      $(document).ready(function()
-      {
-          $('input').on('change',function(){
-              $('input').not(this).prop('checked',false);
-          });
-      });
+    //   $(document).ready(function()
+    //   {
+    //       $('input').on('change',function(){
+    //           $('input').not(this).prop('checked',false);
+    //       });
+    //   });
 
       function validate1()
       {
@@ -832,177 +833,18 @@
 
     function display1()
     {
-        var s1 = document.getElementById('1');
-        var s2 = document.getElementById('2');
-        var s3 = document.getElementById('3');
-        var s4 = document.getElementById('4');
-        var s5 = document.getElementById('5');
-        var s6 = document.getElementById('6');
-        var s7 = document.getElementById('7');
-        var s8 = document.getElementById('8');
-        var s9 = document.getElementById('9');
-        var s10 = document.getElementById('10');
-        var s11 = document.getElementById('11');
-        var s12 = document.getElementById('12');
-        var s13 = document.getElementById('13');
-        var s14 = document.getElementById('14');
-        var s15 = document.getElementById('15');
-        var s16 = document.getElementById('16');
-        var s17 = document.getElementById('17');
-        var s18 = document.getElementById('18');
-        var s19 = document.getElementById('19');
-        var s20 = document.getElementById('20');
-        var s21 = document.getElementById('21');
-        var s22 = document.getElementById('22');
-        var s23 = document.getElementById('23');
-        var s24 = document.getElementById('24');
-        var s25 = document.getElementById('25');
-        var s26 = document.getElementById('26');
-        var s27 = document.getElementById('27');
-        var s28 = document.getElementById('28');
-        var s29 = document.getElementById('29');
-        var s30 = document.getElementById('30');
-
-        if(s1.checked == true)
-        {
-          document.getElementById('display').value="1";
+    var checkboxes = document.getElementsByName('Seaterseat');
+    var count = 0;
+    var result = "";
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            result += checkboxes[i].value + ",";
+            count++;
         }
-
-        if(s2.checked == true)
-        {
-            document.getElementById('display').value="2";
-        }
-        if(s3.checked == true)
-        {
-            document.getElementById('display').value="3";
-        }
-        if(s4.checked == true)
-        {
-            document.getElementById('display').value="4";
-        }
-        if(s5.checked == true)
-        {
-            document.getElementById('display').value="5";
-        }
-
-        if(s6.checked == true)
-        {
-          document.getElementById('display').value="6";
-        }
-
-        if(s7.checked == true)
-        {
-            document.getElementById('display').value="7";
-        }
-        if(s8.checked == true)
-        {
-            document.getElementById('display').value="8";
-        }
-        if(s9.checked == true)
-        {
-            document.getElementById('display').value="9";
-        }
-        if(s10.checked == true)
-        {
-            document.getElementById('display').value="10";
-        }
-
-        if(s11.checked == true)
-        {
-          document.getElementById('display').value="11";
-        }
-
-        if(s12.checked == true)
-        {
-            document.getElementById('display').value="12";
-        }
-        if(s13.checked == true)
-        {
-            document.getElementById('display').value="13";
-        }
-        if(s14.checked == true)
-        {
-            document.getElementById('display').value="14";
-        }
-        if(s15.checked == true)
-        {
-            document.getElementById('display').value="15";
-        }
-
-        if(s16.checked == true)
-        {
-          document.getElementById('display').value="16";
-        }
-
-        if(s17.checked == true)
-        {
-            document.getElementById('display').value="17";
-        }
-        if(s18.checked == true)
-        {
-            document.getElementById('display').value="18";
-        }
-        if(s19.checked == true)
-        {
-            document.getElementById('display').value="19";
-        }
-        if(s20.checked == true)
-        {
-            document.getElementById('display').value="20";
-        }
-        if(s21.checked == true)
-        {
-          document.getElementById('display').value="21";
-        }
-
-        if(s22.checked == true)
-        {
-            document.getElementById('display').value="22";
-        }
-        if(s23.checked == true)
-        {
-            document.getElementById('display').value="23";
-        }
-        if(s24.checked == true)
-        {
-            document.getElementById('display').value="24";
-        }
-        if(s25.checked == true)
-        {
-            document.getElementById('display').value="25";
-        }
-
-        if(s26.checked == true)
-        {
-          document.getElementById('display').value="26";
-        }
-
-        if(s27.checked == true)
-        {
-            document.getElementById('display').value="27";
-        }
-        if(s28.checked == true)
-        {
-            document.getElementById('display').value="28";
-        }
-        if(s29.checked == true)
-        {
-            document.getElementById('display').value="29";
-        }
-        if(s30.checked == true)
-        {
-            document.getElementById('display').value="30";
-        }
-
-
-        // var i;
-        // for(i=1;i<=30;i++)
-        // {
-        //     if('s'+i.checked == true)
-        //     {
-        //         document.getElementById('display').value=i;
-        //     }
-        // }
+    }
+    document.getElementById('display').value = result;
+    document.getElementById('fare').value={{ $fare }} * count;
+    document.getElementById('count').value=count;
     }
 
     </script>
@@ -1048,7 +890,7 @@
                     @endforeach
                     @if ($j == false)
                         <li class="seat" id="seat1">
-                            <input type="checkbox" id="1" />
+                            <input type="checkbox" name="Sleeperseat" value="1" id="1" />
                             <label for="1" id="s1">1</label>
                         </li>
                     @endif
@@ -1071,7 +913,7 @@
                 @endforeach
                 @if ($j == false)
                     <li class="seat" id="seat1">
-                        <input type="checkbox" id="2" />
+                        <input type="checkbox" name="Sleeperseat" value="2" id="2" />
                         <label for="2" id="s1">2</label>
                     </li>
                 @endif
@@ -1094,7 +936,7 @@
             @endforeach
             @if ($j == false)
                 <li class="seat" id="seat1">
-                    <input type="checkbox" id="3" />
+                    <input type="checkbox" name="Sleeperseat" value="3" id="3" />
                     <label for="3" id="s1">3</label>
                 </li>
             @endif
@@ -1117,7 +959,7 @@
             @endforeach
             @if ($j == false)
                 <li class="seat" id="seat1">
-                    <input type="checkbox" id="4" />
+                    <input type="checkbox" name="Sleeperseat" value="4" id="4" />
                     <label for="4" id="s1">4</label>
                 </li>
             @endif
@@ -1140,7 +982,7 @@
         @endforeach
         @if ($j == false)
             <li class="seat" id="seat1">
-                <input type="checkbox" id="5" />
+                <input type="checkbox" name="Sleeperseat" value="5" id="5" />
                 <label for="5" id="s1">5</label>
             </li>
         @endif
@@ -1170,7 +1012,7 @@
                     @endforeach
                     @if ($j == false)
                         <li class="seat" id="seat1">
-                            <input type="checkbox" id="6" />
+                            <input type="checkbox" name="Sleeperseat" value="6" id="6" />
                             <label for="6" id="s1">6</label>
                         </li>
                     @endif
@@ -1193,7 +1035,7 @@
                 @endforeach
                 @if ($j == false)
                     <li class="seat" id="seat1">
-                        <input type="checkbox" id="7" />
+                        <input type="checkbox" name="Sleeperseat" value="7" id="7" />
                         <label for="7" id="s1">7</label>
                     </li>
                 @endif
@@ -1216,7 +1058,7 @@
             @endforeach
             @if ($j == false)
                 <li class="seat" id="seat1">
-                    <input type="checkbox" id="8" />
+                    <input type="checkbox" name="Sleeperseat" value="8" id="8" />
                     <label for="8" id="s1">8</label>
                 </li>
             @endif
@@ -1239,7 +1081,7 @@
             @endforeach
             @if ($j == false)
                 <li class="seat" id="seat1">
-                    <input type="checkbox" id="9" />
+                    <input type="checkbox" name="Sleeperseat" value="9" id="9" />
                     <label for="9" id="s1">9</label>
                 </li>
             @endif
@@ -1262,7 +1104,7 @@
         @endforeach
         @if ($j == false)
             <li class="seat" id="seat1">
-                <input type="checkbox" id="10" />
+                <input type="checkbox" name="Sleeperseat" value="10" id="10" />
                 <label for="10" id="s1">10</label>
             </li>
         @endif
@@ -1293,7 +1135,7 @@
                     @endforeach
                     @if ($j == false)
                         <li class="seat" id="seat1">
-                            <input type="checkbox" id="11" />
+                            <input type="checkbox" name="Sleeperseat" value="11" id="11" />
                             <label for="11" id="s1">11</label>
                         </li>
                     @endif
@@ -1316,7 +1158,7 @@
                 @endforeach
                 @if ($j == false)
                     <li class="seat" id="seat1">
-                        <input type="checkbox" id="12" />
+                        <input type="checkbox" name="Sleeperseat" value="12" id="12" />
                         <label for="12" id="s1">12</label>
                     </li>
                 @endif
@@ -1339,7 +1181,7 @@
             @endforeach
             @if ($j == false)
                 <li class="seat" id="seat1">
-                    <input type="checkbox" id="13" />
+                    <input type="checkbox" name="Sleeperseat" value="13" id="13" />
                     <label for="13" id="s1">13</label>
                 </li>
             @endif
@@ -1362,7 +1204,7 @@
             @endforeach
             @if ($j == false)
                 <li class="seat" id="seat1">
-                    <input type="checkbox" id="14" />
+                    <input type="checkbox" name="Sleeperseat" value="14" id="14" />
                     <label for="14" id="s1">14</label>
                 </li>
             @endif
@@ -1385,7 +1227,7 @@
         @endforeach
         @if ($j == false)
             <li class="seat" id="seat1">
-                <input type="checkbox" id="15" />
+                <input type="checkbox" name="Sleeperseat" value="15" id="15" />
                 <label for="15" id="s1">15</label>
             </li>
         @endif
@@ -1415,7 +1257,7 @@
                     @endforeach
                     @if ($j == false)
                         <li class="seat" id="seat1">
-                            <input type="checkbox" id="16" />
+                            <input type="checkbox" name="Sleeperseat" value="16" id="16" />
                             <label for="16" id="s1">16</label>
                         </li>
                     @endif
@@ -1438,7 +1280,7 @@
                 @endforeach
                 @if ($j == false)
                     <li class="seat" id="seat1">
-                        <input type="checkbox" id="17" />
+                        <input type="checkbox" name="Sleeperseat" value="17" id="17" />
                         <label for="17" id="s1">17</label>
                     </li>
                 @endif
@@ -1461,7 +1303,7 @@
             @endforeach
             @if ($j == false)
                 <li class="seat" id="seat1">
-                    <input type="checkbox" id="18" />
+                    <input type="checkbox" name="Sleeperseat" value="18" id="18" />
                     <label for="18" id="s1">18</label>
                 </li>
             @endif
@@ -1484,7 +1326,7 @@
             @endforeach
             @if ($j == false)
                 <li class="seat" id="seat1">
-                    <input type="checkbox" id="19" />
+                    <input type="checkbox" name="Sleeperseat" value="19" id="19" />
                     <label for="19" id="s1">19</label>
                 </li>
             @endif
@@ -1507,7 +1349,7 @@
         @endforeach
         @if ($j == false)
             <li class="seat" id="seat1">
-                <input type="checkbox" id="20" />
+                <input type="checkbox" name="Sleeperseat" value="20" id="20" />
                 <label for="20" id="s1">20</label>
             </li>
         @endif
@@ -1573,12 +1415,12 @@
 
 <script>
 
-      $(document).ready(function()
-      {
-          $('input').on('change',function(){
-              $('input').not(this).prop('checked',false);
-          });
-      });
+    //   $(document).ready(function()
+    //   {
+    //       $('input').on('change',function(){
+    //           $('input').not(this).prop('checked',false);
+    //       });
+    //   });
 
       function validate()
       {
@@ -1595,128 +1437,22 @@
         }
       }
 
-    function display1()
+    function display2()
     {
-        var s1 = document.getElementById('1');
-        var s2 = document.getElementById('2');
-        var s3 = document.getElementById('3');
-        var s4 = document.getElementById('4');
-        var s5 = document.getElementById('5');
-        var s6 = document.getElementById('6');
-        var s7 = document.getElementById('7');
-        var s8 = document.getElementById('8');
-        var s9 = document.getElementById('9');
-        var s10 = document.getElementById('10');
-        var s11 = document.getElementById('11');
-        var s12 = document.getElementById('12');
-        var s13 = document.getElementById('13');
-        var s14 = document.getElementById('14');
-        var s15 = document.getElementById('15');
-        var s16 = document.getElementById('16');
-        var s17 = document.getElementById('17');
-        var s18 = document.getElementById('18');
-        var s19 = document.getElementById('19');
-        var s20 = document.getElementById('20');
-
-        if(s1.checked == true || s2.checked == true || s3.checked == true || s4.checked == true || s5.checked == true || s6.checked == true || s7.checked == true || s8.checked == true || s9.checked == true || s10.checked == true || s11.checked == true || s12.checked == true || s13.checked == true || s14.checked == true || s15.checked == true || s16.checked == true || s17.checked == true || s18.checked == true || s19.checked == true || s20.checked == true)
-        {
-            if(s1.checked == true)
-            {
-              document.getElementById('display').value="1";
-            }
-
-            if(s2.checked == true)
-            {
-                document.getElementById('display').value="2";
-            }
-            if(s3.checked == true)
-            {
-                document.getElementById('display').value="3";
-            }
-            if(s4.checked == true)
-            {
-                document.getElementById('display').value="4";
-            }
-            if(s5.checked == true)
-            {
-                document.getElementById('display').value="5";
-            }
-
-            if(s6.checked == true)
-            {
-              document.getElementById('display').value="6";
-            }
-
-            if(s7.checked == true)
-            {
-                document.getElementById('display').value="7";
-            }
-            if(s8.checked == true)
-            {
-                document.getElementById('display').value="8";
-            }
-            if(s9.checked == true)
-            {
-                document.getElementById('display').value="9";
-            }
-            if(s10.checked == true)
-            {
-                document.getElementById('display').value="10";
-            }
-
-            if(s11.checked == true)
-            {
-              document.getElementById('display').value="11";
-            }
-
-            if(s12.checked == true)
-            {
-                document.getElementById('display').value="12";
-            }
-            if(s13.checked == true)
-            {
-                document.getElementById('display').value="13";
-            }
-            if(s14.checked == true)
-            {
-                document.getElementById('display').value="14";
-            }
-            if(s15.checked == true)
-            {
-                document.getElementById('display').value="15";
-            }
-
-            if(s16.checked == true)
-            {
-              document.getElementById('display').value="16";
-            }
-
-            if(s17.checked == true)
-            {
-                document.getElementById('display').value="17";
-            }
-            if(s18.checked == true)
-            {
-                document.getElementById('display').value="18";
-            }
-            if(s19.checked == true)
-            {
-                document.getElementById('display').value="19";
-            }
-            if(s20.checked == true)
-            {
-                document.getElementById('display').value="20";
-            }
+        var checkboxes = document.getElementsByName('Sleeperseat');
+    var count = 0;
+    var result = "";
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            result += checkboxes[i].value + ",";
+            count++;
         }
-
-        // var i;
-        // for(i=1;i<=30;i++)
-        // {
-        //     if('s'+i.checked == true)
-        //     {
-        //         document.getElementById('display').value=i;
-        //     }
-        // }
+    }
+    console.log(result);
+    console.log(count);
+    document.getElementById('display').value = result;
+    document.getElementById('fare').value={{ $fare }} * count;
+    document.getElementById('count').value=count;
     }
 
     </script>

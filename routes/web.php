@@ -82,6 +82,7 @@ route::post('viewSeat',[userController::class,'viewSeat']);
 route::middleware(['guard'])->group(function(){
     route::post('booking',[userController::class,'booking']);
     route::post('/downloadTicket',[userController::class,'downloadTicket']);
+    route::post('/downloadTicket1',[userController::class,'downloadTicket1']);
     route::post('showTicket',[userController::class,'showTicket']);
     route::get('viewHistory',[userController::class,'viewHistory']);
     route::get('cancelTicket',[userController::class,'cancelTicket']);
