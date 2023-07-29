@@ -838,7 +838,7 @@
     var result = "";
     for (var i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i].checked) {
-            result += checkboxes[i].value + ",";
+            result += checkboxes[i].value + " ";
             count++;
         }
     }
@@ -1445,7 +1445,7 @@
     var result = "";
     for (var i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i].checked) {
-            result += checkboxes[i].value + ",";
+            result += checkboxes[i].value + " ";
             count++;
         }
     }

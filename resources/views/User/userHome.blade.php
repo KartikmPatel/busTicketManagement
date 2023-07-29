@@ -278,7 +278,7 @@
             var to = document.getElementById("to");
             if(from.value == to.value)
             {
-                document.getElementById("same-error").innerHTML="Playas enter source and destination different";
+                document.getElementById("same-error").innerHTML="Please enter source and destination different";
         		document.getElementById("same-error").style.color="red";
         		document.getElementById("same-error").style.fontSize="15px";
                 return false;

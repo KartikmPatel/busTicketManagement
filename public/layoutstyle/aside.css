@@ -49,7 +49,8 @@
       position: relative;
       /* left: 0; */
       width: 250px;
-      height: 100%;
+      /* height: 100%; */
+      height: 660px;
       background: #33475b;
     }
 

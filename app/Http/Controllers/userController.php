@@ -166,7 +166,7 @@ class userController extends Controller
         $from = $ssID->stationName;
         $to = $esID->stationName;
 
-        $seat1 = explode(",",$seatno);
+        $seat1 = explode(" ",$seatno);
         for($i = 0;$i < $count;$i++)
         {
             $book = new bookingModel;
